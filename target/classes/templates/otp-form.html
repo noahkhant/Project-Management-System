@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" >
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Verification Form</title>
+    <link href="/assets/css/otp-form.css" rel="stylesheet">
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <script>
+
+
+        function submitForm() {
+
+                const otpInputs = document.querySelectorAll('.input-field input');
+                console.log(otpInputs);
+                let combinedOTP = '';
+
+                for (let i = 0; i < otpInputs.length; i++) {
+                    combinedOTP += otpInputs[i].value;
+                }
+
+                console.log(combinedOTP);
+
+
+            // Append the concatenated string as a query parameter to the form action
+            const form = document.getElementById('form');
+            form.action = '/otp-form?OTPInput=' + encodeURIComponent(combinedOTP);
+
+            // Submit the form
+            form.submit();
+            };
+
+    </script>
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <i class="bx bxs-check-shield"></i>
+    </header>
+    <h4>Enter OTP Code</h4>
+    <p th:if="${otpError}" th:text="${otpError}" style="color: red;"></p>
+
+    <form id="form" action="/otp-form" method="post">
+        <div class="input-field">
+            <input type="number" />
+            <input type="number"  />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+            <input type="number" />
+        </div>
+        <button type="button" onclick="submitForm()">Verify OTP</button>
+    </form>
+</div>
+<script src="/assets/js/otp-form.js"></script>
+
+
+
+</body>
+</html>

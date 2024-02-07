@@ -1,0 +1,54 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email with Attachment</title>
+</head>
+<body>
+<form id="emailForm">
+    <label for="recipient">Recipient Email:</label>
+    <input type="email" id="recipient" name="recipient" required /><br><br>
+
+    <label for="subject">Subject:</label>
+    <input type="text" id="subject" name="subject" required /><br><br>
+
+    <label for="message">Message Body:</label>
+    <textarea id="message" name="message" rows="4" required></textarea><br>
+
+    <label for="attachment">Attachment:</label>
+    <input type="file" id="attachment" name="attachment"/><br>
+
+    <button type="button" onclick="sendEmail()">Send Email</button>
+</form>
+
+<script>
+    function sendEmail() {
+        const recipient = document.getElementById('recipient').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        const attachment = document.getElementById('attachment').files[0];
+
+        const formData = new FormData();
+        formData.append('recipient', recipient);
+        formData.append('subject', subject);
+        formData.append('message', message);
+        formData.append('attachment', attachment);
+
+        fetch('/sendEmailWithAttachment', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+</script>
+</body>
+</html>
