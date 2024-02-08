@@ -6,9 +6,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IssueController {
 
-    @GetMapping("/issue")
+    @GetMapping("/issueboard")
     public String issue(){
-        return "issue";
+        return "issueboard";
     }
 
+    @GetMapping("/issue-list")
+    public String issueList(){
+        return "issuelist";
+    }
+
+    @GetMapping("/issue-details")
+    public String issueDetails(){
+        return "issue-details";
+    }
 }
