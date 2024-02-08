@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b261a837-bea6-4388-ac9f-a5428553db68" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,8 +187,9 @@
       <workItem from="1707354211161" duration="551000" />
       <workItem from="1707359773915" duration="3840000" />
       <workItem from="1707366421275" duration="3029000" />
-      <workItem from="1707376113717" duration="22000" />
-      <workItem from="1707379607151" duration="2431000" />
+
+      <workItem from="1707376113717" duration="5374000" />
+
     </task>
     <servers />
   </component>
