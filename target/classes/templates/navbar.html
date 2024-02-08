@@ -13,21 +13,22 @@
         <!-- LOGO -->
         <div class="navbar-brand-box">
             <!-- Dark Logo-->
+
             <a href="index-2.html" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
             </span>
                 <span class="logo-lg">
-                <img src="assets/images/logo-dark.png" alt="" height="17">
+                <img src="/assets/images/logo-dark.png" alt="" height="17">
             </span>
             </a>
             <!-- Light Logo-->
             <a href="index-2.html" class="logo logo-light">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/logo-sm.png" alt="" height="22">
             </span>
                 <span class="logo-lg">
-                <img src="assets/images/logo-light.png" alt="" height="17">
+                <img src="/assets/images/logo-light.png" alt="" height="17">
             </span>
             </a>
             <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -48,26 +49,6 @@
                         </a>
 
                     </li>
-
-<!--                    <li class="nav-item">-->
-<!--                        <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">-->
-<!--                            <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Admin</span>-->
-<!--                        </a>-->
-<!--                        <div class="collapse menu-dropdown" id="sidebarDashboards">-->
-<!--                            <ul class="nav nav-sm flex-column">-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a href="/user-management" class="nav-link" >-->
-<!--                                        User Management-->
-<!--                                    </a>-->
-
-<!--                                </li>-->
-<!--                                <li class="nav-item">-->
-<!--                                    <a href="/department" class="nav-link" data-key="t-nft"> Department Management</a>-->
-<!--                                </li>-->
-
-<!--                            </ul>-->
-<!--                        </div>-->
-<!--                    </li> &lt;!&ndash; end Dashboard Menu &ndash;&gt;-->
                     <!--Projects Start-->
                     <li class="nav-item">
                         <a href="project_list.html" class="nav-link menu-link" >
@@ -85,13 +66,13 @@
                         <div class="collapse menu-dropdown" id="sidebarTasks">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
-                                    <a href="/issue" class="nav-link" data-key="t-kanbanboard"> Issue Board </a>
+                                    <a href="/issueboard" class="nav-link" data-key="t-kanbanboard"> Issue Board </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="issue_over_view.html" class="nav-link" data-key="t-list-view">Issue Over View </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="issue_list_view.html" class="nav-link" data-key="t-list-view">Issue List View </a>
+                                    <a href="/issue-list" class="nav-link" data-key="t-list-view">Issue List View </a>
                                 </li>
 
                             </ul>
@@ -102,35 +83,22 @@
                     <!-- Team Leader Issues Start-->
                     <li class="nav-item">
                         <a href="#teamleader" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" >
-                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-tasks">Team Leader Issues</span>
+                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-tasks">Team Leader</span>
                         </a>
                         <div class="collapse menu-dropdown" id="teamleader">
                             <ul class="nav nav-sm flex-column">
                                 <li class="nav-item">
-                                    <a href="teamleader_issueboard.html" class="nav-link" data-key="t-kanbanboard">Leader Issue Board </a>
+                                    <a href="/teamleader-issuelist" class="nav-link" data-key="t-kanbanboard">Team Leader Issue List </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="teamleader_issuelist.html" class="nav-link" data-key="t-kanbanboard">Leader Issue List </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="issue_list_view.html" class="nav-link" data-key="t-kanbanboard">Member Issue Progress</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="#myissue" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="myissue" >
-                                        <span data-key="t-tasks">My Issues</span>
-                                    </a>
-                                    <div class="collapse menu-dropdown" id="myissue">
-                                        <ul class="nav nav-sm flex-column">
-                                            <li class="nav-item">
-                                                <a href="my_issueboard.html" class="nav-link" data-key="t-kanbanboard">My Issues Board </a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="my_issuelist.html" class="nav-link" data-key="t-kanbanboard">My Issues List </a>
-                                            </li>
 
-                                        </ul>
-                                    </div>
+                                <li class="nav-item">
+                                    <a href="/teamleader-issueboard" class="nav-link" data-key="t-kanbanboard">Team Leader Issue Board </a>
                                 </li>
+
+                                <li class="nav-item">
+                                    <a href="/member-issuelist" class="nav-link" data-key="t-kanbanboard">Member Issue Progress</a>
+                                </li>
+
                             </ul>
                         </div>
                     </li>

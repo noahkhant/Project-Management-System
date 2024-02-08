@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,8 +18,8 @@ public class Issue {
     @Column(nullable = false, length = 50)
     private String title;
 
-    @Column(nullable = false)
-    private String type;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private IssueType issueType;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -30,8 +31,8 @@ public class Issue {
     @Column(length = 500)
     private String description;
 
-    @Column(nullable = false)
-    private String category;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private IssueCategory issueCategory;
 
     @Column(nullable = false)
     private String creator;
@@ -51,13 +52,17 @@ public class Issue {
     @Column(nullable = true)
     private LocalDate actualDueDate;
 
+    @OneToMany(mappedBy = "issue")
+    private List<IssueFiles> filesList;
+
     @Column(nullable = true)
-    private String filename;
+    private int teamLeaderId;
 
     @Transient
     private MultipartFile file;
 
-
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Project project;
 
 
 }

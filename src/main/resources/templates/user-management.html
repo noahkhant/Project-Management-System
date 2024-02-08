@@ -33,7 +33,7 @@
     <div id="navbar-container">
         <div th:replace="~{navbar::navbar}"></div>
     </div>
-
+</div>
     <!-- ============================================================== -->
     <!-- Start right Content here -->
     <!-- ============================================================== -->
@@ -387,36 +387,11 @@
             <!-- container-fluid -->
         </div>
         <!-- End Page-content -->
-
-        <footer class="footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <script>document.write(new Date().getFullYear())</script> © Velzon.
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="text-sm-end d-none d-sm-block">
-                            Design & Develop by Themesbrand
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
-    <!-- end main content-->
-
-</div>
 <!-- END layout-wrapper -->
-
-
-
-<!--start back-to-top-->
-<button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
-    <i class="ri-arrow-up-line"></i>
-</button>
-<!--end back-to-top-->
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<div th:replace="~{layout :: footer}"></div>
+
 <script>
     function previewImage(event) {
         const fileInput = event.target;
@@ -447,12 +422,6 @@
     });
 
 </script>
-<script th:src="@{/assets/libs/bootstrap/js/bootstrap.bundle.min.js}"></script>
-<script th:src="@{/assets/libs/simplebar/simplebar.min.js}"></script>
-<script th:src="@{/assets/libs/node-waves/waves.min.js}"></script>
-<script th:src="@{/assets/libs/feather-icons/feather.min.js}"></script>
-<script th:src="@{/assets/js/pages/plugins/lord-icon-2.1.0.js}"></script>
-<script th:src="@{/assets/js/plugins.js}"></script>
 <!-- prismjs plugin -->
 <script th:src="@{/assets/libs/prismjs/prism.js}"></script>
 <script th:src="@{/assets/libs/list.js/list.min.js}"></script>
@@ -464,10 +433,6 @@
 <!-- Sweet Alerts js -->
 <script th:src="@{/assets/libs/sweetalert2/sweetalert2.min.js}"></script>
 
-<!-- App js -->
-<script th:src="@{/assets/js/app.js}"></script>
 </body>
-
-
 <!-- Mirrored from themesbrand.com/velzon/html/material/tables-listjs.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Jan 2024 06:45:57 GMT -->
 </html>

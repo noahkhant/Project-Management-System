@@ -14,7 +14,6 @@ import java.io.*;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("admin")
 public class UserController {
 
     private final UserService userService;

@@ -15,10 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 public class EmailDetail {
     // Importing required classes
 
-
-
-
-
         private String recipient;
         private String msgBody;
         private String subject;
