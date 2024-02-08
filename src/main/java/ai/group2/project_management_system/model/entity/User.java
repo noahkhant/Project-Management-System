@@ -38,6 +38,9 @@ public class User {
     @ManyToMany(mappedBy = "users")
     private Set<Project> projects;
 
+    @OneToMany(mappedBy = "user")
+    private Set<AssignIssue> assignIssues;
+
 
     @Override
     public String toString() {
