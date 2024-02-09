@@ -2,7 +2,7 @@
 let departmentList = [];
 document.addEventListener('DOMContentLoaded', () => {
     // Make an AJAX request to fetch data from the Rest API endpoint
-    fetch('/departments')
+    fetch('/departments-selector')
         .then(response => response.json())
         .then(data => {
             console.log('All department list: ', data);
@@ -166,7 +166,7 @@ async function toggleDepartment(departmentId) {
 
         // Show Bootstrap modal for confirmation
         const actionText = department.active ? 'Block' : 'Active';
-        document.getElementById('confirmationDepartmentAction').textContent = actionText;
+        document.getElementById('co nfirmationDepartmentAction').textContent = actionText;
         const confirmationModal = document.getElementById('confirmationDepartmentModal');
         confirmationModal.classList.add('show');
     //
