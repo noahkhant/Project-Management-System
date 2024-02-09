@@ -57,4 +57,5 @@ public class Project {
             inverseJoinColumns = @JoinColumn(name = "user_id", nullable = false)  // Column in the join table for Architecture
     )
     private Set<User> users;
+
 }

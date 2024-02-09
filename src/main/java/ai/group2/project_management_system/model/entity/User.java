@@ -47,13 +47,19 @@ public class User implements UserDetails {
     @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Project> projects;
 
+<<<<<<< HEAD
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+=======
+
+    @OneToMany(mappedBy = "user")
+>>>>>>> 20e95cea45a9dcb18aba187f35573fc13a2792fb
     private Set<AssignIssue> assignIssues;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
+
 
     @Override
     public String getPassword() {
