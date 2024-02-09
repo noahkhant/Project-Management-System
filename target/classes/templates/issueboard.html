@@ -451,14 +451,7 @@
                                             <div class="col-lg-12">
                                                 <label for="sub-tasks" class="form-label">Issue Category</label>
                                                 <div class="input-light">
-                                                    <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus">
-                                                        <option selected disabled>Category</option>
-                                                        <option value="all">All</option>
-                                                        <option value="New">A</option>
-                                                        <option value="Pending">B</option>
-                                                        <option value="Inprogress">C</option>
-                                                        <option value="Completed">D</option>
-                                                    </select>
+                                                    <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="issue-category-input" onclick="getCategory()"></select>
                                                 </div>
                                             </div>
                                             <!--end col-->
