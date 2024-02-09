@@ -6,9 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Collection;
@@ -47,12 +44,7 @@ public class User implements UserDetails {
     @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Project> projects;
 
-<<<<<<< HEAD
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-=======
-
     @OneToMany(mappedBy = "user")
->>>>>>> 20e95cea45a9dcb18aba187f35573fc13a2792fb
     private Set<AssignIssue> assignIssues;
 
     @Override
