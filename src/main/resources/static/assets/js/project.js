@@ -39,7 +39,6 @@ function userGetter(){
                 const listItem = document.createElement('li');
 
 
-
             });
         }).catch(error => console.error("Error:", error));
 }
