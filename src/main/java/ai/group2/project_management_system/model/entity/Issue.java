@@ -39,6 +39,7 @@ public class Issue {
     @Column(nullable = false)
     private String creator;
     private boolean is_active;
+    private boolean assign;
 
     @Enumerated(EnumType.STRING)
     private Status status;
