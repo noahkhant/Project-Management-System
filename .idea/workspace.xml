@@ -7,10 +7,12 @@
     <list default="true" id="b261a837-bea6-4388-ac9f-a5428553db68" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
+
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +58,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
@@ -69,6 +72,7 @@
     &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;demo-main&quot;,
+
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;D:/ProjectManagementSystem/src/main/resources/static/assets/js&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
@@ -85,6 +89,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ProjectManagementSystem\src\main\resources\static\assets\js" />
@@ -196,8 +201,10 @@
       <workItem from="1707354211161" duration="551000" />
       <workItem from="1707359773915" duration="3840000" />
       <workItem from="1707366421275" duration="3029000" />
+
+
       <workItem from="1707376113717" duration="5374000" />
-      <workItem from="1707448417708" duration="5161000" />
+
     </task>
     <servers />
   </component>
