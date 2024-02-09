@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Date;
+import java.util.Set;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -33,6 +35,8 @@ public class User {
     @Transient
     private MultipartFile file;
 
+    @ManyToMany(mappedBy = "users")
+    private Set<Project> projects;
 
     @Override
     public String toString() {
