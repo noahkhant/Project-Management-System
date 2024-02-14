@@ -5,71 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b261a837-bea6-4388-ac9f-a5428553db68" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/UserMapping.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/projectFiles/form1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/projectFiles/form2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/projectFiles/form3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/A.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/A6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/Chay Pu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ProjectManagementSystem-0.0.1-SNAPSHOT.war" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/ProjectManagementSystem-0.0.1-SNAPSHOT/WEB-INF/classes/static/assets/js/project.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/Login.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/UserDTO.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User$UserBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/projectFiles/form1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/projectFiles/form2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/projectFiles/form3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/A.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/A6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/Chay Pu.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/IssueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/IssueService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" afterDir="false" />
+
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,9 +50,11 @@
   </component>
   <component name="ProjectColorInfo">{
 
-        &quot;associatedIndex&quot;: 6
 
-        }</component>
+  &quot;associatedIndex&quot;: 6
+
+}</component>
+
   <component name="ProjectId" id="2ayaFAWPrqRfepnH9LIai2wEEpH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -120,6 +63,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -151,6 +95,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\projectFiles" />
