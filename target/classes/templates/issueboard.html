@@ -64,7 +64,7 @@
                              <div class="row g-2">
                                 <div class="col-lg-auto">
                                     <div class="hstack gap-2">
-                                        <button class="btn btn-primary" id="create-issue"><i class="ri-add-line align-bottom me-1"></i> Create Issue</button>
+                                        <button class="btn btn-primary" id="create-issue"><i class="ri-add-line align-bottom me-1" ></i> Create Issue</button>
                                     </div>
                                 </div>
                                 
@@ -408,7 +408,7 @@
                             <div class="modal-content border-0">
                                 <div class="modal-header p-3 bg-info-subtle">
                                     <h5 class="modal-title" id="createrissueModalLabel">Create New Issue</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                                 </div>
                                 <div class="modal-body">
                                     <form action="#">
@@ -451,7 +451,7 @@
                                             <div class="col-lg-12">
                                                 <label for="sub-tasks" class="form-label">Issue Category</label>
                                                 <div class="input-light">
-                                                    <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="issue-category-input" onclick="getCategory()"></select>
+                                                    <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="issue-category-input" ></select>
                                                 </div>
                                             </div>
                                             <!--end col-->
@@ -969,7 +969,7 @@
                     <!--end modal -->
 
                      <!--View Modal-->
-  <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="viewModal" tabindex="-1" aria-labelledby="viewModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0">
             <div class="modal-header p-3 bg-info-subtle">
@@ -1140,6 +1140,48 @@
         </div>
     </div>
 </div>
+
+                    <!--Add Issue Category Form-->
+                    <div class="modal fade" id="addIssueCategoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header bg-light p-3">
+                                    <h5 class="modal-title" id="exampleModalLabel">Add New Issue Category</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+
+                                <form id="addIssueCategoryForm">
+                                    <div class="modal-body">
+                                        <div class="mb-3" id="modal-id" style="display: none;">
+                                            <label th:for="issueCategoryId" class="form-label">ID</label>
+                                            <input type="hidden" name="id" th:id="issueCategoryId" th:class="form-control" placeholder="ID" readonly />
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label  th:for="issueCategoryName" class="form-label">Department Name</label>
+                                            <input type="text" name="name" th:id="issueCategoryName" th:class="form-control" placeholder="Name" th:required="required" />
+                                            <div class="invalid-feedback">Please enter a department name.</div>
+                                        </div>
+
+
+                                        <div class="col-lg-12">
+                                            <label th:for="issueCategoryDescription" class="form-label">Description</label>
+                                            <textarea class="form-control" th:id="issueCategoryDescription" rows="3" placeholder="Description"></textarea>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div class="hstack gap-2 justify-content-end">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                            <button type="submit" class="btn btn-success" id="add-btn" data-bs-dismiss="modal">confirm</button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- container-fluid -->
             </div>
@@ -1149,25 +1191,10 @@
     <!-- END layout-wrapper -->
 <div th:replace="~{layout :: footer}"></div>
     <!-- Add this script after your HTML content -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var createIssueModal = new bootstrap.Modal(document.getElementById('createrissueModal'));
-            var viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
-    
-            // Handle the click event on the "View" button in the first modal
-            document.getElementById('view-btn').addEventListener('click', function () {
-                viewModal.show();
-            });
 
-            document.getElementById('create-issue').addEventListener('click', function (){
-                createIssueModal.show();
-            })
-    
-            
-        });
-    </script>
 
-    <script src="assets/js/issue.js"></script>
+    <script th:src="@{assets/js/issue.js}"></script>
+    <script th:src="@{/assets/js/issue-create.js}"></script>
 <!--FIle Script-->
 <script src="assets/js/file.js"></script>
 <script>
@@ -1176,9 +1203,9 @@
 </script> 
 
   <!-- JAVASCRIPT -->
-     <script src="assets/js/pages/tasks-kanban.init.js"></script>
+     <script th:src="@{assets/js/pages/tasks-kanban.init.js}"></script>
      <!-- ckeditor -->
-     <script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+     <script th:src="@{assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js}"></script>
 <script>
     // Initialize CKEditor for the first instance
     ClassicEditor
@@ -1197,11 +1224,11 @@
 
 
     <!-- dragula init js -->
-    <script src="assets/libs/dragula/dragula.min.js"></script>
+    <script th:src="@{assets/libs/dragula/dragula.min.js}"></script>
 
     <!-- dom autoscroll -->
-    <script src="assets/libs/dom-autoscroller/dom-autoscroller.min.js"></script>
-    <script src="assets/libs/dropzone/dropzone-min.js"></script> 
+    <script th:src="@{assets/libs/dom-autoscroller/dom-autoscroller.min.js}"></script>
+    <script th:src="@{assets/libs/dropzone/dropzone-min.js}"></script>
 
     <script>
         function triggerFileInput() {
@@ -1216,7 +1243,14 @@
         });
       </script>
  <!-- project-create init -->
- <script src="assets/js/pages/project-create.init.js"></script>
+ <script th:src="@{assets/js/pages/project-create.init.js}"></script>
+
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </body>
 <!-- Mirrored from themesbrand.com/velzon/html/material/apps-tasks-kanban.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 13 Jan 2024 06:44:22 GMT -->

@@ -5,6 +5,8 @@ import ai.group2.project_management_system.service.IssueCategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -20,4 +22,11 @@ public class IssueAPI {
         List<IssueCategory> issueCategories = issueCategoryService.getAllIssueCategories();
         return ResponseEntity.ok(issueCategories);
     }
+
+    @PostMapping("/add-category")
+    public ResponseEntity<IssueCategory> addIssueCategory(@RequestBody IssueCategory issueCategory){
+        IssueCategory newIssueCategory = issueCategoryService.save(issueCategory);
+        return ResponseEntity.ok(newIssueCategory);
+    }
+
 }
