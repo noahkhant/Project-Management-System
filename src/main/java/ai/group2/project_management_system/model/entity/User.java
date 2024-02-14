@@ -50,8 +50,6 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<AssignIssue> assignIssues;
 
-<<<<<<< HEAD
-=======
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
@@ -87,7 +85,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
->>>>>>> ba01fb1f05e63036b65785dbb89732e82390d959
+
     @Override
     public String toString() {
         return "User{" +
