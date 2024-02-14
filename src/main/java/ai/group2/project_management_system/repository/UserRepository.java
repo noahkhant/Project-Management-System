@@ -9,4 +9,7 @@ import java.util.Set;
 
 public interface UserRepository extends JpaRepository<User, Integer> {
 
+    List<User> findByIdIn(List<Long> userIds);
+
+    List<User> findByDepartmentId(Long departmentId);
 }

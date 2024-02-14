@@ -22,14 +22,13 @@ document.body.appendChild(script);
 <!--Project creation-->
 <!--Getting Users-->
 document.addEventListener('DOMContentLoaded', function() {
-    // Call userGetter to fetch and display a user list for the default department
-    departmentGetter();
+    // Call userGetter to fetch and display user list for the default department
+    userGetter();
 });
 
 function userGetter() {
     const departmentId = document.getElementById('project-department-input').value;
-    const url = `/members-selector/${departmentId}`;
-
+    const url = '/member-selector';
     fetch(url, {
         method: 'GET',
         credentials: 'include',
@@ -37,53 +36,31 @@ function userGetter() {
             'Accept': 'application/json',
         }
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
+        .then(response => response.json())
         .then(data => {
-            // Display the users returned by the server in the member list
-            populateMemberList(data);
+            // Filter users based on the selected department ID
+            const filteredUsers = data.filter(user => user.department.id === parseInt(departmentId));
+            // Display the filtered users in the member list
+            populateMemberList(filteredUsers);
         })
-        .catch(error => {
-            console.error('Error fetching user data:', error);
-        });
+        .catch(error => console.error('Error fetching user data:', error));
 }
 
-
-// Helper function to group user IDs by department ID
-function groupByDepartment(userIds) {
-    const grouped = {};
-    userIds.forEach(userId => {
-        const departmentId = userId.department.id;
-        if (!grouped[departmentId]) {
-            grouped[departmentId] = [];
-        }
-        grouped[departmentId].push(userId);
-    });
-    return grouped;
-}
-
-
-function populateMemberList(dto) {
+function populateMemberList(users) {
     const memberListContainer = document.getElementById('team-member-list');
     // Clear existing member list content
     memberListContainer.innerHTML = '';
 
-    if (!Array.isArray(dto)) {
-        console.error('DTO is not an array:', dto);
-        return;
-    }
+    // Loop through the filtered users and create HTML elements for each user
+    users.forEach(user => {
+        console.log(user.id);
+        console.log(user.name);
 
-    // Loop through the DTOs and create HTML elements for each DTO
-    dto.forEach(user => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
             <div class="form-check d-flex align-items-center justify-content-between">
                 <div>
-                    <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
+                    <input class="form-check-input  me-3" type="checkbox" id="user-${user.id}" name="users">
                     <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
                         <span class="flex-shrink-0">
                             <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
@@ -99,11 +76,15 @@ function populateMemberList(dto) {
                         </div>
                     </label>
                 </div>
+<!--                <div class="hidden-input" id="hiddenInputContainer">-->
+<!--                    <input type="text" class="form-control form-control-sm float-end" id="placeholderInput" placeholder="Placeholder">-->
+<!--                </div>-->
             </div>
         `;
         memberListContainer.appendChild(listItem);
     });
 }
+
 
 <!--Getting Department-->
 function departmentGetter() {
@@ -123,8 +104,6 @@ function departmentGetter() {
             // Create and append options for each department
             data.forEach((department, index) => {
                 const option = document.createElement('option');
-                console.log(department.id);
-                console.log(department.name)
                 option.value = department.id;
                 option.textContent = department.name;
                 selectElement.appendChild(option);
@@ -137,6 +116,37 @@ function departmentGetter() {
         .catch(error => console.error("Error:", error));
 }
 
+
+function stripHtmlTags(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+}
+function selectMembers() {
+    const url = '/members-selector';
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => response.json())
+        .then(data => {
+            const selectElement = document.getElementById('project-crab-input');
+            // Clear existing options
+            selectElement.innerHTML = '';
+            // Create and append options for each department
+            data.forEach(department => {
+                const option = document.createElement('option');
+                option.value = department.id;
+                option.textContent = department.name;
+                selectElement.appendChild(option);
+            });
+        })
+        .catch(error => console.error("Error:", error));
+}
+
+
 function stripHtmlTags(html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return doc.body.textContent || "";
@@ -148,14 +158,18 @@ function stripHtmlTags(html) {
         event.preventDefault();
         console.log("submitting form...");
 
-        const selectedUserIds = [];
-        document.querySelectorAll('.form-check-input').forEach(checkbox => {
-
-            if (checkbox.checked && checkbox.value !== "dark") {
+        // Create an array to store the selected user IDs
+        let selectedUserIds = [];
+        //I get all the data from that way
+        const checkboxes = document.querySelectorAll('.form-check-input');
+        checkboxes.forEach(checkbox => {
+            
+            if (checkbox.checked) {
+                console.log(checkbox.checked);
+                console.log(checkbox.value);
                 selectedUserIds.push(checkbox.value);
             }
-        });
-        console.log(selectedUserIds);
+        })
 
         let editorData = window.ckeditor.getData();
         let plainTextData = stripHtmlTags(editorData);
@@ -174,18 +188,19 @@ function stripHtmlTags(html) {
             department: {
                 id: document.getElementById('project-department-input').value
             },
-            isActive: true
+            users: selectedUserIds
         };
+
         console.log(formData);
         console.log("this");
 
-       let url = "/add-project";
+        let url = "/add-project?users=" + selectedUserIds.join("&users=");
         fetch(url, {
             method: 'Post',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ ...formData, userIds: selectedUserIds}),
+            body: JSON.stringify(formData)
         })
             .then(response => response.json())
             .then(data => {
