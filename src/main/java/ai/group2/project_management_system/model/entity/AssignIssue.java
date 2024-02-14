@@ -1,5 +1,7 @@
 package ai.group2.project_management_system.model.entity;
 
+import ai.group2.project_management_system.model.Enum.Priority;
+import ai.group2.project_management_system.model.Enum.Status;
 import jakarta.persistence.*;
 
 
@@ -13,6 +15,7 @@ public class AssignIssue {
     private Long id;
     @Column(name = "name")
     private String name;
+    private boolean is_active;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -22,11 +25,11 @@ public class AssignIssue {
     @JoinColumn(name = "issue_id")
     private Issue issue;
 
-    @Column(name = "status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
-    @Column(name = "priority")
-    private String priority;
+    @Enumerated(EnumType.STRING)
+    private Priority priority;
 
     @Column(name = "plan_start_date")
     private Date planStartDate;

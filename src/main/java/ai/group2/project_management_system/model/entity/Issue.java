@@ -1,6 +1,7 @@
 package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
+import ai.group2.project_management_system.model.Enum.Status;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
@@ -37,9 +38,11 @@ public class Issue {
 
     @Column(nullable = false)
     private String creator;
+    private boolean is_active;
+    private boolean assign;
 
-    @Column(nullable = false)
-    private boolean status;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @Column(nullable = false)
     private LocalDate planStartDate;
@@ -68,8 +71,6 @@ public class Issue {
     @OneToMany(mappedBy = "issue")
     private Set<AssignIssue> assignIssues;
 
-    @Column(nullable = false)
-    private boolean isActive;
 
 
 }

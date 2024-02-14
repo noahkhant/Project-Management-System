@@ -12,4 +12,5 @@ public interface DepartmentService {
     List<Department> getAllDepartments();
 
     Department getDepartmentById(Integer id);
+
 }

@@ -67,7 +67,7 @@
             <div class="row g-4 mb-3">
                 <div class="col-sm-auto">
 
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="departmentGetter()">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="ri-add-line align-bottom me-1"></i>Create project
                     </button>
 
@@ -955,7 +955,7 @@
                     <!--Departments-->
                     <div class="mb-3">
                         <label class="form-label" for="project-department-input">Department</label>
-                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onclick="userGetter()"></select>
+                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onchange="userGetter()"></select>
                     </div>
 
 

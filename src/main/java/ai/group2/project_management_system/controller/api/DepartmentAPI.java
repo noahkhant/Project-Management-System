@@ -35,7 +35,7 @@ public class DepartmentAPI {
             existingDepartment.setName(updatedDepartment.getName());
             existingDepartment.setEmail(updatedDepartment.getEmail());
             existingDepartment.setPhone(updatedDepartment.getPhone());
-            existingDepartment.setStatus(updatedDepartment.isStatus());
+            existingDepartment.set_active(updatedDepartment.is_active());
             // Update other fields as needed
 
             Department savedDepartment = departmentService.save(existingDepartment);
@@ -49,7 +49,7 @@ public class DepartmentAPI {
     public ResponseEntity<String> toggleDepartmentStatus(@PathVariable("departmentId") int departmentId) {
         Department department = departmentService.getDepartmentById(departmentId);
         if (department != null) {
-            department.setStatus(!department.isStatus());
+            department.set_active(!department.is_active());
             departmentService.save(department);
             return ResponseEntity.ok("Department status changed successfully");
         } else {
