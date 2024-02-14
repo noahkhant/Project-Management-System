@@ -34,6 +34,7 @@ public class Project {
     private LocalDate planStartDate;
 
     private LocalDate planEndDate;
+    private boolean is_active;
 
     @Enumerated(EnumType.STRING)
     private Status status;

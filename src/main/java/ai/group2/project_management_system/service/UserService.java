@@ -9,6 +9,10 @@ import java.util.Set;
 public interface UserService {
     User save (User user);
     List<User> getAllUsers();
+<<<<<<< HEAD
     List<User> findUsersByIds(List<Long> userIds);
     List<UserDTO> getUsersByDepartmentId(Long departmentId);
+=======
+    User getCurrentUser();
+>>>>>>> ba01fb1f05e63036b65785dbb89732e82390d959
 }

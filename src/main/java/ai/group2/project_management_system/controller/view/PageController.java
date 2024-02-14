@@ -1,17 +1,27 @@
 package ai.group2.project_management_system.controller.view;
 
 
+import ai.group2.project_management_system.dto.Login;
+import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.EmailDetail;
+import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.service.DepartmentService;
 import ai.group2.project_management_system.service.EmailService;
+import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Controller
+@RequiredArgsConstructor
 public class PageController {
+    private final UserService userService;
     @Autowired
     private EmailService service;
 
@@ -40,7 +50,7 @@ public class PageController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping("/login")
     public String login() {
         return "login";
     }
