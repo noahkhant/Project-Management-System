@@ -47,8 +47,6 @@ public class ProjectAPI {
 
     @PostMapping("/add-project")
     public ResponseEntity<Project> addProject(@RequestBody Project project) {
-        System.out.println("Here we go");
-
         System.out.println(project);
         List<Long> userIds = project.getUserIds();
         List<User> users = userService.findUsersByIds(userIds);

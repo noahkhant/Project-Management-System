@@ -5,12 +5,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b261a837-bea6-4388-ac9f-a5428553db68" name="Changes" comment="">
-
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueFilesRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/IssueFilesServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/IssueFilesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/create-issue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" afterDir="false" />
-
-
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/UserMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/UserMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/DepartmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueCategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueCategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/libs/particles.js/particles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/libs/particles.js/particles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/otp-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/otp-form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/UserDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/UserDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/mapping/UserMapping.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/mapping/UserMapping.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User$UserBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User$UserBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/DepartmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/DepartmentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueCategoryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueCategoryRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/DepartmentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/DepartmentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/ProjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/libs/particles.js/particles.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/libs/particles.js/particles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/otp-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/otp-form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +86,10 @@
         <option value="CSS File" />
         <option value="Enum" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="JavaScript File" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -54,7 +117,6 @@
   &quot;associatedIndex&quot;: 6
 
 }</component>
-
   <component name="ProjectId" id="2ayaFAWPrqRfepnH9LIai2wEEpH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -63,7 +125,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
@@ -77,10 +138,10 @@
     "Spring Boot.IssueManagementSystemApplication.executor": "Run",
     "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Merging demo-main",
+    "git-widget-placeholder": "demo-main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Desktop/Git Project/ProjectManagementSystem",
+    "last_opened_file_path": "/home/tinhtet/Documents/Project Management System",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,12 +151,12 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.78360957",
-    "settings.editor.selected.configurable": "project.kotlinCompiler",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "spring.configuration.checksum": "711dd3093ac59cf676ea0432a926fcac",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\projectFiles" />
@@ -136,6 +197,13 @@
         </treeState>
       </serviceView>
     </option>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-25a4bffe" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -215,6 +283,16 @@
       <workItem from="1707464470784" duration="366000" />
       <workItem from="1707467017415" duration="962000" />
       <workItem from="1707467998531" duration="2656000" />
+      <workItem from="1707923368016" duration="6324000" />
+      <workItem from="1707970700754" duration="19978000" />
+      <workItem from="1708051740909" duration="2366000" />
+      <workItem from="1708066520521" duration="8324000" />
+      <workItem from="1708095058705" duration="1935000" />
+      <workItem from="1708132312973" duration="10128000" />
+      <workItem from="1708225836239" duration="12569000" />
+      <workItem from="1708312011275" duration="10649000" />
+      <workItem from="1708340004489" duration="14629000" />
+      <workItem from="1708396737644" duration="23287000" />
     </task>
     <servers />
   </component>

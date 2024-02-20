@@ -12,5 +12,5 @@ public interface UserService {
     List<User> findUsersByIds(List<Long> userIds);
     List<UserDTO> getUsersByDepartmentId(Long departmentId);
     User getCurrentUser();
-
+    List<UserDTO> getUsersByProjectId(Long projectId);
 }
