@@ -89,19 +89,7 @@ public class IssueAPI {
         saveFileNames(newIssue, fileNames);
         return ResponseEntity.ok(newIssue);
     }
-
-    // Method to convert JSON string to Issue object
-    private Issue convertJsonToIssue(String issueJson) {
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            return objectMapper.readValue(issueJson, Issue.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle conversion error
-            return null;
-        }
-    }
-
+    
     private List<String> saveAttachments(List<MultipartFile> files) {
         List<String> fileNames = new ArrayList<>();
         for (MultipartFile file : files) {
