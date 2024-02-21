@@ -61,6 +61,7 @@ public class Project {
     private boolean is_active;
 
     @ElementCollection
+    @Transient
     private List<Long> userIds;
 
     @ManyToOne(cascade = CascadeType.MERGE)

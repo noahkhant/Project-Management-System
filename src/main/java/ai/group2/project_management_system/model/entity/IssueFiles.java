@@ -13,8 +13,8 @@ import lombok.NoArgsConstructor;
 public class IssueFiles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
+    private Long id;
+    private String fileName;
     @ManyToOne
     @JoinColumn(nullable = false)
   //  @JsonIgnore

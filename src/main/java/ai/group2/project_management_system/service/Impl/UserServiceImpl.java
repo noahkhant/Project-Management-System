@@ -30,9 +30,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<UserDTO> getUsersByProjectId(Long projectId) {
+        List<User> users = userRepository.findByProjects_id(projectId);
+        return users.stream()
+                .map(userMapping::mapUserToDTOs)
+                .collect(Collectors.toList());
+    }
+
+    @Override
     public User save(User user) {
         return userRepository.save(user);
     }
+
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();

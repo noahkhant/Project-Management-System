@@ -1,5 +1,7 @@
 package ai.group2.project_management_system.service.Impl;
 
+import ai.group2.project_management_system.dto.ProjectDTO;
+import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.ProjectRepository;
@@ -10,8 +12,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
+
+import java.util.stream.Collectors;
+
 
 @Service
 @RequiredArgsConstructor
@@ -27,13 +31,18 @@ public class ProjectServiceImpl implements ProjectService {
     }
 
     @Override
-    public List<Project> getAllProject() {
+    public List<Project> getAllProjects() {
         return projectRepository.findAll();
     }
 
-    @Override
-    public Project getProjectById(Long projectId) {
-        return projectRepository.findProjectById(projectId);
+   @Override
+    public Project getProjectBy_Id(Long projectId) {
+       return projectRepository.findProjectById(projectId);
+   }
+
+       @Override
+    public ProjectDTO getProjectById(Long id) {
+        return new ProjectDTO(projectRepository.getReferenceById(id));
     }
 
 

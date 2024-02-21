@@ -2,8 +2,11 @@ package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
@@ -11,17 +14,17 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 public class Issue {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private String title;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    private IssueType issueType;
+    private String issueType;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -39,7 +42,7 @@ public class Issue {
     @Column(nullable = false)
     private String creator;
     private boolean is_active;
-    private boolean assign;
+    private boolean is_assigned;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -57,20 +60,19 @@ public class Issue {
     private LocalDate actualDueDate;
 
     @OneToMany(mappedBy = "issue")
+//    @JsonIgnore
     private List<IssueFiles> filesList;
 
     @Column(nullable = true)
-    private int teamLeaderId;
+    private Long teamLeaderId;
 
     @Transient
-    private MultipartFile file;
+    private List<MultipartFile> files;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private Project project;
 
     @OneToMany(mappedBy = "issue")
     private Set<AssignIssue> assignIssues;
-
-
 
 }

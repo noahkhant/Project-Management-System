@@ -33,7 +33,7 @@ public class ProjectController {
     public String projectDetail(@RequestParam("id") Long projectId , Model map){
         System.out.println(projectId);
 
-        Project project = projectService.getProjectById(projectId);
+        Project project = projectService.getProjectBy_Id(projectId);
         System.out.println(project);
 
         map.addAttribute("project", project);

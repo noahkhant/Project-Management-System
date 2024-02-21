@@ -1,5 +1,6 @@
 package ai.group2.project_management_system.dto;
 
+import ai.group2.project_management_system.model.Enum.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import java.util.Date;
     @NoArgsConstructor
     @AllArgsConstructor
 public class UserDTO {
-    private int id;
+    private Long id;
     private String name;
     private String education;
     private LocalDate dob;
@@ -24,7 +25,7 @@ public class UserDTO {
     private boolean is_active;
     private String password;
     private String position;
-    private String role;
+    private Role role;
     private MultipartFile file;
 
 

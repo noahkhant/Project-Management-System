@@ -47,6 +47,7 @@ public class ProjectAPI {
     // This method is for creating new projects
     @PostMapping("/add-project")
     public ResponseEntity<Project> addProject(@RequestBody Project project) {
+
         System.out.println("Here we go");
 
         project.setIsActive(true);
@@ -63,7 +64,7 @@ public class ProjectAPI {
     //These methods are for selecting back and display back the project list
     @GetMapping("/show-projects")
     public ResponseEntity<List<Project>> getAllProjects() {
-        List<Project> projects = projectService.getAllProject();
+        List<Project> projects = projectService.getAllProjects();
         return ResponseEntity.ok(projects);
     }
 

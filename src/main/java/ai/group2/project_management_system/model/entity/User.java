@@ -27,7 +27,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     @ManyToOne(cascade = CascadeType.MERGE)
     private Department department;
@@ -56,7 +56,6 @@ public class User implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
     }
-
 
     @Override
     public String getPassword() {
@@ -87,6 +86,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
+
     @Override
     public String toString() {
         return "User{" +
