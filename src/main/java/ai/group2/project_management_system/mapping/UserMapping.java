@@ -19,7 +19,7 @@ public class UserMapping {
         dto.setPhone(users.getPhone());
         dto.setPhoto(users.getPhoto());
         dto.setPassword(users.getPassword());
-        dto.setRole(users.getRole());
+        dto.setRole(String.valueOf(users.getRole()));
         dto.setPosition(users.getPosition());
 
         return dto;

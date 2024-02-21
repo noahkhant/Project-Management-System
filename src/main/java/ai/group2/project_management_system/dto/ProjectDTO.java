@@ -31,7 +31,7 @@ public class ProjectDTO {
 
     private Priority priority;
 
-    private Boolean isActive;
+    private boolean is_active;
 
     private LocalDate actualStartDate;
 

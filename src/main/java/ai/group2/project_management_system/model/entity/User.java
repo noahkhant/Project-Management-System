@@ -6,11 +6,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.cglib.core.Local;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -30,7 +32,7 @@ public class User implements UserDetails {
     @ManyToOne(cascade = CascadeType.MERGE)
     private Department department;
     private String education;
-    private Date dob;
+    private LocalDate dob;
     private String gender;
     private String email;
     private String address;
@@ -50,8 +52,6 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<AssignIssue> assignIssues;
 
-<<<<<<< HEAD
-=======
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
@@ -87,7 +87,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
->>>>>>> ba01fb1f05e63036b65785dbb89732e82390d959
     @Override
     public String toString() {
         return "User{" +
@@ -101,7 +100,7 @@ public class User implements UserDetails {
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", photo='" + photo + '\'' +
-                ", status=" + is_active +
+                ", is_active=" + is_active +
                 ", password='" + password + '\'' +
                 ", role=" + role+
                 '}';

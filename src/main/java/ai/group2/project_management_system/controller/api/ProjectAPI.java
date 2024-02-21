@@ -44,10 +44,12 @@ public class ProjectAPI {
             return ResponseEntity.noContent().build();
         }
     }
-
+    // This method is for creating new projects
     @PostMapping("/add-project")
     public ResponseEntity<Project> addProject(@RequestBody Project project) {
         System.out.println("Here we go");
+
+        project.setIsActive(true);
 
         System.out.println(project);
         List<Long> userIds = project.getUserIds();
@@ -57,6 +59,33 @@ public class ProjectAPI {
         Project newProject = projectService.save(project);
         return ResponseEntity.ok(newProject);
     }
+
+    //These methods are for selecting back and display back the project list
+    @GetMapping("/show-projects")
+    public ResponseEntity<List<Project>> getAllProjects() {
+        List<Project> projects = projectService.getAllProject();
+        return ResponseEntity.ok(projects);
+    }
+
+    @GetMapping("/user-getter")
+    public ResponseEntity<List<User>> getUserById(@RequestParam("userIds") List<Long> userId) {
+        List<User> user = userService.findUsersByIds(userId);
+        if (user != null) {
+            System.out.println(user);
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    //These methods are for editing the data
+
+
+
+
+
+
+
 
 
 

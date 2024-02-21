@@ -22,16 +22,13 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-<<<<<<< HEAD
     private final UserMapping userMapping;
-
-=======
     @Override
     public User getCurrentUser() {
         var username = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRepository.findByEmail(username).orElse(null);
     }
->>>>>>> ba01fb1f05e63036b65785dbb89732e82390d959
+
     @Override
     public User save(User user) {
         return userRepository.save(user);
