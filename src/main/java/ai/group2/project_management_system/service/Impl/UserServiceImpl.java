@@ -9,8 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserService {
         var username = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRepository.findByEmail(username).orElse(null);
     }
+
     @Override
     public User save(User user) {
         return userRepository.save(user);

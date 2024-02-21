@@ -1,23 +1,23 @@
 package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -25,12 +25,12 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
     @ManyToOne(cascade = CascadeType.MERGE)
     private Department department;
     private String education;
-    private Date dob;
+    private LocalDate dob;
     private String gender;
     private String email;
     private String address;
@@ -39,14 +39,17 @@ public class User implements UserDetails {
     private boolean is_active;
     private String password;
     private String position;
+
     @Enumerated(EnumType.STRING)
     private Role role;
     @Transient
     private MultipartFile file;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Project> projects;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<AssignIssue> assignIssues;
 
@@ -85,22 +88,22 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", department=" + department +
-                ", Education='" + education + '\'' +
-                ", dob=" + dob +
-                ", gender='" + gender + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", phone='" + phone + '\'' +
-                ", photo='" + photo + '\'' +
-                ", status=" + is_active +
-                ", password='" + password + '\'' +
-                ", role=" + role+
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", department=" + department +
+//                ", Education='" + education + '\'' +
+//                ", dob=" + dob +
+//                ", gender='" + gender + '\'' +
+//                ", email='" + email + '\'' +
+//                ", address='" + address + '\'' +
+//                ", phone='" + phone + '\'' +
+//                ", photo='" + photo + '\'' +
+//                ", status=" + is_active +
+//                ", password='" + password + '\'' +
+//                ", role=" + role+
+//                '}';
+//    }
 }

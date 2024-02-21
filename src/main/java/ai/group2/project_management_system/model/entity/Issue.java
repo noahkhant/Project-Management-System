@@ -2,20 +2,25 @@ package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
-public class Issue {
+@Getter
+@Setter
+public class Issue implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 50)
     private String title;
@@ -39,7 +44,7 @@ public class Issue {
     @Column(nullable = false)
     private String creator;
     private boolean is_active;
-    private boolean assign;
+    private boolean is_assigned;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -63,7 +68,7 @@ public class Issue {
     private int teamLeaderId;
 
     @Transient
-    private MultipartFile file;
+    private List<MultipartFile> files;
 
     @ManyToOne(cascade = CascadeType.MERGE)
     private Project project;
