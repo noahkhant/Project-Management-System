@@ -5,9 +5,18 @@ import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+<<<<<<< HEAD
 import lombok.*;
 
 import java.io.Serializable;
+=======
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import ai.group2.project_management_system.model.entity.User;
+
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -36,7 +45,6 @@ public class Project implements Serializable {
     private LocalDate planStartDate;
 
     private LocalDate planEndDate;
-    private boolean is_active;
 
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -51,10 +59,24 @@ public class Project implements Serializable {
 
     private LocalDate actualEndDate;
 
+    public boolean isIsActive() {
+        return is_active;
+    }
+
+    public void setIsActive(boolean is_active) {
+        this.is_active = is_active;
+    }
+
+    private boolean is_active;
+
+    @ElementCollection
+    @Transient
+    private List<Long> userIds;
+
     @ManyToOne(cascade = CascadeType.MERGE)
     private Department department;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.PERSIST })
     @JoinTable(
             name = "project_member",  // Specify the name of the join table
             joinColumns = @JoinColumn(name = "project_id"),  // Column in the join table for Project

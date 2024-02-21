@@ -16,7 +16,11 @@ public class IssueFiles implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+<<<<<<< HEAD
     private String name;
+=======
+    private String fileName;
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
     @ManyToOne
     @JoinColumn(nullable = false)
     @JsonIgnore

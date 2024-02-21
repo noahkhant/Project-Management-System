@@ -19,6 +19,10 @@ public class Department implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+<<<<<<< HEAD
+=======
+
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
     private Long id;
     private String name;
     private String email;

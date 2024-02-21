@@ -1,5 +1,7 @@
 package ai.group2.project_management_system.service.Impl;
 
+import ai.group2.project_management_system.dto.UserDTO;
+import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.UserService;
@@ -10,7 +12,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+<<<<<<< HEAD
 import java.util.Optional;
+=======
+import java.util.stream.Collectors;
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
 
 
 @Service
@@ -20,19 +26,45 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final UserMapping userMapping;
     @Override
     public User getCurrentUser() {
         var username = SecurityContextHolder.getContext().getAuthentication().getName();
         return userRepository.findByEmail(username).orElse(null);
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public List<UserDTO> getUsersByProjectId(Long projectId) {
+        List<User> users = userRepository.findByProjects_id(projectId);
+        return users.stream()
+                .map(userMapping::mapUserToDTOs)
+                .collect(Collectors.toList());
+    }
+
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
     @Override
     public User save(User user) {
         return userRepository.save(user);
     }
+
     @Override
     public List<User> getAllUsers() {
         return userRepository.findAll();
+    }
+
+    @Override
+    public List<User> findUsersByIds(List<Long> userIds) {
+        return userRepository.findByIdIn(userIds);
+    }
+
+    @Override
+    public List<UserDTO> getUsersByDepartmentId(Long departmentId) {
+        List<User> users = userRepository.findByDepartmentId(departmentId);
+        return users.stream()
+                .map(userMapping::mapUserToDTOs)
+                .collect(Collectors.toList());
     }
 
 }

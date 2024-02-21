@@ -2,7 +2,11 @@ package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+=======
+import com.fasterxml.jackson.annotation.JsonIgnore;
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -17,7 +21,11 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+<<<<<<< HEAD
 public class Issue implements Serializable {
+=======
+public class Issue {
+>>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,8 +33,7 @@ public class Issue implements Serializable {
     @Column(nullable = false, length = 50)
     private String title;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    private IssueType issueType;
+    private String issueType;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -62,10 +69,11 @@ public class Issue implements Serializable {
     private LocalDate actualDueDate;
 
     @OneToMany(mappedBy = "issue")
+//    @JsonIgnore
     private List<IssueFiles> filesList;
 
     @Column(nullable = true)
-    private int teamLeaderId;
+    private Long teamLeaderId;
 
     @Transient
     private List<MultipartFile> files;
@@ -75,7 +83,5 @@ public class Issue implements Serializable {
 
     @OneToMany(mappedBy = "issue")
     private Set<AssignIssue> assignIssues;
-
-
 
 }

@@ -22,4 +22,5 @@ public interface IssueRepository extends JpaRepository<Issue, Integer> {
 
 
 
+
 }
