@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import ai.group2.project_management_system.model.entity.User;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -35,7 +37,6 @@ public class Project {
 
     private LocalDate planEndDate;
 
-
     @Enumerated(EnumType.STRING)
     private Status status;
 
@@ -49,9 +50,18 @@ public class Project {
 
     private LocalDate actualEndDate;
 
-    private Boolean isActive;
+    public boolean isIsActive() {
+        return is_active;
+    }
+
+    public void setIsActive(boolean is_active) {
+        this.is_active = is_active;
+    }
+
+    private boolean is_active;
 
     @ElementCollection
+    @Transient
     private List<Long> userIds;
 
     @ManyToOne(cascade = CascadeType.MERGE)

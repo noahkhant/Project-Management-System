@@ -14,13 +14,9 @@ import java.util.Set;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-
     List<User> findByIdIn(List<Long> userIds);
-
     List<User> findByDepartmentId(Long departmentId);
-
     Optional<User> findByEmail(String email);
-
     List<User> findByProjects_id(Long projectId);
 
 }
