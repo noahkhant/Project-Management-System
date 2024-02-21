@@ -2,11 +2,8 @@ package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
-<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-=======
 import com.fasterxml.jackson.annotation.JsonIgnore;
->>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -21,11 +18,9 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
-<<<<<<< HEAD
+
 public class Issue implements Serializable {
-=======
-public class Issue {
->>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

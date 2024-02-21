@@ -12,11 +12,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-<<<<<<< HEAD
+
 import java.util.Optional;
-=======
+
 import java.util.stream.Collectors;
->>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
 
 
 @Service
@@ -33,8 +32,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findByEmail(username).orElse(null);
     }
 
-<<<<<<< HEAD
-=======
     @Override
     public List<UserDTO> getUsersByProjectId(Long projectId) {
         List<User> users = userRepository.findByProjects_id(projectId);
@@ -43,7 +40,6 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
->>>>>>> 48ccadb128d1121d8e6fd2f0b6759d670c1490b0
     @Override
     public User save(User user) {
         return userRepository.save(user);

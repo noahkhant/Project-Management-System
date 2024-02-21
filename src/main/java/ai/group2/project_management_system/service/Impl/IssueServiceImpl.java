@@ -43,7 +43,7 @@ public class IssueServiceImpl implements IssueService {
         return IssueDetailsDto.builder()
                 .issueCategory(issue.getIssueCategory().getName())
                 .issueDescription(issue.getDescription())
-                .issueType(issue.getIssueType().getName())
+                .issueType(issue.getIssueType())
                 .issueTitle(issue.getTitle())
                 .actualEndDate(issue.getActualDueDate())
                 .actualStartDate(issue.getActualStartDate())

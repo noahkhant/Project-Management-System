@@ -37,7 +37,7 @@ public class AssignIssueServiceImpl implements AssignIssueService {
                 .memberUsers(members)
                 .projectName(issue.getProject().getTitle())
                 .issueTitle(issue.getTitle())
-                .issueType(issue.getIssueType().getName())
+                .issueType(issue.getIssueType())
                 .issueCategory(issue.getIssueCategory().getName())
                 .subject(issue.getSubject())
                 .issueDescription(issue.getDescription())
