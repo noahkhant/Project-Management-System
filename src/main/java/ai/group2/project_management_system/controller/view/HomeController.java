@@ -19,6 +19,8 @@ public class HomeController {
         var user = userService.getCurrentUser();
         session.setAttribute("id",user.getId());
         session.setAttribute("role",user.getRole());
+        System.out.println("UserId:"+user.getId());
+        System.out.println("UserName:"+user.getName());
         return "index";
     }
 
