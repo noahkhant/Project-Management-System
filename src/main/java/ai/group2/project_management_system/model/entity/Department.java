@@ -4,35 +4,42 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.lang.reflect.Method;
 
 @Entity
-public class Department {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Department implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+
+    private Long id;
     private String name;
     private String email;
     private String phone;
-    private boolean status;
+    private boolean isActive;
+
 
     //Converting String value from the user create form to a Department object to avoid deserialization
     public Department(String id) {
         // Convert the String ID to an integer
-        this.id = Integer.parseInt(id);
+        this.id = Long.parseLong(id);
     }
 
-    // Add a default constructor
-    public Department() {
-    }
 
-    public int getId() {
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -60,11 +67,15 @@ public class Department {
         this.phone = phone;
     }
 
-    public boolean isStatus() {
-        return status;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
     }
 }

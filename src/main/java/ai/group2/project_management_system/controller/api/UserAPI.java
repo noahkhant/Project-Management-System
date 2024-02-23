@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -51,7 +52,7 @@ public class UserAPI {
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
             @RequestParam("gender") String gender,
-            @RequestParam("dob") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dob, @RequestParam("education") String education,
+            @RequestParam("dob") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dob, @RequestParam("education") String education,
             @RequestParam("email") String email,
             @RequestParam("phone") String phone,
             @RequestParam("address") String address,
@@ -73,6 +74,7 @@ public class UserAPI {
                     user.setName(name);
                     user.setDepartment(department);
                     user.setPosition(position);
+                    user.setRole(Role.PM);
                     user.setGender(gender);
                     user.setDob(dob);
                     user.setEducation(education);
@@ -124,47 +126,6 @@ public class UserAPI {
     }
 
 
-//    // User Update API
-//    @PutMapping("/update/{id}")
-//    public ResponseEntity<User> updateUser(@PathVariable("id") int userId, @RequestBody User updatedUser) {
-//        try {
-//
-//            System.out.println("Received update request for user ID: " + userId);
-//            System.out.println("Name : " + updatedUser.getName());
-//
-//            // Retrieve the existing user from the database
-//            User existingUser = userService.getUserById(userId);
-//
-//            if (existingUser != null) {
-//                // Update the existing user with the new information
-//                existingUser.setName(updatedUser.getName());
-//                existingUser.setEmail(updatedUser.getEmail());
-//                existingUser.setPhone(updatedUser.getPhone());
-//                existingUser.setAddress(updatedUser.getAddress());
-//                existingUser.setPassword(updatedUser.getPassword());
-//                existingUser.setDepartment(updatedUser.getDepartment());
-//                existingUser.setPosition(updatedUser.getPosition());
-//                existingUser.setGender(updatedUser.getGender());
-//                existingUser.setDob(updatedUser.getDob());
-//                existingUser.setEducation(updatedUser.getEducation());
-//                // Update other fields as needed
-//
-//                // Save the updated user to the database
-//                User savedUser = userService.save(existingUser);
-//
-//                return ResponseEntity.ok(savedUser);
-//            } else {
-//                return ResponseEntity.notFound().build();
-//            }
-//        } catch (Exception e) {
-//            // Log the exception or handle it appropriately
-//            e.printStackTrace();
-//
-//            // Return an error response if the update fails
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-//        }
-//    }
-
     @PutMapping("/updateStatus/{id}")
     public ResponseEntity<User> updateStatus(@PathVariable("id") int userId) {
         User user = userService.getUserById(userId);
@@ -194,7 +155,7 @@ public class UserAPI {
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
             @RequestParam("gender") String gender,
-            @RequestParam("dob") @DateTimeFormat(pattern = "yyyy-MM-dd") Date dob,
+            @RequestParam("dob") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dob,
             @RequestParam("education") String education,
             @RequestParam("file") MultipartFile file) {
         try {

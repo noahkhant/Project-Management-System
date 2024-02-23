@@ -6,7 +6,11 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
+
 import java.util.List;
+
+import java.io.Serializable;
+
 
 
 // Annotations
@@ -14,7 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EmailDetail {
+public class EmailDetail implements Serializable {
     // Importing required classes
 
     private List<String> recipients;

@@ -898,116 +898,6 @@
     }
 
 
-    //
-    // // Fetch User details by id for editing
-    // function displayEditUserModal(id) {
-    //     const user = userList.find(user => user.id === id);
-    //     console.log("User Edit ", user);
-    //     if (user) {
-    //         document.getElementById('editId').value = user.id;
-    //         document.getElementById('editName').value = user.name;
-    //         document.getElementById('editEmail').value= user.email;
-    //         document.getElementById('editPhone').value=user.phone;
-    //         document.getElementById('editAddress').value=user.address;
-    //         document.getElementById('editPassword').value=user.password;
-    //
-    //
-    //                 const previewImage = document.getElementById('edit-preview-image');
-    //                 previewImage.src = `/static/img/${user.profilePictureFileName}`; // Assuming the backend returns the image filename
-    //
-    //
-    //         const departmentSelect = document.getElementById("editDepartment");
-    //         fetch("/departments")
-    //             .then(response => response.json())
-    //             .then(departments => {
-    //                 // After populating the options, set the selected value if it exists
-    //                 const selectedDepartmentName = user.department.name;
-    //                 // Iterate through the departments and create options
-    //                 departments.forEach(department => {
-    //                     const option = document.createElement("option");
-    //                     option.value = department.id;
-    //                     option.text = department.name;
-    //                     departmentSelect.appendChild(option);
-    //
-    //                     //Check if the current department matches the selected department and the selected department name option is set true
-    //                     if (selectedDepartmentName && department.name === selectedDepartmentName){
-    //                         option.selected = true;
-    //                     }
-    //                 });
-    //             })
-    //             .catch(error => {
-    //                 console.error("Error fetching departments:", error);
-    //             });
-    //
-    //         const userEditModal = document.getElementById('editUserModal');
-    //         if (userEditModal) {
-    //             userEditModal.classList.add('show');
-    //             userEditModal.style.display = 'block';
-    //         } else {
-    //             console.log("User Edit Modal not found");
-    //         }
-    //
-    //         // PositionFetching for user edit
-    //         const positionSelect = document.getElementById("editPosition");
-    //
-    //         // Clear existing options
-    //         positionSelect.innerHTML = "";
-    //         //Fetch positions from the backend
-    //         fetch("/api/user/positions")
-    //             .then(response => response.json())
-    //             .then(positions => {
-    //                 // After populating the options, set the selected value if it exists
-    //                 const selectedPositionName = user.position.positionName;
-    //                 //positions is arrays of objects adn position is the object of one index in an array.
-    //                 positions.forEach(position => {
-    //                     const option = document.createElement("option");
-    //                     option.value = position.id;
-    //                     option.text = position.positionName || "Unknown";
-    //                     positionSelect.appendChild(option);
-    //
-    //                     //Check if the current position matches the selected position and the selected one option is set true
-    //                     if (selectedPositionName && position.positionName === selectedPositionName){
-    //                         option.selected = true;
-    //                     }
-    //                 });
-    //             })
-    //             .catch(error => {
-    //                 console.error("Error fetching positions: ", error);
-    //             });
-    //
-    //         // Set the selected gender
-    //         const genderRadio = user.gender === "male" ? document.getElementById("editMaleRadio") : document.getElementById("editFemaleRadio");
-    //         if (genderRadio) {
-    //             genderRadio.checked = true;
-    //         }
-    //
-    //
-    //         // set the date of birth which was fetched
-    //         //as it is and ISO format we shouldn't display it in that format, therefore we used split to have YYYY/MM/DD version
-    //         const isoDate= user.dob;
-    //         const datePart= isoDate.split('T')[0];
-    //         document.getElementById('editDob').value = datePart;
-    //
-    //
-    //         // Education field
-    //         const educationSelect = document.getElementById("editEducation");
-    //         // Set the selected value for the education field
-    //         const selectedEducation = user.education;
-    //         // Iterate through the options and set the selected value
-    //         for (let i = 0; i < educationSelect.options.length; i++) {
-    //             if (educationSelect.options[i].value === selectedEducation) {
-    //                 educationSelect.options[i].selected = true;
-    //                 break;
-    //             }
-    //         }
-    //
-    //
-    //     } else {
-    //         console.log("User not found for ID:", id);
-    //     }
-    // }
-
-    //edit User form
 
 
 
@@ -1264,10 +1154,13 @@
             formData.append('password', password);
             formData.append('file', profilePicture);
 
+            console.log("Form Data : "+ formData);
+
             // Send AJAX request to the server
             fetch('/api/user/create', {
                 method: 'POST',
                 body: formData,
+
 
             })
                 .then(response => response.json())

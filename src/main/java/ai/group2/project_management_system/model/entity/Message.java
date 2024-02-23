@@ -5,6 +5,7 @@ public class Message {
     private String sender;
     private String content;
 
+
     // getters and setters
 
     public Message() {

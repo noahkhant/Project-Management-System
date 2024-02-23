@@ -1,63 +1,106 @@
 package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Role;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+
+import lombok.*;
+import org.springframework.cglib.core.Local;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+@Builder
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String name;
-
     @ManyToOne
     @JoinColumn(name = "department_id") // adjust the column name accordingly
     private Department department;
-
     private String education;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date dob;
+    private LocalDate dob;
     private String gender;
     private String email;
     private String address;
     private String phone;
     private String profilePictureFileName; // Add this field to store the file name
-
     @JsonProperty("isActive")
     private boolean isActive;
-
     private String password;
-
-
     @ManyToOne
     @JoinColumn(name = "position_id")
     private Position position;
-
     @Enumerated(EnumType.STRING)
     private Role role;
-
     @Transient
     private MultipartFile file;
-
-    @ManyToMany(mappedBy = "users")
+    @JsonIgnore
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
     private Set<Project> projects;
-
-    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<AssignIssue> assignIssues;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
 
+    @Override
+    public String getPassword() {
+        return this.password;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return this.isActive;
+    }
 
     public String getProfilePictureFileName() {
         return profilePictureFileName;
@@ -83,11 +126,11 @@ public class User {
         isActive = active;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -115,11 +158,11 @@ public class User {
         this.education = education;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
@@ -157,9 +200,7 @@ public class User {
 
 
 
-    public String getPassword() {
-        return password;
-    }
+
 
     public void setPassword(String password) {
         this.password = password;
@@ -212,10 +253,13 @@ public class User {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
+
                 ", photo='" + profilePictureFileName + '\'' +
                 ", isActive=" +isActive +
+
                 ", password='" + password + '\'' +
-                ", file=" + file +
+                ", role=" + role+
                 '}';
     }
+
 }

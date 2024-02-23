@@ -2,7 +2,7 @@ let departmentList = [];
 
 document.addEventListener('DOMContentLoaded', () => {
     // Make an AJAX request to fetch data from the Rest API endpoint
-    fetch('/departments-selector')
+    fetch('/departments')
         .then(response => response.json())
         .then(data => {
             console.log('All department list: ', data);
@@ -157,5 +157,58 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error toggling department:', error);
         }
+<<<<<<< HEAD
+=======
+
+        // Show Bootstrap modal for confirmation
+        const actionText = department.active ? 'Block' : 'Active';
+        document.getElementById('confirmationDepartmentAction').textContent = actionText;
+        const confirmationModal = document.getElementById('confirmationDepartmentModal');
+        confirmationModal.classList.add('show');
+    //
+    //     // Promise to wait for confirmation
+    //     await new Promise((resolve, reject) => {
+    //         // Set event listener for modal confirm button
+    //         const confirmButton = document.getElementById('confirmDepartmentButton');
+    //         const confirmHandler = () => {
+    //             // Close the modal
+    //             confirmationModal.classList.remove('show');
+    //             confirmButton.removeEventListener('click', confirmHandler);
+    //             resolve();
+    //         };
+    //         confirmButton.addEventListener('click', confirmHandler);
+    //     });
+    //
+    //     // Determine the new active status (toggle it)
+    //     const newActiveStatus = !department.active;
+    //
+    //     // Make a PUT request to update the department data
+    //     const response = await fetch(`/department-toggle/${departmentId}`, {
+    //         method: 'PUT',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ active: newActiveStatus })
+    //     });
+    //
+    //     if (!response.ok) {
+    //         throw new Error('Failed to toggle department');
+    //     }
+    //
+    //     console.log('Department toggled successfully');
+    //
+    //     // Update the departmentList with the new active status value
+    //     department.active = newActiveStatus;
+    //
+    //     // Update the button text based on the new active status
+    //     const buttonText = newActiveStatus ? 'Inactive' : 'Active';
+    //     const departmentButton = document.querySelector(`#department-table button[data-id="${departmentId}"]`);
+    //     departmentButton.textContent = buttonText;
+    //
+    //     // Reload the page
+    //     location.reload();
+    } catch (error) {
+        console.error('Error toggling department:', error);
+>>>>>>> f47cad866feae928af1466f1e8035c004eb5f0f6
     }
 });
