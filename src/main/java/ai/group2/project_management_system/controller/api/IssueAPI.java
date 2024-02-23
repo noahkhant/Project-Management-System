@@ -89,7 +89,7 @@ public class IssueAPI {
         saveFileNames(newIssue, fileNames);
         return ResponseEntity.ok(newIssue);
     }
-    
+
     private List<String> saveAttachments(List<MultipartFile> files) {
         List<String> fileNames = new ArrayList<>();
         for (MultipartFile file : files) {
@@ -105,7 +105,7 @@ public class IssueAPI {
     }
 
     private void saveFileNames(Issue issue, List<String> fileNames) {
-        for (String fileName : fileNames) {
+       for (String fileName : fileNames) {
             IssueFiles issueFiles = new IssueFiles();
             issueFiles.setIssue(issue);
             issueFiles.setFileName(fileName);

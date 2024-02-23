@@ -3,12 +3,11 @@ package ai.group2.project_management_system.model.entity;
 import ai.group2.project_management_system.model.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+
 import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.cglib.core.Local;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -92,6 +91,7 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
+
     @Override
     public String toString() {
         return "User{" +
@@ -110,4 +110,5 @@ public class User implements UserDetails {
                 ", role=" + role+
                 '}';
     }
+
 }

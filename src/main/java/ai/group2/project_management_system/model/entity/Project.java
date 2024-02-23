@@ -5,13 +5,15 @@ import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
-import lombok.*;
+
+
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 import ai.group2.project_management_system.model.entity.User;
+
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
