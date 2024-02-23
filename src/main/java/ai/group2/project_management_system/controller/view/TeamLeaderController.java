@@ -51,10 +51,10 @@ public class TeamLeaderController {
         return "teamleader-issueboard";
     }
 
-    @GetMapping("/chatlist")
-    public String Chatlist() {
-        return "chatlist";
-    }
+//    @GetMapping("/chatlist")
+//    public String Chatlist() {
+//        return "chatlist";
+//    }
 
     @GetMapping("/teamleader-issuelist")
     public String DepartmentHeaderIssueList(Model model, HttpSession httpSession) {
