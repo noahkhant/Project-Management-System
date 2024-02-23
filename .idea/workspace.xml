@@ -82,7 +82,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708620623326.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708657436786.jpg" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/chat-box.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/chat-list-from-git.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/templates/multiple-email-selection.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -357,7 +356,7 @@
       <workItem from="1708577731650" duration="631000" />
       <workItem from="1708579900805" duration="12000" />
       <workItem from="1708587741753" duration="23674000" />
-      <workItem from="1708657263976" duration="289000" />
+      <workItem from="1708657263976" duration="610000" />
     </task>
     <servers />
   </component>
