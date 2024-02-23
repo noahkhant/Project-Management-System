@@ -18,6 +18,16 @@ public class Department {
     private String phone;
     private boolean status;
 
+    //Converting String value from the user create form to a Department object to avoid deserialization
+    public Department(String id) {
+        // Convert the String ID to an integer
+        this.id = Integer.parseInt(id);
+    }
+
+    // Add a default constructor
+    public Department() {
+    }
+
     public int getId() {
         return id;
     }

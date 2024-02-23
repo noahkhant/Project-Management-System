@@ -77,6 +77,8 @@ function showData() {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+
+
                 // location.reload();
             })
             .catch(error => console.log("Error" + error));
