@@ -4,6 +4,7 @@ import ai.group2.project_management_system.model.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
+
 import lombok.*;
 import org.springframework.cglib.core.Local;
 
@@ -90,7 +91,6 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return this.is_active;
     }
-
 
     @Override
     public String toString() {
