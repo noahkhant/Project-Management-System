@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -67,12 +68,14 @@
         playNotificationSound2();
     }
 
-    function showMessage(message) {
-        const messages = document.getElementById('messages');
-        const li = document.createElement('li');
 
-        const sender = message.sender || "Unknown";  // Check for undefined
-        const content = message.content || "No content";  // Check for undefined
+    function showMessage(message) {
+       const messages = document.getElementById('messages');
+     const li = document.createElement('li');
+
+      //const sender = message.sender || "Unknown";  // Check for undefined
+       const content = message.content || "No content";  // Check for undefined
+
 
         console.log(sender);
         console.log(content);
@@ -128,3 +131,4 @@
 
 </body>
 </html>
+
