@@ -292,3 +292,33 @@ function searchMessages() {
 }();
 var scrollEl = new SimpleBar(document.getElementById("chat-conversation"));
 scrollEl.getScrollElement().scrollTop = document.getElementById("users-conversation").scrollHeight;
+
+// const socket = new SockJS('/ws');
+//
+// const stompClient = Stomp.over(socket);
+// stompClient.connect({}, () => {
+//     console.log('Connected to WebSocket');
+//     stompClient.subscribe('/topic/messages', (message) => {
+//         showMessage(JSON.parse(message.body));
+//     });
+// });
+//
+// function sendMessage() {
+//     const sender = document.getElementById('sender').value;
+//     const content = document.getElementById('content').value;
+//     const message = { sender, content };
+//     stompClient.send('/app/chat', {}, JSON.stringify(message));
+// }
+//
+// function showMessage(message) {
+//     const messages = document.getElementById('messages');
+//     const li = document.createElement('li');
+//
+//     const sender = message.sender || "Unknown";  // Check for undefined
+//     const content = message.content || "No content";  // Check for undefined
+//
+//     console.log(sender);
+//     console.log(content);
+//     li.textContent = `${message.sender}: ${message.content}`;
+//     messages.appendChild(li);
+// }

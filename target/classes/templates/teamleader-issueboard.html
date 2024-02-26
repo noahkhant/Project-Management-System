@@ -14,6 +14,7 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
     />
+
 </head>
 <style>
     .fa-location-arrow {
@@ -513,6 +514,7 @@
         <!-- End Page-content -->
 </div><!-- end main content-->
     <!-- END layout-wrapper -->
+
 <!--Live chat Form-->
 <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centerted">
@@ -598,12 +600,8 @@
                                 </div>
                                 <!-- end chat user head -->
                                 <div class="chat-conversation p-3 p-lg-4" id="chat-conversation" data-simplebar="init"><div class="simplebar-wrapper" style="margin: -24px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden;"><div class="simplebar-content" style="padding: 24px;">
-                                    <div id="elmLoader">
-                                        <div class="spinner-border text-primary avatar-sm" role="status">
-                                            <span class="visually-hidden">Loading...</span>
-                                        </div>
-                                    </div>
-                                    <ul class="list-unstyled chat-conversation-list" id="users-conversation">
+
+                                    <ul class="list-unstyled chat-conversation-list" id="messages">
 
                                     </ul>
                                     <!-- end chat-conversation-list -->
@@ -708,12 +706,12 @@
                                             <div class="chat-input-feedback">
                                                 Please Enter a Message
                                             </div>
-                                            <input type="text" class="form-control chat-input bg-light border-light" id="chat-input" placeholder="Type your message..." autocomplete="off">
+                                            <input type="text" class="form-control chat-input bg-light border-light" id="content" placeholder="Type your message..." autocomplete="off">
                                         </div>
                                         <div class="col-auto">
                                             <div class="chat-input-links ms-2">
                                                 <div class="links-list-item">
-                                                    <button type="submit" class="btn btn-primary chat-send waves-effect waves-light shadow">
+                                                    <button type="button" onclick="sendMessage()" class="btn btn-primary chat-send waves-effect waves-light shadow">
                                                         <i class="ri-send-plane-2-fill align-bottom"></i>
                                                     </button>
                                                 </div>
@@ -750,9 +748,9 @@
     </div>
 </div>
 
-
     <!-- JAVASCRIPT -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
     <div th:replace="~{layout :: footer}"></div>
     <script th:src="@{/assets/js/teamleader-issueboard.js}"></script>
     <!--taks-kanban-->
@@ -773,6 +771,8 @@
     <script th:src="@{/assets/libs/dropzone/dropzone-min.js}"></script>
     <!-- project-create init -->
     <script th:src="@{/assets/js/pages/project-create.init.js}"></script>
+    <!-- chat js -->
+    <script th:src="@{/assets/js/chat.js}"></script>
 
 
 
