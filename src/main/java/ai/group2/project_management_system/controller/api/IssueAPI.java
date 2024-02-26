@@ -85,8 +85,10 @@ public class IssueAPI {
         objectMapper.registerModule(new JavaTimeModule());
         Issue issue = objectMapper.readValue(issueJson,Issue.class);
         issue.setCreator("Project Manager");
+
         issue.setActive(true);
         issue.setAssigned(false);
+
 
         List<String> fileNames = saveAttachments(files);
         Issue newIssue = issueService.save(issue);
@@ -117,6 +119,7 @@ public class IssueAPI {
         }
     }
 
+
     @PutMapping("/team-leader-issue/{issueId}")
     public ResponseEntity<String> updateIssueStatus(@PathVariable("issueId") Long issueId,
                                                           @RequestBody Issue requestIssue                                              ) {
@@ -133,4 +136,14 @@ public class IssueAPI {
         }
 
     }
+
+
+    @GetMapping("/issueList")
+    public ResponseEntity<List<Issue>> getIssueList(){
+
+        List<Issue> issues= issueService.getAllIssues();
+         return ResponseEntity.ok(issues);
+    }
+
+
 }

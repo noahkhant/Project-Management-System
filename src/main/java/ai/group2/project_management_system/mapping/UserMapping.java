@@ -20,8 +20,7 @@ public class UserMapping {
         dto.setProfilePictureName(users.getProfilePictureFileName());
         dto.setPassword(users.getPassword());
         dto.setRole(users.getRole());
-        dto.setPosition(users.getPosition().getPositionName());
-
+        dto.setPosition(users.getPosition());
         return dto;
     }
 

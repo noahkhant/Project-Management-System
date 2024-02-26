@@ -35,7 +35,6 @@ public class MemberController {
     public String ViewIssueDetails(@PathVariable Long id, Model model) {
         AssignIssue assignIssue=assignIssueService.getAssignIssueDetailsByAssignIssueId(id);
             model.addAttribute("assignIssue",assignIssue);
-//
 //          log.info("Issue -> {}",assignIssue.getIssue().getFilesList());
 //        log.info("Issue -> {}",assignIssue.getIssue().getFiles());
         return "member-issuedetails";
