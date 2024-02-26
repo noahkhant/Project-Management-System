@@ -1,15 +1,3 @@
-<!--Category-->
-
-var categories = ["Designing", "Development"];
-
-// Populate categories dropdown
-var categoriesDropdown = document.getElementById("project-category-input");
-categories.forEach(function (category) {
-    const option = document.createElement("option");
-    option.value = category;
-    option.text = category;
-    categoriesDropdown.add(option);
-});
 
 // Create a new script element
 var script = document.createElement('script');
@@ -24,7 +12,7 @@ document.body.appendChild(script);
 <!--Getting Users-->
 document.addEventListener('DOMContentLoaded', function() {
     // Call userGetter to fetch and display a user list for the default department
-    displayProjects();
+    displayProjects('All');
     departmentGetter();
 });
 
@@ -142,9 +130,11 @@ function stripHtmlTags(html) {
                 selectedUserIds.push(checkbox.value);
             }
         });
+
         console.log(selectedUserIds);
 
         let editorData = window.ckeditor.getData();
+        console.log(editorData);
         let plainTextData = stripHtmlTags(editorData);
         console.log("here");
 
@@ -183,7 +173,7 @@ function stripHtmlTags(html) {
 }
 
 <!--Displaying all the data-->
-// Get the select box element
+// Get the select box elementx`
 const projectFilterSelect = document.getElementById('projectFilter');
 
 // Add an event listener to handle changes in the selected value
@@ -208,6 +198,7 @@ function displayProjects(filter){
             return response.json();
         })
         .then(data => {
+            console.log(data);
             // Filter projects based on the selected filter
             const filteredProjects = filterProjects(data, filter);
             // Display the users returned by the server in the member list
@@ -288,14 +279,15 @@ function populateProjectList(dto) {
             </button>
         </form>
         
-        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#updateModal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-pencil-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
-                <path d="M12.28 4.28l-.025-.025a.5.5 0 0 1-.144-.332L12.11 3H11V1H3v2H1v10h2v2h10v-2h2V5h-2.5a.5.5 0 0 1-.36.28zM4 2h6v2H4V2z"/>
-            </svg>
-            Edit
-        </a>
+              <a class="dropdown-item edit-project-link" href="#" data-bs-toggle="modal" onclick="displayEditProject(${pj.id})" data-bs-target="#updateModal" th:id="editProject">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-pencil-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
+                        <path d="M12.28 4.28l-.025-.025a.5.5 0 0 1-.144-.332L12.11 3H11V1H3v2H1v10h2v2h10v-2h2V5h-2.5a.5.5 0 0 1-.36.28zM4 2h6v2H4V2z"/>
+                    </svg>
+                 Edit
+                </a>
+
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal">
+        <a class="dropdown-item" th:id="removeProject" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-trash-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
                 <path d="M5.5 1a.5.5 0 0 1 .5.5V2h4v-.5a.5.5 0 0 1 1 0V2h1a.5.5 0 0 1 0 1H1a.5.5 0 0 1 0-1h1V1.5a.5.5 0 0 1 .5-.5zM1.18 5l.83 10.005a1 1 0 0 0 .996.995h10.004a1 1 0 0 0 .995-.996L14.82 5H1.18zm6.156 1.61a.5.5 0 0 1 .488.612l-.488 3.488a.5.5 0 0 1-.612.488l-1.488-.41a.5.5 0 0 1-.324-.787l.787-.786a.5.5 0 0 1 .787.324l.398 1.196 2.012-2.012-.398-1.196a.5.5 0 0 1 .612-.612l1.488.41a.5.5 0 0 1 .324.787l-.787.786a.5.5 0 0 1-.787-.324L8.036 6.61l-.398-1.196a.5.5 0 0 1 .324-.787l1.488-.41z"/>
             </svg>
@@ -305,8 +297,6 @@ function populateProjectList(dto) {
 </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="d-flex mb-2">
                                     <div class="flex-shrink-0 me-3">
@@ -366,7 +356,8 @@ function populateProjectList(dto) {
 
                         </div>
                         <!-- end card footer -->
-                    </div>
+                    </div>        
+                   
         `;
         projectListContainer.appendChild(projectCard);
         projectCard.addEventListener('click', function(event) {
@@ -401,6 +392,11 @@ function searchProjects() {
 }
 document.getElementById('search-input').addEventListener('input', searchProjects);
 
-//JS codes to update project data
+
+
+
+
+
+
 
 
