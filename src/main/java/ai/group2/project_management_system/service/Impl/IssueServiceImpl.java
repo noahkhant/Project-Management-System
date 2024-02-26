@@ -50,7 +50,7 @@ public class IssueServiceImpl implements IssueService {
                 .dueDate(issue.getPlanDueDate())
                 .startDate(issue.getPlanStartDate())
                 .pmName(issue.getCreator())
-                .fileNameList(issueFiles.stream().map(v-> v.getName()).toList())
+                .fileNameList(issueFiles.stream().map(v-> v.getFileName()).toList())
                 .priority(issue.getPriority().name())
                 .status(issue.getStatus().name())
                 .subject(issue.getSubject())

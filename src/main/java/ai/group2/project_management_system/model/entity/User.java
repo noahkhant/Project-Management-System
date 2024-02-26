@@ -3,12 +3,11 @@ package ai.group2.project_management_system.model.entity;
 import ai.group2.project_management_system.model.Enum.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+
 import lombok.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.cglib.core.Local;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -40,10 +39,12 @@ public class User implements UserDetails {
     private String email;
     private String address;
     private String phone;
-    private String photo;
-    private boolean is_active;
+    private String profilePictureFileName;
+    private boolean isActive;
     private String password;
-    private String position;
+    @ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "position_id")
+    private Position position;
 
     @Enumerated(EnumType.STRING)
     private Role role;
@@ -90,8 +91,9 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return this.is_active;
+        return this.isActive;
     }
+
     @Override
     public String toString() {
         return "User{" +
@@ -104,10 +106,11 @@ public class User implements UserDetails {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
-                ", photo='" + photo + '\'' +
-                ", is_active=" + is_active +
+                ", photo='" + profilePictureFileName + '\'' +
+                ", is_active=" + isActive +
                 ", password='" + password + '\'' +
                 ", role=" + role+
                 '}';
     }
+
 }

@@ -21,8 +21,8 @@ public class UserDTO {
     private String email;
     private String address;
     private String phone;
-    private String photo;
-    private boolean is_active;
+    private String profilePictureName;
+    private boolean isActive;
     private String password;
     private String position;
     private Role role;

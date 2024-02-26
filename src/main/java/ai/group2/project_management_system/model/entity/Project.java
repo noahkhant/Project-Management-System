@@ -5,13 +5,15 @@ import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
-import lombok.*;
+
+
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+
+import lombok.*;
 
 import ai.group2.project_management_system.model.entity.User;
+
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
@@ -55,14 +57,14 @@ public class Project implements Serializable {
     private LocalDate actualEndDate;
 
     public boolean isIsActive() {
-        return is_active;
+        return isActive;
     }
 
     public void setIsActive(boolean is_active) {
-        this.is_active = is_active;
+        this.isActive = isActive;
     }
 
-    private boolean is_active;
+    private boolean isActive;
 
     @ElementCollection
     @Transient

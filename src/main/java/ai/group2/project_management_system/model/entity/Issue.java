@@ -2,8 +2,10 @@ package ai.group2.project_management_system.model.entity;
 
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -45,8 +47,8 @@ public class Issue implements Serializable {
 
     @Column(nullable = false)
     private String creator;
-    private boolean is_active;
-    private boolean is_assigned;
+    private boolean isActive;
+    private boolean isAssigned;
 
     @Enumerated(EnumType.STRING)
     private Status status;

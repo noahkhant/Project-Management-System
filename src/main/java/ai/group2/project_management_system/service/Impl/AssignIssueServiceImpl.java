@@ -43,7 +43,7 @@ public class AssignIssueServiceImpl implements AssignIssueService {
                 .issueDescription(issue.getDescription())
                 .issuePlanStartDate(issue.getPlanStartDate())
                 .issuePlanEndDate(issue.getPlanDueDate())
-                .fileNameList(issueFiles.stream().map(v->v.getName()).toList())
+                .fileNameList(issueFiles.stream().map(v->v.getFileName()).toList())
                 .build();
     }
 
@@ -51,4 +51,20 @@ public class AssignIssueServiceImpl implements AssignIssueService {
     public AssignIssue save(AssignIssue assignIssue) {
         return assignIssueRepository.save(assignIssue);
     }
+
+    @Override
+    public List<AssignIssue> getAssignIssuesByTeamleaderId(Long id) {
+        return assignIssueRepository.getAssignIssuesByTeamLeaderId(id);
+    }
+
+    @Override
+    public List<AssignIssue> getAssignIssuesByMemberId(Long id) {
+        return assignIssueRepository.getAssignIssuesByMemberId(id);
+    }
+
+    @Override
+    public AssignIssue getAssignIssueDetailsByAssignIssueId(Long id) {
+        return assignIssueRepository.getAssignIssueById(id);
+    }
+
 }

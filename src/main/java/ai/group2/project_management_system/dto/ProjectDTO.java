@@ -26,7 +26,7 @@ public class ProjectDTO {
     private Category category;
     private Priority priority;
 
-    private boolean is_active;
+    private boolean isActive;
 
     private LocalDate actualStartDate;
     private LocalDate actualEndDate;
@@ -43,7 +43,7 @@ public class ProjectDTO {
         status = project.getStatus();
         category = project.getCategory();
         priority = project.getPriority();
-        is_active = project.is_active();
+        isActive = project.isIsActive();
         actualStartDate = project.getActualStartDate();
         actualEndDate = project.getActualEndDate();
         userIds = project.getUserIds().stream().toList();

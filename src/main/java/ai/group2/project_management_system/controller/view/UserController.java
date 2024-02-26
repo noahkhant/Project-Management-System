@@ -96,8 +96,8 @@ public class UserController {
             //user.setDepartment(department);
             //user.setPosition(position);
             // Set photo name in the User object
-            user.setPhoto(photoname);
-            user.set_active(true);
+            user.setProfilePictureFileName(photoname);
+            user.setActive(true);
             System.out.println(user.getName());
 
             // Add user (consider transaction management)
