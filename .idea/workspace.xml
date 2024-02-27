@@ -6,15 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="84f24c3b-6342-4d89-929d-01adf3cae5a7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708539872971." beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708855794634." beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/chat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +24,8 @@
         <option value="Enum" />
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -252,7 +247,9 @@
       <workItem from="1708742004579" duration="3393000" />
       <workItem from="1708752535802" duration="7595000" />
       <workItem from="1708854895306" duration="879000" />
-      <workItem from="1708921775724" duration="11538000" />
+      <workItem from="1708921775724" duration="14199000" />
+      <workItem from="1708965037900" duration="1391000" />
+      <workItem from="1709005386560" duration="3988000" />
     </task>
     <servers />
   </component>
