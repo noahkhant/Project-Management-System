@@ -2,7 +2,9 @@ package ai.group2.project_management_system.controller.api;
 
 import ai.group2.project_management_system.dto.ProjectDTO;
 import ai.group2.project_management_system.dto.UserDTO;
+import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.*;
+import ai.group2.project_management_system.repository.IssueRepository;
 import ai.group2.project_management_system.service.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,6 +19,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,6 +34,7 @@ public class IssueAPI {
     private final UserService userService;
     private final IssueService issueService;
     private final IssueFilesService issueFilesService;
+    private final IssueRepository issueRepository;
     @Value("${upload.path}")
     private String uploadPath;
 
@@ -81,8 +85,10 @@ public class IssueAPI {
         objectMapper.registerModule(new JavaTimeModule());
         Issue issue = objectMapper.readValue(issueJson,Issue.class);
         issue.setCreator("Project Manager");
-        issue.setIs_active(true);
-        issue.setIs_assigned(false);
+
+        issue.setActive(true);
+        issue.setAssigned(false);
+
 
         List<String> fileNames = saveAttachments(files);
         Issue newIssue = issueService.save(issue);
@@ -113,13 +119,24 @@ public class IssueAPI {
         }
     }
 
-//    @GetMapping("/issue/{id}")
-//    public ResponseEntity<List<Issue>> getIssueByUserId(@PathVariable("id") long userId){
-//
-//        List<Issue> issues= issueService.getIssueByUserId(userId);
-//       return ResponseEntity.ok(issues);
-//
-//    }
+
+    @PutMapping("/team-leader-issue/{issueId}")
+    public ResponseEntity<String> updateIssueStatus(@PathVariable("issueId") Long issueId,
+                                                          @RequestBody Issue requestIssue                                              ) {
+        //   String newStatus= String.valueOf(requestAssignIssue.getStatus());
+        Issue issue = issueRepository.findById(Math.toIntExact(issueId)).orElse(null);
+
+        if (issue != null) {
+            issue.setStatus(requestIssue.getStatus());
+            issue.setActualDueDate(LocalDate.now());
+            issueRepository.save(issue);
+            return ResponseEntity.ok(String.format("Issue %d status updated to %s", issueId, requestIssue.getStatus()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+
+    }
+
 
     @GetMapping("/issueList")
     public ResponseEntity<List<Issue>> getIssueList(){
@@ -127,5 +144,6 @@ public class IssueAPI {
         List<Issue> issues= issueService.getAllIssues();
          return ResponseEntity.ok(issues);
     }
+
 
 }

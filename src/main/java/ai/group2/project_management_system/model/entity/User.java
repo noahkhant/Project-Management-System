@@ -4,6 +4,7 @@ import ai.group2.project_management_system.model.Enum.Role;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -50,6 +51,7 @@ public class User implements UserDetails {
     private String email;
     private String address;
     private String phone;
+
     private String profilePictureFileName; // Add this field to store the file name
     @JsonProperty("isActive")
     private boolean isActive;
@@ -57,6 +59,7 @@ public class User implements UserDetails {
     @ManyToOne
     @JoinColumn(name = "position_id")
     private Position position;
+
     @Enumerated(EnumType.STRING)
     private Role role;
 
@@ -102,7 +105,11 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return this.isActive;
+
     }
+
+
+
 
     public String getProfilePictureFileName() {
         return profilePictureFileName;
@@ -240,6 +247,7 @@ public class User implements UserDetails {
     public void setRole(Role role) {
         this.role = role;
     }
+
 
 
 

@@ -52,9 +52,10 @@ public class SecurityConfig {
                                         "/js/**",
                                         "/css/**",
                                         "/images/**",
-                                        "userPhoto",
+                                       "userPhoto",
                                         "projectFiles"
                                 ).permitAll()
+                                .requestMatchers("/forgot-password","/otp-form").permitAll()
                                 .anyRequest()
                                 .authenticated()
 
@@ -70,6 +71,7 @@ public class SecurityConfig {
                             }))
                             .permitAll();
                 })
+
                 .logout(logout ->
                         logout
                                 .logoutUrl("/logout")

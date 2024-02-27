@@ -5,12 +5,357 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84f24c3b-6342-4d89-929d-01adf3cae5a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectManagementSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/git" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/MvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/WebSocketConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/AssignIssueAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/IssueDetailsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/AssignIssueMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/AssignIssueRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueFileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/PositionRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/AssignIssueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ImageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/AssignIssueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/PositionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/PositionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/member-issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issuelist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/projectFiles/otp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708423375322.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708489602299.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708489829979.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708490350253.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708490770230.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708490861332.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708491307826.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708491703763.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708492691718.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708492746933.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708493609176.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708493830384.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708494041292.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708494780953.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708494831726.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708504838824.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708504951208.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708505000929.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708505120811.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708505468272.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708505545158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708505713725.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708508326773.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708508358141.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708508781520.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708514149525.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517151787.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517205215.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517270917.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517314023.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517537709.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517634091.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708517635731.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708522724305.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708523935269.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708531278862.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708532823785.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708533103820.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708533146041.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708535058893.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708535570634.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708536624772.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708536726500.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708536769989.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708538951587.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708538998691.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708539261404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708539664580.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708539893742.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540123237.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540348413.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540404416.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540442691.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540486632.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540603673.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708540663204.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708574371300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708588492377.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618156391.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618387647.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618389652.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618554726.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618840412.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708618962421.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708620623326.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708657436786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708681609155.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708681617030.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708681617855.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708681927306.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708681929402.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708682432599.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708688554865.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708688687006.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708689647797.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708689667236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/1708689684838.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/relax-message-tone.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/tweet.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/apps-chat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/apps-chat1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/chat-box.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member-issueboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member-issuedetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member-issuelist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/multiple-email-selection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/MvcConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/WebSocketConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/AssignIssueAPI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ChatController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/MemberController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueDTO$AssignIssueDTOBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueRequestDTO$AssignIssueRequestDTOBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueRequestDTO.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/IssueDetailsDto$IssueDetailsDtoBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/IssueDetailsDto.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/mapping/AssignIssueMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Message.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Position.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/AssignIssueRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueFileRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/PositionRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/AssignIssueService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/ImageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/AssignIssueServiceImpl$AssignIssueServiceImplBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/AssignIssueServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/IssueServiceImpl$IssueServiceImplBuilder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/PositionServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/PositionService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/chat.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-list.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/member-issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issueboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issuelist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/projectFiles/otp.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708423375322.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708489602299.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708489829979.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708490350253.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708490770230.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708490861332.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708491307826.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708491703763.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708492691718.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708492746933.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708493609176.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708493830384.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708494041292.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708494780953.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708494831726.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708504838824.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708504951208.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708505000929.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708505120811.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708505468272.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708505545158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708505713725.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708508326773.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708508358141.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708508781520.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708514149525.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517151787.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517205215.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517270917.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517314023.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517537709.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517634091.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708517635731.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708522724305.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708523935269.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708531278862.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708532823785.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708533103820.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708533146041.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708535058893.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708535570634.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708536624772.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708536726500.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708536769989.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708538951587.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708538998691.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708539261404.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708539664580.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708539893742.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540123237.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540348413.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540404416.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540442691.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540486632.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540603673.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708540663204.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708574371300.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708588492377.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618156391.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618387647.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618389652.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618554726.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618840412.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708618962421.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708620623326.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708657436786.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708681609155.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708681617030.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708681617855.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708681927306.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708681929402.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708682432599.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708688554865.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708688687006.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708689647797.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708689667236.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/img/1708689684838.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/relax-message-tone.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/tweet.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/apps-chat.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/apps-chat1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/chat-box.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/hello.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/member-issueboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/member-issuedetails.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/member-issuelist.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/multiple-email-selection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ProjectManagementSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ProjectManagementSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/Login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/UserMapping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/mapping/UserMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/IssueFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/EmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/IssueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/IssueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/IssueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/IssueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/css/chatlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/css/chatlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/chatlist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/create-issue.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-modal-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chartjs.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chartjs.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chat.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pages/chat.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/chatlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/chatlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issue-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issue-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuedetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuedetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/ProjectManagementSystemApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/mapping/UserMapping.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/IssueFiles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User$UserBuilder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/ProjectRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/EmailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/EmailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/IssueServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/IssueService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/css/chatlist.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/css/chatlist.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/chatlist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/create-issue.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/department-list-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/department-list-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-modal-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/pages/chartjs.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/pages/chartjs.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/pages/chat.init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/pages/chat.init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/chatlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/chatlist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/issue-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issue-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/members-view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issuedetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issuedetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-management.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,14 +395,13 @@
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="vmOptionsForImporter" value="-Xmx768m" />
-        <option name="workspaceImportForciblyTurnedOn" value="true" />
       </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 6
-}</component>
+    &quot;customColor&quot;: &quot;&quot;,
+    &quot;associatedIndex&quot;: 6
+    }</component>
   <component name="ProjectId" id="2ayaFAWPrqRfepnH9LIai2wEEpH" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -66,24 +410,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;demo-main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
+    "git-widget-placeholder": "Merging demo-main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
