@@ -7,15 +7,22 @@ import lombok.ToString;
 import org.springframework.web.multipart.MultipartFile;
 
 
+import java.util.List;
+
+import java.io.Serializable;
+
+
+
 // Annotations
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class EmailDetail {
+public class EmailDetail implements Serializable {
     // Importing required classes
 
-        private String recipient;
+    private List<String> recipients;
+
         private String msgBody;
         private String subject;
         private MultipartFile attachment;
@@ -28,13 +35,7 @@ public class EmailDetail {
         this.attachment = attachment;
     }
 
-    public String getRecipient() {
-            return recipient;
-        }
 
-        public void setRecipient(String recipient) {
-            this.recipient = recipient;
-        }
 
         public String getMsgBody() {
             return msgBody;
@@ -52,6 +53,11 @@ public class EmailDetail {
             this.subject = subject;
         }
 
+    public List<String> getRecipients() {
+        return recipients;
+    }
 
-
+    public void setRecipients(List<String> recipients) {
+        this.recipients = recipients;
+    }
 }
