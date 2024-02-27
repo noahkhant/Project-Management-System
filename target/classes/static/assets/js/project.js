@@ -279,12 +279,13 @@ function populateProjectList(dto) {
             </button>
         </form>
         
-              <a class="dropdown-item edit-project-link" href="#" data-bs-toggle="modal" onclick="displayEditProject(${pj.id})" data-bs-target="#updateModal" th:id="editProject">
+              <a class="dropdown-item edit-project-link" href="#" data-bs-toggle="modal" onclick="displayEditProject('${pj.id}')" data-bs-target="#updateModal" th:id="editProject">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-pencil-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
                         <path d="M12.28 4.28l-.025-.025a.5.5 0 0 1-.144-.332L12.11 3H11V1H3v2H1v10h2v2h10v-2h2V5h-2.5a.5.5 0 0 1-.36.28zM4 2h6v2H4V2z"/>
                     </svg>
-                 Edit
-                </a>
+                    Edit
+             </a>
+
 
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" th:id="removeProject" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal">

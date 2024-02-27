@@ -74,6 +74,31 @@ public class ProjectAPI {
         return ResponseEntity.ok(projects);
     }
 
+
+    @PutMapping("/edit-project/{id}")
+    public ResponseEntity<Project> editProject(@PathVariable("id") Long projectId, @RequestBody Project project){
+        System.out.println("we reach edit mapping!");
+
+       Project pj = projectService.getProjectBy_Id(projectId);
+        if (pj != null) {
+
+            pj.setTitle(project.getTitle());
+            pj.setObjective(project.getObjective());
+            pj.setCreator(project.getCreator());
+            pj.setDescription(project.getDescription());
+            pj.setCategory(project.getCategory());
+            pj.setStatus(project.getStatus());
+            pj.setPriority(project.getPriority());
+            pj.setPlanStartDate(project.getPlanStartDate());
+            pj.setPlanEndDate(project.getPlanEndDate());
+
+            Project latestUser = projectService.save(pj);
+            return ResponseEntity.ok(latestUser);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/member")
     public ResponseEntity<List<Long>> getUserIdsByProjectId(@RequestParam Long projectId) {
         System.out.print("Get Mapping"+ projectId);
@@ -96,7 +121,7 @@ public class ProjectAPI {
     @GetMapping("/project-selector/{projectId}")
     public ResponseEntity<Project> getProjectById(@PathVariable Long projectId) {
         System.out.println("Start Update"+ projectId);
-        Project project = projectService.findById(projectId);
+        Project project = projectService.getProjectBy_Id(projectId);
         System.out.println(project);
         if (project != null) {
             return ResponseEntity.ok().body(project);
@@ -115,13 +140,6 @@ public class ProjectAPI {
         } else {
             return ResponseEntity.noContent().build();
         }
-    }
-
-    @GetMapping("/show-projects-for-update")
-    public ResponseEntity<List<Project>> getAllProjectsForUpdate() {
-        List<Project> projects = projectService.getAllProjectsWithUsers();
-        System.out.println("All "+ projects);
-        return ResponseEntity.ok(projects);
     }
 
 

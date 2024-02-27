@@ -277,7 +277,7 @@
 </form>
 
 <!--Update Modal-->
-<form th:id="updateAuthor">
+<form th:id="updateProject">
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -286,6 +286,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                    <div class="mb-3">
+                        <input type="hidden" class="form-control" th:id="project-id" name="id">
+                    </div>
                     <div class="mb-3">
                         <label class="form-label" th:for="project-title-update">Project Title</label>
                         <input type="text" class="form-control" th:id="project-title-update" placeholder="Enter project title" name="title">
@@ -399,7 +402,7 @@
                     <div class="text-end mb-4">
                         <button type="button" class="btn btn-danger w-sm" data-bs-dismiss="modal">Close</button>
                         <button type="reset" class="btn btn-secondary w-sm">Reset</button>
-                        <button type="submit" class="btn btn-success w-sm" onclick="showData()">Edit</button>
+                        <button type="submit" class="btn btn-success w-sm">Edit</button>
                     </div>
                 </div>
             </div>
@@ -438,42 +441,17 @@
 
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
-    // Initialize Flatpickr for date inputs
-    const startDateInput = document.getElementById('datepicker-start-date-input');
-    const endDateInput = document.getElementById('datepicker-end-date-input');
+    // Initialize Flatpickr for the first set of date inputs
+    const startDateInput1 = document.getElementById('datepicker-start-date-input');
+    const endDateInput1 = document.getElementById('datepicker-end-date-input');
 
-    const startDatePicker = flatpickr(startDateInput, {
+    const startDatePicker1 = flatpickr(startDateInput1, {
         enableTime: false,
         dateFormat: "Y-m-d",
         theme: "custom-theme", // Use the custom theme
     });
 
-
-    const endDatePicker = flatpickr(endDateInput, {
-        enableTime: false,
-        dateFormat: "Y-m-d",
-        minDate: "today", // Restrict end date to today or later
-        theme: "custom-theme", // Use the custom theme
-    });
-
-    // Set minDate of end date picker based on the selected start date
-    startDatePicker.config.onChange.push(function(selectedDates, dateStr, instance) {
-        endDatePicker.set("minDate", dateStr);
-    });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script>
-    const startDatePicker = document.getElementById('datepicker-start-date-update');
-    const endDatePicker = document.getElementById('datepicker-end-date-update');
-
-    const startDatePicker = flatpickr(startDatePicker, {
-        enableTime: false,
-        dateFormat: "Y-m-d",
-        theme: "custom-theme", // Use the custom theme
-    });
-
-
-    const endDatePicker = flatpickr(endDatePicker, {
+    const endDatePicker1 = flatpickr(endDateInput1, {
         enableTime: false,
         dateFormat: "Y-m-d",
         minDate: "today", // Restrict end date to today or later
@@ -481,9 +459,32 @@
     });
 
     // Set minDate of end date picker based on the selected start date
-    startDatePicker.config.onChange.push(function(selectedDates, dateStr, instance) {
-        endDatePicker.set("minDate", dateStr);
+    startDatePicker1.config.onChange.push(function(selectedDates, dateStr, instance) {
+        endDatePicker1.set("minDate", dateStr);
     });
+
+    // Initialize Flatpickr for the second set of date inputs
+    const startDateInput2 = document.getElementById('datepicker-start-date-update');
+    const endDateInput2 = document.getElementById('datepicker-end-date-update');
+
+    const startDatePicker2 = flatpickr(startDateInput2, {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+        theme: "custom-theme", // Use the custom theme
+    });
+
+    const endDatePicker2 = flatpickr(endDateInput2, {
+        enableTime: false,
+        dateFormat: "Y-m-d",
+        minDate: "today", // Restrict end date to today or later
+        theme: "custom-theme", // Use the custom theme
+    });
+
+    // Set minDate of end date picker based on the selected start date
+    startDatePicker2.config.onChange.push(function(selectedDates, dateStr, instance) {
+        endDatePicker2.set("minDate", dateStr);
+    });
+
 </script>
 <script th:src="@{/assets/js/project-update.js}"></script>
 

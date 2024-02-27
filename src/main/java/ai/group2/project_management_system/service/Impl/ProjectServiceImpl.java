@@ -41,7 +41,7 @@ public class ProjectServiceImpl implements ProjectService {
             // Trigger lazy loading by accessing the users association
             Set<User> users = project.getUsers();
             // Optional: Print the users for demonstration
-            users.forEach(user -> System.out.println("User: " + user.getName() + "" + user.getId()));
+            users.forEach(user -> System.out.println("User: " + user.getName() + " " + user.getId()));
         }
         return projects;
     }
