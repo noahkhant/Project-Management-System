@@ -141,6 +141,22 @@ public class ProjectAPI {
             return ResponseEntity.noContent().build();
         }
     }
+    // This is to delete projects
+    @PutMapping("/updateStatusForProject/{id}")
+    public ResponseEntity<Project> updateStatusForProject(@PathVariable("id") Long projectId){
+        Project project = projectService.getProjectBy_Id(projectId);
+        System.out.println("Project id : " + projectId);
+        System.out.println("Project status : " + project.isActive());
+
+        if(project != null){
+            project.setActive(!project.isActive());
+            Project updatedProject = projectService.save(project);
+            System.out.println("Project later ststus : "+ project.isActive());
+            return ResponseEntity.ok(updatedProject);
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 
 }

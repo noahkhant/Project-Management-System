@@ -137,4 +137,21 @@ public class UserDTO {
         public void setFile(MultipartFile file) {
             this.file = file;
         }
+        @Override
+        public String toString() {
+            return "User{" +
+                    "id=" + id +
+                    ", name='" + name + '\'' +
+                    ", Education='" + education + '\'' +
+                    ", dob=" + dob +
+                    ", gender='" + gender + '\'' +
+                    ", email='" + email + '\'' +
+                    ", address='" + address + '\'' +
+                    ", phone='" + phone + '\'' +
+                    ", position='" + position + '\'' +
+                    ", isActive=" +isActive +
+                    ", password='" + password + '\'' +
+                    ", role=" + role+
+                    '}';
+        }
     }

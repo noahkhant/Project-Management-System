@@ -1,4 +1,4 @@
-
+var projectList = [];
 // Create a new script element
 var script = document.createElement('script');
 
@@ -34,6 +34,7 @@ function userGetter() {
             return response.json();
         })
         .then(data => {
+            console.log("data : " + data);
             // Display the users returned by the server in the member list
             populateMemberList(data);
         })
@@ -42,8 +43,10 @@ function userGetter() {
         });
 }
 
+
 function populateMemberList(dto) {
     const memberListContainer = document.getElementById('team-member-list');
+    console.log("dto : "+dto);
     // Clear existing member list content
     memberListContainer.innerHTML = '';
 
@@ -64,7 +67,7 @@ function populateMemberList(dto) {
                             <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
                         </span>
                         <span class="flex-grow-1 ms-2">${user.name}</span>
-                        <span class="flex-grow-1 ms-2">${user.position}</span>
+                        <span class="flex-grow-1 ms-2">${user.position.positionName}</span>
                         <div class="flex-shrink-0 ms-4 additional-content">
                             <ul class="list-inline tasks-list-menu mb-0">
                                 <li class="list-inline-item">
@@ -110,6 +113,60 @@ function departmentGetter() {
             userGetter();
         })
         .catch(error => console.error("Error:", error));
+}
+
+function displayProjects(filter){
+    const url = "/show-projects";
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            projectList = data;
+            console.log("Project Lists: " + projectList);
+            // Filter projects based on the selected filter
+            const filteredProjects = filterProjects(data, filter);
+            // Display the users returned by the server in the member list
+            populateProjectList(filteredProjects);
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
+}
+
+function filterProjects(projects, filter) {
+    switch (filter) {
+        case 'Today':
+            return projects.filter(project => isToday(new Date(project.planStartDate)));
+        case 'Yesterday':
+            return projects.filter(project => isYesterday(new Date(project.planStartDate)));
+        // Add more cases for other filter options if needed
+        case 'All':
+        default:
+            return projects;
+    }
+}
+
+// Function to check if a date is today
+function isToday(date) {
+    const today = new Date();
+    return date.toDateString() === today.toDateString();
+}
+
+// Function to check if a date is yesterday
+function isYesterday(date) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    return date.toDateString() === yesterday.toDateString();
 }
 
 function stripHtmlTags(html) {
@@ -167,7 +224,7 @@ function stripHtmlTags(html) {
             .then(data => {
                 console.log(data);
 
-
+                displayProjects('All');
                 // location.reload();
             })
             .catch(error => console.log("Error" + error));
@@ -184,57 +241,8 @@ projectFilterSelect.addEventListener('change', function() {
     displayProjects(selectedFilter);
 });
 
-function displayProjects(filter){
-    const url = "/show-projects";
-    fetch(url, {
-        method: 'GET',
-        credentials: 'include',
-        headers: {
-            'Accept': 'application/json',
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-            // Filter projects based on the selected filter
-            const filteredProjects = filterProjects(data, filter);
-            // Display the users returned by the server in the member list
-            populateProjectList(filteredProjects);
-        })
-        .catch(error => {
-            console.error('Error fetching user data:', error);
-        });
-}
-function filterProjects(projects, filter) {
-    switch (filter) {
-        case 'Today':
-            return projects.filter(project => isToday(new Date(project.planStartDate)));
-        case 'Yesterday':
-            return projects.filter(project => isYesterday(new Date(project.planStartDate)));
-        // Add more cases for other filter options if needed
-        case 'All':
-        default:
-            return projects;
-    }
-}
 
-// Function to check if a date is today
-function isToday(date) {
-    const today = new Date();
-    return date.toDateString() === today.toDateString();
-}
 
-// Function to check if a date is yesterday
-function isYesterday(date) {
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    return date.toDateString() === yesterday.toDateString();
-}
 
 const titles = [];
 function populateProjectList(dto) {
@@ -258,9 +266,14 @@ function populateProjectList(dto) {
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted mb-4">Updated 3hrs ago</p>
+                                        
                                     </div>
+                                    
                                     <div class="flex-shrink-0">
                                         <div class="d-flex gap-1 align-items-center">
+                                        <div class="text-end">
+                                            ${pj.isActive ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>'}
+                                        </div>
 
                                             <div class="dropdown">
     <button class="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15 shadow-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -290,7 +303,7 @@ function populateProjectList(dto) {
 
 
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" th:id="removeProject" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal">
+        <a class="dropdown-item" th:id="removeProject" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal" onclick="setDeleteProjectId(${pj.id})">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-trash-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
                 <path d="M5.5 1a.5.5 0 0 1 .5.5V2h4v-.5a.5.5 0 0 1 1 0V2h1a.5.5 0 0 1 0 1H1a.5.5 0 0 1 0-1h1V1.5a.5.5 0 0 1 .5-.5zM1.18 5l.83 10.005a1 1 0 0 0 .996.995h10.004a1 1 0 0 0 .995-.996L14.82 5H1.18zm6.156 1.61a.5.5 0 0 1 .488.612l-.488 3.488a.5.5 0 0 1-.612.488l-1.488-.41a.5.5 0 0 1-.324-.787l.787-.786a.5.5 0 0 1 .787.324l.398 1.196 2.012-2.012-.398-1.196a.5.5 0 0 1 .612-.612l1.488.41a.5.5 0 0 1 .324.787l-.787.786a.5.5 0 0 1-.787-.324L8.036 6.61l-.398-1.196a.5.5 0 0 1 .324-.787l1.488-.41z"/>
             </svg>
@@ -349,6 +362,7 @@ function populateProjectList(dto) {
                                         </a>
                                     </div>
                                 </div>
+                             
                                 <div class="flex-shrink-0">
                                     <div class="text-muted">
                                         <i class="ri-calendar-event-fill me-1 align-bottom"></i> ${pj.planStartDate}
@@ -395,7 +409,38 @@ function searchProjects() {
 }
 document.getElementById('search-input').addEventListener('input', searchProjects);
 
+var deleteProjectId;
+<!--Let's start the delete statement-->
+window.setDeleteProjectId = function (projectId){
+    deleteProjectId = projectId;
+    console.log("Project id to delete : "+ deleteProjectId);
+}
 
+window.deleteProject = function() {
+    const project = projectList.find(project => project.id === parseInt(deleteProjectId));
+
+    fetch(`/updateStatusForProject/${deleteProjectId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response data
+            console.log(data);
+
+            const deleteModal = document.getElementById('removeProjectModal');
+            deleteModal.classList.remove('show');
+
+            displayProjects('All');
+            // Manually remove the backdrop
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+        });
+}
 
 
 
