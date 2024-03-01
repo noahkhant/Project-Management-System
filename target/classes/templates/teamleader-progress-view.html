@@ -21,6 +21,14 @@
         display: none;
     }
 
+    .teamLeaderImage {
+        width: 50px; /* Adjust the width as needed */
+        height: 50px; /* Adjust the height as needed */
+        display: block;
+        margin: 0 auto; /* Center the image */
+    }
+
+
 </style>
 <body>
 <!-- Begin page -->
@@ -83,16 +91,16 @@
                                 </div>
 
                                 <div class="col-sm-3 ms-sm-auto">
-                                   <!-- <div class="input-light">
-                                        <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus" >
-                                            <option selected disabled>Search Issues</option>
-                                            <option value="New">All</option>
-                                            <option value="New">A</option>
-                                            <option value="Pending">B</option>
-                                            <option value="Inprogress">C</option>
-                                            <option value="Completed">D</option>
-                                        </select>
-                                    </div>-->
+                                    <!-- <div class="input-light">
+                                         <select class="form-control" data-choices data-choices-search-false name="choices-single-default" id="idStatus" >
+                                             <option selected disabled>Search Issues</option>
+                                             <option value="New">All</option>
+                                             <option value="New">A</option>
+                                             <option value="Pending">B</option>
+                                             <option value="Inprogress">C</option>
+                                             <option value="Completed">D</option>
+                                         </select>
+                                     </div>-->
                                 </div>
 
 
@@ -108,8 +116,7 @@
                                         <th class="sort" data-sort="">PM Name</th>
                                         <th class="sort" data-sort="">Project</th>
                                         <th class="sort" data-sort="">Issue Title</th>
-                                        <th class="sort" data-sort="">Sub Issue</th>
-                                        <th class="sort" data-sort="">Assigned Member</th>
+                                        <th class="sort" data-sort="">Team Leader</th>
                                         <th class="sort" data-sort="">Start Date</th>
                                         <th class="sort" data-sort="">Due Date</th>
                                         <th class="sort" data-sort="">Status</th>
@@ -117,28 +124,32 @@
                                     </tr>
                                     </thead>
                                     <tbody class="list form-check-all">
-                                    <tr th:each="assignIssue : ${assignIssues}">
-                                        <td class="id"><a href="#" class="fw-medium link-primary" th:text="${assignIssue.getIssue().getCreator()}"></a></td>
-                                        <td class="due_date"><a href="#" class="fw-medium link-primary" th:text="${assignIssue.getIssue().getProject().getTitle()}"></a></td>
+                                    <tr th:each="currentIssue : ${currentIssues}">
+                                        <td class="id"><a href="#" class="fw-medium link-primary" th:text="${currentIssue.getCreator()}"></a></td>
+                                        <td class="due_date"><a href="#" class="fw-medium link-primary" th:text="${currentIssue.getProject().getTitle()}"></a></td>
 
                                         <td>
                                             <div class="d-flex">
-                                                <div class="flex-grow-1 tasks_name" th:text="${assignIssue.getIssue().getTitle()}"></div>
+                                                <div class="flex-grow-1 tasks_name" th:text="${currentIssue.getTitle()}"></div>
                                             </div>
                                         </td>
-                                        <td class="priority"><span class="badge bg-primary-subtle text-uppercase text-primary" th:text="${assignIssue.getName()}"></span></td>
                                         <td class="assignedto">
                                             <div class="avatar-group">
-                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" th:title="${assignIssue.getUser().getName()}">
-                                                    <img th:src="@{'/assets/userPhoto/'+${assignIssue.getUser().getProfilePictureFileName()}}" alt="" class="rounded-circle avatar-xxs" />
+                                                <!--<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                    <img th:src="@{'/assets/userPhoto/A.jpg'}" alt="" class="rounded-circle avatar-xxs" />
+                                                </a>-->
+
+                                                <a href="#" class="avatar-group-item shadow teamLeaderName" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="" th:attr="data-team-leader-id=${currentIssue.getTeamLeaderId()}">
+                                                    <img src="" alt="" class="rounded-circle avatar-xxs teamLeaderImage">
                                                 </a>
+
 
                                             </div>
                                         </td>
-                                        <td class="due_date" th:text="${assignIssue.getPlanStartDate()}"></td>
-                                        <td class="due_date" th:text="${assignIssue.getPlanDueDate()}"></td>
-                                        <td class="status"><span class="badge bg-secondary-subtle text-secondary text-uppercase" th:text="${assignIssue.getStatus()}"></span></td>
-                                        <td class="priority"><span class="badge bg-danger text-uppercase" th:text="${assignIssue.getPriority()}"></span></td>
+                                        <td class="due_date" th:text="${currentIssue.getPlanStartDate()}"></td>
+                                        <td class="due_date" th:text="${currentIssue.getPlanDueDate()}"></td>
+                                        <td class="status"><span class="badge bg-secondary-subtle text-secondary text-uppercase" th:text="${currentIssue.getStatus()}"></span></td>
+                                        <td class="priority"><span class="badge bg-danger text-uppercase" th:text="${currentIssue.getPriority()}"></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -164,6 +175,7 @@
 </div>
 <!-- END layout-wrapper -->
 <div th:replace="~{layout :: footer}"></div>
+
 <!--Update Issue Script-->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
@@ -193,6 +205,6 @@
 
 <!-- Sweet Alerts js -->
 <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
-
+<script th:src="@{assets/js/pm-teamleader-list.js}"></script>
 </body>
 </html>

@@ -5,16 +5,16 @@ import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.service.DepartmentService;
 import ai.group2.project_management_system.service.ProjectService;
 import ai.group2.project_management_system.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.*;
-import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,6 +23,7 @@ public class ProjectAPI {
     private final ProjectService projectService;
     private final DepartmentService departmentService;
     private final UserService userService;
+    private final ProjectRepository projectRepository;
 
     private final UserMapping userMapping;
 
@@ -81,14 +82,20 @@ public class ProjectAPI {
 
     //These methods are for editing the data
 
+    @PutMapping("/project/{projectId}")
+    public ResponseEntity<String> updateProjectStatus(@PathVariable("projectId") Long projectId,
+                                                    @RequestBody Project requestProject ) {
+        //   String newStatus= String.valueOf(requestAssignIssue.getStatus());
+        Project project = projectRepository.findById(projectId).orElse(null);
 
-
-
-
-
-
-
-
-
+        if (project != null) {
+            project.setStatus(requestProject.getStatus());
+            project.setActualEndDate(LocalDate.now());
+            projectRepository.save(project);
+            return ResponseEntity.ok(String.format("Issue %d status updated to %s", project, requestProject.getStatus()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

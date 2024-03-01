@@ -129,7 +129,7 @@
                                         <td class="priority"><span class="badge bg-primary-subtle text-uppercase text-primary" th:text="${assignIssue.getName()}"></span></td>
                                         <td class="assignedto">
                                             <div class="avatar-group">
-                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Frank">
+                                                <a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" th:title="${assignIssue.getUser().getName()}">
                                                     <img th:src="@{'/assets/userPhoto/'+${assignIssue.getUser().getProfilePictureFileName()}}" alt="" class="rounded-circle avatar-xxs" />
                                                 </a>
 

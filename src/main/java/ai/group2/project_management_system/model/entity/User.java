@@ -51,7 +51,6 @@ public class User implements UserDetails {
     private String email;
     private String address;
     private String phone;
-
     private String profilePictureFileName; // Add this field to store the file name
     @JsonProperty("isActive")
     private boolean isActive;
