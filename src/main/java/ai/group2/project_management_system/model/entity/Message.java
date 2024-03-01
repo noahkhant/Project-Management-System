@@ -1,19 +1,39 @@
 package ai.group2.project_management_system.model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.time.LocalDateTime;
-
+@Entity
 public class Message {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String sender;
+    public Long getId() {
+        return id;
+    }
+
+    private long senderId;
     private String content;
     private Long issueId;
     private LocalDateTime timeStamp;
 
-    public Message(String sender, String content, Long issueId, LocalDateTime timeStamp) {
-        this.sender = sender;
+    public Message(Long senderId, String content, Long issueId, LocalDateTime timeStamp) {
+        this.senderId = senderId;
         this.content = content;
         this.issueId = issueId;
         this.timeStamp = timeStamp;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setSenderId(long senderId) {
+        this.senderId = senderId;
     }
 
     public Long getIssueId() {
@@ -36,12 +56,12 @@ public class Message {
     public Message() {
     }
 
-    public String getSender() {
-        return sender;
+    public Long getSenderId() {
+        return senderId;
     }
 
-    public void setSender(String sender) {
-        this.sender = sender;
+    public void setSenderId(Long senderId) {
+        this.senderId = senderId;
     }
 
     public String getContent() {
@@ -52,8 +72,8 @@ public class Message {
         this.content = content;
     }
 
-    public Message(String sender, String content) {
-        this.sender = sender;
+    public Message(Long senderId, String content) {
+        this.senderId = senderId;
         this.content = content;
     }
 }

@@ -88,6 +88,7 @@ public class IssueAPI {
 
         issue.setActive(true);
         issue.setAssigned(false);
+        issue.setStatus(Status.TODO);
 
 
         List<String> fileNames = saveAttachments(files);
