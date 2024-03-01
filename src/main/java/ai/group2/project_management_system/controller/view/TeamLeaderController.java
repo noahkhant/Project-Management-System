@@ -71,14 +71,15 @@ public class TeamLeaderController {
                 if(issue.getStatus()==Status.PENDING || issue.getStatus()==Status.COMPLETED){
                     issue.setAssigned(true);
                 }else {
-                    assignIssuesFound=true;
-                    for (AssignIssue assignIssue : issue.getAssignIssues()) {
-
-                        if (assignIssue.getStatus() == Status.INPROGRESS) {
-                            anyInProgress = true;
-                            break; // Break if any assign issue is in progress
-                        } else if (assignIssue.getStatus() != Status.COMPLETED) {
-                            allCompleted = false; // Not all assign issues are completed
+                    if(issue.getAssignIssues().size()>0){
+                        assignIssuesFound=true;
+                        for (AssignIssue assignIssue : issue.getAssignIssues()) {
+                            if (assignIssue.getStatus() == Status.INPROGRESS) {
+                                anyInProgress = true;
+                                break; // Break if any assign issue is in progress
+                            } else if (assignIssue.getStatus() != Status.COMPLETED) {
+                                allCompleted = false; // Not all assign issues are completed
+                            }
                         }
                     }
 
