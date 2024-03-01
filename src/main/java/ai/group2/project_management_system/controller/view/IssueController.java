@@ -63,8 +63,9 @@ public class IssueController {
             boolean allCompleted = true;
             boolean issuesFound = false;
             for(Issue issue:currentIssues) {
-                issuesFound = true;
+
                 if (currentProject.getTitle().equals(issue.getProject().getTitle())) {
+                    issuesFound = true;
                     if (issue.getStatus() == Status.INPROGRESS) {
                         anyInProgress = true;
                         break; // Break if any assign issue is in progress

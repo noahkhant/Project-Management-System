@@ -4,12 +4,14 @@ import ai.group2.project_management_system.model.Enum.Category;
 import ai.group2.project_management_system.model.Enum.Priority;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Project;
+import ai.group2.project_management_system.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -32,6 +34,8 @@ public class ProjectDTO {
     private LocalDate actualEndDate;
     private List<Long> userIds;
 
+    private Set<User> users;
+
     public ProjectDTO(Project project) {
         id = project.getId();
         title = project.getTitle();
@@ -49,9 +53,9 @@ public class ProjectDTO {
         actualStartDate = project.getActualStartDate();
         actualEndDate = project.getActualEndDate();
         userIds = project.getUserIds().stream().toList();
+        users = project.getUsers();
 
     }
-
     public Long getId() {
         return id;
     }

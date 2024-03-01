@@ -71,8 +71,9 @@ public class TeamLeaderController {
                 if(issue.getStatus()==Status.PENDING || issue.getStatus()==Status.COMPLETED){
                     issue.setAssigned(true);
                 }else {
+                    assignIssuesFound=true;
                     for (AssignIssue assignIssue : issue.getAssignIssues()) {
-                        assignIssuesFound=true;
+
                         if (assignIssue.getStatus() == Status.INPROGRESS) {
                             anyInProgress = true;
                             break; // Break if any assign issue is in progress

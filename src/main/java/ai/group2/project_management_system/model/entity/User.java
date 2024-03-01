@@ -106,10 +106,6 @@ public class User implements UserDetails {
         return this.isActive;
 
     }
-
-
-
-
     public String getProfilePictureFileName() {
         return profilePictureFileName;
     }
@@ -206,10 +202,6 @@ public class User implements UserDetails {
         this.phone = phone;
     }
 
-
-
-
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -247,9 +239,6 @@ public class User implements UserDetails {
         this.role = role;
     }
 
-
-
-
     @Override
     public String toString() {
         return "User{" +
@@ -262,13 +251,11 @@ public class User implements UserDetails {
                 ", email='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
-
+                ", position='" + position + '\'' +
                 ", photo='" + profilePictureFileName + '\'' +
                 ", isActive=" +isActive +
-
                 ", password='" + password + '\'' +
                 ", role=" + role+
                 '}';
     }
-
 }
