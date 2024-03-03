@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <input class="form-check-input  me-3" type="radio" id="issue-teamleader-input" name="teamLeader" value="${user.id}">
             <label class="form-check-label  d-flex align-items-center" for="user-${user.id}">
                 <span class="flex-shrink-0">
-                    <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
+                    <img src="assets/images/${user.profilePictureName}" alt="" class="avatar-xxs rounded-circle" />
                 </span>
                 <span class="flex-grow-1 ms-2">${user.name}</span>
                 <span class="badge text-bg-success flex-grow-1 ms-2">${user.position}</span>

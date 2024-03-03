@@ -9,13 +9,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ChatController {
     @GetMapping("/chat-list")
     public String chatList() {
-        return "apps-chat";
+        return "apps-chat1";
     }
 
     @GetMapping("/aaa/testChat")
     public String index() {
         return "chat-box";
     }
-
-
+    
 }

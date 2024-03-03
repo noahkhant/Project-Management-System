@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,22 +67,32 @@ public class TeamLeaderController {
             for(Issue issue:issues){
                 boolean anyInProgress = false;
                 boolean allCompleted = true;
+                boolean assignIssuesFound = false;
                 if(issue.getStatus()==Status.PENDING || issue.getStatus()==Status.COMPLETED){
                     issue.setAssigned(true);
                 }else {
-                    for (AssignIssue assignIssue : issue.getAssignIssues()) {
-                        if (assignIssue.getStatus() == Status.INPROGRESS) {
-                            anyInProgress = true;
-                            break; // Break if any assign issue is in progress
-                        } else if (assignIssue.getStatus() != Status.COMPLETED) {
-                            allCompleted = false; // Not all assign issues are completed
+                    if(issue.getAssignIssues().size()>0){
+                        assignIssuesFound=true;
+                        for (AssignIssue assignIssue : issue.getAssignIssues()) {
+                            if (assignIssue.getStatus() == Status.INPROGRESS) {
+                                anyInProgress = true;
+                                break; // Break if any assign issue is in progress
+                            } else if (assignIssue.getStatus() != Status.COMPLETED) {
+                                allCompleted = false; // Not all assign issues are completed
+                            }
                         }
                     }
 
-                    if (anyInProgress) {
-                        issue.setStatus(Status.INPROGRESS);
-                    } else if (allCompleted) {
-                        issue.setStatus(Status.PENDING);
+                    if (!assignIssuesFound) {
+                        issue.setStatus(Status.TODO);
+                    } else {
+
+                        if (anyInProgress) {
+                            issue.setStatus(Status.INPROGRESS);
+                            issue.setActualStartDate(LocalDate.now());
+                        } else if (allCompleted) {
+                            issue.setStatus(Status.PENDING);
+                        }
                     }
                 }
                 issueRepository.save(issue);

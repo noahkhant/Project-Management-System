@@ -131,6 +131,7 @@ function displayEditProject(id) {
                     if (projectEditModal) {
                         projectEditModal.classList.add('show');
                         projectEditModal.style.display = 'block';
+
                     } else {
                         console.log("Project Edit Modal not found");
                     }
@@ -269,14 +270,18 @@ document.getElementById("updateProject").addEventListener('submit', function (ev
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);
-            //location.reload();
-            //departmentList.push(data);
-            //refreshDepartmentListTable(departmentList);
+
+            displayProjects('All');
 
         })
         .catch(error => console.log("Error" + error));
-
+    const modal = new bootstrap.Modal(document.getElementById('updateModal'));
+    modal.hide();
 });
+
+
+
+
 
 
 

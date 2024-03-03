@@ -5,11 +5,13 @@ import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.IssueRepository;
+import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.parameters.P;
@@ -20,18 +22,17 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @RequiredArgsConstructor
+@Slf4j
 public class IssueAPI {
 
     private final ProjectService projectService;
     private final IssueCategoryService issueCategoryService;
     private final UserService userService;
+    private final UserRepository userRepository;
     private final IssueService issueService;
     private final IssueFilesService issueFilesService;
     private final IssueRepository issueRepository;
@@ -81,11 +82,12 @@ public class IssueAPI {
 
     @PostMapping("/create-issue")
     public ResponseEntity<Issue> createIssue(@RequestParam("issue") String issueJson, @RequestParam("files") List<MultipartFile> files)  throws JsonProcessingException {
+        User user=userService.getCurrentUser();
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         Issue issue = objectMapper.readValue(issueJson,Issue.class);
-        issue.setCreator("Project Manager");
-
+        issue.setCreator(user.getName());
+        issue.setStatus(Status.TODO);
         issue.setActive(true);
         issue.setAssigned(false);
         issue.setStatus(Status.TODO);
@@ -144,6 +146,19 @@ public class IssueAPI {
 
         List<Issue> issues= issueService.getAllIssues();
          return ResponseEntity.ok(issues);
+    }
+
+    @GetMapping("/get-user/{teamLeaderId}")
+    public ResponseEntity<User> getUser(@PathVariable String teamLeaderId) {
+        Long id = Long.valueOf(teamLeaderId);
+        User user=userService.getUserById(id
+        );
+        log.info("User -> {}",user);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.noContent().build();
+        }
     }
 
 

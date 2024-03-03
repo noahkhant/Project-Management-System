@@ -44,8 +44,10 @@
                                                 </div>
                                             </div>
                                             <div class="col-md">
+
                                                 <div>
                                                     <h4 class="fw-bold" th:text="${project.title}"></h4>
+
                                                     <div class="hstack gap-3 flex-wrap">
 
                                                         <div class="vr"></div>
@@ -53,8 +55,14 @@
                                                         <div class="vr"></div>
                                                         <div>Due Date : <span class="fw-medium" th:text="${project.planEndDate}"></span></div>
                                                         <div class="vr"></div>
+                                                        <div class="text-end">
+                                                            <span th:if="${project.isActive()}" class="badge bg-success">Active</span>
+                                                            <span th:unless="${project.isActive()}" class="badge bg-danger">Inactive</span>
+                                                            <!-- You can customize the color and text as needed -->
+                                                        </div>
 
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>

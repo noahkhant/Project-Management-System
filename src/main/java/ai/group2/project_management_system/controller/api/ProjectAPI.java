@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import java.time.LocalDate;
 import java.util.*;
 
 @RestController
@@ -26,7 +26,6 @@ public class ProjectAPI {
     private final ProjectService projectService;
     private final DepartmentService departmentService;
     private final UserService userService;
-
     private final ProjectRepository projectRepository;
 
     private final UserMapping userMapping;
@@ -130,6 +129,21 @@ public class ProjectAPI {
         }
     }
 
+    @PutMapping("/project/{projectId}")
+    public ResponseEntity<String> updateProjectStatus(@PathVariable("projectId") Long projectId,
+                                                    @RequestBody Project requestProject ) {
+        //   String newStatus= String.valueOf(requestAssignIssue.getStatus());
+        Project project = projectRepository.findById(projectId).orElse(null);
+
+        if (project != null) {
+            project.setStatus(requestProject.getStatus());
+            project.setActualEndDate(LocalDate.now());
+            projectRepository.save(project);
+            return ResponseEntity.ok(String.format("Issue %d status updated to %s", project, requestProject.getStatus()));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
     @GetMapping("/user-for-project-update/{departmentId}")
     public ResponseEntity<List<UserDTO>> getUsersForProject(@PathVariable Long departmentId) {
         System.out.println("Updaters are gone");
@@ -141,6 +155,21 @@ public class ProjectAPI {
             return ResponseEntity.noContent().build();
         }
     }
+    // This is to delete projects
+    @PutMapping("/updateStatusForProject/{id}")
+    public ResponseEntity<Project> updateStatusForProject(@PathVariable("id") Long projectId){
+        Project project = projectService.getProjectBy_Id(projectId);
+        System.out.println("Project id : " + projectId);
+        System.out.println("Project status : " + project.isActive());
 
+        if(project != null){
+            project.setActive(!project.isActive());
+            Project updatedProject = projectService.save(project);
+            System.out.println("Project later ststus : "+ project.isActive());
+            return ResponseEntity.ok(updatedProject);
+        }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

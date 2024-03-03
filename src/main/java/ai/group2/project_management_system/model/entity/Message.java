@@ -1,9 +1,6 @@
 package ai.group2.project_management_system.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
 @Entity
@@ -20,6 +17,17 @@ public class Message {
     private String content;
     private Long issueId;
     private LocalDateTime timeStamp;
+
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Message(Long senderId, String content, Long issueId, LocalDateTime timeStamp) {
         this.senderId = senderId;

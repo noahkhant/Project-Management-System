@@ -17,8 +17,7 @@
 
     <!-- Layout config Js -->
     <script th:src="@{/assets/js/layout.js}"></script>
-    <!-- Bootstrap Css -->
-    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+
     <!-- Icons Css -->
     <link th:href="@{/assets/css/icons.min.css}" rel="stylesheet" type="text/css"/>
     <!-- App Css-->
@@ -27,11 +26,60 @@
     <link th:href="@{/assets/css/custom.min.css}" rel="stylesheet" type="text/css"/>
     <!-- data tables Css-->
     <link th:href="@{/assets/css/jquery.dataTables.min.css}" rel="stylesheet" type="text/css"/>
-
     <!-- Live Chat CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" th:href="@{/assets/css/chatlist.css}" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Bootstrap Css -->
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+<!--    <link rel="stylesheet" th:href="@{/assets/css/chatlist.css}" />-->
+
+    <style>
+        .own-message {
+            float: right;
+            color: #ffffff;
+            background-color: #4b38b3;
+            border-radius: 15px;
+            padding: 12px 20px;
+            clear: both;
+            margin-bottom: 10px;
+        }
+
+        .other-message .sender {
+            color: black;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .other-message .content {
+            color: #ffffff;
+            background-color: #4b38b3;
+            border-radius: 15px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+        }
+
+        #chatList {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #chatList li {
+            background-color: #4b38b3;
+            color: white;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+        }
+
+        #chatList li:last-child {
+            margin-bottom: 0;
+        }
+
+        #chatList li:hover {
+            background-color: #5e4bb3;
+            cursor: pointer;
+        }
+    </style>
 
 </head>
 <body>
@@ -174,14 +222,16 @@
      <!--App js -->
     <script th:src="@{/assets/js/app.js}"></script>
 
-        <!-- Chat Live Script-->
-        <script th:src="@{/assets/js/chat.js}"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<!--        &lt;!&ndash; Chat Live Script&ndash;&gt;-->
+<!--        <script th:src="@{/assets/js/chat.js}"></script>-->
+<!--        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>-->
+<!--        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>-->
+<!--        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>-->
+
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.2/sockjs.min.js"></script>-->
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>-->
+
 
 
 </div>

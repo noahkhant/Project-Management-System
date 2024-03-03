@@ -1,13 +1,8 @@
 let stompClient;
 let issueId;
-let messageList = [];
-document.addEventListener('DOMContentLoaded',()=>{
-    // Button to trigger modal
-    var openChatBtn = document.getElementById('liveChat');
-    // Modal
-    var chatModal = new bootstrap.Modal(document.getElementById('chatModal'));
-    var currentUser;
-
+let currentUser;
+document.addEventListener('DOMContentLoaded', () => {
+    renderChatList();
 
     async function fetchCurrentUser() {
         return await fetch('/api/user/current-user')
@@ -17,9 +12,10 @@ document.addEventListener('DOMContentLoaded',()=>{
                 }
                 return response.json();
             })
-            .then(data => {
+            .then(user => {
                 // Update UI with user data
-                return data;
+                currentUser = user;
+                return user;
             })
             .catch(error => {
                 console.error('Error fetching current user:', error);
@@ -27,52 +23,24 @@ document.addEventListener('DOMContentLoaded',()=>{
             });
     }
 
-
-    function chatListOnClick(event){
-        let target = event.target;
-        if (target.tagName === 'LI') {
-            // Get the chat name
-            let chatName = target.getAttribute('data-chat');
-            issueId = target.getAttribute('data-issue-id');
-            // Set modal title to chat name
-            let chatModalLabel = document.getElementById('chatModalLabel');
-            chatModalLabel.textContent = chatName;
-            // Clear chat list
-            let chatListItems = document.querySelectorAll('#chatList .list-group-item');
-            chatListItems.forEach(function(item) {
-                item.parentNode.removeChild(item);
-            });
-            // Show chat box
-            let chatBox = document.getElementById('chatBox');
-            chatBox.classList.remove('d-none');
-            // Set chat box title
-            let chatBoxTitle = document.getElementById('chatBoxTitle');
-            chatBoxTitle.textContent = chatName;
-            // Clear chat name in the modal body
-            let chatBoxBody = document.getElementById('chatBoxTitle'); // This line was corrected
-            chatBoxBody.textContent = ''; // This line was added to clear the content
-
-
-            //fetch list of message
-            fetchMessageList()
-                .then(messages =>{
-                    messageList.push(...messages);
-                    showMessage(messageList);
-                    stompClient.subscribe(`/topic/messages/${issueId}`, function(message) {
-                        let messageData = JSON.parse(message.body).body; // Extract the message data from the payload
-                        showMessage(messageData); // Pass the message data (list of messages) to showMessage
-                    });
-                    // Show modal
-                    chatModal.show();
-                })
-                .catch(error => {
-                    console.error('Error fetching message list:', error);
-                });
-
-
-        }
+    function scrollToButton() {
+        const kk = document.getElementById('chat-conversation').querySelector("#chat-conversation .simplebar-content-wrapper");
+        kk.scrollTop = kk.scrollHeight;
     }
-    async function fetchMessageList(){
+
+    function formatTimestamp(timestamp) {
+        const date = new Date(timestamp); // Parse the timestamp string into a Date object
+        // Extract individual date components
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        const seconds = date.getSeconds().toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+        const year = date.getFullYear().toString().slice(2); // Get last two digits of the year
+        return `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
+    }
+
+    async function fetchMessageList(issueId) {
         return await fetch(`/get-messages/${issueId}`)
             .then(response => response.json())
             .then(messageList => {
@@ -83,119 +51,195 @@ document.addEventListener('DOMContentLoaded',()=>{
                 return Promise.reject(0);
             });
     }
-    function renderChatList(){
+
+    function renderChatList() {
         fetchCurrentUser()
-            .then(currentUser=>{
+            .then(currentUser => {
                 const userId = currentUser.id;
                 fetch(`/get-issues/${userId}`)
                     .then(response => response.json())
                     .then(data => {
                         console.log('All issue list: ', data);
                         issueList = data;
-
-                        let chatList = document.getElementById('chatList');
+                        let chatList = document.getElementById('issue-chat-list');
                         chatList.innerHTML = '';
 
                         // Generate new list items based on the data
-                        issueList.forEach(function(issue) {
-                            let li = document.createElement('li');
-                            li.classList.add('list-group-item');
-                            li.setAttribute('data-chat', issue.title);
-                            li.setAttribute('data-issue-id', issue.id);
-                            li.textContent = issue.title + " Group chat";
-                            li.addEventListener("click",chatListOnClick);
-                            chatList.appendChild(li);
+                        issueList.forEach(function (issue) {
+                            const outerDiv = document.createElement('div');
+                            outerDiv.classList.add('d-flex', 'align-items-center', 'px-4', 'mb-3');
+                            const innerDiv = document.createElement('div');
+                            innerDiv.classList.add('flex-grow-1');
+                            const btn = document.createElement("a");
+                            btn.classList.add("issue-btn")
+                            const heading = document.createElement('h4');
+                            heading.classList.add('mb-0', 'fs-11', 'text-muted', 'text-uppercase');
+                            heading.textContent = issue.title + " Group Chat";
+                            btn.appendChild(heading);
+                            innerDiv.appendChild(btn);
+                            outerDiv.appendChild(innerDiv);
+                            chatList.appendChild(outerDiv);
+
+                            btn.addEventListener("click", function () {
+                                issueGroupOnClick(issue)
+                            });
                         });
-                        // Render the data into the DataTable
-                        //refreshDepartmentListTable(departmentList);
                     })
                     .catch(error => {
                         console.log('Error: ', error);
                     });
-                chatModal.show();
             })
-            .catch(err=>{
+            .catch(err => {
                 console.log(err);
             })
     }
 
-    // Show modal when button clicked
-    openChatBtn.addEventListener('click', function() {
-        renderChatList();
-    });
-
-    // Handle back to chat list button click
-    document.getElementById('backToChatListBtn').addEventListener('click', function() {
-        // // Clear chat list
-        // let chatListItems = document.querySelectorAll('#chatBox');
-        // chatListItems.forEach(function(item) {
-        //     item.parentNode.removeChild(item);
-        // });
-        renderChatList();
-    });
-
-
-    //websocket connection
-    const socket = new SockJS('/ws');
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, () => {
-        console.log('Connected to WebSocket');
-
-    });
-
-    function showMessage(messageList) {
-        const messages = document.getElementById('messages');
-        // Clear existing messages before appending new ones
-        messages.innerHTML = '';
-
-        // Check if messageList is an array
-        if (!Array.isArray(messageList)) {
-            console.error("messageList is not an array:", messageList);
-            return;
-        }
-
-        messageList.forEach(function(message) {
-            const li = document.createElement('li');
-
-            const sender = message.sender || "Unknown";
-            const content = message.content || "No content";
-
-            const senderElement = document.createElement('div');
-            senderElement.textContent = sender;
-            senderElement.classList.add('sender');
-            li.appendChild(senderElement);
-
-            const contentElement = document.createElement('div');
-            contentElement.textContent = content;
-            contentElement.classList.add('content');
-            li.appendChild(contentElement);
-
-            if (sender === currentUser) {
-                li.classList.add("own-message");
-            } else {
-                li.classList.add("other-message");
-            }
-
-            messages.appendChild(li);
+    function displayGroupMembers(userList) {
+        document.getElementById('group-members').innerHTML = '';
+        userList.forEach(function (user) {
+            const aElement = document.createElement('a');
+            aElement.setAttribute('class', 'dropdown-item');
+            aElement.innerHTML = '<i class="ri-user-fill align-bottom text-muted me-2"></i>' + user.name;
+            document.getElementById('group-members').appendChild(aElement);
         });
+    }
+
+    function getGroupMember(issueId) {
+        fetch(`/get-members/${issueId}`)
+            .then(response => response.json())
+            .then(userList => {
+                console.log('Group Member list: ', userList);
+                displayGroupMembers(userList);
+            })
+            .catch(error => {
+                console.log('Error: ', error);
+            });
 
 
     }
 
+    function issueGroupOnClick(issue) {
+        document.getElementById('issue-group-title').innerHTML = issue.title;
+        document.getElementById('isActive').innerHTML = issue.active ? "Active" : "Inactive";
+        renderMessage(issue.id);
+        subscribeToIssue(issue.id);
+        getGroupMember(issue.id);
+        issueId = issue.id;
+        console.log(issue);
+    }
+
+    function renderMessage(issueId) {
+        fetchMessageList(issueId)
+            .then(messages => {
+                displayMessages(messages);
+            })
+            .catch(err =>
+                console.log(err));
+    }
+
+    function commonAppendMessage(message) {
+        const liElement = document.createElement('li');
+        liElement.classList.add('chat-list');
+        if (currentUser.id === message.senderId) {
+            liElement.classList.add('right')
+        } else {
+            liElement.classList.add('left')
+        }
+        liElement.id = message.id;
+        const conversationListDiv = document.createElement('div');
+        conversationListDiv.classList.add('conversation-list');
+
+        // user name
+        const userNameWrap = document.createElement('div');
+        userNameWrap.classList.add('conversation-name');
+
+        const userName = document.createElement('small');
+        userName.classList.add('text-muted', 'time');
+        userName.textContent = message.user.name;
+
+        userNameWrap.appendChild(userName);
+
+        const userChatContentDiv = document.createElement('div');
+        userChatContentDiv.classList.add('user-chat-content');
+
+        const ctextWrapDiv = document.createElement('div');
+        ctextWrapDiv.classList.add('ctext-wrap');
+
+        const ctextWrapContentDiv = document.createElement('div');
+        ctextWrapContentDiv.classList.add('ctext-wrap-content');
+
+        const pElement = document.createElement('p');
+        pElement.classList.add('mb-0', 'ctext-content');
+        pElement.textContent = message.content;
+
+        ctextWrapContentDiv.appendChild(pElement);
+        ctextWrapDiv.appendChild(ctextWrapContentDiv);
+
+        const conversationNameDiv = document.createElement('div');
+        conversationNameDiv.classList.add('conversation-name');
+
+        const smallElement = document.createElement('small');
+        smallElement.classList.add('text-muted', 'time');
+        smallElement.textContent = formatTimestamp(message.timeStamp);
+
+        const spanElement = document.createElement('span');
+        spanElement.classList.add('text-success', 'check-message-icon');
+
+        const iElement = document.createElement('i');
+        iElement.classList.add('bx', 'bx-check');
+
+        spanElement.appendChild(iElement);
+        conversationNameDiv.appendChild(smallElement);
+        conversationNameDiv.appendChild(spanElement);
+        userChatContentDiv.appendChild(userNameWrap);
+        userChatContentDiv.appendChild(ctextWrapDiv);
+        userChatContentDiv.appendChild(conversationNameDiv);
+        conversationListDiv.appendChild(userChatContentDiv);
+        liElement.appendChild(conversationListDiv);
+        document.getElementById('user-conversation').appendChild(liElement);
+    }
 
 
+    function displayMessages(messages) {
+        document.getElementById('user-conversation').innerHTML = '';
+        messages.forEach(message => {
+            commonAppendMessage(message)
+        });
+        scrollToButton();
+    }
+
+    function displayUpdateMessage(message) {
+        commonAppendMessage(message);
+        scrollToButton();
+    }
+
+    function subscribeToIssue(issueId) {
+        const socket = new SockJS('/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, () => {
+            console.log('Connected to WebSocket');
+            stompClient.subscribe(`/topic/messages/${issueId}`, function (data) {
+                let message = JSON.parse(data.body).body; // Extract the message data from the payload
+                console.log("msg:::", message.content);
+                displayUpdateMessage(message);
+            });
+        });
+    }
+
+    //websocket connection
+    document.getElementById('chat-input-form').addEventListener("submit", function (e) {
+        e.preventDefault();
+        sendMessage(document.getElementById('chat-input').value);
+    })
+
+    function sendMessage(content) {
+        console.log(content)
+        const senderId = currentUser.id;
+        const message = {senderId, content};
+        console.log(message);
+        stompClient.send(`/app/chat/${issueId}`, {}, JSON.stringify(message));
+        document.getElementById('chat-input').value = '';
+    }
 });
-
-function sendMessage() {
-    const sender = document.getElementById('sender').value;
-    const content = document.getElementById('content').value;
-    const message = {sender, content};
-    stompClient.send(`/app/chat/${issueId}`, {}, JSON.stringify(message));
-}
-
-
-
-
-
 
 
