@@ -113,6 +113,7 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
 
+
     }
 
     @Bean
