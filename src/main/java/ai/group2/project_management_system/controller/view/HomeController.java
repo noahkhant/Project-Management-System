@@ -15,19 +15,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Slf4j
 public class HomeController {
     private final UserService userService;
+
     @GetMapping("/home")
-
     public String home(Model model, HttpSession session){
-
         var user = userService.getCurrentUser();
-//        session.setAttribute("id",user.getId());
-//        session.setAttribute("role",user.getRole());
-        /*
-        System.out.println("UserId:"+user.getId());
-        System.out.println("UserName:"+user.getName());*/
-
+        System.out.println("Current User: "+ user);
+        session.setAttribute("departmentId", user.getDepartment().getId());
         session.setAttribute("user", user);
-
         return "index";
     }
 

@@ -15,4 +15,12 @@ public interface ProjectService {
     ProjectDTO getProjectById(Long id);
     List<Long> getUserIdsByProjectId(Long projectId);
     Project findById(Long projectId);
+    int getProjectCount();
+
+    int getActiveProjectCount();
+
+    int getInactiveProjectCount();
+
+    List<Project> getActiveProjects();
+    List<Project> getProjectsByDepartmentId(Long departmentId);
 }

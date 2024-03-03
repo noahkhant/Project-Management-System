@@ -34,10 +34,6 @@
         object-fit: cover;
     }
 
-    #confirmationModal {
-        z-index: 2060; /* Higher than the main modal */
-    }
-
 </style>
 <body>
 <!-- Begin page -->
@@ -77,9 +73,6 @@
                     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="ri-add-line align-bottom me-1"></i>Create project
                     </button>
-                    <button type="button" id="toggleButton" class="btn btn-danger" title="Inactive projects" style="font-size: 12px;" onclick="toggleProjects()">
-                        <i class="ri-delete-bin-line"></i> Inactive projects
-                    </button>
 
                 </div>
                 <div class="col-sm">
@@ -89,18 +82,19 @@
                             <input type="text" id="search-input" class="form-control" placeholder="Search...">
                             <i class="ri-search-line search-icon"></i>
                         </div>
-                        <select id="projectFilter" class="form-control w-md" data-choices data-choices-search-false onchange="checkButtonTitle()">
+
+
+                        <select id="projectFilter" class="form-control w-md" data-choices data-choices-search-false>
                             <option value="All">All</option>
                             <option value="Today">Today</option>
                             <option value="Yesterday">Yesterday</option>
-                            <option value="This month">This month</option>
-                            <option value="Last month">Last month</option>
-                            <option value="Next month">Next month</option>
-                            <option value="Last year">Last year</option>
-                            <option value="Future">Future</option>
+                            <option value="Last 7 Days">Last 7 Days</option>
+                            <option value="Last 30 Days">Last 30 Days</option>
+                            <option value="This Month">This Month</option>
+                            <option value="Last Year">Last Year</option>
                         </select>
-                    </div>
 
+                    </div>
                 </div>
             </div>
 
@@ -159,27 +153,8 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!--confirm a creation project-->
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to create this project?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <button type="button" data-bs-dismiss="modal" class="btn btn-primary" id="confirmCreate">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 <!--Modal-->
-<form th:id="formAuthor"class="needs-validation" novalidate>
+<form th:id="formAuthor">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -190,19 +165,22 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label class="form-label" th:for="project-title-input">Project Title</label>
-                        <input type="text" class="form-control" th:id="project-title-input" placeholder="Enter project title" name="title" required>
-                        <div class="invalid-feedback">Please enter a project title.</div>
+                        <input type="text" class="form-control" th:id="project-title-input" placeholder="Enter project title" name="title">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" th:for="project-objective-input">Objective</label>
-                        <input type="text" class="form-control" th:id="project-objective-input" placeholder="Enter Objective" name="objective" required>
-                        <div class="invalid-feedback">Please enter a objective</div>
+                        <input type="text" class="form-control" th:id="project-objective-input" placeholder="Enter Objective" name="objective">
                     </div>
 
-                    <div class="mb-3" id="ckeditor-camp">
+<!--                    <div class="mb-3">-->
+<!--                        <label class="form-label" th:for="project-creator-name">Project Creator</label>-->
+<!--                        <input class="form-control" th:id="project-creator-name" type="text" name="creator" placeholder="Enter creator">-->
+<!--                    </div>-->
+
+                    <div class="mb-3">
                         <label class="form-label">Project Description</label>
-                        <input type="hidden" th:id="ckeditorHiddenInput" name="description" required>
+                        <input type="hidden" th:id="ckeditorHiddenInput" name="description">
                         <div id="ckeditor"></div>
                     </div>
                     <!-- CKEditor script from local resources -->
@@ -223,12 +201,13 @@
                     <!--Departments-->
                     <div class="mb-3">
                         <label class="form-label" for="project-department-input">Department</label>
-                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onchange="userGetter()" required></select>
+                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onchange="userGetter()"></select>
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" th:for="project-category-input">Category</label>
-                        <select class="form-select" data-choices data-choices-search-false th:id="project-category-input" required>
+
+                        <select class="form-select" data-choices data-choices-search-false th:id="project-category-input">
                             <option value="BANKING" selected>Banking</option>
                             <option value="HEALTHCARE">Healthcare</option>
                             <option value="EDUCATION">Education</option>
@@ -242,29 +221,25 @@
                         <div class="col-lg-4">
                             <div class="mb-3 mb-lg-0">
                                 <label th:for="choices-priority-input" class="form-label">Priority</label>
-                                <select class="form-select" data-choices data-choices-search-false th:id="choices-priority-input" name="priority" required>
+                                <select class="form-select" data-choices data-choices-search-false th:id="choices-priority-input" name="priority">
                                     <option value="HIGH" selected>High</option>
                                     <option value="MEDIUM">Medium</option>
                                     <option value="LOW">Low</option>
                                 </select>
                             </div>
                         </div>
-
                         <div class="col-lg-4">
-                            <div class="mb-3">
+                            <div>
                                 <label th:for="datepicker-start-date-input" class="form-label">Start Date</label>
-                                <input type="text" class="form-control" name="planStartDate" th:id="datepicker-start-date-input" placeholder="Select start date" data-provider="datepicker" required>
-                                <div class="invalid-feedback">Please set a plan start date.</div> <!-- Feedback message for Start Date -->
+                                <input type="date" class="form-control" name="planStartDate" th:id="datepicker-start-date-input" placeholder="Select start date" data-provider="datepicker">
                             </div>
                         </div>
                         <div class="col-lg-4">
-                            <div class="mb-3">
+                            <div>
                                 <label th:for="datepicker-end-date-input" class="form-label">End Date</label>
-                                <input type="text" class="form-control" name="planEndDate" th:id="datepicker-end-date-input" placeholder="Enter end date" data-provider="datepicker" required>
-                                <div class="invalid-feedback">Please set a plan end date.</div> <!-- Feedback message for End Date -->
+                                <input type="date" class="form-control" name="planEndDate" th:id="datepicker-end-date-input" placeholder="Enter end date" data-provider="datepicker">
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <!--Members-->
@@ -282,7 +257,7 @@
                     <div class="text-end mb-4">
                         <button type="button" class="btn btn-danger w-sm" data-bs-dismiss="modal">Close</button>
                         <button type="reset" class="btn btn-secondary w-sm">Reset</button>
-                        <button id="createButton" type="button" class="btn btn-success w-sm" onclick="validateAndConfirm()">Create</button>
+                        <button type="submit" class="btn btn-success w-sm" data-bs-dismiss="modal" onclick="showData()">Create</button>
                     </div>
                 </div>
             </div>
@@ -291,7 +266,7 @@
 </form>
 
 <!--Update Modal-->
-<form th:id="updateProject" class="needs-validation" novalidate>
+<form th:id="updateProject">
     <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -305,13 +280,17 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label" th:for="project-title-update">Project Title</label>
-                        <input type="text" class="form-control" th:id="project-title-update" placeholder="Enter project title" name="title" required>
-
+                        <input type="text" class="form-control" th:id="project-title-update" placeholder="Enter project title" name="title">
                     </div>
 
                     <div class="mb-3">
                         <label class="form-label" th:for="project-objective-input">Objective</label>
-                        <input type="text" class="form-control" th:id="project-objective-update" placeholder="Enter Objective" name="objective" required>
+                        <input type="text" class="form-control" th:id="project-objective-update" placeholder="Enter Objective" name="objective">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" th:for="project-creator-name">Project Creator</label>
+                        <input class="form-control" th:id="project-creator-update" type="text" name="creator" placeholder="Enter creator">
                     </div>
 
                     <div class="mb-3">
@@ -351,7 +330,7 @@
                     <div class="mb-3">
                         <label class="form-label" th:for="project-category-update">Category</label>
 
-                        <select class="form-select" data-choices data-choices-search-false th:id="project-category-update" required>
+                        <select class="form-select" data-choices data-choices-search-false th:id="project-category-update">
                             <option value="BANKING" selected>Banking</option>
                             <option value="HEALTHCARE">Healthcare</option>
                             <option value="EDUCATION">Education</option>
@@ -364,7 +343,7 @@
                     <div class="mb-3">
                         <label class="form-label" th:for="project-status-update">Status</label>
 
-                        <select class="form-select" data-choices data-choices-search-false th:id="project-status-update" name="status" required>
+                        <select class="form-select" data-choices data-choices-search-false th:id="project-status-update" name="status">
                             <option value="TODO" selected>To do</option>
                             <option value="INPROGRESS">In progress</option>
                             <option value="PENDING">Pending</option>
@@ -376,7 +355,7 @@
                         <div class="col-lg-4">
                             <div class="mb-3 mb-lg-0">
                                 <label th:for="choices-priority-input" class="form-label">Priority</label>
-                                <select class="form-select" data-choices data-choices-search-false th:id="choices-priority-update" name="priority" required>
+                                <select class="form-select" data-choices data-choices-search-false th:id="choices-priority-update" name="priority">
                                     <option value="HIGH" selected>High</option>
                                     <option value="MEDIUM">Medium</option>
                                     <option value="LOW">Low</option>
@@ -387,7 +366,6 @@
                             <div>
                                 <label th:for="datepicker-start-date-input" class="form-label">Start Date</label>
                                 <input type="text" class="form-control" name="planStartDate" th:id="datepicker-start-date-update" placeholder="Select start date" data-provider="datepicker">
-
                             </div>
                         </div>
                         <div class="col-lg-4">
@@ -413,7 +391,7 @@
                     <div class="text-end mb-4">
                         <button type="button" class="btn btn-danger w-sm" data-bs-dismiss="modal">Close</button>
                         <button type="reset" class="btn btn-secondary w-sm">Reset</button>
-                        <button id="updateSubmit" type="submit" data-bs-dismiss="modal" class="btn btn-success w-sm">Edit</button>
+                        <button type="submit" class="btn btn-success w-sm" data-bs-dismiss="modal">Edit</button>
                     </div>
                 </div>
             </div>
@@ -466,17 +444,13 @@
     const endDatePicker1 = flatpickr(endDateInput1, {
         enableTime: false,
         dateFormat: "Y-m-d",
-        minDate: "today", // Restrict end date to today or later initially
+        minDate: new Date(new Date().getTime() + 24 * 60 * 60 * 1000), // Restrict end date to tomorrow or later
         theme: "custom-theme", // Use the custom theme
     });
 
-    // Set minDate of end date picker to the day after the selected start date
+    // Set minDate of end date picker based on the selected start date
     startDatePicker1.config.onChange.push(function(selectedDates, dateStr, instance) {
-        if (selectedDates.length > 0) {
-            const nextDay = new Date(selectedDates[0]);
-            nextDay.setDate(nextDay.getDate() + 1);
-            endDatePicker1.set("minDate", nextDay);
-        }
+        endDatePicker1.set("minDate", dateStr);
     });
 
     // Initialize Flatpickr for the second set of date inputs
@@ -493,22 +467,17 @@
     const endDatePicker2 = flatpickr(endDateInput2, {
         enableTime: false,
         dateFormat: "Y-m-d",
-        minDate: "today", // Restrict end date to today or later initially
+        minDate: new Date(new Date().getTime() + 24 * 60 * 60 * 1000), // Restrict end date to tomorrow or later
         theme: "custom-theme", // Use the custom theme
     });
 
-    // Set minDate of end date picker to the day after the selected start date
+    // Set minDate of end date picker based on the selected start date
     startDatePicker2.config.onChange.push(function(selectedDates, dateStr, instance) {
-        if (selectedDates.length > 0) {
-            const nextDay = new Date(selectedDates[0]);
-            nextDay.setDate(nextDay.getDate() + 1);
-            endDatePicker2.set("minDate", nextDay);
-        }
+        endDatePicker2.set("minDate", dateStr);
     });
 
 </script>
 <script th:src="@{/assets/js/project-update.js}"></script>
-<script th:src="@{/assets/js/project-validation.js}"></script>
 
 
 </body>

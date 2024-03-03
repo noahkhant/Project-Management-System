@@ -106,8 +106,6 @@ public class UserAPI {
         }
     }
 
-
-
     @GetMapping("/positions")
     public ResponseEntity<List<Position>> getPositions() {
         List<Position> positions = positionService.getAllPositions();

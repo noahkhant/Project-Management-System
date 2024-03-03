@@ -9,16 +9,45 @@ script.src = 'https://code.jquery.com/jquery-3.6.4.min.js';
 document.body.appendChild(script);
 
 <!--Project creation-->
+function toggleProjects() {
+    var button = document.getElementById("toggleButton");
+    if (button.classList.contains("btn-danger")) {
+        // Change to Active projects
+        button.classList.remove("btn-danger");
+        button.classList.add("btn-success");
+        button.title = "Active projects";
+        button.innerHTML = '<i class="ri-add-circle-line"></i> Active projects';
+        // Call function to display active projects
+        inActiveProjects('All');
+    } else {
+        // Change to Inactive projects
+        button.classList.remove("btn-success");
+        button.classList.add("btn-danger");
+        button.title = "Inactive projects";
+        button.innerHTML = '<i class="ri-delete-bin-line"></i> Inactive projects';
+        // Call function to display inactive projects
+        displayProjects('All');
+    }
+}
+function checkButtonTitle() {
+    var button = document.getElementById("toggleButton");
+    if (button.title !== "Inactive projects") {
+        // Change button title and appearance
+        toggleProjects();
+    }
+}
+
 <!--Getting Users-->
 document.addEventListener('DOMContentLoaded', function() {
     // Call userGetter to fetch and display a user list for the default department
     displayProjects('All');
     departmentGetter();
+    validateForm();
 });
 
 function userGetter() {
     const departmentId = document.getElementById('project-department-input').value;
-    const url = `/members-selector/${departmentId}`;
+    const url = `/members-selection/${departmentId}`;
 
     fetch(url, {
         method: 'GET',
@@ -57,17 +86,21 @@ function populateMemberList(dto) {
 
     // Loop through the DTOs and create HTML elements for each DTO
     dto.forEach(user => {
+        console.log(user.profilePictureFileName);
         const listItem = document.createElement('li');
         listItem.innerHTML = `
             <div class="form-check d-flex align-items-center justify-content-between">
                 <div>
-                    <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
                     <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
-                        <span class="flex-shrink-0">
-                            <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
-                        </span>
-                        <span class="flex-grow-1 ms-2">${user.name}</span>
-                        <span class="flex-grow-1 ms-2">${user.position.positionName}</span>
+                        <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
+                        <div class="invalid-feedback">
+                        Choose members for this project.
+                    </div>
+                           <img src="/static/img/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
+                        <div>
+                            <div class="fw-bold">${user.name}</div>
+                            <div>${user.position.positionName}</div>
+                        </div>
                         <div class="flex-shrink-0 ms-4 additional-content">
                             <ul class="list-inline tasks-list-menu mb-0">
                                 <li class="list-inline-item">
@@ -78,6 +111,7 @@ function populateMemberList(dto) {
                     </label>
                 </div>
             </div>
+            
         `;
         memberListContainer.appendChild(listItem);
     });
@@ -114,6 +148,33 @@ function departmentGetter() {
         })
         .catch(error => console.error("Error:", error));
 }
+function inActiveProjects(filter){
+    const url = "/show-inactive-projects";
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            projectList = data;
+            console.log("Project Lists: " + projectList);
+            // Filter projects based on the selected filter
+            const filteredProjects = filterProjects(data, filter);
+            // Display the users returned by the server in the member list
+            populateProjectList(filteredProjects);
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
+}
 
 function displayProjects(filter){
     const url = "/show-projects";
@@ -144,11 +205,22 @@ function displayProjects(filter){
 }
 
 function filterProjects(projects, filter) {
+
     switch (filter) {
         case 'Today':
             return projects.filter(project => isToday(new Date(project.planStartDate)));
         case 'Yesterday':
             return projects.filter(project => isYesterday(new Date(project.planStartDate)));
+        case 'This month':
+            return projects.filter(project => isThisMonth(new Date(project.planStartDate)));
+        case 'Last month':
+            return projects.filter(project => isLastMonth(new Date(project.planStartDate)));
+        case 'Next month':
+            return projects.filter(project => isNextMonth(new Date(project.planStartDate)));
+        case 'Last year':
+            return projects.filter(project => isLastYear(new Date(project.planStartDate)));
+        case 'Future':
+            return projects.filter(project => isFuture(new Date(project.planStartDate)));
         // Add more cases for other filter options if needed
         case 'All':
         default:
@@ -169,6 +241,38 @@ function isYesterday(date) {
     return date.toDateString() === yesterday.toDateString();
 }
 
+// Function to check if a date is in the current month
+function isThisMonth(date) {
+    const today = new Date();
+    return date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
+}
+
+// Function to check if a date is in the last month
+function isLastMonth(date) {
+    const today = new Date();
+    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1);
+    return date.getMonth() === lastMonth.getMonth() && date.getFullYear() === lastMonth.getFullYear();
+}
+
+// Function to check if a date is in the last year
+function isLastYear(date) {
+    const today = new Date();
+    const lastYear = new Date(today.getFullYear() - 1, today.getMonth());
+    return date.getFullYear() === lastYear.getFullYear();
+}
+// Function to check if a date is in the next month
+function isNextMonth(date) {
+    const today = new Date();
+    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1);
+    return date.getMonth() === nextMonth.getMonth() && date.getFullYear() === nextMonth.getFullYear();
+}
+function isFuture(date) {
+    const today = new Date();
+    const futureLimit = new Date(today.getFullYear(), today.getMonth() + 2);
+    return date >= futureLimit;
+}
+
+
 function stripHtmlTags(html) {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     return doc.body.textContent || "";
@@ -176,7 +280,7 @@ function stripHtmlTags(html) {
 
  function showData() {
 
-    document.getElementById("formAuthor").addEventListener("submit", async function (event) {
+     //document.getElementById("formAuthor").addEventListener("submit", async function (event) {
         event.preventDefault();
         console.log("submitting form...");
 
@@ -196,7 +300,6 @@ function stripHtmlTags(html) {
         console.log("here");
 
         let formData = {
-            creator: document.getElementById('project-creator-name').value,
             objective: document.getElementById('project-objective-input').value,
             title: document.getElementById('project-title-input').value,
             category: document.getElementById('project-category-input').value,
@@ -204,7 +307,7 @@ function stripHtmlTags(html) {
             priority: document.getElementById('choices-priority-input').value,
             planStartDate: document.getElementById('datepicker-start-date-input').value,
             planEndDate: document.getElementById('datepicker-end-date-input').value,
-            status: document.getElementById('project-status-input').value,
+            //status: document.getElementById('project-status-input').value,
             department: {
                 id: document.getElementById('project-department-input').value
             },
@@ -223,12 +326,11 @@ function stripHtmlTags(html) {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-
                 displayProjects('All');
                 // location.reload();
             })
             .catch(error => console.log("Error" + error));
-    });
+     //});
 }
 
 <!--Displaying all the data-->
@@ -240,9 +342,6 @@ projectFilterSelect.addEventListener('change', function() {
     const selectedFilter = projectFilterSelect.value;
     displayProjects(selectedFilter);
 });
-
-
-
 
 const titles = [];
 function populateProjectList(dto) {

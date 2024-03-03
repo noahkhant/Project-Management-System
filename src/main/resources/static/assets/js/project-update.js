@@ -23,10 +23,10 @@ function appendUserToList(user, isChecked, container) {
                 <input class="form-check-input-update me-3" type="checkbox" value="${user.id}" ${isChecked ? 'checked' : ''}>
                 <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
                     <span class="flex-shrink-0">
-                        <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
+                        <img src="/assets/images/userPhoto/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
                     </span>
                     <span class="flex-grow-1 ms-2">${user.name}</span>
-                    <span class="flex-grow-1 ms-2">${user.position}</span>
+                    <span class="flex-grow-1 ms-2">${user.position.positionName}</span>
                     <div class="flex-shrink-0 ms-4 additional-content">
                         <ul class="list-inline tasks-list-menu mb-0">
                             <li class="list-inline-item">
@@ -65,7 +65,7 @@ function displayEditProject(id) {
                     document.getElementById('project-id').value = project.id;
                     document.getElementById('project-title-update').value = project.title;
                     document.getElementById('project-objective-update').value = project.objective;
-                    document.getElementById('project-creator-update').value = project.creator;
+                    //document.getElementById('project-creator-update').value = project.creator;
                     document.getElementById('project-category-update').value = project.category;
                     document.getElementById('project-status-update').value = project.status;
                     document.getElementById('choices-priority-update').value = project.priority;
@@ -160,6 +160,7 @@ function getUserFromDepartment(departmentId) {
             return response.json();
         })
         .then(data => {
+            console.log(data);
             // Return the user data
             return data;
         })
@@ -211,7 +212,7 @@ function getUserDataWithProject(userIds) {
         })
         .then(users => {
             // Process the user data and return it
-            console.log(users);
+            console.log("Hey Nigga : "+users);
             return users;
         })
         .catch(error => {
@@ -248,7 +249,7 @@ document.getElementById("updateProject").addEventListener('submit', function (ev
     console.log("here");
 
     let updateData = {
-        creator: document.getElementById('project-creator-update').value,
+        //creator: document.getElementById('project-creator-update').value,
         objective: document.getElementById('project-objective-update').value,
         title: document.getElementById('project-title-update').value ,
         category: document.getElementById('project-category-update').value,
