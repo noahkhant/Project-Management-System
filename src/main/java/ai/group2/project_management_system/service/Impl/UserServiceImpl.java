@@ -55,6 +55,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findPhotoById(id);
     }
 
+    public List<User> getAllUserByIssueId(Long issueId) {
+        return userRepository.findAllUserByIssueId(issueId);
+    }
+
     @Override
     public User save(User user) {
         return userRepository.save(user);

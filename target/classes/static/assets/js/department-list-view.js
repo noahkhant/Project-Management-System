@@ -13,10 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.log('Error: ', error);
         });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35866e6a1b2988301612dbf46303b03228670d83
 
     // Render Department list Table
     function refreshDepartmentListTable(items) {
         const table = document.getElementById('department-table');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35866e6a1b2988301612dbf46303b03228670d83
 
         // Check if DataTable is already initialized and destroy it
         if (table && table.DataTable) {
@@ -139,6 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.log("Error" + error));
     });
 
+<<<<<<< HEAD
     // Toggle Department status
     async function toggleDepartment(departmentId) {
         console.log('function call......' + departmentId);
@@ -157,6 +166,33 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Error toggling department:', error);
         }
+=======
+    // // Toggle Department status
+    // async function toggleDepartment(departmentId) {
+    //     console.log('function call......' + departmentId);
+    //     try {
+    //         const department = departmentList.find(department => department.id === departmentId);
+    //         console.log(department);
+    //         if (!department) {
+    //             console.log("Department not found for ID:", departmentId);
+    //             return;
+    //         }
+    //
+    //         const actionText = department.active ? 'Block' : 'Active';
+    //         document.getElementById('confirmationDepartmentAction').textContent = actionText;
+    //         const confirmationModal = document.getElementById('confirmationDepartmentModal');
+    //         confirmationModal.classList.add('show');
+    //     } catch (error) {
+    //         console.error('Error toggling department:', error);
+    //     }
+    //     // Show Bootstrap modal for confirmation
+    //     const actionText = department.active ? 'Block' : 'Active';
+    //     document.getElementById('confirmationDepartmentAction').textContent = actionText;
+    //     const confirmationModal = document.getElementById('confirmationDepartmentModal');
+    //     confirmationModal.classList.add('show');
+    // } catch (error) {
+    //     console.error('Error toggling department:', error);
+>>>>>>> 35866e6a1b2988301612dbf46303b03228670d83
 
 
         // Show Bootstrap modal for confirmation
@@ -209,5 +245,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // } catch (error) {
     //     console.error('Error toggling department:', error);
     //
+<<<<<<< HEAD
     }
+=======
+    //}
+>>>>>>> 35866e6a1b2988301612dbf46303b03228670d83
 });
