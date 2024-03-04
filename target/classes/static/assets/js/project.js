@@ -1,16 +1,4 @@
-<!--Category-->
-
-var categories = ["Designing", "Development"];
-
-// Populate categories dropdown
-var categoriesDropdown = document.getElementById("project-category-input");
-categories.forEach(function (category) {
-    const option = document.createElement("option");
-    option.value = category;
-    option.text = category;
-    categoriesDropdown.add(option);
-});
-
+var projectList = [];
 // Create a new script element
 var script = document.createElement('script');
 
@@ -21,16 +9,45 @@ script.src = 'https://code.jquery.com/jquery-3.6.4.min.js';
 document.body.appendChild(script);
 
 <!--Project creation-->
+function toggleProjects() {
+    var button = document.getElementById("toggleButton");
+    if (button.classList.contains("btn-danger")) {
+        // Change to Active projects
+        button.classList.remove("btn-danger");
+        button.classList.add("btn-success");
+        button.title = "Active projects";
+        button.innerHTML = '<i class="ri-add-circle-line"></i> Active projects';
+        // Call function to display active projects
+        inActiveProjects('All');
+    } else {
+        // Change to Inactive projects
+        button.classList.remove("btn-success");
+        button.classList.add("btn-danger");
+        button.title = "Inactive projects";
+        button.innerHTML = '<i class="ri-delete-bin-line"></i> Inactive projects';
+        // Call function to display inactive projects
+        displayProjects('All');
+    }
+}
+function checkButtonTitle() {
+    var button = document.getElementById("toggleButton");
+    if (button.title !== "Inactive projects") {
+        // Change button title and appearance
+        toggleProjects();
+    }
+}
+
 <!--Getting Users-->
 document.addEventListener('DOMContentLoaded', function() {
     // Call userGetter to fetch and display a user list for the default department
-    displayProjects();
+    displayProjects('All');
     departmentGetter();
+    validateForm();
 });
 
 function userGetter() {
     const departmentId = document.getElementById('project-department-input').value;
-    const url = `/members-selector/${departmentId}`;
+    const url = `/members-selection/${departmentId}`;
 
     fetch(url, {
         method: 'GET',
@@ -46,6 +63,7 @@ function userGetter() {
             return response.json();
         })
         .then(data => {
+            console.log("data : " + data);
             // Display the users returned by the server in the member list
             populateMemberList(data);
         })
@@ -54,8 +72,10 @@ function userGetter() {
         });
 }
 
+
 function populateMemberList(dto) {
     const memberListContainer = document.getElementById('team-member-list');
+    console.log("dto : "+dto);
     // Clear existing member list content
     memberListContainer.innerHTML = '';
 
@@ -66,17 +86,21 @@ function populateMemberList(dto) {
 
     // Loop through the DTOs and create HTML elements for each DTO
     dto.forEach(user => {
+        console.log(user.profilePictureFileName);
         const listItem = document.createElement('li');
         listItem.innerHTML = `
             <div class="form-check d-flex align-items-center justify-content-between">
                 <div>
-                    <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
                     <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
-                        <span class="flex-shrink-0">
-                            <img src="assets/images/${user.photo}" alt="" class="avatar-xxs rounded-circle" />
-                        </span>
-                        <span class="flex-grow-1 ms-2">${user.name}</span>
-                        <span class="flex-grow-1 ms-2">${user.position}</span>
+                        <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
+                        <div class="invalid-feedback">
+                        Choose members for this project.
+                    </div>
+                           <img src="/static/img/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
+                        <div>
+                            <div class="fw-bold">${user.name}</div>
+                            <div>${user.position.positionName}</div>
+                        </div>
                         <div class="flex-shrink-0 ms-4 additional-content">
                             <ul class="list-inline tasks-list-menu mb-0">
                                 <li class="list-inline-item">
@@ -87,6 +111,7 @@ function populateMemberList(dto) {
                     </label>
                 </div>
             </div>
+            
         `;
         memberListContainer.appendChild(listItem);
     });
@@ -123,76 +148,33 @@ function departmentGetter() {
         })
         .catch(error => console.error("Error:", error));
 }
-
-function stripHtmlTags(html) {
-    const doc = new DOMParser().parseFromString(html, 'text/html');
-    return doc.body.textContent || "";
-}
-
- function showData() {
-
-    document.getElementById("formAuthor").addEventListener("submit", async function (event) {
-        event.preventDefault();
-        console.log("submitting form...");
-
-        const selectedUserIds = [];
-        document.querySelectorAll('.form-check-input').forEach(checkbox => {
-
-            if (checkbox.checked && checkbox.value !== "dark") {
-                selectedUserIds.push(checkbox.value);
+function inActiveProjects(filter){
+    const url = "/show-inactive-projects";
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        });
-        console.log(selectedUserIds);
-
-        let editorData = window.ckeditor.getData();
-        let plainTextData = stripHtmlTags(editorData);
-        console.log("here");
-
-        let formData = {
-            creator: document.getElementById('project-creator-name').value,
-            objective: document.getElementById('project-objective-input').value,
-            title: document.getElementById('project-title-input').value,
-            category: document.getElementById('project-category-input').value,
-            description: plainTextData,
-            priority: document.getElementById('choices-priority-input').value,
-            planStartDate: document.getElementById('datepicker-start-date-input').value,
-            planEndDate: document.getElementById('datepicker-end-date-input').value,
-            status: document.getElementById('project-status-input').value,
-            department: {
-                id: document.getElementById('project-department-input').value
-            },
-        };
-        console.log(formData);
-        console.log("this");
-
-       let url = "/add-project";
-        fetch(url, {
-            method: 'Post',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ ...formData, userIds: selectedUserIds}),
+            return response.json();
         })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-
-
-                // location.reload();
-            })
-            .catch(error => console.log("Error" + error));
-    });
+        .then(data => {
+            projectList = data;
+            console.log("Project Lists: " + projectList);
+            // Filter projects based on the selected filter
+            const filteredProjects = filterProjects(data, filter);
+            // Display the users returned by the server in the member list
+            populateProjectList(filteredProjects);
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
 }
-
-<!--Displaying all the data-->
-// Get the select box element
-const projectFilterSelect = document.getElementById('projectFilter');
-
-// Add an event listener to handle changes in the selected value
-projectFilterSelect.addEventListener('change', function() {
-    const selectedFilter = projectFilterSelect.value;
-    displayProjects(selectedFilter);
-});
 
 function displayProjects(filter){
     const url = "/show-projects";
@@ -210,6 +192,8 @@ function displayProjects(filter){
             return response.json();
         })
         .then(data => {
+            projectList = data;
+            console.log("Project Lists: " + projectList);
             // Filter projects based on the selected filter
             const filteredProjects = filterProjects(data, filter);
             // Display the users returned by the server in the member list
@@ -219,12 +203,24 @@ function displayProjects(filter){
             console.error('Error fetching user data:', error);
         });
 }
+
 function filterProjects(projects, filter) {
+
     switch (filter) {
         case 'Today':
             return projects.filter(project => isToday(new Date(project.planStartDate)));
         case 'Yesterday':
             return projects.filter(project => isYesterday(new Date(project.planStartDate)));
+        case 'This month':
+            return projects.filter(project => isThisMonth(new Date(project.planStartDate)));
+        case 'Last month':
+            return projects.filter(project => isLastMonth(new Date(project.planStartDate)));
+        case 'Next month':
+            return projects.filter(project => isNextMonth(new Date(project.planStartDate)));
+        case 'Last year':
+            return projects.filter(project => isLastYear(new Date(project.planStartDate)));
+        case 'Future':
+            return projects.filter(project => isFuture(new Date(project.planStartDate)));
         // Add more cases for other filter options if needed
         case 'All':
         default:
@@ -244,6 +240,108 @@ function isYesterday(date) {
     yesterday.setDate(yesterday.getDate() - 1);
     return date.toDateString() === yesterday.toDateString();
 }
+
+// Function to check if a date is in the current month
+function isThisMonth(date) {
+    const today = new Date();
+    return date.getMonth() === today.getMonth() && date.getFullYear() === today.getFullYear();
+}
+
+// Function to check if a date is in the last month
+function isLastMonth(date) {
+    const today = new Date();
+    const lastMonth = new Date(today.getFullYear(), today.getMonth() - 1);
+    return date.getMonth() === lastMonth.getMonth() && date.getFullYear() === lastMonth.getFullYear();
+}
+
+// Function to check if a date is in the last year
+function isLastYear(date) {
+    const today = new Date();
+    const lastYear = new Date(today.getFullYear() - 1, today.getMonth());
+    return date.getFullYear() === lastYear.getFullYear();
+}
+// Function to check if a date is in the next month
+function isNextMonth(date) {
+    const today = new Date();
+    const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1);
+    return date.getMonth() === nextMonth.getMonth() && date.getFullYear() === nextMonth.getFullYear();
+}
+function isFuture(date) {
+    const today = new Date();
+    const futureLimit = new Date(today.getFullYear(), today.getMonth() + 2);
+    return date >= futureLimit;
+}
+
+
+function stripHtmlTags(html) {
+    const doc = new DOMParser().parseFromString(html, 'text/html');
+    return doc.body.textContent || "";
+}
+
+ function showData() {
+
+     //document.getElementById("formAuthor").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        console.log("submitting form...");
+
+        const selectedUserIds = [];
+        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+
+            if (checkbox.checked && checkbox.value !== "dark") {
+                selectedUserIds.push(checkbox.value);
+            }
+        });
+
+        console.log(selectedUserIds);
+
+        let editorData = window.ckeditor.getData();
+        console.log(editorData);
+        let plainTextData = stripHtmlTags(editorData);
+        console.log("here");
+
+        let formData = {
+            objective: document.getElementById('project-objective-input').value,
+            title: document.getElementById('project-title-input').value,
+            category: document.getElementById('project-category-input').value,
+            description: plainTextData,
+            priority: document.getElementById('choices-priority-input').value,
+            planStartDate: document.getElementById('datepicker-start-date-input').value,
+            planEndDate: document.getElementById('datepicker-end-date-input').value,
+            //status: document.getElementById('project-status-input').value,
+            department: {
+                id: document.getElementById('project-department-input').value
+            },
+        };
+        console.log(formData);
+        console.log("this");
+
+       let url = "/add-project";
+        fetch(url, {
+            method: 'Post',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ...formData, userIds: selectedUserIds}),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                displayProjects('All');
+                // location.reload();
+            })
+            .catch(error => console.log("Error" + error));
+     //});
+}
+
+<!--Displaying all the data-->
+// Get the select box elementx`
+const projectFilterSelect = document.getElementById('projectFilter');
+
+// Add an event listener to handle changes in the selected value
+projectFilterSelect.addEventListener('change', function() {
+    const selectedFilter = projectFilterSelect.value;
+    displayProjects(selectedFilter);
+});
 
 const titles = [];
 function populateProjectList(dto) {
@@ -267,9 +365,14 @@ function populateProjectList(dto) {
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
                                         <p class="text-muted mb-4">Updated 3hrs ago</p>
+                                        
                                     </div>
+                                    
                                     <div class="flex-shrink-0">
                                         <div class="d-flex gap-1 align-items-center">
+                                        <div class="text-end">
+                                            ${pj.isActive ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>'}
+                                        </div>
 
                                             <div class="dropdown">
     <button class="btn btn-link text-muted p-1 mt-n2 py-0 text-decoration-none fs-15 shadow-none" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -290,14 +393,16 @@ function populateProjectList(dto) {
             </button>
         </form>
         
-        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#updateModal">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-pencil-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
-                <path d="M12.28 4.28l-.025-.025a.5.5 0 0 1-.144-.332L12.11 3H11V1H3v2H1v10h2v2h10v-2h2V5h-2.5a.5.5 0 0 1-.36.28zM4 2h6v2H4V2z"/>
-            </svg>
-            Edit
-        </a>
+              <a class="dropdown-item edit-project-link" href="#" data-bs-toggle="modal" onclick="displayEditProject('${pj.id}')" data-bs-target="#updateModal" th:id="editProject">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-pencil-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
+                        <path d="M12.28 4.28l-.025-.025a.5.5 0 0 1-.144-.332L12.11 3H11V1H3v2H1v10h2v2h10v-2h2V5h-2.5a.5.5 0 0 1-.36.28zM4 2h6v2H4V2z"/>
+                    </svg>
+                    Edit
+             </a>
+
+
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal">
+        <a class="dropdown-item" th:id="removeProject" href="#" data-bs-toggle="modal" data-bs-target="#removeProjectModal" onclick="setDeleteProjectId(${pj.id})">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" th:class="bi bi-trash-fill align-bottom me-2 text-muted" viewBox="0 0 16 16">
                 <path d="M5.5 1a.5.5 0 0 1 .5.5V2h4v-.5a.5.5 0 0 1 1 0V2h1a.5.5 0 0 1 0 1H1a.5.5 0 0 1 0-1h1V1.5a.5.5 0 0 1 .5-.5zM1.18 5l.83 10.005a1 1 0 0 0 .996.995h10.004a1 1 0 0 0 .995-.996L14.82 5H1.18zm6.156 1.61a.5.5 0 0 1 .488.612l-.488 3.488a.5.5 0 0 1-.612.488l-1.488-.41a.5.5 0 0 1-.324-.787l.787-.786a.5.5 0 0 1 .787.324l.398 1.196 2.012-2.012-.398-1.196a.5.5 0 0 1 .612-.612l1.488.41a.5.5 0 0 1 .324.787l-.787.786a.5.5 0 0 1-.787-.324L8.036 6.61l-.398-1.196a.5.5 0 0 1 .324-.787l1.488-.41z"/>
             </svg>
@@ -307,8 +412,6 @@ function populateProjectList(dto) {
 </div>
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="d-flex mb-2">
                                     <div class="flex-shrink-0 me-3">
@@ -358,6 +461,7 @@ function populateProjectList(dto) {
                                         </a>
                                     </div>
                                 </div>
+                             
                                 <div class="flex-shrink-0">
                                     <div class="text-muted">
                                         <i class="ri-calendar-event-fill me-1 align-bottom"></i> ${pj.planStartDate}
@@ -368,7 +472,8 @@ function populateProjectList(dto) {
 
                         </div>
                         <!-- end card footer -->
-                    </div>
+                    </div>        
+                   
         `;
         projectListContainer.appendChild(projectCard);
         projectCard.addEventListener('click', function(event) {
@@ -403,6 +508,42 @@ function searchProjects() {
 }
 document.getElementById('search-input').addEventListener('input', searchProjects);
 
-//JS codes to update project data
+var deleteProjectId;
+<!--Let's start the delete statement-->
+window.setDeleteProjectId = function (projectId){
+    deleteProjectId = projectId;
+    console.log("Project id to delete : "+ deleteProjectId);
+}
+
+window.deleteProject = function() {
+    const project = projectList.find(project => project.id === parseInt(deleteProjectId));
+
+    fetch(`/updateStatusForProject/${deleteProjectId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the response data
+            console.log(data);
+
+            const deleteModal = document.getElementById('removeProjectModal');
+            deleteModal.classList.remove('show');
+
+            displayProjects('All');
+            // Manually remove the backdrop
+        })
+        .catch(error => {
+            // Handle errors
+            console.error('Error:', error);
+        });
+}
+
+
+
+
+
 
 

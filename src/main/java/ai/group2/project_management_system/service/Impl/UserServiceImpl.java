@@ -5,6 +5,9 @@ import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.UserService;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
+import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -41,6 +44,20 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<User> getMembersByDepartmentId(Long departmentId) {
+        List<User> users = userRepository.findByDepartmentId(departmentId);
+        return users;
+    }
+
+    @Override
+    public String getUserPhotoById(Long id) {
+        return userRepository.findPhotoById(id);
+    }
+
+    public List<User> getAllUserByIssueId(Long issueId) {
+        return userRepository.findAllUserByIssueId(issueId);
+    }
 
     @Override
     public User save(User user) {

@@ -61,14 +61,6 @@
                                                 <button class="btn btn-soft-danger" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
                                             </div>
                                         </div>
-<!--                                        <div class="col-sm">-->
-<!--                                            <div class="d-flex justify-content-sm-end">-->
-<!--                                                <div class="search-box ms-2">-->
-<!--                                                    <input type="text" class="form-control search" placeholder="Search...">-->
-<!--                                                    <i class="ri-search-line search-icon"></i>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
                                     </div>
 
                                     <div class="table-responsive table-card mt-3 mb-1">
@@ -93,10 +85,6 @@
                                                     <td>
                                                         <img th:src="@{'/assets/images/userPhoto/' + ${user.getPhoto()}}" alt="image" class="round-image" />
                                                     </td>
-
-<!--                                                    <td style="text-align: center;" th:text="${user.getPhone()}"></td>-->
-<!--                                                    <td style="text-align: center;" th:text="${user.getPosition().getName()}"></td>-->
-<!--                                                    <td style="text-align: center;" th:text="${user.getDepartment().getName()}"></td>-->
                                                     <td style="text-align: center;" th:text="${user.getEmail()}"></td>
 
 
@@ -768,16 +756,9 @@
                         .catch(error => {
                             console.error("Error creating Blob from image path:", error);
                         });
-
-
-
                 })
-
         }
-
     });
-
-
     // Fetch User details by id for editing
     function displayEditUserModal(id) {
         const user = userList.find(user => user.id === id);
@@ -789,7 +770,6 @@
             document.getElementById('editPhone').value=user.phone;
             document.getElementById('editAddress').value=user.address;
             document.getElementById('editPassword').value=user.password;
-
 
             // Display the fetched image
             const previewImage = document.getElementById('edit-preview-image');
@@ -871,13 +851,11 @@
                 genderRadio.checked = true;
             }
 
-
             // set the date of birth which was fetched
             //as it is and ISO format we shouldn't display it in that format, therefore we used split to have YYYY/MM/DD version
             const isoDate= user.dob;
             const datePart= isoDate.split('T')[0];
             document.getElementById('editDob').value = datePart;
-
 
             // Education field
             const educationSelect = document.getElementById("editEducation");
@@ -890,14 +868,10 @@
                     break;
                 }
             }
-
-
         } else {
             console.log("User not found for ID:", id);
         }
     }
-
-
     document.addEventListener("DOMContentLoaded", function () {
         //User Selector fetching request
         fetch("/api/user/get-lists")
@@ -918,8 +892,6 @@
             .catch(error => {
                 console.log('Error: ', error);
             });
-
-
         function refreshUserListTable(users) {
             const table = document.getElementById('UserTable');
 
@@ -1005,21 +977,14 @@
                     console.error('Error fetching user data:', error);
                 });
         }
-
-
-
         // Ensure setDeleteUid is in the global scope
         window.setDeleteUid = function(uid) {
             deleteUid = uid;
             console.log("deleteUid inside setDeleteUid: " + deleteUid);
         }
-
-
         window.deleteUser = function() {
             // Find the user in the userList
             const user = userList.find(user => user.id === parseInt(deleteUid));
-
-
             fetch(`/api/user/updateStatus/${deleteUid}`, {
                 method: 'PUT',
                 headers: {
@@ -1031,7 +996,6 @@
                 .then(data => {
                     // Handle the response data
                     console.log(data);
-
 
                     const deleteModal = document.getElementById('deleteRecordModal');
                     deleteModal.classList.remove('show');
@@ -1060,9 +1024,6 @@
             .catch(error => {
                 console.error("Error fetching users:", error);
             });
-
-
-
         // Get the select element by its ID to fetch departments
         const departmentSelect = document.getElementById("department");
         // Fetch departments from the backend
@@ -1089,7 +1050,7 @@
             .then(positions => {
                 console.log("Positions from backend:", positions);
 
-                //positions is arrays of objects adn position is the object of one index in an array.
+                //positions are arrays of objects adn position is the object of one index in an array.
                 positions.forEach(position => {
                     const option = document.createElement("option");
                     option.value = position.id;
@@ -1101,9 +1062,6 @@
                 console.error("Error fetching positions: ", error);
             });
 
-
-
-
         // Function to refresh the DataTable with new data
         function refreshDataTable(updatedUserList) {
             const userTable = $('#UserTable').DataTable();
@@ -1111,8 +1069,6 @@
             // Clear existing data and add new data to the DataTable
             userTable.clear().rows.add(updatedUserList).draw();
         }
-
-        // const submitButtonToDelete = document.getElementById("submitButton");
 
         const submitButton= document.getElementById("submitButton");
         const form= document.getElementById("userAddForm");
@@ -1155,8 +1111,6 @@
             fetch('/api/user/create', {
                 method: 'POST',
                 body: formData,
-
-
             })
                 .then(response => response.json())
                 .then(data => {
@@ -1187,12 +1141,6 @@
 
     });
 
-
-
-
-
-
-
 </script>
 <!-- JAVASCRIPT -->
 <!-- Bootstrap JS -->
@@ -1204,8 +1152,6 @@
 
         });
     });
-
-
 
 </script>
 <!-- prismjs plugin -->

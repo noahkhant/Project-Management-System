@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.List;
@@ -105,8 +106,6 @@ public class UserAPI {
             return new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-
 
     @GetMapping("/positions")
     public ResponseEntity<List<Position>> getPositions() {
@@ -209,5 +208,9 @@ public class UserAPI {
         }
     }
 
-
+    @GetMapping("/current-user")
+    public ResponseEntity<User> getCurrentUser(){
+        User currentUser = userService.getCurrentUser();
+        return ResponseEntity.ok(currentUser); // This will return the authenticated user
+    }
 }
