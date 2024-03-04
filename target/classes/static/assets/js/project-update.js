@@ -1,5 +1,5 @@
 <!--These codes are for the project Update-->
-function memberPlaces(uProject, uDepartment) {
+function memberPlaces(uDepartment, uProject) {
     const memberListContainer = document.getElementById('team-member-list-update');
     // Clear existing member list content
     memberListContainer.innerHTML = '';
@@ -9,8 +9,8 @@ function memberPlaces(uProject, uDepartment) {
         return;
     }
 
-    uProject.forEach(user => {
-        const isChecked = uDepartment.some(depUser => depUser.id === user.id);
+    uDepartment.forEach(user => {
+        const isChecked = uProject.some(projUser  => projUser .id === user.id);
         appendUserToList(user, isChecked, memberListContainer);
     });
 }
@@ -23,7 +23,7 @@ function appendUserToList(user, isChecked, container) {
                 <input class="form-check-input-update me-3" type="checkbox" value="${user.id}" ${isChecked ? 'checked' : ''}>
                 <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
                     <span class="flex-shrink-0">
-                        <img src="/assets/images/userPhoto/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
+                        <img src="/static/img/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
                     </span>
                     <span class="flex-grow-1 ms-2">${user.name}</span>
                     <span class="flex-grow-1 ms-2">${user.position.positionName}</span>
@@ -112,7 +112,7 @@ function displayEditProject(id) {
                                                     console.log("userDataFromProject:", userDataFromProject);
                                                     console.log("userDataFromDepartment:", userDataFromDepartment);
                                                     // Call memberPlaces with the fetched user data
-                                                    memberPlaces(userDataFromProject, userDataFromDepartment);
+                                                    memberPlaces(userDataFromDepartment, userDataFromProject);
                                                 });
                                         } else {
                                             console.log('Related department not found.');
@@ -145,7 +145,7 @@ function displayEditProject(id) {
     fetchProjectByIdAndSetFields(projectId);
 }
 function getUserFromDepartment(departmentId) {
-    const url = `/user-for-project-update/${departmentId}`;
+    const url = `/members-selection/${departmentId}`;
     return fetch(url, {
         method: 'GET',
         credentials: 'include',

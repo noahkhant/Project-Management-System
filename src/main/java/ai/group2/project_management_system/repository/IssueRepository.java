@@ -1,5 +1,6 @@
 package ai.group2.project_management_system.repository;
 
+import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Issue;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -24,7 +25,12 @@ public interface IssueRepository extends JpaRepository<Issue, Integer> {
     @Query(value = "select i.* from issue i join project p on p.id=i.project_id join project_member pm on pm.project_id = p.id where pm.user_id = :userId ", nativeQuery = true)
     List<Issue> findAllIssueByUserId(@Param("userId") Long userId);
 
+    Issue getIssueById(Long id);
+
 
     List<Issue> findIssuesByProjectId(Long projectId);
+
+
+    Integer countByStatus(Status status);
 
 }

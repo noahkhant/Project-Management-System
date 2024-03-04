@@ -1,5 +1,6 @@
 package ai.group2.project_management_system.repository;
 
+import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Issue;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
@@ -21,7 +22,11 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
      Project findProjectById(@Param("projectId") Long projectId);
      List<Project> findProjectsByCreator(String creator);
 
+
      @Query("SELECT p.id FROM Project p")
      List<Long> findAllProjectIds();
+
+
+    Integer countByStatus(Status status);
 
 }

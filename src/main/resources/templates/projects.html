@@ -253,14 +253,14 @@
                         <div class="col-lg-4">
                             <div class="mb-3">
                                 <label th:for="datepicker-start-date-input" class="form-label">Start Date</label>
-                                <input type="text" class="form-control" name="planStartDate" th:id="datepicker-start-date-input" placeholder="Select start date" data-provider="datepicker" required>
+                                <input type="date" class="form-control" name="planStartDate" th:id="datepicker-start-date-input" placeholder="Select start date" data-provider="datepicker" required>
                                 <div class="invalid-feedback">Please set a plan start date.</div> <!-- Feedback message for Start Date -->
                             </div>
                         </div>
                         <div class="col-lg-4">
                             <div class="mb-3">
                                 <label th:for="datepicker-end-date-input" class="form-label">End Date</label>
-                                <input type="text" class="form-control" name="planEndDate" th:id="datepicker-end-date-input" placeholder="Enter end date" data-provider="datepicker" required>
+                                <input type="date" class="form-control" name="planEndDate" th:id="datepicker-end-date-input" placeholder="Enter end date" data-provider="datepicker" required>
                                 <div class="invalid-feedback">Please set a plan end date.</div> <!-- Feedback message for End Date -->
                             </div>
                         </div>
@@ -282,7 +282,7 @@
                     <div class="text-end mb-4">
                         <button type="button" class="btn btn-danger w-sm" data-bs-dismiss="modal">Close</button>
                         <button type="reset" class="btn btn-secondary w-sm">Reset</button>
-                        <button id="createButton" type="button" class="btn btn-success w-sm" onclick="validateAndConfirm()">Create</button>
+                        <button id="createButton" type="button" data-bs-dismiss="modal" class="btn btn-success w-sm" onclick="validateAndConfirm()">Create</button>
                     </div>
                 </div>
             </div>
@@ -509,6 +509,12 @@
 </script>
 <script th:src="@{/assets/js/project-update.js}"></script>
 <script th:src="@{/assets/js/project-validation.js}"></script>
+
+<!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- SweetAlert JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 </body>

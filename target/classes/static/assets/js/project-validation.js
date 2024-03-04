@@ -8,26 +8,28 @@ function validateForm() {
     return true;
 }
 
-document.getElementById('confirmCreate').addEventListener('click', function() {
-    // Execute showData() and close modal if the form is valid
-    showData();
-    var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-    confirmationModal.hide();
-});
-
 // Function to validate form and display confirmation modal
 function validateAndConfirm() {
+    // Perform your validation here
     if (validateForm()) {
-        // Show the confirmation modal
-        if(document.getElementById('createButton').hasAttribute('data-bs-dismiss')){
-            var confirmationModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
-            confirmationModal.show();
-        }
+        // Show success message
+        Swal.fire({
+            title: 'Success!',
+            text: 'Your project has been created successfully.',
+            icon: 'success',
+            timer: 2000 // 2 seconds
+        });
+        showData();
     } else {
-        // If validation fails, prevent the modal from being dismissed by removing the data-bs-dismiss attribute
-        document.getElementById('createButton').removeAttribute('data-bs-dismiss');
-        document.getElementById('createButton').setAttribute('data-bs-dismiss', 'modal');
+        // Show validation failure message
+        Swal.fire({
+            title: 'Validation Failed',
+            text: 'Please correct the validation errors.',
+            icon: 'error',
+            timer: 2000 // 2 seconds
+        });
     }
 }
+
 
 

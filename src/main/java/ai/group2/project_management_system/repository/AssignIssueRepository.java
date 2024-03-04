@@ -23,5 +23,5 @@ public interface AssignIssueRepository extends JpaRepository<AssignIssue,Integer
 
     AssignIssue getAssignIssueById(Long id);
 
-
+    AssignIssue findById(Long assignIssueId);
 }

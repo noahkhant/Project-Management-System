@@ -167,8 +167,9 @@
                     </div>
 
                     <div class="my-3">
-                        <button class="btn btn-soft-info w-100" onclick='location.href="/member-issuelist"'>See More</button>
+                        <button class="btn btn-soft-info w-100" onclick="redirectToIssueListToDo()">See More</button>
                     </div>
+
                 </div>
                 <!--end tasks-list-->
 
@@ -233,7 +234,7 @@
                         </div>
                     </div>
                     <div class="my-3">
-                        <button class="btn btn-soft-info w-100" onclick='location.href="/member-issuelist"'>See More</button>
+                        <button class="btn btn-soft-info w-100" onclick="redirectToIssueListToDoInProgress()">See More</button>
                     </div>
 
 
@@ -301,7 +302,7 @@
                     </div>
 
                     <div class="my-3">
-                        <button class="btn btn-soft-info w-100" onclick='location.href="/member-issuelist"'>See More</button>
+                        <button class="btn btn-soft-info w-100" onclick="redirectToIssueListCompleted()">See More</button>
                     </div>
                 </div>
                 <!--end tasks-list-->
@@ -368,7 +369,7 @@
                     </div>
 
                     <div class="my-3">
-                        <button class="btn btn-soft-info w-100" onclick='location.href="/member-issuelist"'>See More</button>
+                        <button class="btn btn-soft-info w-100" onclick='redirectToIssueListOverDue()'>See More</button>
                     </div>
                 </div>
                 <!--end tasks-list-->
@@ -400,7 +401,7 @@
 <!-- project-create init -->
 <script th:src="@{/assets/js/pages/project-create.init.js}"></script>
 
-
+<script th:src="@{/assets/js/search-bars.js}"></script>
 
 </body>
 

@@ -4,6 +4,7 @@ import ai.group2.project_management_system.dto.ProjectDTO;
 import ai.group2.project_management_system.model.entity.Project;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public interface ProjectService {
@@ -24,4 +25,8 @@ public interface ProjectService {
     List<Project> getActiveProjects();
     List<Project> getProjectsByDepartmentId(Long departmentId);
     List<Long> getAllProjectIds();
+
+
+    Map<String, Integer> getCountsByStatus();
+
 }

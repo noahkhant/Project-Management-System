@@ -1,14 +1,10 @@
 package ai.group2.project_management_system.service;
 
 import ai.group2.project_management_system.dto.UserDTO;
+import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-
-
-import java.util.Set;
-
 
 
 public interface UserService {
@@ -23,4 +19,8 @@ public interface UserService {
     List<User> getMembersByDepartmentId(Long departmentId);
     String getUserPhotoById(Long id);
     List<User> getAllUserByIssueId(Long issueId);
+
+    List<User> getUsersByIds(List<Long> teamLeaderIds);
+
+    List<Project> getProjectsByUserId(Long userId);
 }
