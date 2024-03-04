@@ -102,14 +102,14 @@
                             <div class="input-light">
 
                                 <select class="form-control" data-choices data-choices-search-false name="choices-single-default" th:id="issueId">
-                                    <option value="" selected disabled>Search Projects</option>
+                                    <option value="" selected disabled>Search Issues</option>
                                     <option th:each="issue : ${issues}" th:value="${issue.id}" th:text="${issue.title}"  ></option>
                                 </select>
 
                             </div>
                         </div>
 
-                        <div class="d-flex  col-xxl-4 col-sm-4 mx-auto">
+                       <!-- <div class="d-flex  col-xxl-4 col-sm-4 mx-auto">
                             <div class="flex-shrink-0">
                                 <img src="assets/images/users/avatar-10.jpg" alt="" class="avatar-xs rounded-circle shadow">
                             </div>
@@ -117,24 +117,7 @@
                                 <h6 class="mb-1"><a href="" class="text-body" >Tonya Noble</a></h6>
                                 <p class="text-muted mb-0">Full Stack Developer</p>
                             </div>
-                        </div>
-
-                        <!--<div class="col-auto ms-sm-auto ">
-                            <button class="btn btn-primary " type="button" >Live Chat</button>
-
                         </div>-->
-
-                        <div class="col-auto ms-sm-auto ">
-                            <button class="btn btn-primary " type="button" data-bs-toggle="modal" data-bs-target="#chatModal">Live Chat</button>
-<!--                            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">-->
-
-<!--                                <div class="offcanvas-body" style="margin: 0; padding: 0;">-->
-<!--                                    <iframe src="chatlist.html" title="chat list" width="100%" height="100%">-->
-<!--                                    </iframe>-->
-
-<!--                                </div>-->
-<!--                            </div>-->
-                        </div>
                     </div>
                     <!--End col-->
 

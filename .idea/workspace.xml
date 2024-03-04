@@ -5,20 +5,222 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/CalendarController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-modal-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-modal-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issuelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issuelist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-modal-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-modal-init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issuelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issuelist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/MvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/MvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/DepartmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/IssueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/IssueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/Enum/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/Enum/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708423375322.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708489602299.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708489829979.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708490350253.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708490770230.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708490861332.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708491307826.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708491703763.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708492691718.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708492746933.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708493609176.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708493830384.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708494041292.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708494780953.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708494831726.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708504838824.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708504951208.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708505000929.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708505120811.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708505468272.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708505545158.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708505713725.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708508326773.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708508358141.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708508781520.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708514149525.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517151787.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517205215.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517270917.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517314023.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517537709.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517634091.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708517635731.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708522724305.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708523935269.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708531278862.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708532823785.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708533103820.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708533146041.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708535058893.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708535570634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708536624772.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708536726500.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708536769989.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708538951587.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708538998691.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708539261404.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708539664580.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708539893742.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540123237.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540348413.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540404416.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540442691.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540486632.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540603673.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708540663204.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708574371300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708588492377.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618156391.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618387647.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618389652.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618554726.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618840412.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708618962421.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708620623326.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708657436786.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708681609155.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708681617030.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708681617855.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708681927306.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708681929402.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708682432599.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708688554865.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708688687006.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708689647797.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708689667236.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1708689684838.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1709003879699.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709003879699.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1709011428259.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/1709040775419.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/MvcConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/MvcConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ChatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/DepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/DepartmentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/IssueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/IssueController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/Enum/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/Enum/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708423375322.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708489602299.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708489829979.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708490350253.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708490770230.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708490861332.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708491307826.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708491703763.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708492691718.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708492746933.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708493609176.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708493830384.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708494041292.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708494780953.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708494831726.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708504838824.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708504951208.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708505000929.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708505120811.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708505468272.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708505545158.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708505713725.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708508326773.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708508358141.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708508781520.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708514149525.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517151787.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517205215.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517270917.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517314023.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517537709.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517634091.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708517635731.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708522724305.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708523935269.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708531278862.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708532823785.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708533103820.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708533146041.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708535058893.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708535570634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708536624772.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708536726500.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708536769989.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708538951587.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708538998691.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708539261404.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708539664580.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708539893742.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540123237.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540348413.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540404416.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540442691.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540486632.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540603673.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708540663204.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708574371300.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708588492377.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618156391.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618387647.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618389652.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618554726.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618840412.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708618962421.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708620623326.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708657436786.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708681609155.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708681617030.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708681617855.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708681927306.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708681929402.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708682432599.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708688554865.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708688687006.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708689647797.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708689667236.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1708689684838.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1709003879699.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1709011428259.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/img/1709040775419.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-management.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,6 +238,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
@@ -44,6 +247,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;demo-main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/OJT/Intellij_WS/project-management-system-master&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -54,6 +259,12 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\templates\error" />
+      <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\userPhoto" />
+    </key>
+  </component>
   <component name="RunManager" selected="Spring Boot.ProjectManagementSystemApplication">
     <configuration name="issue-create.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="issue-create.js" working-dir="$PROJECT_DIR$/src/main/resources/static/assets/js">
       <method v="2" />
@@ -86,11 +297,26 @@
       <option name="presentableId" value="Default" />
       <updated>1709303108709</updated>
       <workItem from="1709303120398" duration="10958000" />
-      <workItem from="1709353285534" duration="18479000" />
+      <workItem from="1709353285534" duration="19624000" />
+      <workItem from="1709432103409" duration="13698000" />
+      <workItem from="1709477891505" duration="14394000" />
+      <workItem from="1709515116429" duration="9659000" />
+      <workItem from="1709529721782" duration="12202000" />
+      <workItem from="1709553659021" duration="3594000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.thymeleaf.exceptions.TemplateInputException" package="org.thymeleaf.exceptions" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
