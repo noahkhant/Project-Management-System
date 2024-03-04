@@ -461,15 +461,13 @@ function populateProjectList(dto) {
                                         </a>
                                     </div>
                                 </div>
-                             
                                 <div class="flex-shrink-0">
                                     <div class="text-muted">
-                                        <i class="ri-calendar-event-fill me-1 align-bottom"></i> ${pj.planStartDate}
+                                        <i class="ri-calendar-event-fill me-1 align-bottom"></i> ${pj.planEndDate}
                                     </div>
                                 </div>
 
                             </div>
-
                         </div>
                         <!-- end card footer -->
                     </div>        

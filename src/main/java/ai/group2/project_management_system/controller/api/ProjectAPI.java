@@ -58,6 +58,9 @@ public class ProjectAPI {
     public ResponseEntity<List<User>> getMembers(@PathVariable Long departmentId){
         System.out.println("Users are gone : ");
         List<User> users = userService.getMembersByDepartmentId(departmentId);
+        users = users.stream()
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .collect(Collectors.toList());
         System.out.println(users);
         users.forEach(user -> {
             String profile = userService.getUserPhotoById(user.getId());
@@ -75,9 +78,12 @@ public class ProjectAPI {
         System.out.println("Here we go");
         project.setIsActive(true);
         System.out.println(project);
+
         List<Long> userIds = project.getUserIds();
         User currentUser = userService.getCurrentUser();
         project.setCreator(currentUser.getName());
+        userIds.add(currentUser.getId());
+
         List<User> users = userService.findUsersByIds(userIds);
         project.setUsers(new HashSet<>(users));
         project.setStatus(Status.TODO);
