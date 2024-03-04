@@ -56,6 +56,7 @@ public class SecurityConfig {
                                         "projectFiles"
                                 ).permitAll()
                                 .requestMatchers("/forgot-password","/otp-form").permitAll()
+                                .requestMatchers("/app/**").permitAll()
                                 .anyRequest()
                                 .authenticated()
 

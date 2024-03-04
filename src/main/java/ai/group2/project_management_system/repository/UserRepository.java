@@ -20,7 +20,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByDepartmentId(Long departmentId);
     Optional<User> findByEmail(String email);
     List<User> findByProjects_id(Long projectId);
-
+    @Query("SELECT u.profilePictureFileName FROM User u WHERE u.id = :id")
+    String findPhotoById(@Param("id") Long id);
     @Query(value = "select u.* from user u join project_member pm on u.id = pm.user_id join issue i on i.project_id=pm.project_id where i.id =:issueId", nativeQuery = true)
     List<User> findAllUserByIssueId(@Param("issueId") Long issueId);
 }

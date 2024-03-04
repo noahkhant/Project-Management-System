@@ -9,6 +9,8 @@ import ai.group2.project_management_system.service.ProjectService;
 import jakarta.persistence.Cacheable;
 import jakarta.persistence.EntityGraph;
 import jakarta.persistence.EntityManager;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +19,7 @@ import java.util.*;
 
 @Service
 @RequiredArgsConstructor
-public class ProjectServiceImpl implements ProjectService {
+public  class ProjectServiceImpl implements ProjectService {
 
     private final UserRepository userRepository;
     private final ProjectRepository projectRepository;
@@ -66,12 +68,52 @@ public class ProjectServiceImpl implements ProjectService {
                 .setParameter("projectId", projectId)
                 .getResultList();
     }
-
     @Override
     public Project findById(Long projectId) {
         return projectRepository.findProjectById(projectId) ;
     }
+    @Override
+    public int getProjectCount() {
+        return (int) projectRepository.count();
+    }
+    @Override
+    public int getActiveProjectCount() {
+        List<Project> allProjects = projectRepository.findAll();
+        int activeProjects = 0;
+        for (Project project : allProjects){
+            if(project.isActive()){
+                activeProjects++;
+            }
+        }
+        return activeProjects;
+    }
+    @Override
+    public int getInactiveProjectCount() {
+        List<Project> allProjects = projectRepository.findAll();
+        int inActiveProjects = 0;
+        for (Project project : allProjects){
+            if(!project.isActive()){
+                inActiveProjects++;
+            }
+        }
+        return inActiveProjects;
+    }
+    @Override
+    public List<Project> getActiveProjects() {
+        List<Project> allProjects = projectRepository.findAll();
+        List<Project> activeProjects = new ArrayList<>();
+        for (Project project : allProjects) {
+            if (project.isActive()) {
+                activeProjects.add(project);
+            }
+        }
+        return activeProjects;
+    }
 
+    @Override
+    public List<Project> getProjectsByDepartmentId(Long departmentId) {
+        return null;
+    }
 
 
 }
