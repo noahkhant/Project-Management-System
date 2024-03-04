@@ -3,6 +3,8 @@ package ai.group2.project_management_system.controller.api;
 import ai.group2.project_management_system.dto.ProjectDTO;
 import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.mapping.UserMapping;
+import ai.group2.project_management_system.model.Enum.Role;
+import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
@@ -13,11 +15,13 @@ import ai.group2.project_management_system.service.ProjectService;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.persistence.Cacheable;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @RestController
 @RequiredArgsConstructor
@@ -40,37 +44,73 @@ public class ProjectAPI {
     @GetMapping("/members-selector/{departmentId}")
     public ResponseEntity<List<UserDTO>> getUsers(@PathVariable Long departmentId) {
         System.out.println("Users are gone");
-        List<UserDTO> users = userService.getUsersByDepartmentId(departmentId);
-        System.out.println("member-selector "+users);
+        List<UserDTO> users = userService.getUsersByDepartmentId(departmentId); // Assuming this returns List<User>
+
+        System.out.println("member-selector " + users);
         if (!users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {
             return ResponseEntity.noContent().build();
         }
     }
+
+    @GetMapping("/members-selection/{departmentId}")
+    public ResponseEntity<List<User>> getMembers(@PathVariable Long departmentId){
+        System.out.println("Users are gone : ");
+        List<User> users = userService.getMembersByDepartmentId(departmentId);
+        users = users.stream()
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .collect(Collectors.toList());
+        System.out.println(users);
+        users.forEach(user -> {
+            String profile = userService.getUserPhotoById(user.getId());
+            user.setProfilePictureFileName(profile);
+            System.out.println("User isActive: " + user.isActive());
+        });
+        return ResponseEntity.ok(users);
+    }
+
+
     // This method is for creating new projects
     @PostMapping("/add-project")
     public ResponseEntity<Project> addProject(@RequestBody Project project) {
 
         System.out.println("Here we go");
         project.setIsActive(true);
-
         System.out.println(project);
+
         List<Long> userIds = project.getUserIds();
+        User currentUser = userService.getCurrentUser();
+        project.setCreator(currentUser.getName());
+        userIds.add(currentUser.getId());
 
         List<User> users = userService.findUsersByIds(userIds);
         project.setUsers(new HashSet<>(users));
-
+        project.setStatus(Status.TODO);
         Project newProject = projectService.save(project);
         return ResponseEntity.ok(newProject);
     }
 
     //These methods are for selecting back and display back the project list
     @GetMapping("/show-projects")
-    public ResponseEntity<List<Project>> getAllProjects() {
+    public ResponseEntity<List<Project>> getActiveProjects() {
         List<Project> projects = projectService.getAllProjectsWithUsers();
-        System.out.println(projects);
-        return ResponseEntity.ok(projects);
+
+        List<Project> activeProjects = projects.stream()
+                .filter(Project::isActive)
+                .collect(Collectors.toList());
+        System.out.println(activeProjects);
+        return ResponseEntity.ok(activeProjects);
+    }
+    @GetMapping("/show-inactive-projects")
+    public ResponseEntity<List<Project>> getInactiveProjects() {
+        List<Project> projects = projectService.getAllProjectsWithUsers();
+
+        List<Project> inactiveProjects = projects.stream()
+                .filter(project -> !project.isActive())
+                .collect(Collectors.toList());
+        System.out.println(inactiveProjects);
+        return ResponseEntity.ok(inactiveProjects);
     }
 
 

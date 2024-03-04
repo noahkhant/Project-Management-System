@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function showProjectDropdown(){
-        const url = '/get-projects';
+        var creatorValue = document.getElementById('creator').textContent;
+        const url = '/get-projects/'+ creatorValue;
         fetch(url)
             .then(response => response.json())
             .then(data => {
@@ -87,7 +88,9 @@ document.addEventListener('DOMContentLoaded', function () {
             <input class="form-check-input  mt-3" type="radio"  name="user.id" value="${user.id}" id="${user.id}">
             <label class="form-check-label  d-flex align-items-center" for="${user.id}">
                 <span class="flex-shrink-0">
+
                     <img src="/assets/userPhoto/${user.profilePictureName}" alt="" class="avatar-xxs rounded-circle" />
+
                 </span>
               
                 <div class="d-flex justify-content-between flex-grow-1 ms-2 user-label-container">

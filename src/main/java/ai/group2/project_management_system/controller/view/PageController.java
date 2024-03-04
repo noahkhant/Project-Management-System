@@ -37,10 +37,7 @@ public class PageController {
         String OTP = service.generateOTP();
         details.setMsgBody(OTP);
         session.setAttribute("otp", OTP);
-
         {
-
-
             // Call the service method to send the email
             String status = service.simpleMail(details);
 

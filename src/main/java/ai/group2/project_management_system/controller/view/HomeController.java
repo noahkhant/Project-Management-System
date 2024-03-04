@@ -1,6 +1,8 @@
 package ai.group2.project_management_system.controller.view;
 
 
+import ai.group2.project_management_system.model.Enum.Role;
+import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -24,24 +26,42 @@ public class HomeController {
         User user = userService.getCurrentUser();
         return user;
     }
+
+ /*   @GetMapping("/home")
+    public String home(Model model, HttpSession session){
+        var user = userService.getCurrentUser();
+
+        System.out.println("Current User: "+ user);
+        if(user.getRole()!= Role.PM || user.getRole()!=Role.PMO){
+            session.setAttribute("departmentId", user.getDepartment().getId());
+        }
+
+        session.setAttribute("user", user);
+        return "index";
+    }*/
+
     @GetMapping("/home")
+    public String home(Model model, HttpSession session) {
+        var user = userService.getCurrentUser();
 
-    public String home( HttpSession session){
+        System.out.println("Current User: " + user);
 
+        if (user.getRole() != Role.PM || user.getRole() != Role.PMO) {
+            Department department = user.getDepartment();
+            if (department != null) {
+                session.setAttribute("departmentId", department.getId());
+            } else {
+                System.out.println("There is no department!");
+            }
+        }
 
+        session.setAttribute("user", user);
         return "index";
     }
 
+
     @GetMapping("/profile")
     public String profile(){
-        /*var user = userService.getCurrentUser();*/
-//        session.setAttribute("id",user.getId());
-//        session.setAttribute("role",user.getRole());
-        /*
-        System.out.println("UserId:"+user.getId());
-        System.out.println("UserName:"+user.getName());*/
-       /* var user = userService.getCurrentUser();
-        session.setAttribute("user", user);*/
         return "profile";
     }
 

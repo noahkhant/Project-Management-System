@@ -2,7 +2,10 @@ package ai.group2.project_management_system.service;
 
 import ai.group2.project_management_system.dto.IssueDetailsDto;
 import ai.group2.project_management_system.model.entity.Issue;
+import org.springframework.data.repository.query.Param;
+
 import java.util.List;
+import java.util.Map;
 
 public interface IssueService {
 
@@ -14,7 +17,14 @@ public interface IssueService {
 
     IssueDetailsDto getIssueDetailsById(Long id);
 
-//    List<Issue> getIssueByUserId(Long id);
+    List<Issue> getAllIssueByUserId(Long userId);
 
+    int getIssueCount();
 
+    int getActiveIssueCount();
+
+    int getInactiveIssueCount();
+    Issue getIssueById(Long id);
+
+    Map<String, Integer> getCountsByStatus();
 }

@@ -2,6 +2,7 @@ package ai.group2.project_management_system.service.Impl;
 
 import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.mapping.UserMapping;
+import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.UserService;
@@ -41,6 +42,30 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public List<User> getMembersByDepartmentId(Long departmentId) {
+        List<User> users = userRepository.findByDepartmentId(departmentId);
+        return users;
+    }
+
+    @Override
+    public String getUserPhotoById(Long id) {
+        return userRepository.findPhotoById(id);
+    }
+
+    public List<User> getAllUserByIssueId(Long issueId) {
+        return userRepository.findAllUserByIssueId(issueId);
+    }
+
+    @Override
+    public List<User> getUsersByIds(List<Long> teamLeaderIds) {
+        return userRepository.findAllById(teamLeaderIds);
+    }
+
+    @Override
+    public List<Project> getProjectsByUserId(Long userId) {
+        return userRepository.findProjectsByUserId(userId);
+    }
 
     @Override
     public User save(User user) {

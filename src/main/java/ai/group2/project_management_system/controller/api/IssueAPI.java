@@ -5,6 +5,7 @@ import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.IssueRepository;
+import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -30,6 +31,7 @@ import java.util.*;
 public class IssueAPI {
 
     private final ProjectService projectService;
+    private final ProjectRepository projectRepository;
     private final IssueCategoryService issueCategoryService;
     private final UserService userService;
     private final UserRepository userRepository;
@@ -39,9 +41,10 @@ public class IssueAPI {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping("/get-projects")
-    public ResponseEntity<List<Project>> getProjects(){
-        List<Project> projectList = projectService.getAllProjects();
+    @GetMapping("/get-projects/{user}")
+    public ResponseEntity<List<Project>> getProjects(@PathVariable String user){
+        List<Project> projectList =projectRepository.findProjectsByCreator(user);
+        /*List<Project> projectList = projectService.getAllProjects();*/
         List<Project> currentProjectList=new ArrayList<Project>();
         for(Project project:projectList){
             if(project.getStatus()!=Status.COMPLETED && project.getStatus()!=Status.PENDING){
@@ -107,6 +110,7 @@ public class IssueAPI {
         issue.setStatus(Status.TODO);
         issue.setActive(true);
         issue.setAssigned(false);
+        issue.setStatus(Status.TODO);
 
 
         List<String> fileNames = saveAttachments(files);

@@ -92,30 +92,6 @@
                         <hr style="color: darkgray;">
                     </li>
                     <!--Issues End-->
-
-                    <!-- Team Leader Issues Start-->
-                    <!--<li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).TEAMLEADER}">
-                        <a href="#teamleader" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" >
-                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-tasks">Team Leader</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="teamleader">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="/teamleader-issuelist" class="nav-link" data-key="t-kanbanboard"> Issue List </a>
-                                </li>
-
-                                &lt;!&ndash;<li class="nav-item">
-                                    <a href="/teamleader-issueboard" class="nav-link" data-key="t-kanbanboard">Team Leader Issue Board </a>
-                                </li>&ndash;&gt;
-
-                                <li class="nav-item">
-                                    <a href="/teamleader-member-issuelist" class="nav-link" data-key="t-kanbanboard"> Issue Status</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <hr style="color: darkgray;">
-                    </li>-->
                     <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).TEAMLEADER}">
                         <a href="/teamleader-issuelist" class="nav-link menu-link"  >
                             <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">My Issue List</span>
@@ -130,26 +106,6 @@
                     </li>
 
                     <!--Team Leader Issues End-->
-
-                    <!--Members Start-->
-                   <!-- <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).MEMBER}">
-                        <a class="nav-link menu-link" href="#sidebarDashboardss" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                            <i class="mdi mdi-speedometer"></i> <span data-key="t-dashboards">Members</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarDashboardss">
-                            <ul class="nav nav-sm flex-column">
-
-                                <li class="nav-item">
-                                    <a href="/member-issueboard" class="nav-link" data-key="t-nft">Member Issue Board</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/member-issuelist" class="nav-link" data-key="t-job">Member Issue List View</a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <hr style="color: darkgray;">
-                    </li>-->
                     <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).MEMBER}">
                         <a href="/member-issueboard" class="nav-link menu-link"  >
                             <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">My Issue Board</span>
@@ -165,20 +121,7 @@
                     </li>
                     <!--Members End-->
                     <!--Calendar Start-->
-                    <!--<li class="nav-item">
-                        <a href="#sidebarCalendar" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarCalendar">
-                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-calender">Calendar</span>
-                        </a>
-                        <div class="collapse menu-dropdown" id="sidebarCalendar">
-                            <ul class="nav nav-sm flex-column">
-                                <li class="nav-item">
-                                    <a href="/calendar" class="nav-link" data-key="t-main-calender"> Calender </a>
-                                </li>
 
-                            </ul>
-                        </div>
-                        <hr style="color: darkgray;">
-                    </li>-->
                     <li class="nav-item" >
                         <a href="/calendar" class="nav-link menu-link"  >
                             <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Calendar</span>
