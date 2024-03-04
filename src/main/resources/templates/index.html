@@ -7,6 +7,12 @@
 <head th:replace="~{layout :: head}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>#pieChartContainer {
+        overflow: hidden;
+        white-space: nowrap;
+        transition: margin-left 0.5s ease;
+    }
+    </style>
 
 
 </head>
@@ -187,16 +193,22 @@
 
 
 
-
-                <div class="col-xxl-4">
-                    <div class="card">
+                <div class="col-xxl-5" style="display: inline-block; margin-right: 10px;">
+                    <div class="row" id="cardRow" style="overflow-x: auto; white-space: nowrap;">
+                    <div class="card" style="width: 500px; height: 400px;">
                         <div class="card-header border-0">
                             <h4 class="card-title mb-0">Project Pie Charts</h4>
                         </div><!-- end cardheader -->
-                        <div class="card-body" id="pieChartContainer">
+                        <div class="card-body-wrapper">
+                        <div class="card-body" id="pieChartContainer" >
+                            <div class="row">
                             <!-- Container for dynamically created canvas elements -->
+                            </div>
+
                         </div><!-- end cardbody -->
+                        </div>
                     </div><!-- end card -->
+                    </div>
                 </div><!-- end col -->
 
             </div><!-- end row -->
@@ -1148,6 +1160,8 @@
 
 
 </script>
+
+
 </body>
 <!-- Include jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
