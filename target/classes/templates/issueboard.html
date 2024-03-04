@@ -199,7 +199,7 @@
                             </div>
 
                             <div class="my-3">
-                                <button class="btn btn-soft-info w-100" onclick='location.href="/issuelist"'>See More</button>
+                                <button class="btn btn-soft-info w-100" onclick="projectManagerRedirectToIssueListToDo()">See More</button>
                             </div>
                         </div>
                         <!--end tasks-list-->
@@ -276,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="my-3">
-                                <button class="btn btn-soft-info w-100" onclick='location.href="/issuelist"'>See More</button>
+                                <button class="btn btn-soft-info w-100" onclick="projectManagerRedirectToIssueListToDoInProgress()">See More</button>
                             </div>
 
                         </div>
@@ -354,7 +354,7 @@
                             </div>
 
                             <div class="my-3">
-                                <button class="btn btn-soft-info w-100" onclick='location.href="/issuelist"'>See More</button>
+                                <button class="btn btn-soft-info w-100" onclick="projectManagerRedirectToIssueListPending()">See More</button>
                             </div>
                         </div>
                         <!--end tasks-list-->
@@ -431,7 +431,7 @@
                             </div>
 
                             <div class="my-3">
-                                <button class="btn btn-soft-info w-100" onclick='location.href="/issuelist"'>See More</button>
+                                <button class="btn btn-soft-info w-100" onclick="projectManagerRedirectToIssueListCompleted()">See More</button>
                             </div>
                         </div>
                         <!--end tasks-list-->
@@ -507,7 +507,7 @@
                             </div>
 
                             <div class="my-3">
-                                <button class="btn btn-soft-info w-100" onclick='location.href="/issuelist"'>See More</button>
+                                <button class="btn btn-soft-info w-100" onclick="projectManagerRedirectToIssueListOverDue">See More</button>
                             </div>
                         </div>
                         <!--end tasks-list-->
@@ -1280,7 +1280,7 @@
     <!-- SweetAlert JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
+<script th:src="@{assets/js/search-bars.js}"></script>
 
 
 </body>

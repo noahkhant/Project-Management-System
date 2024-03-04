@@ -6,6 +6,7 @@ import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.Enum.Role;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Department;
+import ai.group2.project_management_system.model.entity.Notification;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.ProjectRepository;
@@ -58,6 +59,9 @@ public class ProjectAPI {
     public ResponseEntity<List<User>> getMembers(@PathVariable Long departmentId){
         System.out.println("Users are gone : ");
         List<User> users = userService.getMembersByDepartmentId(departmentId);
+        users = users.stream()
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .collect(Collectors.toList());
         System.out.println(users);
         users.forEach(user -> {
             String profile = userService.getUserPhotoById(user.getId());
@@ -75,9 +79,12 @@ public class ProjectAPI {
         System.out.println("Here we go");
         project.setIsActive(true);
         System.out.println(project);
+
         List<Long> userIds = project.getUserIds();
         User currentUser = userService.getCurrentUser();
         project.setCreator(currentUser.getName());
+        userIds.add(currentUser.getId());
+
         List<User> users = userService.findUsersByIds(userIds);
         project.setUsers(new HashSet<>(users));
         project.setStatus(Status.TODO);
@@ -202,6 +209,21 @@ public class ProjectAPI {
             System.out.println("Project later ststus : "+ project.isActive());
             return ResponseEntity.ok(updatedProject);
         }else{
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/all-project-ids")
+    public ResponseEntity<List<Long>> getAllProjectIds() {
+        List<Long> projectIds = projectService.getAllProjectIds();
+        return ResponseEntity.ok(projectIds);
+    }
+    @GetMapping("/project-name/{projectId}")
+    public ResponseEntity<String> getProjectNameById(@PathVariable Long projectId) {
+        Project project = projectService.getProjectBy_Id(projectId);
+
+        if (project != null) {
+            return ResponseEntity.ok(project.getTitle()); // Assuming the project name is stored in the 'title' field
+        } else {
             return ResponseEntity.notFound().build();
         }
     }

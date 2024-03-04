@@ -2,12 +2,10 @@ package ai.group2.project_management_system.service.Impl;
 
 import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.mapping.UserMapping;
+import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.UserService;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.NoResultException;
-import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -57,6 +55,16 @@ public class UserServiceImpl implements UserService {
 
     public List<User> getAllUserByIssueId(Long issueId) {
         return userRepository.findAllUserByIssueId(issueId);
+    }
+
+    @Override
+    public List<User> getUsersByIds(List<Long> teamLeaderIds) {
+        return userRepository.findAllById(teamLeaderIds);
+    }
+
+    @Override
+    public List<Project> getProjectsByUserId(Long userId) {
+        return userRepository.findProjectsByUserId(userId);
     }
 
     @Override

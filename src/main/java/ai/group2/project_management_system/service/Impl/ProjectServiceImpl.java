@@ -1,6 +1,7 @@
 package ai.group2.project_management_system.service.Impl;
 
 import ai.group2.project_management_system.dto.ProjectDTO;
+import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.ProjectRepository;
@@ -115,5 +116,20 @@ public  class ProjectServiceImpl implements ProjectService {
         return null;
     }
 
+    @Override
+    public Map<String, Integer> getCountsByStatus() {
+        Map<String, Integer> countsByStatus = new HashMap<>();
+        countsByStatus.put("todo", projectRepository.countByStatus(Status.TODO));
+        countsByStatus.put("inProgress", projectRepository.countByStatus(Status.INPROGRESS));
+        countsByStatus.put("pending", projectRepository.countByStatus(Status.PENDING));
+        countsByStatus.put("overdue", projectRepository.countByStatus(Status.OVERDUE));
+        countsByStatus.put("completed", projectRepository.countByStatus(Status.COMPLETED));
+        return countsByStatus;
+    }
 
+
+    @Override
+    public List<Long> getAllProjectIds() {
+        return projectRepository.findAllProjectIds();
+    }
 }

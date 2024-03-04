@@ -13,6 +13,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
@@ -175,6 +176,18 @@ public class IssueAPI {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.noContent().build();
+        }
+    }
+
+
+    @GetMapping("/{projectId}/issues")
+    public ResponseEntity<List<Issue>> getIssuesByProjectId(@PathVariable Long projectId) {
+        List<Issue> issues = issueService.findIssuesByProjectId(projectId);
+
+        if (issues.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(issues, HttpStatus.OK);
         }
     }
 

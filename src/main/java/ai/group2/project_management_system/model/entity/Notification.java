@@ -17,6 +17,6 @@ public class Notification {
     private User sender;
     @ManyToOne(cascade = CascadeType.MERGE)
     private User sendTo;
-
     private  String redirectURL;
+
 }
