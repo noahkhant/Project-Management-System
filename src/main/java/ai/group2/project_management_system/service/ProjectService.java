@@ -24,6 +24,9 @@ public interface ProjectService {
 
     List<Project> getActiveProjects();
     List<Project> getProjectsByDepartmentId(Long departmentId);
+    List<Long> getAllProjectIds();
+
 
     Map<String, Integer> getCountsByStatus();
+
 }

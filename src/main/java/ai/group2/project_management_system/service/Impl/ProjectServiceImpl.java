@@ -128,4 +128,8 @@ public  class ProjectServiceImpl implements ProjectService {
     }
 
 
+    @Override
+    public List<Long> getAllProjectIds() {
+        return projectRepository.findAllProjectIds();
+    }
 }

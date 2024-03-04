@@ -22,5 +22,11 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
      Project findProjectById(@Param("projectId") Long projectId);
      List<Project> findProjectsByCreator(String creator);
 
+
+     @Query("SELECT p.id FROM Project p")
+     List<Long> findAllProjectIds();
+
+
     Integer countByStatus(Status status);
+
 }

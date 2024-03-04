@@ -27,5 +27,10 @@ public interface IssueRepository extends JpaRepository<Issue, Integer> {
 
     Issue getIssueById(Long id);
 
+
+    List<Issue> findIssuesByProjectId(Long projectId);
+
+
     Integer countByStatus(Status status);
+
 }
