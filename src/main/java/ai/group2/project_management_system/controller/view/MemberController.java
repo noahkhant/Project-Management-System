@@ -4,13 +4,17 @@ import ai.group2.project_management_system.dto.IssueDetailsDto;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.AssignIssue;
 import ai.group2.project_management_system.model.entity.Issue;
+import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.service.AssignIssueService;
 import ai.group2.project_management_system.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.ArrayList;
@@ -22,6 +26,12 @@ import java.util.List;
 public class MemberController {
     private final UserService userService;
     private final AssignIssueService assignIssueService;
+    @ModelAttribute("user")
+    public User getUserFromSession(HttpSession session) {
+        User user = userService.getCurrentUser();
+        return user;
+    }
+
     @GetMapping("member-issuelist")
     public String showMemberIssueList(Model model){
         var user = userService.getCurrentUser();
@@ -39,6 +49,7 @@ public class MemberController {
 //        log.info("Issue -> {}",assignIssue.getIssue().getFiles());
         return "member-issuedetails";
     }
+
 
     @GetMapping("/member-issueboard")
     public String MemberIssueBoard(Model model) {

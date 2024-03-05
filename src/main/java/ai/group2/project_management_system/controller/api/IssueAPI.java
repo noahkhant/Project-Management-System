@@ -5,6 +5,7 @@ import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.IssueRepository;
+import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.*;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -13,6 +14,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +32,7 @@ import java.util.*;
 public class IssueAPI {
 
     private final ProjectService projectService;
+    private final ProjectRepository projectRepository;
     private final IssueCategoryService issueCategoryService;
     private final UserService userService;
     private final UserRepository userRepository;
@@ -39,9 +42,10 @@ public class IssueAPI {
     @Value("${upload.path}")
     private String uploadPath;
 
-    @GetMapping("/get-projects")
-    public ResponseEntity<List<Project>> getProjects(){
-        List<Project> projectList = projectService.getAllProjects();
+    @GetMapping("/get-projects/{user}")
+    public ResponseEntity<List<Project>> getProjects(@PathVariable String user){
+        List<Project> projectList =projectRepository.findProjectsByCreator(user);
+        /*List<Project> projectList = projectService.getAllProjects();*/
         List<Project> currentProjectList=new ArrayList<Project>();
         for(Project project:projectList){
             if(project.getStatus()!=Status.COMPLETED && project.getStatus()!=Status.PENDING){
@@ -175,6 +179,18 @@ public class IssueAPI {
             return ResponseEntity.ok(user);
         } else {
             return ResponseEntity.noContent().build();
+        }
+    }
+
+
+    @GetMapping("/{projectId}/issues")
+    public ResponseEntity<List<Issue>> getIssuesByProjectId(@PathVariable Long projectId) {
+        List<Issue> issues = issueService.findIssuesByProjectId(projectId);
+
+        if (issues.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(issues, HttpStatus.OK);
         }
     }
 

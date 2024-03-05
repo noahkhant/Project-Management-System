@@ -1,16 +1,11 @@
 package ai.group2.project_management_system.controller.view;
 
-
 import ai.group2.project_management_system.model.entity.EmailDetail;
-import ai.group2.project_management_system.model.entity.Message;
 import ai.group2.project_management_system.service.EmailService;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -94,11 +89,7 @@ public class PageController {
 
     }
 
-    @GetMapping("/calendar")
-    public String getCalendar(){
 
-        return "calendar";
-    }
 
     @GetMapping("/sendMultipleEmail")
     public String getEmailForm(){
@@ -119,8 +110,5 @@ public class PageController {
 
         return "login";
     }
-
-
-
 
 }

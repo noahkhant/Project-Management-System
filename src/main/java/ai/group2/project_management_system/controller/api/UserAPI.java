@@ -4,33 +4,25 @@ import ai.group2.project_management_system.model.Enum.Role;
 import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.Position;
 import ai.group2.project_management_system.model.entity.User;
-import ai.group2.project_management_system.service.*;
-import ai.group2.project_management_system.service.Impl.PositionServiceImpl;
-import jakarta.annotation.Resource;
-import jakarta.mail.internet.MimeBodyPart;
-import jakarta.servlet.http.HttpServletRequest;
+import ai.group2.project_management_system.service.ImageService;
+import ai.group2.project_management_system.service.PositionService;
+import ai.group2.project_management_system.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.io.FilenameUtils;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.http.CacheControl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.security.Principal;
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/user")
@@ -52,6 +44,7 @@ public class UserAPI {
             @RequestParam("name") String name,
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
+            @RequestParam("role")Role role,
             @RequestParam("gender") String gender,
             @RequestParam("dob") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dob, @RequestParam("education") String education,
             @RequestParam("email") String email,
@@ -63,6 +56,7 @@ public class UserAPI {
 
             System.out.println("Department = "+ department);
             System.out.println("Position = "+ position);
+            System.out.println("Role:"+role);
             MultipartFile photo = file;
             System.out.println("photo : " + photo);
             if (photo != null && !photo.isEmpty()) {
@@ -71,11 +65,12 @@ public class UserAPI {
                 if (savedImagePath != null && (savedImagePath.endsWith(".jpg") || savedImagePath.endsWith(".jpeg") ||
                         savedImagePath.endsWith(".png") || savedImagePath.endsWith(".gif"))) {
                     String image = savedImagePath;
+                    String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
                     User user = new User();
                     user.setName(name);
                     user.setDepartment(department);
                     user.setPosition(position);
-                    user.setRole(Role.PM);
+                    user.setRole(role);
                     user.setGender(gender);
                     user.setDob(dob);
                     user.setEducation(education);
@@ -83,7 +78,7 @@ public class UserAPI {
                     user.setPhone(phone);
                     user.setActive(true);
                     user.setAddress(address);
-                    user.setPassword(password);
+                    user.setPassword(hashedPassword);
                     user.setProfilePictureFileName(image);
                     userService.save(user);
                 } else {
@@ -113,6 +108,27 @@ public class UserAPI {
 
         return ResponseEntity.ok(positions);
     }
+
+    @GetMapping("/roles")
+    public ResponseEntity<List<String>> getRoles() {
+        User user = userService.getCurrentUser();
+        String userRole = String.valueOf(user.getRole());
+        List<String> roles;
+
+        // Customize roles based on the user's role
+        if ("PM".equals(userRole)) {
+            roles = Arrays.asList( "TEAMLEADER", "MEMBER");
+        } else {
+            // Include all roles, excluding "PMO"
+            roles = Arrays.stream(Role.values())
+                    .map(Enum::name)
+                    .filter(role -> !role.equals("PMO"))
+                    .collect(Collectors.toList());
+        }
+
+        return ResponseEntity.ok(roles);
+    }
+
 
     @GetMapping("/get-lists")
     public ResponseEntity<List<User>> getUserList() {

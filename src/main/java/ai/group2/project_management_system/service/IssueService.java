@@ -19,7 +19,14 @@ public interface IssueService {
 
     List<Issue> getAllIssueByUserId(Long userId);
 
+
+
+    List<Issue> findIssuesByProjectId(Long projectId);
+
+//    List<Issue> getIssueByUserId(Long id);
+
     int getIssueCount();
+
 
     int getActiveIssueCount();
 
