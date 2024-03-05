@@ -3,7 +3,9 @@ package ai.group2.project_management_system.controller.view;
 import ai.group2.project_management_system.model.Enum.Role;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -16,6 +18,12 @@ import java.io.InputStream;
 @RequiredArgsConstructor
 public class UserController {
 private final UserService userService;
+    @ModelAttribute("user")
+    public User getUserFromSession(HttpSession session) {
+        User user = userService.getCurrentUser();
+        return user;
+    }
+
     @GetMapping("/user-management")
     public String getAllUsers(User user) {
 

@@ -7,13 +7,16 @@ import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.AssignIssue;
 import ai.group2.project_management_system.model.entity.Department;
 import ai.group2.project_management_system.model.entity.Issue;
+import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.AssignIssueRepository;
 import ai.group2.project_management_system.repository.IssueRepository;
 import ai.group2.project_management_system.service.AssignIssueService;
 import ai.group2.project_management_system.service.IssueService;
 import ai.group2.project_management_system.service.UserService;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +38,11 @@ public class TeamLeaderController {
     private final IssueRepository issueRepository;
     private final AssignIssueRepository assignIssueRepository;
     private final AssignIssueMapper assignIssueMapper;
+    @ModelAttribute("user")
+    public User getUserFromSession(HttpSession session) {
+        User user = userService.getCurrentUser();
+        return user;
+    }
     @GetMapping("/teamleader-issueboard")
     public String TeamLeaderIssueBoard(Model model) {
 
@@ -53,7 +61,6 @@ public class TeamLeaderController {
         model.addAttribute("issues",currentTeamLeaderIssues);
         return "teamleader-issueboard";
     }
-
 
 
     @GetMapping("/teamleader-issuelist")

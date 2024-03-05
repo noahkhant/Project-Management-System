@@ -208,18 +208,19 @@
 
 
 
-                <div class="col-xxl-5" style="display: inline-block; margin-right: 10px;">
-                    <div class="row" id="cardRow" style="overflow-x: auto; white-space: nowrap;">
-                    <div class="card" style="width: 500px; height: 400px;">
+                <div class="col-xxl-12" style="display: inline-block; margin-right: 10px;">
+                    <div class="row" id="cardRow" style="overflow-y: hidden; float-wrap: wrap">
+                    <div class="card col-xl-3"  style="width: 100%; height: 400px; overflow-y: auto;">
                         <div class="card-header border-0">
                             <h4 class="card-title mb-0">Project Pie Charts</h4>
                         </div><!-- end cardheader -->
                         <div class="card-body-wrapper">
-                        <div class="card-body" id="pieChartContainer" >
-                            <div class="row">
-                            <!-- Container for dynamically created canvas elements -->
+                        <div class="card-body"  id="pieChartContainer" style="max-height: 100%;">
+                            <!--<div class="row display-flex">
+                            &lt;!&ndash; Container for dynamically created canvas elements &ndash;&gt;
+                            </div>-->
+                            <div class="row display-flex" id="chartRow">
                             </div>
-
                         </div><!-- end cardbody -->
                         </div>
                     </div><!-- end card -->
@@ -288,7 +289,7 @@
             </div><!-- end row -->
 
             <div class="row">
-                <div class="col-xxl-4">
+                <div class="col-xxl-4" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).TEAMLEADER or user.role == T(ai.group2.project_management_system.model.Enum.Role).MEMBER}">
                     <div class="card card-height-100">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Members from your departments</h4>
@@ -315,8 +316,10 @@
                     </div><!-- end card -->
                 </div><!-- end col -->
 
-                <div class="col-xxl-4 col-lg-6">
-                    <div class="card card-height-100">
+                <!--<div class="col-xxl-4 col-lg-6" >-->
+                <div th:class="${user.role == T(ai.group2.project_management_system.model.Enum.Role).TEAMLEADER or user.role == T(ai.group2.project_management_system.model.Enum.Role).MEMBER} ? 'col-xxl-4 col-lg-6' : 'col-xxl-6 col-lg-6'">
+
+                <div class="card card-height-100">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Issues Status</h4>
                         </div><!-- end card header -->
@@ -375,7 +378,7 @@
                     </div><!-- end card -->
                 </div><!-- end col -->
 
-                <div class="col-xxl-4 col-lg-6">
+                <div th:class="${user.role == T(ai.group2.project_management_system.model.Enum.Role).TEAMLEADER or user.role == T(ai.group2.project_management_system.model.Enum.Role).MEMBER} ? 'col-xxl-4 col-lg-6' : 'col-xxl-6 col-lg-6'">
                     <div class="card card-height-100">
                         <div class="card-header align-items-center d-flex">
                             <h4 class="card-title mb-0 flex-grow-1">Projects Status</h4>
@@ -443,6 +446,9 @@
 
 </div>
 
+<div>
+    <h1 th:text="${user.role}"></h1>
+</div>
 <div th:replace="~{layout :: footer}"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>      m n
@@ -625,19 +631,26 @@
                                     labels.forEach(status => {
                                         console.log(`Color for ${status}:`, statusColors[status]);
                                     });
-
+                                    const container = document.getElementById('pieChartContainer');
+                                    const chartRow = document.getElementById('chartRow');
                                     // Create a new canvas for each project
                                     const canvas = document.createElement('canvas');
-                                    canvas.width = 30; // Set your desired width
-                                    canvas.height = 30; // Set your desired height
+                                    canvas.width =300; // Set your desired width
+                                    canvas.height =300; // Set your desired height
 
-                                    const container = document.getElementById('pieChartContainer');
-                                    if (container) {
+                                    canvas.style.maxWidth = '100%'; // Limit the width
+                                    canvas.style.maxHeight = '100%';
+                                    // Append the canvas to the chartRow
+                                    const chartCol = document.createElement('div');
+                                    chartCol.classList.add('col-4'); // Adjust the column class as needed
+                                    chartCol.appendChild(canvas);
+                                    chartRow.appendChild(chartCol);
+                                    /*if (container) {
                                         container.appendChild(canvas);
                                     } else {
                                         console.error('Container element not found.');
                                     }
-
+*/
                                     // Create a pie chart with custom tooltip for each project
                                     new Chart(canvas.getContext('2d'), {
                                         type: 'pie',

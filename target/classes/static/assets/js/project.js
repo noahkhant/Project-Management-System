@@ -96,7 +96,7 @@ function populateMemberList(dto) {
                         <div class="invalid-feedback">
                         Choose members for this project.
                     </div>
-                           <img src="/static/img/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
+                           <img src="/static/assets/userPhoto/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
                         <div>
                             <div class="fw-bold">${user.name}</div>
                             <div>${user.position.positionName}</div>

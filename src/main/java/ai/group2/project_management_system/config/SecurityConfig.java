@@ -1,5 +1,6 @@
 package ai.group2.project_management_system.config;
 
+import ai.group2.project_management_system.model.Enum.Role;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +14,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.session.SessionRegistry;
 import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -24,6 +26,8 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenBasedRememberMeServices;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 
@@ -56,9 +60,22 @@ public class SecurityConfig {
                                         "projectFiles"
                                 ).permitAll()
                                 .requestMatchers("/forgot-password","/otp-form").permitAll()
-                                .requestMatchers("/app/**").permitAll()
+                                .requestMatchers("/calendar","/all-issue-list","/home")
+                                .hasAnyAuthority("PMO","PM","TEAMLEADER","MEMBER")
+                                .requestMatchers("/project/projects","/issue-list","/issueboard","/teamleader-progress-view")
+                                .hasAnyAuthority("PM")
+                                .requestMatchers("/user-management")
+                                .hasAnyAuthority("PM","PMO")
+                                .requestMatchers("/department")
+                                .hasAnyAuthority("PMO")
+                                .requestMatchers("/teamleader-issuelist","/teamleader-member-issuelist","/teamleader-issueboard")
+                                .hasAnyAuthority("TEAMLEADER")
+                                .requestMatchers("/member-issueboard","member-issuelist")
+                                .hasAnyAuthority("MEMBER")
                                 .anyRequest()
-                                .authenticated()
+                                .fullyAuthenticated()
+
+
 
                 )
                 .formLogin(form -> {
@@ -68,6 +85,7 @@ public class SecurityConfig {
                             .usernameParameter("email")
                             .passwordParameter("password")
                             .successHandler(((request, response, authentication) -> {
+                                System.out.println("Successful authentication. Redirecting to /home");
                                 response.sendRedirect("/home");
                             }))
                             .permitAll();
@@ -114,8 +132,8 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        //return new BCryptPasswordEncoder();
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
+//        return NoOpPasswordEncoder.getInstance();
 
 
     }
@@ -164,5 +182,13 @@ public class SecurityConfig {
 //        }
     }
 
-
+    @Bean
+    public WebMvcConfigurer webConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addViewControllers(ViewControllerRegistry registry) {
+                registry.addViewController("/error/404").setViewName("error/404");
+            }
+        };
+    }
 }
