@@ -60,9 +60,9 @@ public class SecurityConfig {
                                         "projectFiles"
                                 ).permitAll()
                                 .requestMatchers("/forgot-password","/otp-form").permitAll()
-                                .requestMatchers("/calendar","/all-issue-list","/home")
+                                .requestMatchers("/calendar","/all-issue-list","/home","/project/projects")
                                 .hasAnyAuthority("PMO","PM","TEAMLEADER","MEMBER")
-                                .requestMatchers("/project/projects","/issue-list","/issueboard","/teamleader-progress-view")
+                                .requestMatchers("/issue-list","/issueboard","/teamleader-progress-view")
                                 .hasAnyAuthority("PM")
                                 .requestMatchers("/user-management")
                                 .hasAnyAuthority("PM","PMO")

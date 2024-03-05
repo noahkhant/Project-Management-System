@@ -74,7 +74,7 @@
             <div class="row g-4 mb-3">
                 <div class="col-sm-auto">
 
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"  th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
                         <i class="ri-add-line align-bottom me-1"></i>Create project
                     </button>
                     <button type="button" id="toggleButton" class="btn btn-danger" title="Inactive projects" style="font-size: 12px;" onclick="toggleProjects()">

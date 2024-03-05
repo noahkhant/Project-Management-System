@@ -32,9 +32,8 @@ public class HomeController {
         var user = userService.getCurrentUser();
 
         System.out.println("Current User: "+ user);
-<<<<<<< HEAD
        // session.setAttribute("departmentId", user.getDepartment().getId());
-=======
+
         if(user.getRole()!= Role.PM || user.getRole()!=Role.PMO){
             session.setAttribute("departmentId", user.getDepartment().getId());
         }
@@ -58,7 +57,6 @@ public class HomeController {
             }
         }
 
->>>>>>> 4d979a94b664eb1dda5139c6bf3efc7f8ddd0648
         session.setAttribute("user", user);
         return "index";
     }
