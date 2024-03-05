@@ -20,7 +20,7 @@ public class HomeController {
     public String home(Model model, HttpSession session){
         var user = userService.getCurrentUser();
         System.out.println("Current User: "+ user);
-        session.setAttribute("departmentId", user.getDepartment().getId());
+       // session.setAttribute("departmentId", user.getDepartment().getId());
         session.setAttribute("user", user);
         return "index";
     }
