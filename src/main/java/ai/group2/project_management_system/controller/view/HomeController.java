@@ -27,21 +27,6 @@ public class HomeController {
         return user;
     }
 
- /*   @GetMapping("/home")
-    public String home(Model model, HttpSession session){
-        var user = userService.getCurrentUser();
-
-        System.out.println("Current User: "+ user);
-       // session.setAttribute("departmentId", user.getDepartment().getId());
-
-        if(user.getRole()!= Role.PM || user.getRole()!=Role.PMO){
-            session.setAttribute("departmentId", user.getDepartment().getId());
-        }
-
-        session.setAttribute("user", user);
-        return "index";
-    }*/
-
     @GetMapping("/home")
     public String home(Model model, HttpSession session) {
         var user = userService.getCurrentUser();

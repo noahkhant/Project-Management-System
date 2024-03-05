@@ -326,13 +326,36 @@ function stripHtmlTags(html) {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Your project has been successfully created.',
+                    showConfirmButton: false,
+                    timer: 2000 // Close after 2 seconds
+                })
                 displayProjects('All');
+
+                sendNotiProjectCreate(data);
                 // location.reload();
             })
             .catch(error => console.log("Error" + error));
      //});
 }
-
+function  sendNotiProjectCreate(project){
+    project.users.forEach(user=>{
+        delete currentUser.authorities;
+        delete user.authorities;
+        let noti = {
+            title:"New Project",
+            redirectURL:"/project/projects",
+            content:`You have been assigned to ${project.title}`,
+            sender:currentUser,
+            sendTo:user
+        }
+        console.log("SENT:",noti)
+        sendNotification(noti);
+    })
+}
 <!--Displaying all the data-->
 // Get the select box elementx`
 const projectFilterSelect = document.getElementById('projectFilter');
