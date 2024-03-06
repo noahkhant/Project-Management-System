@@ -29,4 +29,9 @@ public interface ProjectService {
 
     Map<String, Integer> getCountsByStatus();
 
+    // New method to get project name by ID
+    String getProjectNameById(Long projectId);
+    String getProjectCreatorByPID(Long projectId);
+
+
 }

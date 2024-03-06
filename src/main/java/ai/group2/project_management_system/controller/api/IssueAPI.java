@@ -12,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +38,9 @@ public class IssueAPI {
     private final IssueService issueService;
     private final IssueFilesService issueFilesService;
     private final IssueRepository issueRepository;
+
+    @Autowired
+    private EmailService service;
     @Value("${upload.path}")
     private String uploadPath;
 
@@ -109,6 +113,34 @@ public class IssueAPI {
         issue.setActive(true);
         issue.setAssigned(false);
         issue.setStatus(Status.TODO);
+
+
+        // Extracting specific fields
+        Long projectId = issue.getProject().getId();
+        String title = issue.getTitle();
+        String projectName= projectService.getProjectNameById(projectId);
+        String projectManagerName= projectService.getProjectCreatorByPID(projectId);
+        String userEmailById= userService.getUserEmailById(issue.getTeamLeaderId());
+
+
+        System.out.println("projecId "+ projectId);
+        System.out.println("Title "+ title);
+        System.out.println("projectName "+ projectName);
+        System.out.println("projectManagerName "+ projectManagerName);
+        System.out.println("userEmailById "+ userEmailById);
+
+        String winston = "marannoe1322001@gmail.com";
+
+        EmailDetail email= new EmailDetail();
+        email.setRecipients(Collections.singletonList(winston));
+        email.setSubject("Issue Assign Announcements!");
+        email.setMsgBody("Dear Employee, You have been assigned in "+title + " Issue of "+projectName+ " Project By the Project Manager Mr-"+projectManagerName+". FOR Further affairs, Please check in the website!" + "http://localhost:8080/home");
+        email.setAttachment((MultipartFile) files);
+
+        System.out.println("Emails :  "+ email.getRecipients());
+        System.out.println("Subject :  "+ email.getSubject());
+        System.out.println("message :  "+ email.getMsgBody());
+        service.sendMultipleEmail(email);
 
 
         List<String> fileNames = saveAttachments(files);

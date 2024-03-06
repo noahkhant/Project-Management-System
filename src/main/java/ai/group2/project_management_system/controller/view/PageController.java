@@ -107,9 +107,6 @@ public class PageController {
         System.out.println("Emails :  "+ email.getRecipients());
         System.out.println("Subject :  "+ email.getSubject());
         System.out.println("message :  "+ email.getMsgBody());
-
-
-
         service.sendMultipleEmail(email);
 
         return "login";
