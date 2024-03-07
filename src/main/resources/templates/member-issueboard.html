@@ -113,6 +113,10 @@
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
                                                 </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -182,6 +186,10 @@
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
                                                 </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -249,6 +257,10 @@
                                                 <div class="flex-grow-1">
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
                                                 </div>
 
                                             </div>
