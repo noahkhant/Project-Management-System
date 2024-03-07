@@ -13,7 +13,6 @@
         <!-- LOGO -->
         <div class="navbar-brand-box">
             <!-- Dark Logo-->
-
             <a href="#" class="logo logo-dark">
             <span class="logo-sm">
                 <img src="/assets/images/logo-sm.png" alt="" height="22">
@@ -52,18 +51,18 @@
 
                     <!--All Issues Rotate-->
                     <hr style="color: darkgray;">
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
 
                         <a href="/all-issue-list" class="nav-link menu-link"  >
                             <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Projects List</span>
                         </a>
                         <hr style="color: darkgray;">
-                    </li>
+                    </li>-->
 
                     <!--Projects Start-->
-                    <li class="nav-item"  th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
+                    <li class="nav-item" >
                         <a href="/project/projects" class="nav-link menu-link" >
-                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">My Projects</span>
+                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Projects</span>
                         </a>
                         <hr style="color: darkgray;">
                     </li>

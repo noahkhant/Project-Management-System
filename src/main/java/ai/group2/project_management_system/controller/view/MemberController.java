@@ -5,6 +5,7 @@ import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.AssignIssue;
 import ai.group2.project_management_system.model.entity.Issue;
 import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.repository.AssignIssueRepository;
 import ai.group2.project_management_system.service.AssignIssueService;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,6 +28,7 @@ import java.util.List;
 public class MemberController {
     private final UserService userService;
     private final AssignIssueService assignIssueService;
+    private final AssignIssueRepository assignIssueRepository;
     @ModelAttribute("user")
     public User getUserFromSession(HttpSession session) {
         User user = userService.getCurrentUser();
@@ -57,6 +60,21 @@ public class MemberController {
         Long memberId=user.getId();
         List<AssignIssue> memberIssues=assignIssueService.getAssignIssuesByMemberId(memberId);
         System.out.println("MemberIssues:"+memberIssues.size());
+        for(AssignIssue assignIssue:memberIssues){
+            if(assignIssue != null && assignIssue.getStatus().equals(Status.COMPLETED)){
+                if(assignIssue.getPlanDueDate().isBefore(assignIssue.getActualDueDate())){
+                    assignIssue.setOverDue(true);
+                    assignIssueRepository.save(assignIssue);
+                }
+            }else  {
+                if( assignIssue.getPlanDueDate().isBefore(LocalDate.now())){
+                    assignIssue.setOverDue(true);
+                    assignIssueRepository.save(assignIssue);
+                }
+
+            }
+
+        }
         List<AssignIssue> currentMemberIssues=new ArrayList<AssignIssue>();
         for (int i = 0; i <memberIssues.size(); i++) {
             if (!memberIssues.get(i).getIssue().getProject().getStatus().equals(Status.COMPLETED)

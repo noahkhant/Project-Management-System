@@ -1,6 +1,5 @@
 let stompClient;
 let issueId;
-let currentUser;
 document.addEventListener('DOMContentLoaded', () => {
     renderChatList();
 
@@ -222,6 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let message = JSON.parse(data.body).body; // Extract the message data from the payload
                 console.log("msg:::", message.content);
                 displayUpdateMessage(message);
+                if(!message.senderId===currentUser.id){
+                    playNotificationSound();
+                }
             });
         });
     }
@@ -239,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(message);
         stompClient.send(`/app/chat/${issueId}`, {}, JSON.stringify(message));
         document.getElementById('chat-input').value = '';
+        playSendSound();
     }
 });
 

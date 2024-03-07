@@ -41,8 +41,8 @@ public class HomeController {
                 System.out.println("There is no department!");
             }
         }
-
         session.setAttribute("user", user);
+
         return "index";
     }
 

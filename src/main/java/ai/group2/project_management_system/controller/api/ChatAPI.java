@@ -36,7 +36,26 @@ public class ChatAPI {
             message.setUser(userService.getUserById(message.getSenderId()));
             Message newMessage = messageService.save(message);
             System.out.println(newMessage);
-            return new ResponseEntity<>(newMessage, HttpStatus.OK);
+
+            // get all user from issue Id
+            // for each user
+            // simpMessagingTemplate.convertAndSendToUser(recipient, "/message-noti", filteredNotification);
+
+            // client side
+            // subscribe
+
+//        stompNotiClient.subscribe('/user/message-noti', function (message) {
+//            // Handle received notification
+//            console.log('Received notification:', JSON.parse(notification.body));
+//            increaseNotificationNumberToLocalStorage();
+//            setNotificationMessages(JSON.parse(message.body));
+//            appendNotiToNotiMessageList(JSON.parse(message.body))
+//            notiNumberSpan.innerText= fetchNotificationNumberFromLocalStorage().toString();
+//            notiPopNumberSpan.innerText=fetchNotificationNumberFromLocalStorage().toString() + ' New';
+//            playNotificationSound();
+//        });
+
+        return new ResponseEntity<>(newMessage, HttpStatus.OK);
     }
 
     @GetMapping("/get-messages/{issueId}")

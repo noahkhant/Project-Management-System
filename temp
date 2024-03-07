@@ -174,3 +174,32 @@
             </div>
         </div>
     </div>
+
+
+ //     let socket = new SockJS('/ws');
+ //     stompNotiClient = Stomp.over(socket);
+ //     stompNotiClient.connect({}, function (frame) {
+ //         let url = stompNotiClient.ws._transport.url;
+ //         console.log("URL:",url);
+ //         url = url.replace(
+ //             "ws://localhost:8080/ws/",  "");
+ //         url = url.replace("/websocket", "");
+ //         url = url.replace(/^[0-9]+\//, "");
+ //         console.log("Your current session is: " + url);
+ //         sessionId = url;
+ //         userNotiSubscribe(sessionId)
+ //     });
+ // }
+
+ // function userNotiSubscribe(sessionId){
+ //     // stompNotiClient.subscribe('secured/user/queue/specific-user' + '-user' + sessionId, function (notification) {
+ //     stompNotiClient.subscribe('/user/specific', function (notification) {
+ //         //handle messages
+ //         console.log('Received notification:', JSON.parse(notification.body));
+ //     });
+ //     //
+ //     // stompNotiClient.subscribe(`/user/queue/notifications`, function (notification) {
+ //     //     // Handle received notification
+ //     //     console.log('Received notification:', JSON.parse(notification.body));
+ //     // });
+ }

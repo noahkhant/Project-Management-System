@@ -39,11 +39,15 @@ public class ProjectController {
     @PostMapping("/project-detail")
     public String projectDetail(@RequestParam("id") Long projectId , Model map){
         System.out.println(projectId);
-
         Project project = projectService.getProjectBy_Id(projectId);
+        map.addAttribute("project", project);
+        return "project-detail";
+    }
 
-        System.out.println(project);
-
+    @GetMapping("/project-detail/{id}")
+    public String projectDetails(@PathVariable("id") Long projectId , Model map){
+        System.out.println(projectId);
+        Project project = projectService.getProjectBy_Id(projectId);
         map.addAttribute("project", project);
         return "project-detail";
     }

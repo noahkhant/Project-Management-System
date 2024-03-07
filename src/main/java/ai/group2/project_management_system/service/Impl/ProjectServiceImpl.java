@@ -117,7 +117,7 @@ public  class ProjectServiceImpl implements ProjectService {
         countsByStatus.put("todo", projectRepository.countByStatus(Status.TODO));
         countsByStatus.put("inProgress", projectRepository.countByStatus(Status.INPROGRESS));
         countsByStatus.put("pending", projectRepository.countByStatus(Status.PENDING));
-        countsByStatus.put("overdue", projectRepository.countByStatus(Status.OVERDUE));
+       /* countsByStatus.put("overdue", projectRepository.countByStatus(Status.OVERDUE));*/
         countsByStatus.put("completed", projectRepository.countByStatus(Status.COMPLETED));
         return countsByStatus;
     }
