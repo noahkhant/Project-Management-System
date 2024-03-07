@@ -142,6 +142,12 @@
                         </a>
                         <hr style="color: darkgray;">
                     </li>
+                    <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PMO}">
+                        <a href="/report" class="nav-link menu-link"  >
+                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Report</span>
+                        </a>
+                        <hr style="color: darkgray;">
+                    </li>
 
                 </ul>
             </div>
