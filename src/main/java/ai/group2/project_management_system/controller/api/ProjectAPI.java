@@ -45,8 +45,9 @@ public class ProjectAPI {
     @GetMapping("/members-selector/{departmentId}")
     public ResponseEntity<List<UserDTO>> getUsers(@PathVariable Long departmentId) {
         System.out.println("Users are gone");
+        User currentUser = userService.getCurrentUser();
         List<UserDTO> users = userService.getUsersByDepartmentId(departmentId); // Assuming this returns List<User>
-
+        users.removeIf(user -> user.getId().equals(currentUser.getId()));
         System.out.println("member-selector " + users);
         if (!users.isEmpty()) {
             return ResponseEntity.ok(users);
@@ -60,7 +61,7 @@ public class ProjectAPI {
         System.out.println("Users are gone : ");
         List<User> users = userService.getMembersByDepartmentId(departmentId);
         users = users.stream()
-                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO) && !user.getRole().equals(Role.TEAMLEADER))
                 .collect(Collectors.toList());
         System.out.println(users);
         users.forEach(user -> {
@@ -69,6 +70,22 @@ public class ProjectAPI {
             System.out.println("User isActive: " + user.isActive());
         });
         return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/teamLeader-selection/{departmentId}")
+    public ResponseEntity<List<User>> getTeamLeaders(@PathVariable Long departmentId){
+        System.out.println("Users are gone : ");
+        List<User> teamLeaders = userService.getMembersByDepartmentId(departmentId);
+        teamLeaders = teamLeaders.stream()
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO) && !user.getRole().equals(Role.MEMBER))
+                .collect(Collectors.toList());
+        System.out.println(teamLeaders);
+        teamLeaders.forEach(user -> {
+            String profile = userService.getUserPhotoById(user.getId());
+            user.setProfilePictureFileName(profile);
+            System.out.println("User isActive: " + user.isActive());
+        });
+        return ResponseEntity.ok(teamLeaders);
     }
 
 
@@ -95,14 +112,18 @@ public class ProjectAPI {
     //These methods are for selecting back and display back the project list
     @GetMapping("/show-projects")
     public ResponseEntity<List<Project>> getActiveProjects() {
-        List<Project> projects = projectService.getAllProjectsWithUsers();
+
+        User currentUser = userService.getCurrentUser();
+        List<Project> projects = projectService.getProjectsByCreator(currentUser.getName());
 
         List<Project> activeProjects = projects.stream()
                 .filter(Project::isActive)
+                .sorted(Comparator.comparingLong(Project::getId).reversed())
                 .collect(Collectors.toList());
         System.out.println(activeProjects);
         return ResponseEntity.ok(activeProjects);
     }
+
     @GetMapping("/show-inactive-projects")
     public ResponseEntity<List<Project>> getInactiveProjects() {
         List<Project> projects = projectService.getAllProjectsWithUsers();
@@ -150,6 +171,9 @@ public class ProjectAPI {
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsersByIds(@RequestParam("userIds") List<Long> userIds) {
         List<User> users = userService.findUsersByIds(userIds);
+        users = users.stream()
+                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .collect(Collectors.toList());
         if (!users.isEmpty()) {
             return ResponseEntity.ok(users);
         } else {

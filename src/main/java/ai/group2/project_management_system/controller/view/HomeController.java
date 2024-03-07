@@ -27,22 +27,6 @@ public class HomeController {
         return user;
     }
 
- /*   @GetMapping("/home")
-    public String home(Model model, HttpSession session){
-        var user = userService.getCurrentUser();
-
-        System.out.println("Current User: "+ user);
-<<<<<<< HEAD
-       // session.setAttribute("departmentId", user.getDepartment().getId());
-=======
-        if(user.getRole()!= Role.PM || user.getRole()!=Role.PMO){
-            session.setAttribute("departmentId", user.getDepartment().getId());
-        }
-
-        session.setAttribute("user", user);
-        return "index";
-    }*/
-
     @GetMapping("/home")
     public String home(Model model, HttpSession session) {
         var user = userService.getCurrentUser();
@@ -58,7 +42,6 @@ public class HomeController {
             }
         }
 
->>>>>>> 4d979a94b664eb1dda5139c6bf3efc7f8ddd0648
         session.setAttribute("user", user);
         return "index";
     }

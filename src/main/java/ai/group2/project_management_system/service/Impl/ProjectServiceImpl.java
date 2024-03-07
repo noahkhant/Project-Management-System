@@ -7,11 +7,8 @@ import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.repository.*;
 import ai.group2.project_management_system.service.ProjectService;
-import jakarta.persistence.Cacheable;
-import jakarta.persistence.EntityGraph;
 import jakarta.persistence.EntityManager;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
+import jakarta.persistence.TypedQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -41,9 +38,7 @@ public  class ProjectServiceImpl implements ProjectService {
         List<Project> projects = projectRepository.findAll();
         // Example: Fetch users for each project
         for (Project project : projects) {
-            // Trigger lazy loading by accessing the users association
             Set<User> users = project.getUsers();
-            // Optional: Print the users for demonstration
             users.forEach(user -> System.out.println("User: " + user.getName() + " " + user.getId()));
         }
         return projects;
@@ -126,6 +121,15 @@ public  class ProjectServiceImpl implements ProjectService {
         countsByStatus.put("completed", projectRepository.countByStatus(Status.COMPLETED));
         return countsByStatus;
     }
+
+    @Override
+    public List<Project> getProjectsByCreator(String creatorName) {
+        String jpql = "SELECT p FROM Project p WHERE p.creator = :creatorName";
+        TypedQuery<Project> query = entityManager.createQuery(jpql, Project.class);
+        query.setParameter("creatorName", creatorName);
+        return query.getResultList();
+    }
+
 
 
     @Override

@@ -23,10 +23,11 @@ public interface ProjectService {
     int getInactiveProjectCount();
 
     List<Project> getActiveProjects();
+
     List<Project> getProjectsByDepartmentId(Long departmentId);
     List<Long> getAllProjectIds();
 
-
     Map<String, Integer> getCountsByStatus();
 
+    List<Project> getProjectsByCreator(String creatorName);
 }

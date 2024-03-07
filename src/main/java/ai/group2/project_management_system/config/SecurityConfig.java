@@ -135,7 +135,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
 //        return NoOpPasswordEncoder.getInstance();
 
-
     }
 
     @Bean
