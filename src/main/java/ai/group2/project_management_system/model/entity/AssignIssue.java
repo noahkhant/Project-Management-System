@@ -27,6 +27,7 @@ public class AssignIssue implements Serializable {
     @Column(name = "name")
     private String name;
     private boolean isActive;
+    private boolean isOverDue;
 
     @ManyToOne
     @JsonIgnore

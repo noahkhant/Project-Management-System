@@ -5,10 +5,7 @@ import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.Enum.Role;
 import ai.group2.project_management_system.model.Enum.Status;
-import ai.group2.project_management_system.model.entity.Department;
-import ai.group2.project_management_system.model.entity.Notification;
-import ai.group2.project_management_system.model.entity.Project;
-import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.service.DepartmentService;
 import ai.group2.project_management_system.service.Impl.ProjectServiceImpl;
@@ -96,6 +93,19 @@ public class ProjectAPI {
     @GetMapping("/show-projects")
     public ResponseEntity<List<Project>> getActiveProjects() {
         List<Project> projects = projectService.getAllProjectsWithUsers();
+        for(Project project:projects){
+            if(project != null && project.getStatus().equals(Status.COMPLETED)){
+                if(project.getPlanEndDate().isBefore(project.getActualEndDate())){
+                    project.setOverDue(true);
+                    projectRepository.save(project);
+                }
+            }else  {
+                if( project.getPlanEndDate().isBefore(LocalDate.now())){
+                    project.setOverDue(true);
+                    projectRepository.save(project);
+                }
+            }
+        }
 
         List<Project> activeProjects = projects.stream()
                 .filter(Project::isActive)

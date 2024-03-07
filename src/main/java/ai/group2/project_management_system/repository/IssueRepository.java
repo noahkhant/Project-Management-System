@@ -13,8 +13,11 @@ import java.util.Optional;
 @Repository
 public interface IssueRepository extends JpaRepository<Issue, Integer> {
     Optional<Issue> findIssueById(Long id);
+
     List<Issue> getIssuesByTeamLeaderId(Long id);
+
     List<Issue> getIssuesByCreator(String creator);
+
     @Query(value = "select u.id from issue ie join\n" +
             "project p on ie.project_id = p.id join\n" +
             "project_member pm on p.id = pm.project_id join\n" +
@@ -32,5 +35,12 @@ public interface IssueRepository extends JpaRepository<Issue, Integer> {
 
 
     Integer countByStatus(Status status);
+
+    @Query("SELECT COUNT(i) FROM Issue i WHERE i.project.id = :projectId")
+    int countIssuesByProjectId(@Param("projectId") Long projectId);
+
+    @Query("SELECT COUNT(i) FROM Issue i WHERE i.project.id = :projectId AND i.status = 'COMPLETED'")
+    int countCompletedIssuesByProjectId(@Param("projectId") Long projectId);
+
 
 }

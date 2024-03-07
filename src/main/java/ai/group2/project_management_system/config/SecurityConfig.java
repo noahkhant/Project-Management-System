@@ -105,12 +105,12 @@ public class SecurityConfig {
                 .exceptionHandling(
                         (exceptionHandling) -> exceptionHandling
                                 .accessDeniedPage("/access-denied"))
-                .rememberMe(remember -> remember
+                /*.rememberMe(remember -> remember
                         .key(MY_KEY )
                         .rememberMeParameter("remember-me")
                         .rememberMeServices(rememberMeServices())
                         .tokenValiditySeconds(60 * 60 * 24)//1 day
-                )
+                )*/
                 .sessionManagement(session -> session
                         .maximumSessions(1)//1 user 1 session
                         .maxSessionsPreventsLogin(false)//if user already login, then user can't login again
