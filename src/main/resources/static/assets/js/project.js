@@ -218,7 +218,7 @@ function departmentGetter() {
         .catch(error => console.error("Error:", error));
 }
 function inActiveProjects(filter){
-    const url = "/show-inactive-projects";
+    const url = "/show-projects";
     fetch(url, {
         method: 'GET',
         credentials: 'include',
@@ -235,9 +235,11 @@ function inActiveProjects(filter){
         .then(data => {
             projectList = data;
             console.log("Project Lists: " + projectList);
-            // Filter projects based on the selected filter
-            const filteredProjects = filterProjects(data, filter);
-            // Display the users returned by the server in the member list
+            // Filter out active projects
+            const inactiveProjects = data.filter(project => !project.active);
+            // Filter projects based on the selected filter (if any)
+            const filteredProjects = filterProjects(inactiveProjects, filter);
+            // Display the inactive projects in the member list
             populateProjectList(filteredProjects);
         })
         .catch(error => {
@@ -263,9 +265,11 @@ function displayProjects(filter){
         .then(data => {
             projectList = data;
             console.log("Project Lists: " + projectList);
-            // Filter projects based on the selected filter
-            const filteredProjects = filterProjects(data, filter);
-            // Display the users returned by the server in the member list
+            // Filter out inactive projects
+            const activeProjects = data.filter(project => project.active);
+            // Filter projects based on the selected filter (if any)
+            const filteredProjects = filterProjects(activeProjects, filter);
+            // Display the active projects in the member list
             populateProjectList(filteredProjects);
         })
         .catch(error => {

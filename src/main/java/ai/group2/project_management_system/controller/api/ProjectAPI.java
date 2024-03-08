@@ -111,38 +111,22 @@ public class ProjectAPI {
     public ResponseEntity<List<Project>> getActiveProjects() {
 
         List<Project> projects = projectService.getAllProjectsWithUsers();
-        for(Project project:projects){
-            if(project != null && project.getStatus().equals(Status.COMPLETED)){
-                if(project.getPlanEndDate().isBefore(project.getActualEndDate())){
-                    project.setOverDue(true);
-                    projectRepository.save(project);
-                }
-            }else  {
-                if( project.getPlanEndDate().isBefore(LocalDate.now())){
-                    project.setOverDue(true);
-                    projectRepository.save(project);
-                }
-            }
-        }
-
-        List<Project> activeProjects = projects.stream()
-                .filter(Project::isActive)
+        List<Project> projects1 = projects.stream()
                 .sorted(Comparator.comparingLong(Project::getId).reversed())
                 .collect(Collectors.toList());
-        System.out.println(activeProjects);
-        return ResponseEntity.ok(activeProjects);
+        return ResponseEntity.ok(projects1);
     }
 
-    @GetMapping("/show-inactive-projects")
-    public ResponseEntity<List<Project>> getInactiveProjects() {
-        List<Project> projects = projectService.getAllProjectsWithUsers();
-
-        List<Project> inactiveProjects = projects.stream()
-                .filter(project -> !project.isActive())
-                .collect(Collectors.toList());
-        System.out.println(inactiveProjects);
-        return ResponseEntity.ok(inactiveProjects);
-    }
+//    @GetMapping("/show-inactive-projects")
+//    public ResponseEntity<List<Project>> getInactiveProjects() {
+//        List<Project> projects = projectService.getAllProjectsWithUsers();
+//
+//        List<Project> inactiveProjects = projects.stream()
+//                .filter(project -> !project.isActive())
+//                .collect(Collectors.toList());
+//        System.out.println(inactiveProjects);
+//        return ResponseEntity.ok(inactiveProjects);
+//    }
 
 
     @PutMapping("/edit-project/{id}")
