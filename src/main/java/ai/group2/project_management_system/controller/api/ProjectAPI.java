@@ -109,8 +109,8 @@ public class ProjectAPI {
     //These methods are for selecting back and display back the project list
     @GetMapping("/show-projects")
     public ResponseEntity<List<Project>> getActiveProjects() {
-
         List<Project> projects = projectService.getAllProjectsWithUsers();
+        List<Project> activeProjectsByUser=new ArrayList<Project>();
         for(Project project:projects){
             if(project != null && project.getStatus().equals(Status.COMPLETED)){
                 if(project.getPlanEndDate().isBefore(project.getActualEndDate())){
@@ -129,8 +129,19 @@ public class ProjectAPI {
                 .filter(Project::isActive)
                 .sorted(Comparator.comparingLong(Project::getId).reversed())
                 .collect(Collectors.toList());
-        System.out.println(activeProjects);
-        return ResponseEntity.ok(activeProjects);
+        return ResponseEntity.ok(activeProjectsByUser);
+        /*if(userService.getCurrentUser().getRole()==Role.PMO || userService.getCurrentUser().getRole()==Role.PM){
+            return ResponseEntity.ok(activeProjects);
+        }else {
+            List<Project> userProjects=projectRepository.findProjectsByUserId(userService.getCurrentUser().getId());
+            //System.out.println("Project Size:"+teamLeaderProjects.size());
+            for(Project project:userProjects){
+                if(project.isActive()){
+                    activeProjectsByUser.add(project);
+                }
+            }
+            return ResponseEntity.ok(activeProjectsByUser);
+        }*/
     }
 
     @GetMapping("/show-inactive-projects")
