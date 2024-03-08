@@ -147,7 +147,7 @@ function  updateProfile(){
                 // Reload the browser
                 Swal.fire({
                     title: 'Success!',
-                    text: 'Your project has been updated successfully.',
+                    text: 'Your profile has been updated successfully.',
                     icon: 'success',
                     timer: 2000, // 2 seconds
                     showConfirmButton: false // Hide the default "Ok" button
@@ -195,8 +195,85 @@ function  updateImage(){
     }
 }
 
-function changePassword(){
+function validateChangePassword() {
+    var oldPassword = document.getElementById('oldPasswordInput').value;
+    fetch(`/user/password/${oldPassword}`)
+            .then(response=>{
+                console.log("Response received from the server:", response);
+                if(response.ok){
+                    console.log("ok");
+                }
+                return response.json();
+            })
+                .then(data =>{
+                    console.log("User updated successfully:"+ data);
+                    if(data == true){
+                        var newPassword = document.getElementById('newPasswordInput').value;
+                        var confirmPassword = document.getElementById('confirmPasswordInput').value;
 
+                        if (newPassword !== confirmPassword) {
+                            var confirmPasswordInput = document.getElementById('confirmPasswordInput');
+                            confirmPasswordInput.classList.add('is-invalid');
+                            Swal.fire({
+                                title: 'Success!',
+                                html: '<div>Update password failed</div><div style="font-size: 60%; color: red">Please, make sure that new password & confirm password are the same</div>',
+                                icon: 'error',
+                                timer: 4000, // 2 seconds
+                                showConfirmButton: false // Hide the default "Ok" button
+                            });
+                            return false;
+                        }else{
+                            Swal.fire({
+                                title: 'Success!',
+                                text: 'Your password has been updated successfully.',
+                                icon: 'success',
+                                timer: 2000, // 2 seconds
+                                showConfirmButton: false // Hide the default "Ok" button
+                            });
+                            changePassword();
+                        }
+                    }else{
+                        Swal.fire({
+                            title: 'Success!',
+                            html: '<div>Update password failed</div><div style="font-size: 60%; color: red">Please, check back your old password</div>',
+                            icon: 'error',
+                            timer: 4000, // 2 seconds
+                            showConfirmButton: false // Hide the default "Ok" button
+                        });
+                    }
+
+                })
+                .catch(error => {
+                    console.error("Error updating user:", error);
+                });
+}
+
+function changePassword(){
+    const userId = document.getElementById('current-id').value;
+    const updatePassword = {
+        password: document.getElementById('newPasswordInput').value
+    }
+    console.log(updatePassword);
+    fetch(`/update-password/${userId}`, {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(updatePassword)
+    })
+        .then(response=>{
+            console.log("Response received from the server:", response);
+            if(response.ok){
+                console.log("ok");
+            }
+        })
+        .then(updateUserData =>{
+            console.log("User updated successfully:"+ updateUserData);
+        })
+        .catch(error => {
+            console.error("Error updating user:", error);
+        });
 }
 
 

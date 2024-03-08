@@ -125,11 +125,6 @@ public class ProjectAPI {
             }
         }
 
-        List<Project> activeProjects = projects.stream()
-                .filter(Project::isActive)
-                .sorted(Comparator.comparingLong(Project::getId).reversed())
-                .collect(Collectors.toList());
-        return ResponseEntity.ok(activeProjectsByUser);
         /*if(userService.getCurrentUser().getRole()==Role.PMO || userService.getCurrentUser().getRole()==Role.PM){
             return ResponseEntity.ok(activeProjects);
         }else {
@@ -142,18 +137,22 @@ public class ProjectAPI {
             }
             return ResponseEntity.ok(activeProjectsByUser);
         }*/
-    }
-
-    @GetMapping("/show-inactive-projects")
-    public ResponseEntity<List<Project>> getInactiveProjects() {
-        List<Project> projects = projectService.getAllProjectsWithUsers();
-
-        List<Project> inactiveProjects = projects.stream()
-                .filter(project -> !project.isActive())
+        List<Project> projects1 = projects.stream()
+                .sorted(Comparator.comparingLong(Project::getId).reversed())
                 .collect(Collectors.toList());
-        System.out.println(inactiveProjects);
-        return ResponseEntity.ok(inactiveProjects);
+        return ResponseEntity.ok(projects1);
     }
+
+//    @GetMapping("/show-inactive-projects")
+//    public ResponseEntity<List<Project>> getInactiveProjects() {
+//        List<Project> projects = projectService.getAllProjectsWithUsers();
+//
+//        List<Project> inactiveProjects = projects.stream()
+//                .filter(project -> !project.isActive())
+//                .collect(Collectors.toList());
+//        System.out.println(inactiveProjects);
+//        return ResponseEntity.ok(inactiveProjects);
+//    }
 
 
     @PutMapping("/edit-project/{id}")
