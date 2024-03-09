@@ -8,7 +8,6 @@ function validateForm() {
     return true;
 }
 // Function to validate form and display confirmation modal
-
 function validateAndConfirm() {
     // Perform your validation here
     if (validateForm()) {
@@ -20,16 +19,36 @@ function validateAndConfirm() {
             timer: 2000 // 2 seconds
         });
         showData();
-    } else {
-        // Show validation failure message
-        Swal.fire({
-            title: 'Validation Failed',
-            text: 'Please correct the validation errors.',
-            icon: 'error',
-            timer: 2000 // 2 seconds
-        });
     }
 }
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+document.getElementById('updateSubmit').addEventListener('click', function(event) {
+    validateForUpdateProject(event);
+});
+
+function validateUpdateForm() {
+    const form = document.getElementById('updateProject');
+    if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return false;
+    }
+    return true;
+}
+function validateForUpdateProject(event){
+    event.preventDefault();
+    // Perform your validation here
+    if (validateUpdateForm()) {
+        // Show a success message
+        Swal.fire({
+            title: 'Success!',
+            text: 'Your project has been updated successfully.',
+            icon: 'success',
+            timer: 2000 // 2 seconds
+        });
+        updateProject();
+    }
+}
+
 
 
 
