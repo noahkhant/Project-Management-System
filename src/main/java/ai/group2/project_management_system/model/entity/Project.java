@@ -51,6 +51,23 @@ public class Project implements Serializable {
 
     private boolean isOverDue;
 
+    public boolean isOverDue() {
+        return isOverDue;
+    }
+
+    public void setOverDue(boolean overDue) {
+        isOverDue = overDue;
+    }
+
+    private boolean isActive;
+    public String getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(String percentage) {
+        this.percentage = percentage;
+    }
+
     @Enumerated(EnumType.STRING)
     private Category category;
 
@@ -71,7 +88,7 @@ public class Project implements Serializable {
         this.isActive = isActive;
     }
 
-    private boolean isActive;
+
 
     @Transient
     private List<Long> userIds;

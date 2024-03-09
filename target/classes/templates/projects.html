@@ -110,7 +110,7 @@
 
                 </div>
             </div>
-
+            <div style="display: none" th:text="${user.role} " id="userRole"></div>
             <div class="row" id="projects">
 
             </div>
@@ -120,21 +120,6 @@
         <!-- container-fluid -->
     </div>
     <!-- End Page-content -->
-
-   <!-- <footer class="footer">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <script>document.write(new Date().getFullYear())</script> © Velzon.
-                </div>
-                <div class="col-sm-6">
-                    <div class="text-sm-end d-none d-sm-block">
-                        Design & Develop by Themesbrand
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>-->
 </div>
 <!-- end main content-->
 
@@ -422,7 +407,6 @@
 <div th:replace="~{layout :: footer}"></div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" ></script>
-
 <!-- prismjs plugin -->
 <script th:src="@{/assets/libs/prismjs/prism.js}"></script>
 <script th:src="@{/assets/libs/list.js/list.min.js}"></script>
