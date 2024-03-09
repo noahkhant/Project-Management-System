@@ -32,10 +32,8 @@ public class ProjectServiceImplTest {
         // Arrange
         Project project = new Project();
         when(projectRepository.save(project)).thenReturn(project);
-
         // Act
         Project savedProject = projectService.save(project);
-
         // Assert
         assertEquals(project, savedProject);
         verify(projectRepository, times(1)).save(project);
