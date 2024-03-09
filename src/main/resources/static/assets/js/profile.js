@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (){
+    displayProfile();
     getDepartment();
     getPositions();
-    displayProfile();
+
 })
 
 function displayProfile() {

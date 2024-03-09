@@ -153,7 +153,7 @@ public class ProjectAPI {
 //    }
 
 
-    @PutMapping("/edit-project/{id}")
+    @PostMapping("/edit-project/{id}")
     public ResponseEntity<Project> editProject(@PathVariable("id") Long projectId, @RequestBody Project project){
         System.out.println("we reach edit mapping!");
 

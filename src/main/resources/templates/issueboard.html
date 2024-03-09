@@ -1242,38 +1242,17 @@
 
 <div th:replace="~{layout :: footer}"></div>
 <!-- Add this script after your HTML content -->
-
-
 <script th:src="@{assets/js/issueboard.js}"></script>
 <script th:src="@{assets/js/pm-issue-board.js}"></script>
 <script th:src="@{/assets/js/issue-modal-init.js}"></script>
 <script th:src="@{/assets/js/issue-create.js}"></script>
 <!--FIle Script-->
 <script src="assets/js/file.js"></script>
-<!--<script>-->
-<!--    initializeFileUpload('file-input', 'fileNames');-->
-<!--    initializeFileUpload1('file-input1', 'fileNames1');-->
-<!--</script>-->
 <script th:src="@{https://cdn.jsdelivr.net/npm/flatpickr}"></script>
 <!-- JAVASCRIPT -->
 <script th:src="@{assets/js/pages/tasks-kanban.init.js}"></script>
 <!-- ckeditor -->
 <script th:src="@{assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js}"></script>
-<script>
-    // Initialize CKEditor for the first instance
-    // ClassicEditor
-    //     .create(document.querySelector('#ckeditor-classic-1'))
-    //     .catch(error => {
-    //         console.error(error);
-    //     });
-
-    //Initialize CKEditor for the second instance
-    // ClassicEditor
-    //     .create(document.querySelector('#ckeditor-classic-2'))
-    //     .catch(error => {
-    //         console.error(error);
-    //     });
-</script>
 
 <script th:src="@{/assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js}"></script>
 <script>

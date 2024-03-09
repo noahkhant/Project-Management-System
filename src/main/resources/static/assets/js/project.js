@@ -43,7 +43,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Call userGetter to fetch and display a user list for the default department
     displayProjects('All');
     departmentGetter();
-    validateForm();
 });
 
 function userGetter() {
