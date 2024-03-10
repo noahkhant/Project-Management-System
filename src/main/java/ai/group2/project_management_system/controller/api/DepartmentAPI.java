@@ -22,6 +22,7 @@ public class DepartmentAPI {
 
     @PostMapping("/add-department")
     public ResponseEntity<Department> addDepartment(@RequestBody Department department) {
+        department.setActive(true);
         Department newDepartment = departmentService.save(department);
         return ResponseEntity.ok(newDepartment);
     }
@@ -35,7 +36,7 @@ public class DepartmentAPI {
             existingDepartment.setName(updatedDepartment.getName());
             existingDepartment.setEmail(updatedDepartment.getEmail());
             existingDepartment.setPhone(updatedDepartment.getPhone());
-            existingDepartment.setActive(updatedDepartment.isActive());
+//            existingDepartment.setActive(updatedDepartment.isActive());
             // Update other fields as needed
 
             Department savedDepartment = departmentService.save(existingDepartment);
@@ -45,7 +46,21 @@ public class DepartmentAPI {
         }
     }
 
-    @PutMapping("/department-toggle/{departmentId}")
+    @PutMapping("api/updateRecord/{departmentId}")
+    public ResponseEntity<String> departmentStatus(@PathVariable("departmentId") Long departmentId) {
+        Department department = departmentService.getDepartmentById(departmentId);
+        if (department != null && department.isActive()) {
+            department.setActive(false);
+            departmentService.save(department);
+            return ResponseEntity.ok("Department status false changed successfully");
+        } else {
+            department.setActive(true);
+            departmentService.save(department);
+            return ResponseEntity.ok("Department status true changed successfully");
+        }
+    }
+
+   /* @PutMapping("api/updateRecord/{departmentId/}")
     public ResponseEntity<String> toggleDepartmentStatus(@PathVariable("departmentId") Long departmentId) {
         Department department = departmentService.getDepartmentById(departmentId);
         if (department != null) {
@@ -55,5 +70,5 @@ public class DepartmentAPI {
         } else {
             return ResponseEntity.notFound().build();
         }
-    }
+    }*/
 }
