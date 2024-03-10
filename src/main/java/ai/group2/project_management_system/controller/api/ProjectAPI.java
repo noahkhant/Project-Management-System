@@ -116,7 +116,6 @@ public class ProjectAPI {
     @GetMapping("/show-projects")
     public ResponseEntity<List<Project>> getActiveProjects() {
         List<Project> projects = projectService.getAllProjectsWithUsers();
-        List<Project> activeProjectsByUser=new ArrayList<Project>();
         for(Project project:projects){
             if(project != null && project.getStatus().equals(Status.COMPLETED)){
                 if(project.getPlanEndDate().isBefore(project.getActualEndDate())){
@@ -130,23 +129,22 @@ public class ProjectAPI {
                 }
             }
         }
-
-        /*if(userService.getCurrentUser().getRole()==Role.PMO || userService.getCurrentUser().getRole()==Role.PM){
-            return ResponseEntity.ok(activeProjects);
-        }else {
-            List<Project> userProjects=projectRepository.findProjectsByUserId(userService.getCurrentUser().getId());
-            //System.out.println("Project Size:"+teamLeaderProjects.size());
-            for(Project project:userProjects){
-                if(project.isActive()){
-                    activeProjectsByUser.add(project);
-                }
-            }
-            return ResponseEntity.ok(activeProjectsByUser);
-        }*/
         List<Project> projects1 = projects.stream()
                 .sorted(Comparator.comparingLong(Project::getId).reversed())
                 .collect(Collectors.toList());
-        return ResponseEntity.ok(projects1);
+        //return ResponseEntity.ok(projects1);
+        if(userService.getCurrentUser().getRole()==Role.PMO || userService.getCurrentUser().getRole()==Role.PM){
+
+            return ResponseEntity.ok(projects1);
+        }else {
+            List<Project> userProjects=projectRepository.findProjectsByUserId(userService.getCurrentUser().getId());
+            //System.out.println("Project Size:"+teamLeaderProjects.size());
+            List<Project> sortUserProjects = userProjects.stream()
+                    .sorted(Comparator.comparingLong(Project::getId).reversed())
+                    .collect(Collectors.toList());
+            return ResponseEntity.ok(sortUserProjects);
+        }
+
     }
 
 //    @GetMapping("/show-inactive-projects")
@@ -161,7 +159,7 @@ public class ProjectAPI {
 //    }
 
 
-    @PutMapping("/edit-project/{id}")
+    @PostMapping("/edit-project/{id}")
     public ResponseEntity<Project> editProject(@PathVariable("id") Long projectId, @RequestBody Project project){
         System.out.println("we reach edit mapping!");
 

@@ -37,7 +37,7 @@ public class UserAPI {
     private String uploadDir;
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, String>> createUser(
+    public ResponseEntity<Map<String, String>>  createUser(
             @RequestParam("name") String name,
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
@@ -50,7 +50,6 @@ public class UserAPI {
             @RequestParam("password") String password,
             @RequestParam("file") MultipartFile file) {
         try {
-
             System.out.println("Department = "+ department);
             System.out.println("Position = "+ position);
             System.out.println("Role:"+role);
@@ -65,9 +64,18 @@ public class UserAPI {
                     String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
                     User user = new User();
                     user.setName(name);
-                    user.setDepartment(department);
+                    if (!position.getPositionName().equals("Project Manager")) {
+                        user.setDepartment(department);
+                    }else{
+                        user.setDepartment(null);
+                    }
                     user.setPosition(position);
-                    user.setRole(role);
+                    // Set role based on position value
+                    if (position.getPositionName().equals("Project Manager")) {
+                        user.setRole(Role.PM);
+                    } else {
+                        user.setRole(role);
+                    }
                     user.setGender(gender);
                     user.setDob(dob);
                     user.setEducation(education);

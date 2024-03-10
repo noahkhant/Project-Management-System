@@ -229,7 +229,7 @@ function htmlTags(html) {
     return doc.body.textContent || "";
 }
 
-document.getElementById("updateProject").addEventListener('submit', function (event) {
+function updateProject(){
     event.preventDefault();
     console.log("submitting add form .....");
 
@@ -262,7 +262,7 @@ document.getElementById("updateProject").addEventListener('submit', function (ev
     console.log("updateData", updateData);
     const id = document.getElementById('project-id').value;
     const response =  fetch(`/edit-project/${id}`, {
-        method: 'PUT',
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
@@ -271,14 +271,10 @@ document.getElementById("updateProject").addEventListener('submit', function (ev
         .then(response => response.json())
         .then(data => {
             console.log('Data received:', data);
-
             displayProjects('All');
-
         })
         .catch(error => console.log("Error" + error));
-    const modal = new bootstrap.Modal(document.getElementById('updateModal'));
-    modal.hide();
-});
+}
 
 
 
