@@ -30,4 +30,6 @@ public interface AssignIssueRepository extends JpaRepository<AssignIssue,Integer
 
     @Query("SELECT COUNT(i) FROM AssignIssue i WHERE i.issue.id = :issueId AND i.status = 'COMPLETED'")
     int countCompletedSubIssuesByIssueId(@Param("issueId") Long issueId);
+
+    List<AssignIssue> findAssignIssuesByIssueId(Long id);
 }
