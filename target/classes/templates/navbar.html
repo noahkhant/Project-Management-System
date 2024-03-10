@@ -68,6 +68,15 @@
                     </li>
                     <!--Projects End-->
 
+                    <!--Projects Start-->
+                    <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
+                        <a href="/project/my-projects" class="nav-link menu-link" >
+                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">My Projects</span>
+                        </a>
+                        <hr style="color: darkgray;">
+                    </li>
+                    <!--Projects End-->
+
                     <!--Issues Start-->
                     <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
                         <a href="#sidebarTasks" class="nav-link" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarTasks" >

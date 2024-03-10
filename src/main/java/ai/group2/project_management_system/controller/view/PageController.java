@@ -1,10 +1,14 @@
 package ai.group2.project_management_system.controller.view;
 
 import ai.group2.project_management_system.model.entity.EmailDetail;
+import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.repository.UserRepository;
 import ai.group2.project_management_system.service.EmailService;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,31 +16,40 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
+@Slf4j
 public class PageController {
     private final UserService userService;
+    private final UserRepository userRepository;
     @Autowired
     private EmailService service;
 
     // Sending a simple Email
     @PostMapping("/forgot-password")
     public String sendMail(@RequestParam String recipient,
-                           @RequestParam String subject, HttpSession session) {
-
-        // Create an EmailDetail object and set the values
-        EmailDetail details = new EmailDetail();
-        details.setRecipients(Collections.singletonList(recipient));
-        details.setSubject(subject);
-        String OTP = service.generateOTP();
-        details.setMsgBody(OTP);
-        session.setAttribute("otp", OTP);
-        {
-            // Call the service method to send the email
-            String status = service.simpleMail(details);
-
-            return "otp-form";
+                           @RequestParam String subject, HttpSession session,Model model) {
+        List<String> emails=userRepository.findAllEmails();
+        if(emails.contains(recipient)){
+            // Create an EmailDetail object and set the values
+            EmailDetail details = new EmailDetail();
+            details.setRecipients(Collections.singletonList(recipient));
+            details.setSubject(subject);
+            String OTP = service.generateOTP();
+            details.setMsgBody(OTP);
+            session.setAttribute("otp", OTP);
+            {
+                // Call the service method to send the email
+                String status = service.simpleMail(details);
+                session.setAttribute("email",recipient);
+                return "otp-form";
+            }
+        }else {
+            model.addAttribute("error","Your Email is invalie!");
+            return "forgot-password";
         }
 
     }
@@ -57,7 +70,6 @@ public class PageController {
 
         String OTP = (String) session.getAttribute("otp");
 
-        // Validate OTPs using equals() for content comparison
         if (OTPInput.equals(OTP)) {
             // OTPs match, redirect to create-new-password
             return "create-new-password";
@@ -105,6 +117,61 @@ public class PageController {
         System.out.println("message :  "+ email.getMsgBody());
         service.sendMultipleEmail(email);
 
+        return "login";
+    }
+
+    /*@PostMapping("/create-new-password")
+    public String createNewPassword(@RequestParam("password") String password, HttpSession httpSession) {
+
+        try {
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+            String email = (String) httpSession.getAttribute("email");
+
+            if (email != null) {
+                Optional<User> optionalUser = userRepository.findByEmail(email);
+
+                if (optionalUser.isPresent()) {
+                    User user = optionalUser.get();
+                    user.setPassword(hashedPassword);
+                    User savedUser = userRepository.save(user);
+
+                    if (savedUser != null) {
+                        log.info("User with ID {} saved successfully.", savedUser.getId());
+                    } else {
+                        log.error("Failed to save user.");
+                    }
+                } else {
+                    // Log that the user was not found
+                    log.error("User with email {} not found.", email);
+                }
+            } else {
+                // Log that the email is null
+                log.error("Email is null.");
+            }
+
+            httpSession.invalidate();
+            return "login";
+        } catch (Exception e) {
+            // Log any unexpected exceptions
+            log.error("An unexpected error occurred.", e);
+            return "error/404"; // Redirect to an error page or handle appropriately
+        }
+    }*/
+
+    @PostMapping("/create-new-password")
+    public String createNewPassword(@RequestParam("password") String password,HttpSession httpSession){
+        System.out.println("Password:"+password);
+        String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+        String email= (String) httpSession.getAttribute("email");
+        User user=userRepository.findByEmail(email).orElse(null);
+        user.setPassword(hashedPassword);
+        User savedUser=userRepository.save(user);
+        if (savedUser != null) {
+            System.out.println("User saved successfully with ID: " + savedUser.getId());
+        } else {
+            System.out.println("Failed to save user.");
+        }
+        httpSession.invalidate();
         return "login";
     }
 

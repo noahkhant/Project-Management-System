@@ -56,6 +56,9 @@ public class MemberController {
 
     @GetMapping("/member-issueboard")
     public String MemberIssueBoard(Model model) {
+        int todoCount = 0;
+        int  inprogressCount=0;
+        int completedCount=0;
         var user = userService.getCurrentUser();
         Long memberId=user.getId();
         List<AssignIssue> memberIssues=assignIssueService.getAssignIssuesByMemberId(memberId);
@@ -73,6 +76,15 @@ public class MemberController {
                 }
 
             }
+            if(assignIssue.getStatus()==Status.TODO){
+                todoCount+=1;
+            } else if (assignIssue.getStatus()==Status.INPROGRESS) {
+                inprogressCount+=1;
+            }else if(assignIssue.getStatus()==Status.COMPLETED){
+                completedCount+=1;
+            }else {
+                System.out.println("It is not ok for counting");
+            }
 
         }
         List<AssignIssue> currentMemberIssues=new ArrayList<AssignIssue>();
@@ -84,8 +96,12 @@ public class MemberController {
                 currentMemberIssues.add(memberIssues.get(i));
             }
         }
+
         //   log.info("currnenIssues list -> {}",currentMemberIssues.size());
 
+        model.addAttribute("todoCount", todoCount);
+        model.addAttribute("inprogressCount", inprogressCount);
+        model.addAttribute("completedCount", completedCount);
             model.addAttribute("currentIssues",currentMemberIssues);
         return "member-issueboard";
     }

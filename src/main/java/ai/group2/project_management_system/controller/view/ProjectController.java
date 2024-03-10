@@ -8,6 +8,7 @@ import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.repository.AssignIssueRepository;
 import ai.group2.project_management_system.repository.IssueRepository;
+import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.service.ProjectService;
 import ai.group2.project_management_system.service.UserService;
 import jakarta.servlet.http.HttpSession;
@@ -28,6 +29,7 @@ import java.util.Set;
 public class ProjectController {
     private final IssueRepository issueRepository;
     private final AssignIssueRepository assignIssueRepository;
+    private final ProjectRepository projectRepository;
    private final ProjectService projectService;
     private final UserService userService;
     @ModelAttribute("user")
@@ -63,6 +65,13 @@ public class ProjectController {
         model.addAttribute("assignIssues",assignIssues);
         model.addAttribute("issue", issue);
         return "project-issue-detail";
+    }
+
+    @GetMapping("/my-projects")
+    public String myProjects(Model model){
+        List<Project> projects=projectRepository.findProjectsByCreator(userService.getCurrentUser().getName());
+        model.addAttribute("projects",projects);
+        return "my-projects";
     }
 
 }
