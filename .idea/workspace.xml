@@ -5,65 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881641102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881700440.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881993960.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883241534.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883845234.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884286961.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884504749.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884767778.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885179045.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885269385.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885412200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/project-issue-detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881641102.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881700440.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881993960.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883241534.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883845234.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884286961.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884504749.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884767778.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885179045.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885269385.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885412200.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/project-issue-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062810033.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062877447.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062924194.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/AssignIssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/AssignIssueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/pm-teamleader-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pm-teamleader-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/project-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/project-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-progress-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-progress-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/AssignIssueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/AssignIssueRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/pm-teamleader-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/pm-teamleader-list.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project-update.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/members-view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/project-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/project-detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-progress-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-progress-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-management.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,6 +30,15 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -161,5 +115,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
