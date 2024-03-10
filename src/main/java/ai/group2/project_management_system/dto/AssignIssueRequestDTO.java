@@ -113,4 +113,6 @@ public class AssignIssueRequestDTO {
     public void setFileNameList(List<String> fileNameList) {
         this.fileNameList = fileNameList;
     }
+
+
 }

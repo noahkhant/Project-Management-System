@@ -7,8 +7,8 @@ function validateForm() {
     }
     return true;
 }
-
 // Function to validate form and display confirmation modal
+
 function validateAndConfirm() {
     // Perform your validation here
     if (validateForm()) {

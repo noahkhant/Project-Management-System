@@ -89,11 +89,7 @@ public class PageController {
 
     }
 
-    @GetMapping("/calendar")
-    public String getCalendar(){
 
-        return "calendar";
-    }
 
     @GetMapping("/sendMultipleEmail")
     public String getEmailForm(){
@@ -111,9 +107,5 @@ public class PageController {
 
         return "login";
     }
-
-
-
-
 
 }

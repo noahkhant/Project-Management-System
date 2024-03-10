@@ -118,7 +118,7 @@ public class IssueServiceImpl implements IssueService {
         countsByStatus.put("todo", issueRepository.countByStatus(Status.TODO));
         countsByStatus.put("inProgress", issueRepository.countByStatus(Status.INPROGRESS));
         countsByStatus.put("pending", issueRepository.countByStatus(Status.PENDING));
-        countsByStatus.put("overdue", issueRepository.countByStatus(Status.OVERDUE));
+        /*countsByStatus.put("overdue", issueRepository.countByStatus(Status.OVERDUE));*/
         countsByStatus.put("completed", issueRepository.countByStatus(Status.COMPLETED));
         return countsByStatus;
     }

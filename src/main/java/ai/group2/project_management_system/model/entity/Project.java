@@ -40,12 +40,16 @@ public class Project implements Serializable {
 
     private String creator;
 
+    private String percentage;
+
     private LocalDate planStartDate;
 
     private LocalDate planEndDate;
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    private boolean isOverDue;
 
     @Enumerated(EnumType.STRING)
     private Category category;
@@ -209,5 +213,21 @@ public class Project implements Serializable {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public String getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(String percentage) {
+        this.percentage = percentage;
+    }
+
+    public boolean isOverDue() {
+        return isOverDue;
+    }
+
+    public void setOverDue(boolean overDue) {
+        isOverDue = overDue;
     }
 }

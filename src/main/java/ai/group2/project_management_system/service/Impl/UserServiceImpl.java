@@ -102,4 +102,9 @@ public class UserServiceImpl implements UserService {
         return userRepository.findEmailById(userId);
     }
 
+    @Override
+    public String getUserNameById(Long userId){
+        return userRepository.findUserNameByID(userId);
+    }
+
 }

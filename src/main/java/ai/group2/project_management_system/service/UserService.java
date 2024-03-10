@@ -25,4 +25,6 @@ public interface UserService {
     List<Project> getProjectsByUserId(Long userId);
 
     String getUserEmailById(Long userId);
+
+    String getUserNameById(Long userId);
 }

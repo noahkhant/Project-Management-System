@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+ document.addEventListener('DOMContentLoaded', function() {
     // Call userGetter to fetch and display a user list for the default department
     sameDepartmentUsers();
     myTasks();
@@ -145,7 +145,7 @@ function populateMemberWithDepartment(members){
 
 function getDepartmentOfCurrentUser(id) {
     const departmentId = id;
-    const url = `/members-selection/${departmentId}`;
+    const url = `/members-selector/${departmentId}`;
     fetch(url, {
         method: 'GET',
         credentials: 'include',

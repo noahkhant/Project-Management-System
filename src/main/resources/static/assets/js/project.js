@@ -72,6 +72,74 @@ function userGetter() {
         });
 }
 
+function teamLeaderGetter() {
+    const departmentId = document.getElementById('project-department-input').value;
+    const url = `/teamLeader-selection/${departmentId}`;
+
+    fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("data : " + data);
+            // Display the users returned by the server in the member list
+            populateTeamLeaderList(data);
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+        });
+}
+
+function populateTeamLeaderList(dto) {
+    const memberListContainer = document.getElementById('team-teamLeader-list');
+    console.log("dto : "+dto);
+    // Clear existing member list content
+    memberListContainer.innerHTML = '';
+
+    if (!Array.isArray(dto)) {
+        console.error('DTO is not an array:', dto);
+        return;
+    }
+    // Loop through the DTOs and create HTML elements for each DTO
+    dto.forEach(user => {
+        console.log(user.profilePictureFileName);
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+            <div class="form-check d-flex align-items-center justify-content-between">
+                <div>
+                    <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
+                        <input class="form-check-input  me-3" type="checkbox" value="${user.id}">
+                        <div class="invalid-feedback">
+                        Choose members for this project.
+                    </div>
+                           <img src="/static/assets/userPhoto/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
+                        <div>
+                            <div class="fw-bold">${user.name}</div>
+                            <div>${user.position.positionName}</div>
+                        </div>
+                        <div class="flex-shrink-0 ms-4 additional-content">
+                            <ul class="list-inline tasks-list-menu mb-0">
+                                <li class="list-inline-item">
+                                    <a href="issue_member_details.html"><button class="btn btn-sm btn-light" id="view-btn">View</button></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </label>
+                </div>
+            </div>     
+        `;
+        memberListContainer.appendChild(listItem);
+    });
+}
 
 function populateMemberList(dto) {
     const memberListContainer = document.getElementById('team-member-list');
@@ -96,7 +164,7 @@ function populateMemberList(dto) {
                         <div class="invalid-feedback">
                         Choose members for this project.
                     </div>
-                           <img src="/static/img/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
+                           <img src="/static/assets/userPhoto/${user.profilePictureFileName}" alt="image" class="rounded-circle" style="width: 50px; height: 50px;"/>
                         <div>
                             <div class="fw-bold">${user.name}</div>
                             <div>${user.position.positionName}</div>
@@ -111,7 +179,7 @@ function populateMemberList(dto) {
                     </label>
                 </div>
             </div>
-            
+          
         `;
         memberListContainer.appendChild(listItem);
     });
@@ -145,11 +213,12 @@ function departmentGetter() {
                 }
             });
             userGetter();
+            teamLeaderGetter();
         })
         .catch(error => console.error("Error:", error));
 }
 function inActiveProjects(filter){
-    const url = "/show-inactive-projects";
+    const url = "/show-projects";
     fetch(url, {
         method: 'GET',
         credentials: 'include',
@@ -166,9 +235,11 @@ function inActiveProjects(filter){
         .then(data => {
             projectList = data;
             console.log("Project Lists: " + projectList);
-            // Filter projects based on the selected filter
-            const filteredProjects = filterProjects(data, filter);
-            // Display the users returned by the server in the member list
+            // Filter out active projects
+            const inactiveProjects = data.filter(project => !project.active);
+            // Filter projects based on the selected filter (if any)
+            const filteredProjects = filterProjects(inactiveProjects, filter);
+            // Display the inactive projects in the member list
             populateProjectList(filteredProjects);
         })
         .catch(error => {
@@ -194,9 +265,11 @@ function displayProjects(filter){
         .then(data => {
             projectList = data;
             console.log("Project Lists: " + projectList);
-            // Filter projects based on the selected filter
-            const filteredProjects = filterProjects(data, filter);
-            // Display the users returned by the server in the member list
+            // Filter out inactive projects
+            const activeProjects = data.filter(project => project.active);
+            // Filter projects based on the selected filter (if any)
+            const filteredProjects = filterProjects(activeProjects, filter);
+            // Display the active projects in the member list
             populateProjectList(filteredProjects);
         })
         .catch(error => {
@@ -326,13 +399,36 @@ function stripHtmlTags(html) {
             .then(response => response.json())
             .then(data => {
                 console.log(data);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Your project has been successfully created.',
+                    showConfirmButton: false,
+                    timer: 2000 // Close after 2 seconds
+                })
                 displayProjects('All');
+
+                sendNotiProjectCreate(data);
                 // location.reload();
             })
             .catch(error => console.log("Error" + error));
      //});
 }
-
+function  sendNotiProjectCreate(project){
+    project.users.forEach(user=>{
+        delete currentUser.authorities;
+        delete user.authorities;
+        let noti = {
+            title:"New Project",
+            redirectURL:"/project/projects",
+            content:`You have been assigned to ${project.title}`,
+            sender:currentUser,
+            sendTo:user
+        }
+        console.log("SENT:",noti)
+        sendNotification(noti);
+    })
+}
 <!--Displaying all the data-->
 // Get the select box elementx`
 const projectFilterSelect = document.getElementById('projectFilter');

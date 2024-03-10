@@ -15,7 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function showProjectDropdown(){
-        const url = '/get-projects';
+        var creatorValue = document.getElementById('creator').textContent;
+        const url = '/get-projects/'+ creatorValue;
         fetch(url)
             .then(response => response.json())
             .then(data => {

@@ -7,6 +7,13 @@
 
     <!-- Date Css -->
     <link rel="stylesheet" th:href="@{https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css}" />
+
+
+    <!-- SweetAlert CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Project Management System</title>
 </head>
 <style>
@@ -74,7 +81,7 @@
             <div class="row g-4 mb-3">
                 <div class="col-sm-auto">
 
-                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"  th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
                         <i class="ri-add-line align-bottom me-1"></i>Create project
                     </button>
                     <button type="button" id="toggleButton" class="btn btn-danger" title="Inactive projects" style="font-size: 12px;" onclick="toggleProjects()">
@@ -114,7 +121,7 @@
     </div>
     <!-- End Page-content -->
 
-    <footer class="footer">
+   <!-- <footer class="footer">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6">
@@ -127,7 +134,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer>-->
 </div>
 <!-- end main content-->
 
@@ -158,25 +165,6 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-
-<!--confirm a creation project-->
-<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmationModalLabel">Confirmation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to create this project?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                <button type="button" data-bs-dismiss="modal" class="btn btn-primary" id="confirmCreate">Yes</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!--Modal-->
 <form th:id="formAuthor"class="needs-validation" novalidate>
@@ -223,7 +211,7 @@
                     <!--Departments-->
                     <div class="mb-3">
                         <label class="form-label" for="project-department-input">Department</label>
-                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onchange="userGetter()" required></select>
+                        <select class="form-select" data-choices data-choices-search-false id="project-department-input" name="department" onchange="userGetter(); teamLeaderGetter()" required></select>
                     </div>
 
                     <div class="mb-3">
@@ -269,9 +257,18 @@
                 </div>
                 <!--Members-->
                 <div class="col-lg-12">
-                    <label th:for="tasks-progress" class="form-label">Add Team Member</label>
-                    <div data-simplebar style="height: 95px;">
-                        <ul class="list-unstyled vstack gap-2 mb-0" th:id="team-member-list">
+                    <label th:for="tasks-progress" class="form-label m-3">Add Team Members</label>
+                    <div data-simplebar style="height: 150px;">
+                        <ul class="list-unstyled vstack gap-2 mb-0 m-3" th:id="team-member-list">
+                            <!-- Placeholder for dynamic content -->
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <label th:for="tasks-progress" class="form-label m-3">Add Team Leaders</label>
+                    <div data-simplebar style="height: 150px;">
+                        <ul class="list-unstyled vstack gap-2 mb-0 m-3" th:id="team-teamLeader-list">
                             <!-- Placeholder for dynamic content -->
                         </ul>
                     </div>
@@ -420,7 +417,6 @@
         </div>
     </div>
 </form>
-
 
 <!--JavaScript files-->
 <div th:replace="~{layout :: footer}"></div>
