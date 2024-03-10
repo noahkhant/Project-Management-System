@@ -32,6 +32,12 @@ public class ProjectAPI {
 
     private final UserMapping userMapping;
 
+    @GetMapping("/all-project")
+    public ResponseEntity<List<Project>> getAllProjects() {
+        List<Project> projects = projectService.getAllProjects();
+        return ResponseEntity.ok(projects);
+    }
+
     @GetMapping("/departments-selector")
     public ResponseEntity<List<Department>> selectDepartment() {
         System.out.println("department is gone");
@@ -264,6 +270,23 @@ public class ProjectAPI {
 
         if (project != null) {
             return ResponseEntity.ok(project.getTitle()); // Assuming the project name is stored in the 'title' field
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/projectList/{userId}")
+    public ResponseEntity<List<Project>> getProjectsByUserId(@PathVariable Long userId) {
+
+        String userName= userService.getUserNameById(userId);
+        List<Project> userProjects = projectService.getProjectsByUserName(userName);
+        return ResponseEntity.ok(userProjects);
+    }
+    @GetMapping("/projectByTitle/{title}")
+    public ResponseEntity<Project> getProjectByTitle(@PathVariable String title) {
+        Project project = projectService.getProjectByTitle(title);
+
+        if (project != null) {
+            return ResponseEntity.ok(project);
         } else {
             return ResponseEntity.notFound().build();
         }

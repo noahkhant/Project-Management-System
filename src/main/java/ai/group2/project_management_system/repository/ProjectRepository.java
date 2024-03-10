@@ -31,4 +31,21 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 
 
     Integer countByStatus(Status status);
+
+
+     // New method to find project name by ID
+     @Query("SELECT p.title FROM Project p WHERE p.id = :projectId")
+     String findProjectNameById(@Param("projectId") Long projectId);
+
+    // New method to find project creator by ID
+    @Query("SELECT p.creator FROM Project p WHERE p.id = :projectId")
+    String findProjectCreatorById(@Param("projectId") Long projectId);
+
+
+    @Query("SELECT p FROM Project p WHERE p.title = :title")
+    Project findProjectByTitle(@Param("title") String title);
+
+    @Query("SELECT p FROM Project p WHERE p.creator = :creator")
+    List<Project> findProjectsByUserName(@Param("creator") String name);
+
 }
