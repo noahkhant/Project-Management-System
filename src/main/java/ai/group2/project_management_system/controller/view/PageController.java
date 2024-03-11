@@ -120,6 +120,7 @@ public class PageController {
         return "login";
     }
 
+
     /*@PostMapping("/create-new-password")
     public String createNewPassword(@RequestParam("password") String password, HttpSession httpSession) {
 
@@ -174,5 +175,6 @@ public class PageController {
         httpSession.invalidate();
         return "login";
     }
+
 
 }
