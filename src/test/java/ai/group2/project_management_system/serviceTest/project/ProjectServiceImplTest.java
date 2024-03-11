@@ -1,4 +1,4 @@
-package ai.group2.project_management_system.serviceTest;
+package ai.group2.project_management_system.serviceTest.project;
 
 import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.repository.ProjectRepository;

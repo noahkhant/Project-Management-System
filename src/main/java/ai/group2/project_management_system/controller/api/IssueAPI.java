@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,9 @@ public class IssueAPI {
     private final IssueService issueService;
     private final IssueFilesService issueFilesService;
     private final IssueRepository issueRepository;
+
+    @Autowired
+    private EmailService service;
     @Value("${upload.path}")
     private String uploadPath;
 
@@ -114,6 +118,36 @@ public class IssueAPI {
         issue.setStatus(Status.TODO);
 
 
+        // Extracting specific fields
+        Long projectId = issue.getProject().getId();
+        String title = issue.getTitle();
+        String projectName= projectService.getProjectNameById(projectId);
+        String projectManagerName= projectService.getProjectCreatorByPID(projectId);
+        String userEmailById= userService.getUserEmailById(issue.getTeamLeaderId());
+        String userNameById= userService.getUserNameById(issue.getTeamLeaderId());
+
+
+//        System.out.println("projecId "+ projectId);
+//        System.out.println("Title "+ title);
+//        System.out.println("projectName "+ projectName);
+//        System.out.println("projectManagerName "+ projectManagerName);
+//        System.out.println("userEmailById "+ userEmailById);
+//
+
+        System.out.println("userNameById "+ userNameById);
+
+        EmailDetail email= new EmailDetail();
+        email.setRecipients(Collections.singletonList(userEmailById));
+        email.setSubject("Issue Assign Announcements!");
+        email.setMsgBody("Dear Mr-"+userNameById+" You have been assigned in "+title + " Issue of "+projectName+ " Project By the Project Manager Mr-"+projectManagerName+". FOR Further affairs, Please check in the website!" + "http://localhost:8080/home");
+        email.setAttachment((MultipartFile) files);
+
+        System.out.println("Emails :  "+ email.getRecipients());
+        System.out.println("Subject :  "+ email.getSubject());
+        System.out.println("message :  "+ email.getMsgBody());
+        service.sendMultipleEmail(email);
+
+
         List<String> fileNames = saveAttachments(files);
         Issue newIssue = issueService.save(issue);
         saveFileNames(newIssue, fileNames);
@@ -166,6 +200,9 @@ public class IssueAPI {
     public ResponseEntity<List<Issue>> getIssueList(){
 
         List<Issue> issues= issueService.getAllIssues();
+
+        // Print the list of issues to the console
+        System.out.println("List of Issues: " + issues);
          return ResponseEntity.ok(issues);
     }
 
@@ -191,6 +228,19 @@ public class IssueAPI {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         } else {
             return new ResponseEntity<>(issues, HttpStatus.OK);
+        }
+
+
+    }
+
+    @GetMapping("/issueList/{userId}")
+    public ResponseEntity<List<Issue>> getIssuesByUserId(@PathVariable Long userId) {
+        List<Issue> issues = issueService.getIssuesByTeamleaderId(userId);
+
+        if (issues != null && !issues.isEmpty()) {
+            return ResponseEntity.ok(issues);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 

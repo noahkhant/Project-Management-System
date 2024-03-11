@@ -32,6 +32,12 @@ public class ProjectAPI {
 
     private final UserMapping userMapping;
 
+    @GetMapping("/all-project")
+    public ResponseEntity<List<Project>> getAllProjects() {
+        List<Project> projects = projectService.getAllProjects();
+        return ResponseEntity.ok(projects);
+    }
+
     @GetMapping("/departments-selector")
     public ResponseEntity<List<Department>> selectDepartment() {
         System.out.println("department is gone");
@@ -58,9 +64,25 @@ public class ProjectAPI {
         System.out.println("Users are gone : ");
         List<User> users = userService.getMembersByDepartmentId(departmentId);
         users = users.stream()
-                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO) && !user.getRole().equals(Role.TEAMLEADER))
+                .filter(user -> user.getRole().equals(Role.MEMBER))
                 .collect(Collectors.toList());
-        System.out.println(users);
+        //System.out.println(users);
+        users.forEach(user -> {
+            String profile = userService.getUserPhotoById(user.getId());
+            user.setProfilePictureFileName(profile);
+            System.out.println("User isActive: " + user.isActive());
+        });
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/leader-selection/{departmentId}")
+    public ResponseEntity<List<User>> getLeaders(@PathVariable Long departmentId){
+        System.out.println("Users are gone : ");
+        List<User> users = userService.getMembersByDepartmentId(departmentId);
+        users = users.stream()
+                .filter(user -> user.getRole().equals(Role.TEAMLEADER))
+                .collect(Collectors.toList());
+       // System.out.println(users);
         users.forEach(user -> {
             String profile = userService.getUserPhotoById(user.getId());
             user.setProfilePictureFileName(profile);
@@ -71,10 +93,10 @@ public class ProjectAPI {
 
     @GetMapping("/teamLeader-selection/{departmentId}")
     public ResponseEntity<List<User>> getTeamLeaders(@PathVariable Long departmentId){
-        System.out.println("Users are gone : ");
+        System.out.println("Leaders are gone : ");
         List<User> teamLeaders = userService.getMembersByDepartmentId(departmentId);
         teamLeaders = teamLeaders.stream()
-                .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO) && !user.getRole().equals(Role.MEMBER))
+                .filter(user -> user.getRole().equals(Role.TEAMLEADER))
                 .collect(Collectors.toList());
         System.out.println(teamLeaders);
         teamLeaders.forEach(user -> {
@@ -84,7 +106,6 @@ public class ProjectAPI {
         });
         return ResponseEntity.ok(teamLeaders);
     }
-
 
     // This method is for creating new projects
     @PostMapping("/add-project")
@@ -166,7 +187,7 @@ public class ProjectAPI {
             pj.setCreator(currentUser.getName());
             pj.setDescription(project.getDescription());
             pj.setCategory(project.getCategory());
-            pj.setStatus(project.getStatus());
+//            pj.setStatus(project.getStatus());
             pj.setPriority(project.getPriority());
             pj.setPlanStartDate(project.getPlanStartDate());
             pj.setPlanEndDate(project.getPlanEndDate());
@@ -191,6 +212,18 @@ public class ProjectAPI {
         List<User> users = userService.findUsersByIds(userIds);
         users = users.stream()
                 .filter(user -> !user.getRole().equals(Role.PM) && !user.getRole().equals(Role.PMO))
+                .collect(Collectors.toList());
+        if (!users.isEmpty()) {
+            return ResponseEntity.ok(users);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/leaders")
+    public ResponseEntity<List<User>> getLeadersByIds(@RequestParam("userIds") List<Long> userIds) {
+        List<User> users = userService.findUsersByIds(userIds);
+        users = users.stream()
+                .filter(user -> user.getRole().equals(Role.TEAMLEADER))
                 .collect(Collectors.toList());
         if (!users.isEmpty()) {
             return ResponseEntity.ok(users);
@@ -265,6 +298,23 @@ public class ProjectAPI {
 
         if (project != null) {
             return ResponseEntity.ok(project.getTitle()); // Assuming the project name is stored in the 'title' field
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+    @GetMapping("/projectList/{userId}")
+    public ResponseEntity<List<Project>> getProjectsByUserId(@PathVariable Long userId) {
+
+        String userName= userService.getUserNameById(userId);
+        List<Project> userProjects = projectService.getProjectsByUserName(userName);
+        return ResponseEntity.ok(userProjects);
+    }
+    @GetMapping("/projectByTitle/{title}")
+    public ResponseEntity<Project> getProjectByTitle(@PathVariable String title) {
+        Project project = projectService.getProjectByTitle(title);
+
+        if (project != null) {
+            return ResponseEntity.ok(project);
         } else {
             return ResponseEntity.notFound().build();
         }

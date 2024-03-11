@@ -20,13 +20,15 @@ function appendUserToList(user, isChecked, container) {
     listItem.innerHTML = `
         <div class="form-check d-flex align-items-center justify-content-between">
             <div>
-                <input class="form-check-input-update me-3" type="checkbox" value="${user.id}" ${isChecked ? 'checked' : ''}>
                 <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
+                 <input class="form-check-input-update me-3" type="checkbox" value="${user.id}" ${isChecked ? 'checked' : ''}>
                     <span class="flex-shrink-0">
-                        <img src="/static/img/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
-                    </span>
-                    <span class="flex-grow-1 ms-2">${user.name}</span>
-                    <span class="flex-grow-1 ms-2">${user.position.positionName}</span>
+                        <img src="/static/assets/userPhoto/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
+                    </span> 
+                    <div>
+                            <div class="fw-bold">${user.name}</div>
+                            <div>${user.position.positionName}</div>
+                        </div>
                     <div class="flex-shrink-0 ms-4 additional-content">
                         <ul class="list-inline tasks-list-menu mb-0">
                             <li class="list-inline-item">
@@ -67,7 +69,7 @@ function displayEditProject(id) {
                     document.getElementById('project-objective-update').value = project.objective;
                     //document.getElementById('project-creator-update').value = project.creator;
                     document.getElementById('project-category-update').value = project.category;
-                    document.getElementById('project-status-update').value = project.status;
+                    //document.getElementById('project-status-update').value = project.status;
                     document.getElementById('choices-priority-update').value = project.priority;
                     document.getElementById('datepicker-start-date-update').value = project.planStartDate;
                     document.getElementById('datepicker-end-date-update').value = project.planEndDate;
@@ -83,9 +85,12 @@ function displayEditProject(id) {
                                 userIds = [userIds];
                             }
                             // Fetch user data with project IDs
-                            return getUserDataWithProject(userIds);
+                            return Promise.all([
+                                getUserDataWithProject(userIds),
+                                getTeamLeaderWithProject(userIds),
+                            ]);
                         })
-                        .then(userDataFromProject => {
+                        .then(([userDataFromProject, teamLeaderDataFromProject]) => {
                             // Fetch departments data
                             return fetch('/departments', {
                                 method: 'GET'
@@ -107,12 +112,17 @@ function displayEditProject(id) {
                                             selectElement.value = relatedDepartment.name;
 
                                             // Fetch users based on department and project
-                                            return getUserFromDepartment(relatedDepartment.id)
-                                                .then(userDataFromDepartment => {
+                                            return Promise.all([
+                                                getUserFromDepartment(relatedDepartment.id),
+                                                getLeaderFromDepartment(relatedDepartment.id)
+                                            ])
+                                                .then(([userDataFromDepartment, leaderDataFromDepartment]) => {
                                                     console.log("userDataFromProject:", userDataFromProject);
                                                     console.log("userDataFromDepartment:", userDataFromDepartment);
                                                     // Call memberPlaces with the fetched user data
                                                     memberPlaces(userDataFromDepartment, userDataFromProject);
+                                                    // Now you can use leaderDataFromDepartment and teamLeaderDataFromProject as needed
+                                                    populateTeamLeaderList(leaderDataFromDepartment, teamLeaderDataFromProject);
                                                 });
                                         } else {
                                             console.log('Related department not found.');
@@ -169,6 +179,32 @@ function getUserFromDepartment(departmentId) {
             throw error; // Rethrow the error for the caller to handle
         });
 }
+function getLeaderFromDepartment(departmentId){
+    const url = `/leader-selection/${departmentId}`;
+    return fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            // Return the user data
+            return data;
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+            throw error; // Rethrow the error for the caller to handle
+        });
+}
+
 // Function to fetch user IDs based on project IDs
 function getUserIdsByProjectIds(projectId) {
     // Construct the URL with the projectId as a query parameter
@@ -257,7 +293,7 @@ function updateProject(){
         priority: document.getElementById('choices-priority-update').value,
         planStartDate: document.getElementById('datepicker-start-date-update').value,
         planEndDate: document.getElementById('datepicker-end-date-update').value,
-        status: document.getElementById('project-status-update').value,
+        //status: document.getElementById('project-status-update').value,
     };
     console.log("updateData", updateData);
     const id = document.getElementById('project-id').value;
@@ -276,9 +312,76 @@ function updateProject(){
         .catch(error => console.log("Error" + error));
 }
 
+function getTeamLeaderWithProject(userIds){
+    const url = `/leaders?userIds=${userIds.join(',')}`;
+    return fetch(url, {
+        method: 'GET',
+        credentials: 'include',
+        headers: {
+            'Accept': 'application/json',
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(users => {
+            // Process the user data and return it
+            console.log("Hey Nigga : "+users);
+            return users;
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+            throw error; // rethrow the error to be caught elsewhere
+        });
+}
 
+function populateTeamLeaderList(leaderFromDepartment, leaderFromProject) {
+    const memberListContainer = document.getElementById('team-leader-list-update');
+    // console.log("dto : " + dto);
+    // Clear existing member list content
+    memberListContainer.innerHTML = '';
 
+    if (!Array.isArray(leaderFromProject) || !Array.isArray(leaderFromProject)) {
+        console.error('User data is not an array:', leaderFromProject, leaderFromDepartment);
+        return;
+    }
 
+    leaderFromDepartment.forEach(user => {
+        const isChecked = leaderFromProject.some(projUser  => projUser .id === user.id);
+        appendLeaderToList(user, isChecked, memberListContainer);
+    });
+}
+
+function appendLeaderToList(user, isChecked, container) {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+        <div class="form-check d-flex align-items-center justify-content-between">
+            <div>
+                <label class="form-check-label d-flex align-items-center" for="user-${user.id}">
+                 <input class="form-check-input-update me-3" type="checkbox" value="${user.id}" ${isChecked ? 'checked' : ''}>
+                    <span class="flex-shrink-0">
+                        <img src="/static/assets/userPhoto/${user.profilePictureFileName}" alt="" class="avatar-xxs rounded-circle" />
+                    </span> 
+                    <div>
+                            <div class="fw-bold">${user.name}</div>
+                            <div>${user.position.positionName}</div>
+                        </div>
+                    <div class="flex-shrink-0 ms-4 additional-content">
+                        <ul class="list-inline tasks-list-menu mb-0">
+                            <li class="list-inline-item">
+                                <a href="issue_member_details.html"><button class="btn btn-sm btn-light" id="view-btn">View</button></a>
+                            </li>
+                        </ul>
+                    </div>
+                </label>
+            </div>
+        </div>
+    `;
+    container.appendChild(listItem);
+}
 
 
 

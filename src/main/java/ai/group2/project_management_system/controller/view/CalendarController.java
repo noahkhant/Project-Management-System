@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 @Slf4j
 public class CalendarController {
     private final UserService userService;
+
     @ModelAttribute("user")
     public User getUserFromSession(HttpSession session) {
         User user = userService.getCurrentUser();

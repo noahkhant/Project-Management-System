@@ -136,4 +136,31 @@ public  class ProjectServiceImpl implements ProjectService {
     public List<Long> getAllProjectIds() {
         return projectRepository.findAllProjectIds();
     }
+
+    @Override
+    public String getProjectNameById(Long projectId){
+        return projectRepository.findProjectNameById(projectId);
+    }
+
+    @Override
+    public String getProjectCreatorByPID(Long projectId){
+        return projectRepository.findProjectCreatorById(projectId);
+    }
+    @Override
+    public List<Project> getProjectsByUserId(Long userId) {
+        return projectRepository.findProjectsByUserId(userId);
+    }
+    @Override
+    public Project getProjectByTitle(String title) {
+        return projectRepository.findProjectByTitle(title);
+    }
+
+
+    @Override
+    public List<Project> getProjectsByUserName(String name){
+        return projectRepository.findProjectsByUserName(name);
+    }
+
+
+
 }
