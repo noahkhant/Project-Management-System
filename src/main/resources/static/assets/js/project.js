@@ -187,7 +187,7 @@ function populateMemberList(dto) {
 
 <!--Getting Department-->
 function departmentGetter() {
-    const url = '/departments-selector';
+    const url = '/current-departments';
     fetch(url, {
         method: 'GET',
         credentials: 'include',
@@ -468,12 +468,13 @@ function populateProjectList(dto) {
                             <div class="d-flex flex-column h-100">
                                 <div class="d-flex">
                                     <div class="flex-grow-1">
-                                        <p class="text-muted mb-4"></p>
-                                        
+                                        <p class="text-muted mb-4">${pj.creator}</p>
+                                          
                                     </div>
                                     
                                     <div class="flex-shrink-0">
                                         <div class="d-flex gap-1 align-items-center">
+                                        
                                         <div class="text-end">
                                             ${pj.isActive ? '<span class="badge bg-success">Active</span>' : '<span class="badge bg-danger">Inactive</span>'}
                                         </div>

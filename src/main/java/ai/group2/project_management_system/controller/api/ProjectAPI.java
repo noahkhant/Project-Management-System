@@ -41,14 +41,19 @@ public class ProjectAPI {
     @GetMapping("/departments-selector")
     public ResponseEntity<List<Department>> selectDepartment() {
         System.out.println("department is gone");
-        List<Department> currentDepartments=new ArrayList<Department>();
         List<Department> departments = departmentService.getAllDepartments();
-        for(Department department:departments){
-            if(department.isActive()){
-                currentDepartments.add(department);
-            }
-        }
-        return ResponseEntity.ok(currentDepartments);
+        return ResponseEntity.ok(departments);
+    }
+
+    @GetMapping("/current-departments")
+    public ResponseEntity<List<Department>> selectCurrentDepartment() {
+        System.out.println("department is gone");
+        List<Department> departments = departmentService.getAllDepartments();
+        // Filter active departments
+        List<Department> activeDepartments = departments.stream()
+                .filter(Department::isActive)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(activeDepartments);
     }
 
     @GetMapping("/members-selector/{departmentId}")
