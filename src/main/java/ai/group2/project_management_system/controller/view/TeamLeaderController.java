@@ -43,7 +43,10 @@ public class TeamLeaderController {
     }
     @GetMapping("/teamleader-issueboard")
     public String TeamLeaderIssueBoard(Model model) {
-
+        int todoCount = 0;
+        int  inprogressCount=0;
+        int  pendingCount=0;
+        int completedCount=0;
        // Long teamleaderId= (Long) httpSession.getAttribute("id");
         var user = userService.getCurrentUser();
         Long teamleaderId=user.getId();
@@ -65,8 +68,22 @@ public class TeamLeaderController {
             String formattedPercentage = decimalFormat.format(percentage);
             issue.setPercentage(formattedPercentage);
             issueRepository.save(issue);
+            if(issue.getStatus()==Status.TODO){
+                todoCount+=1;
+            } else if (issue.getStatus()==Status.INPROGRESS) {
+                inprogressCount+=1;
+            } else if (issue.getStatus()==Status.PENDING) {
+                pendingCount+=1;
+            }else if(issue.getStatus()==Status.COMPLETED){
+                completedCount+=1;
+            }else {
+                System.out.println("It is not ok for counting");
+            }
         }
-
+        model.addAttribute("todoCount", todoCount);
+        model.addAttribute("inprogressCount", inprogressCount);
+        model.addAttribute("pendingCount", pendingCount);
+        model.addAttribute("completedCount", completedCount);
         model.addAttribute("issues",currentTeamLeaderIssues);
         return "teamleader-issueboard";
     }

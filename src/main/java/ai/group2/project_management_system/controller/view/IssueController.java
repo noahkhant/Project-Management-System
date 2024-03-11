@@ -62,6 +62,10 @@ public class IssueController {
     }
     @GetMapping("/issueboard")
     public String issueBoard(Model model){
+        int todoCount = 0;
+         int  inprogressCount=0;
+          int  pendingCount=0;
+            int completedCount=0;
         var user=userService.getCurrentUser();
         List<Project> creatorProjects=projectRepository.findProjectsByCreator(user.getName());
         List<Project> currentProjects=new ArrayList<Project>();
@@ -132,10 +136,23 @@ public class IssueController {
             String formattedPercentage = decimalFormat.format(percentage);
             pj.setPercentage(formattedPercentage);
             projectRepository.save(pj);
+
+            if(pj.getStatus()==Status.TODO){
+                todoCount+=1;
+            } else if (pj.getStatus()==Status.INPROGRESS) {
+                inprogressCount+=1;
+            } else if (pj.getStatus()==Status.PENDING) {
+                pendingCount+=1;
+            }else {
+                completedCount+=1;
+            }
         }
 //        log.info(" All Project list -> {}",creatorIssues.size());
 //          log.info("Project list -> {}",currentIssues.size());
-
+        model.addAttribute("todoCount", todoCount);
+        model.addAttribute("inprogressCount", inprogressCount);
+        model.addAttribute("pendingCount", pendingCount);
+        model.addAttribute("completedCount", completedCount);
         model.addAttribute("issues",currentIssues);
         model.addAttribute("projects",currentProjects);
         return "issueboard";
