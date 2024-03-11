@@ -108,4 +108,14 @@ public class PageController {
         return "login";
     }
 
+    @PostMapping("/changePassword")
+    public String changePassword(@RequestParam String password) {
+
+        System.out.println("Password : "+ password);
+        return "login";
+
+    }
+
+
+
 }

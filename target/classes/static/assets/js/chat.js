@@ -39,17 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${hours}:${minutes}:${seconds} ${day}/${month}/${year}`;
     }
 
-    async function fetchMessageList(issueId) {
-        return await fetch(`/get-messages/${issueId}`)
-            .then(response => response.json())
-            .then(messageList => {
-                return messageList;
-            })
-            .catch(error => {
-                console.log('Error: ', error);
-                return Promise.reject(0);
-            });
-    }
 
     function renderChatList() {
         fetchCurrentUser()
@@ -127,6 +116,18 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(issue);
     }
 
+    async function fetchMessageList(issueId) {
+        return await fetch(`/get-messages/${issueId}`)
+            .then(response => response.json())
+            .then(messageList => {
+                return messageList;
+            })
+            .catch(error => {
+                console.log('Error: ', error);
+                return Promise.reject(0);
+            });
+    }
+
     function renderMessage(issueId) {
         fetchMessageList(issueId)
             .then(messages => {
@@ -136,6 +137,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log(err));
     }
 
+   //Displaying list of messages while click issue item
+    function displayMessages(messages) {
+        document.getElementById('user-conversation').innerHTML = '';
+        messages.forEach(message => {
+            commonAppendMessage(message)
+        });
+        scrollToButton();
+    }
+
+    //Mutual Appending of new message or List of messages
     function commonAppendMessage(message) {
         const liElement = document.createElement('li');
         liElement.classList.add('chat-list');
@@ -199,14 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    function displayMessages(messages) {
-        document.getElementById('user-conversation').innerHTML = '';
-        messages.forEach(message => {
-            commonAppendMessage(message)
-        });
-        scrollToButton();
-    }
-
+    //Displaying newly appended messages
     function displayUpdateMessage(message) {
         commonAppendMessage(message);
         scrollToButton();

@@ -127,20 +127,18 @@ public class IssueAPI {
         String userNameById= userService.getUserNameById(issue.getTeamLeaderId());
 
 
-//        System.out.println("projecId "+ projectId);
-//        System.out.println("Title "+ title);
-//        System.out.println("projectName "+ projectName);
-//        System.out.println("projectManagerName "+ projectManagerName);
-//        System.out.println("userEmailById "+ userEmailById);
-//
-
+        System.out.println("projecId "+ projectId);
+        System.out.println("Title "+ title);
+        System.out.println("projectName "+ projectName);
+        System.out.println("projectManagerName "+ projectManagerName);
+        System.out.println("userEmailById "+ userEmailById);
         System.out.println("userNameById "+ userNameById);
 
         EmailDetail email= new EmailDetail();
         email.setRecipients(Collections.singletonList(userEmailById));
         email.setSubject("Issue Assign Announcements!");
         email.setMsgBody("Dear Mr-"+userNameById+" You have been assigned in "+title + " Issue of "+projectName+ " Project By the Project Manager Mr-"+projectManagerName+". FOR Further affairs, Please check in the website!" + "http://localhost:8080/home");
-        email.setAttachment((MultipartFile) files);
+        email.setAttachments(files);
 
         System.out.println("Emails :  "+ email.getRecipients());
         System.out.println("Subject :  "+ email.getSubject());
