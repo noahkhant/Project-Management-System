@@ -167,8 +167,6 @@ public class UserAPI {
         }
     }
 
-
-
     @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUserWithImage(
             @PathVariable("id") long userId,
@@ -238,5 +236,19 @@ public class UserAPI {
     public ResponseEntity<User> getCurrentUser(){
         User currentUser = userService.getCurrentUser();
         return ResponseEntity.ok(currentUser); // This will return the authenticated user
+    }
+
+    @PutMapping("/updateUser/{userId}")
+    public ResponseEntity<String> departmentStatus(@PathVariable("userId") Long userId) {
+        User user = userService.getUserById(userId);
+        if (user != null && user.isActive()) {
+            user.setActive(false);
+            userService.save(user);
+            return ResponseEntity.ok("User status false changed successfully");
+        } else {
+            user.setActive(true);
+            userService.save(user);
+            return ResponseEntity.ok("User status true changed successfully");
+        }
     }
 }

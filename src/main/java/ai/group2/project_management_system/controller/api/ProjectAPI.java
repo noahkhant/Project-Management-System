@@ -45,6 +45,17 @@ public class ProjectAPI {
         return ResponseEntity.ok(departments);
     }
 
+    @GetMapping("/current-departments")
+    public ResponseEntity<List<Department>> selectCurrentDepartment() {
+        System.out.println("department is gone");
+        List<Department> departments = departmentService.getAllDepartments();
+        // Filter active departments
+        List<Department> activeDepartments = departments.stream()
+                .filter(Department::isActive)
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(activeDepartments);
+    }
+
     @GetMapping("/members-selector/{departmentId}")
     public ResponseEntity<List<UserDTO>> getUsers(@PathVariable Long departmentId) {
         System.out.println("Users are gone");
@@ -65,6 +76,7 @@ public class ProjectAPI {
         List<User> users = userService.getMembersByDepartmentId(departmentId);
         users = users.stream()
                 .filter(user -> user.getRole().equals(Role.MEMBER))
+                .filter(User::isActive)
                 .collect(Collectors.toList());
         //System.out.println(users);
         users.forEach(user -> {
@@ -81,6 +93,7 @@ public class ProjectAPI {
         List<User> users = userService.getMembersByDepartmentId(departmentId);
         users = users.stream()
                 .filter(user -> user.getRole().equals(Role.TEAMLEADER))
+                .filter(User::isActive)
                 .collect(Collectors.toList());
        // System.out.println(users);
         users.forEach(user -> {
@@ -97,6 +110,7 @@ public class ProjectAPI {
         List<User> teamLeaders = userService.getMembersByDepartmentId(departmentId);
         teamLeaders = teamLeaders.stream()
                 .filter(user -> user.getRole().equals(Role.TEAMLEADER))
+                .filter(User::isActive)
                 .collect(Collectors.toList());
         System.out.println(teamLeaders);
         teamLeaders.forEach(user -> {
@@ -161,18 +175,6 @@ public class ProjectAPI {
         }
 
     }
-
-//    @GetMapping("/show-inactive-projects")
-//    public ResponseEntity<List<Project>> getInactiveProjects() {
-//        List<Project> projects = projectService.getAllProjectsWithUsers();
-//
-//        List<Project> inactiveProjects = projects.stream()
-//                .filter(project -> !project.isActive())
-//                .collect(Collectors.toList());
-//        System.out.println(inactiveProjects);
-//        return ResponseEntity.ok(inactiveProjects);
-//    }
-
 
     @PostMapping("/edit-project/{id}")
     public ResponseEntity<Project> editProject(@PathVariable("id") Long projectId, @RequestBody Project project){

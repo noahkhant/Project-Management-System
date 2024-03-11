@@ -24,8 +24,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@ToString(exclude = "users")
-//@EqualsAndHashCode(exclude = "users")
 public class Project implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -87,8 +85,6 @@ public class Project implements Serializable {
 
         this.isActive = isActive;
     }
-
-
 
     @Transient
     private List<Long> userIds;

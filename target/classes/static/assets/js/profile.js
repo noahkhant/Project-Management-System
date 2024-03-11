@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", function (){
     displayProfile();
     getDepartment();
     getPositions();
-
 })
 
 function displayProfile() {
@@ -60,7 +59,7 @@ function displayProfile() {
                 userProfileImage.alt = data.name;
             } else {
                 // Fallback image or hide the image element
-                userProfileImage.src = '/static/img/1709489830348.jpg'; // Provide a default image
+                userProfileImage.src = '/static/assets/userPhoto/1709489830348.jpg'; // Provide a default image
                 userProfileImage.alt = 'Default Profile Image';
             }
 
@@ -101,10 +100,8 @@ function getPositions(){
         .then(data => {
             // Get a reference to the select element
             const positionSelect = document.getElementById('editPosition');
-
             // Clear any existing options
             positionSelect.innerHTML = '';
-
             // Add options based on the data received
             data.forEach(position => {
                 const option = document.createElement('option');

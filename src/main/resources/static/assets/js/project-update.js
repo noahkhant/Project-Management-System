@@ -122,7 +122,7 @@ function displayEditProject(id) {
                                                     // Call memberPlaces with the fetched user data
                                                     memberPlaces(userDataFromDepartment, userDataFromProject);
                                                     // Now you can use leaderDataFromDepartment and teamLeaderDataFromProject as needed
-                                                    populateTeamLeaderList(leaderDataFromDepartment, teamLeaderDataFromProject);
+                                                    populateLeaderList(leaderDataFromDepartment, teamLeaderDataFromProject);
                                                 });
                                         } else {
                                             console.log('Related department not found.');
@@ -338,7 +338,7 @@ function getTeamLeaderWithProject(userIds){
         });
 }
 
-function populateTeamLeaderList(leaderFromDepartment, leaderFromProject) {
+function populateLeaderList(leaderFromDepartment, leaderFromProject) {
     const memberListContainer = document.getElementById('team-leader-list-update');
     // console.log("dto : " + dto);
     // Clear existing member list content

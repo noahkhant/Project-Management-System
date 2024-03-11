@@ -31,7 +31,6 @@ public class ProfileAPI {
         return checkedPassword;
     }
 
-
     @PostMapping("/edit-user/{id}")
     public ResponseEntity<User> editUser(@PathVariable("id") Long userId, @RequestBody User user){
         System.out.println("we reach edit mapping!");
