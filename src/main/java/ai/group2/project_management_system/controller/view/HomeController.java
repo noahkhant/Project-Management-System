@@ -27,7 +27,6 @@ public class HomeController {
         return user;
     }
 
-
     @GetMapping("/home")
     public String home(Model model, HttpSession session) {
         var user = userService.getCurrentUser();
@@ -42,8 +41,8 @@ public class HomeController {
                 System.out.println("There is no department!");
             }
         }
-
         session.setAttribute("user", user);
+
         return "index";
     }
 

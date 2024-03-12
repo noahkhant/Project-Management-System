@@ -16,8 +16,18 @@ public class ReportController {
         User user = userService.getCurrentUser();
         return user;
     }
-    @GetMapping("/report")
-    public String getReport() {
-        return "report";
+    @GetMapping("/project-report")
+    public String getProjectReport() {
+        return "project-report";
+    }
+
+    @GetMapping("/issue-report")
+    public String getIssueReport() {
+        return "issue-report";
+    }
+
+    @GetMapping("/user-report")
+    public String getUserReport() {
+        return "user-report";
     }
 }

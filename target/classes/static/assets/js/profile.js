@@ -53,9 +53,15 @@ function displayProfile() {
             const event = new Event('change');
             departmentSelect.dispatchEvent(event);
 
-            const userProfileImage = document.querySelector('.user-profile-image');
-            userProfileImage.src = `/static/img/${data.profilePictureFileName}`; // Assuming data contains imageName
-            userProfileImage.alt = data.name;
+            const userProfileImage = document.getElementById('userProfile');
+            if (data.profilePictureFileName) {
+                userProfileImage.src = `/static/assets/userPhoto/${data.profilePictureFileName}`;
+                userProfileImage.alt = data.name;
+            } else {
+                // Fallback image or hide the image element
+                userProfileImage.src = '/static/img/1709489830348.jpg'; // Provide a default image
+                userProfileImage.alt = 'Default Profile Image';
+            }
 
             document.getElementById('username').textContent = data.name;
             document.getElementById('position').textContent = data.position.positionName;
@@ -108,54 +114,90 @@ function getPositions(){
         })
 }
 
-// document.getElementById("updateUserButton").addEventListener('submit', function (event) {
-//     event.preventDefault();
-//     console.log("submitting add form .....");
-//
-//     let gender;
-//     if (document.getElementById('maleRadio').checked) {
-//         gender = document.getElementById('maleRadio').value;
-//     } else if (document.getElementById('femaleRadio').checked) {
-//         gender = document.getElementById('femaleRadio').value;
-//     } else {
-//         // Handle case where no radio button is selected
-//         gender = ''; // Or whatever default value you want to assign
-//     }
-//
-//     console.log("here");
-//
-//     let updateData = {
-//         //creator: document.getElementById('project-creator-update').value,
-//         name: document.getElementById('nameInput').value,
-//         dob: document.getElementById('dobInput').value,
-//         phone:  document.getElementById('phoneNumberInput').value,
-//         email: document.getElementById('emailInput').value,
-//         gender: gender,
-//         position: {
-//             id:document.getElementById('editPosition')
-//         },
-//         education: document.getElementById('editEducation').value,
-//         address: document.getElementById('addressInput').value,
-//         department: {
-//             id: document.getElementById('editDepartment').value
-//         },
-//         profilePictureFileName: document.querySelector('.profile-img-file-input').value
-//     };
-//     console.log("updateData", updateData);
-//     const id = document.getElementById('current-id').value;
-//     const response =  fetch(`/edit-user/${id}`, {
-//         method: 'PUT',
-//         headers: {
-//             'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(updateData),
-//     })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Data received:', data);
-//             displayProfile();
-//         })
-//         .catch(error => console.log("Error" + error));
-// });
+function  updateProfile(){
+    const userId = document.getElementById('current-id').value;
+    const updatedData = {
+        name: document.getElementById('nameInput').value,
+        dob: document.getElementById('dobInput').value,
+        phone: document.getElementById('phoneNumberInput').value,
+        email: document.getElementById('emailInput').value,
+        position: {
+            id: document.getElementById('editPosition').value
+        },
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        education: document.getElementById('editEducation').value,
+        address: document.getElementById('addressInput').value,
+        department:{
+            id: document.getElementById('editDepartment').value
+        },
+    }
+    fetch(`/edit-user/${userId}`, {
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(updatedData)
+    })
+        .then(response => {
+            if(response.ok){
+                if(document.getElementById('editProfilePicture-in-user').value != null){
+                    updateImage();
+                }
+                // Reload the browser
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Your project has been updated successfully.',
+                    icon: 'success',
+                    timer: 2000, // 2 seconds
+                    showConfirmButton: false // Hide the default "Ok" button
+                });
+            }
+        })
+        .then(data=>{
+            console.log(data);
+        })
+        .catch(error=> {
+            console.log('Error saving user profile:', error);
+        })
+}
+
+function  updateImage(){
+
+    // Create FormData object
+    const formData = new FormData();
+    // Check if a file is selected before appending
+    const profilePictureInput = document.getElementById('editProfilePicture-in-user');
+    const selectedFile = profilePictureInput.files[0];
+    console.log("Selected File:", selectedFile);
+
+    if (selectedFile) {
+        formData.append('file', selectedFile);
+        // Log the FormData before sending the request
+        console.log("FormData before sending:", formData);
+        const id = document.getElementById('current-id').value;
+        fetch(`/edit-profilePhoto/${id}`,{
+            method: 'POST',
+            body: formData,
+        })
+            .then(response=>{
+                console.log("Response received from the server:", response);
+                if(response.ok){
+               console.log("ok");
+            }
+            })
+            .then(updateUserData =>{
+                console.log("User updated successfully:"+ updateUserData);
+            })
+            .catch(error => {
+                console.error("Error updating user:", error);
+            });
+    }
+}
+
+function changePassword(){
+
+}
+
 
 

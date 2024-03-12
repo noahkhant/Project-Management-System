@@ -60,9 +60,9 @@ public class SecurityConfig {
                                         "projectFiles"
                                 ).permitAll()
                                 .requestMatchers("/forgot-password","/otp-form").permitAll()
-                                .requestMatchers("/calendar","/all-issue-list","/home")
+                                .requestMatchers("/calendar","/all-issue-list","/home","/project/projects")
                                 .hasAnyAuthority("PMO","PM","TEAMLEADER","MEMBER")
-                                .requestMatchers("/project/projects","/issue-list","/issueboard","/teamleader-progress-view")
+                                .requestMatchers("/issue-list","/issueboard","/teamleader-progress-view")
                                 .hasAnyAuthority("PM")
                                 .requestMatchers("/user-management")
                                 .hasAnyAuthority("PM","PMO")
@@ -107,12 +107,12 @@ public class SecurityConfig {
                 .exceptionHandling(
                         (exceptionHandling) -> exceptionHandling
                                 .accessDeniedPage("/access-denied"))
-                .rememberMe(remember -> remember
+                /*.rememberMe(remember -> remember
                         .key(MY_KEY )
                         .rememberMeParameter("remember-me")
                         .rememberMeServices(rememberMeServices())
                         .tokenValiditySeconds(60 * 60 * 24)//1 day
-                )
+                )*/
                 .sessionManagement(session -> session
                         .maximumSessions(1)//1 user 1 session
                         .maxSessionsPreventsLogin(false)//if user already login, then user can't login again
@@ -136,7 +136,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();
 //        return NoOpPasswordEncoder.getInstance();
-
 
     }
 

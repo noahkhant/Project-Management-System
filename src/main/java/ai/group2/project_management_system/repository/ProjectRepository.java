@@ -29,4 +29,5 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
 
     Integer countByStatus(Status status);
 
+
 }

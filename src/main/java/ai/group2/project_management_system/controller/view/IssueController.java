@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +45,17 @@ public class IssueController {
     public String issueList(Model model){
         var user = userService.getCurrentUser();
         List<Issue> pmIssues=issueRepository.getIssuesByCreator(user.getName());
+        for (Issue issue : pmIssues) {
 
+                if (issue.getStatus() != Status.COMPLETED && issue.getStatus() != Status.PENDING) {
+                    if( issue.getPlanDueDate().isBefore(LocalDate.now())){
+                        /*issue.setStatus(Status.OVERDUE);*/
+                        issueRepository.save(issue);
+                    }
+
+                }
+
+        }
     //    log.info("Issue -> {}",pmIssues.size());
         model.addAttribute("pmIssues",pmIssues);
         return "issue-list";
@@ -100,8 +111,31 @@ public class IssueController {
             projectRepository.save(currentProject);
         }
 
+        /*For Overdue*/
+        for(Project project:currentProjects){
+
+            if (project.getStatus() != Status.COMPLETED && project.getStatus() != Status.PENDING) {
+                if( project.getPlanEndDate().isBefore(LocalDate.now())){
+                    /*project.setStatus(Status.OVERDUE);*/
+                    projectRepository.save(project);
+                }
+            }
+        }
+
+       /* For percentage*/
+        double percentage=0;
+        for(Project pj:currentProjects){
+            int issueCount = issueRepository.countIssuesByProjectId(pj.getId());
+            int completedIssueCount = issueRepository.countCompletedIssuesByProjectId(pj.getId());
+            percentage = (double) completedIssueCount / issueCount * 100;
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            String formattedPercentage = decimalFormat.format(percentage);
+            pj.setPercentage(formattedPercentage);
+            projectRepository.save(pj);
+        }
 //        log.info(" All Project list -> {}",creatorIssues.size());
 //          log.info("Project list -> {}",currentIssues.size());
+
         model.addAttribute("issues",currentIssues);
         model.addAttribute("projects",currentProjects);
         return "issueboard";
@@ -133,6 +167,7 @@ public class IssueController {
     public String ViewIssueDetails(@PathVariable Long id, Model model) {
         IssueDetailsDto issue=issueService.getIssueDetailsById(id);
         model.addAttribute("issue",issue);
+        System.out.println("Issue Id:"+id);
 //          log.info("Issue -> {}",assignIssue.getIssue().getFilesList());
 //        log.info("Issue -> {}",assignIssue.getIssue().getFiles());
         return "issue-details";

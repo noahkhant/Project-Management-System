@@ -4,10 +4,7 @@ import ai.group2.project_management_system.dto.AssignIssueDTO;
 import ai.group2.project_management_system.dto.IssueDetailsDto;
 import ai.group2.project_management_system.mapping.AssignIssueMapper;
 import ai.group2.project_management_system.model.Enum.Status;
-import ai.group2.project_management_system.model.entity.AssignIssue;
-import ai.group2.project_management_system.model.entity.Department;
-import ai.group2.project_management_system.model.entity.Issue;
-import ai.group2.project_management_system.model.entity.User;
+import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.AssignIssueRepository;
 import ai.group2.project_management_system.repository.IssueRepository;
 import ai.group2.project_management_system.service.AssignIssueService;
@@ -24,6 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +55,17 @@ public class TeamLeaderController {
             }
         }
      //   log.info("Issues list -> {}",currentTeamLeaderIssues.size());
+        /* For percentage*/
+        double percentage=0;
+        for(Issue issue:currentTeamLeaderIssues){
+            int assignIssueCount = assignIssueRepository.countSubIssuesByIssueId(issue.getId());
+            int completedAssignIssueCount = assignIssueRepository.countCompletedSubIssuesByIssueId(issue.getId());
+            percentage = (double) completedAssignIssueCount / assignIssueCount * 100;
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            String formattedPercentage = decimalFormat.format(percentage);
+            issue.setPercentage(formattedPercentage);
+            issueRepository.save(issue);
+        }
 
         model.addAttribute("issues",currentTeamLeaderIssues);
         return "teamleader-issueboard";
@@ -104,6 +113,21 @@ public class TeamLeaderController {
                 }
                 issueRepository.save(issue);
             }
+
+            for(Issue issue:issues){
+                if(issue != null && issue.getStatus().equals(Status.COMPLETED)){
+                    if(issue.getPlanDueDate().isBefore(issue.getActualDueDate())){
+                        issue.setOverDue(true);
+                        issueRepository.save(issue);
+                    }
+                }else  {
+                    if( issue.getPlanDueDate().isBefore(LocalDate.now())){
+                        issue.setOverDue(true);
+                        issueRepository.save(issue);
+                    }
+                }
+            }
+
 
             model.addAttribute("issues", issues);
             model.addAttribute("assignIssue", new AssignIssueDTO());

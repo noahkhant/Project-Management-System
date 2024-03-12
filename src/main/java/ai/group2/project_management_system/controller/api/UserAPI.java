@@ -18,10 +18,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -105,8 +102,13 @@ public class UserAPI {
     @GetMapping("/positions")
     public ResponseEntity<List<Position>> getPositions() {
         List<Position> positions = positionService.getAllPositions();
-
-        return ResponseEntity.ok(positions);
+       List<Position> getPositions=new ArrayList<Position>();
+       for(Position position:positions){
+           if(!Objects.equals(position.getPositionName(), "PMO")){
+               getPositions.add(position);
+           }
+       }
+        return ResponseEntity.ok(getPositions);
     }
 
     @GetMapping("/roles")
