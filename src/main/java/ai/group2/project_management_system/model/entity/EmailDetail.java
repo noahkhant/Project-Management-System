@@ -58,4 +58,7 @@ public class EmailDetail implements Serializable {
     public void setRecipients(List<String> recipients) {
         this.recipients = recipients;
     }
+
+    public void addRecipient(String mail) {
+    }
 }

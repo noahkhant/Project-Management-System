@@ -15,19 +15,19 @@
             <!-- Dark Logo-->
             <a href="#" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="/assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/pj-logo.jpg" alt="" height="50" width="100">
             </span>
                 <span class="logo-lg">
-                <img src="/assets/images/logo-dark.png" alt="" height="17">
+                <img src="/assets/images/pj-logo.jpg" alt="" height="50" width="100">
             </span>
             </a>
             <!-- Light Logo-->
             <a href="#" class="logo logo-light">
             <span class="logo-sm">
-                <img src="/assets/images/logo-sm.png" alt="" height="22">
+                <img src="/assets/images/pj-logo.jpg" alt="" height="50" width="100">
             </span>
                 <span class="logo-lg">
-                <img src="/assets/images/logo-light.png" alt="" height="17">
+                <img src="/assets/images/pj-logo.jpg" alt="" height="50" width="100">
             </span>
             </a>
             <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
@@ -69,12 +69,12 @@
                     <!--Projects End-->
 
                     <!--Projects Start-->
-                    <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
+                   <!-- <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
                         <a href="/project/my-projects" class="nav-link menu-link" >
                             <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">My Projects</span>
                         </a>
                         <hr style="color: darkgray;">
-                    </li>
+                    </li>-->
                     <!--Projects End-->
 
                     <!--Issues Start-->
@@ -93,8 +93,9 @@
                                 <li class="nav-item">
                                     <a href="/teamleader-progress-view" class="nav-link" data-key="t-list-view">Issue Status</a>
                                 </li>
-
-
+                                <li class="nav-item">
+                                    <a href="/project/my-projects" class="nav-link" data-key="t-list-view">My Projects</a>
+                                </li>
                             </ul>
                         </div>
                         <hr style="color: darkgray;">
@@ -130,12 +131,6 @@
                     <!--Members End-->
                     <!--Calendar Start-->
 
-                    <li class="nav-item" >
-                        <a href="/calendar" class="nav-link menu-link"  >
-                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Calendar</span>
-                        </a>
-                        <hr style="color: darkgray;">
-                    </li>
                     <!--Calendar End-->
 
                     <li class="nav-item" th:if="${user.role == T(ai.group2.project_management_system.model.Enum.Role).PMO or user.role == T(ai.group2.project_management_system.model.Enum.Role).PM}">
@@ -169,6 +164,14 @@
 
                             </ul>
                         </div>
+                        <hr style="color: darkgray;">
+                    </li>
+
+
+                    <li class="nav-item" >
+                        <a href="/calendar" class="nav-link menu-link"  >
+                            <i class="mdi mdi-view-grid-plus-outline"></i> <span data-key="t-projects">Calendar</span>
+                        </a>
                         <hr style="color: darkgray;">
                     </li>
 
