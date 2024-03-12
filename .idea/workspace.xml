@@ -79,98 +79,10 @@
       <recent name="ai.group2.project_management_system.model.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in ProjectManagementSystem">
-    <configuration name="All in ProjectManagementSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EmailServiceImplTest.testGenerateOTP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.service.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service.Impl" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.Impl.EmailServiceImplTest" />
-      <option name="METHOD_NAME" value="testGenerateOTP" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ImageServiceTest.testSaveImageAsync" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.ImageServiceTest" />
-      <option name="METHOD_NAME" value="testSaveImageAsync" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MessageServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.service.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service.Impl" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.Impl.MessageServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NotificationServiceImplTest.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.service.Impl.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service.Impl" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.Impl.NotificationServiceImplTest" />
-      <option name="METHOD_NAME" value="testSave" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="issue-create.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="issue-create.js" working-dir="$PROJECT_DIR$/src/main/resources/static/assets/js">
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="JUnit.ImageServiceTest.testSaveImageAsync" />
-      <item itemvalue="JUnit.MessageServiceImplTest" />
-      <item itemvalue="JUnit.NotificationServiceImplTest.testSave" />
-      <item itemvalue="JUnit.EmailServiceImplTest.testGenerateOTP" />
-      <item itemvalue="JUnit.All in ProjectManagementSystem" />
-      <item itemvalue="Node.js.issue-create.js" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.All in ProjectManagementSystem" />
-        <item itemvalue="JUnit.NotificationServiceImplTest.testSave" />
-        <item itemvalue="JUnit.ImageServiceTest.testSaveImageAsync" />
-        <item itemvalue="JUnit.MessageServiceImplTest" />
-        <item itemvalue="JUnit.EmailServiceImplTest.testGenerateOTP" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
