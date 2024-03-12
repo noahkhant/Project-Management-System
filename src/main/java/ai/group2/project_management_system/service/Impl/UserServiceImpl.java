@@ -14,16 +14,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 import java.util.stream.Collectors;
-
-
 
 @Service
 @RequiredArgsConstructor
 @Slf4j
 @Transactional
 public class UserServiceImpl implements UserService {
+
 
     private final UserRepository userRepository;
     private final UserMapping userMapping;
@@ -82,8 +80,6 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(userId).orElse(null);
     }
 
-
-
     @Override
     public List<User> findUsersByIds(List<Long> userIds) {
         return userRepository.findByIdIn(userIds);
@@ -97,5 +93,14 @@ public class UserServiceImpl implements UserService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public String getUserEmailById(Long userId) {
+        return userRepository.findEmailById(userId);
+    }
+
+    @Override
+    public String getUserNameById(Long userId){
+        return userRepository.findUserNameByID(userId);
+    }
 
 }

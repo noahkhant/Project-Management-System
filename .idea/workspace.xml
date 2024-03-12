@@ -1,256 +1,501 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="ALL" />
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BeansEndpointTabSettings">
+    <option name="diagramMode" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="84f24c3b-6342-4d89-929d-01adf3cae5a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ReportAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/images/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-report.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-report.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/user-report.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709608710314.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709612985823.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709644243991.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709699706308.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709135803.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709334627.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709453717.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709577364.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709711895020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712071203.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712177639.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712263255.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712338882.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709785948348.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795232179.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795311459.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795629409.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796482170.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796554274.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796603455.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796651822.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796720612.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797018014.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797066397.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797195085.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797337007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797514883.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167495758.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167644741.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167750079.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167893557.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167937765.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167955621." afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168364047.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168424989.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168509290.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168563341.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168635683.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168688293.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/issue-report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/project-report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/user-report.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/images/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/images/img_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709608710314.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709612985823.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709644243991.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709699706308.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709135803.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709334627.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709453717.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709577364.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709711895020.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712071203.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712177639.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712263255.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712338882.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709785948348.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795232179.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795311459.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795629409.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796482170.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796554274.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796603455.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796651822.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796720612.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797018014.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797066397.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797195085.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797337007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797514883.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.project" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/.jsdtscope" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/css/coverage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/css/idea.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/img/arrowDown.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/img/arrowUp.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/js/highlight.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/js/highlightjs-line-numbers.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-1/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-2/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-3/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-4/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-5/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-6/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-7/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-8/sources/source-b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-9/sources/source-c.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-a/sources/source-b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_BLOCK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_BLOCK_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_CLASS.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_CLASS_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_LINE.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_LINE_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_METHOD.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_METHOD_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/index_SORT_BY_NAME_DESC.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/htmlReport/ns-b/sources/source-b.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709837941077.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709869032690.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709874392796.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881641102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881700440.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881993960.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883241534.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883845234.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884286961.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884504749.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884767778.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885179045.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885269385.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885412200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710034827052.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062810033.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062877447.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062924194.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710100103989.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710131961771.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710134659764.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710134801259.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710144072940" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710144144859" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710145284542" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710148455972" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710148614494" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164132862.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164263158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164332107.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164387597.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164443352.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164959693.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710165144209.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/my-projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/project-issue-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/department/DepartmentAPITest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/department/DepartmentControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/department/DepartmentServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/department/DepartmentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/project/ProjectServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/user/UserServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-update.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709837941077.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709869032690.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709874392796.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881641102.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881700440.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881993960.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883241534.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883845234.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884286961.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884504749.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884767778.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885179045.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885269385.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885412200.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710034827052.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062810033.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062877447.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062924194.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710100103989.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710131961771.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710134659764.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710134801259.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710144072940" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710144144859" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710145284542" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710148455972" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710148614494" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164132862.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164263158.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164332107.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164387597.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164443352.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164959693.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710165144209.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/my-projects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/templates/project-issue-detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/department/DepartmentAPITest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/department/DepartmentControllerTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/department/DepartmentServiceImplTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/department/DepartmentServiceTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/project/ProjectServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/AssignIssueAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/AssignIssueAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ChatAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ChatAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/IssueAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/NotificationAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/NotificationAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProfileAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProfileAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/UserAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/CalendarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/CalendarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/DepartmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/DepartmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/IssueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/IssueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/MemberController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/PageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ProjectController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/ReportController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/TeamLeaderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/view/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/AssignIssueRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/IssueDetailsDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/IssueDetailsDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/ProjectDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/dto/UserDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/Enum/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/Enum/Status.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Issue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Position.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/AssignIssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/AssignIssueRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/IssueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/DepartmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/DepartmentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/ProjectRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/ProjectRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/AssignIssueService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/AssignIssueService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/DepartmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/DepartmentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/IssueServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/IssueServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/PositionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/PositionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/main-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/main-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/department-list-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-modal-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-modal-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/pm-teamleader-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/pm-teamleader-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709003879699.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709484326879.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709699627899.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709486140506.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709707308508.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709487481144.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709487812493.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709699627899.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709490565569.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709490688245.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709490913031.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709491057375.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709707308508.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709491982754.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709492734739.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709494407991.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709494577750.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/A.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/A6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/Chay Pu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/search-bars.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/search-bars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issuelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/teamleader-issuelist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/create-new-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/create-new-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/forgot-password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issueboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/members-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/project-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/project-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-progress-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-progress-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-management.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/ProjectServiceImplTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjectManagementSystem-0.0.1-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjectManagementSystem-0.0.1-SNAPSHOT/WEB-INF/classes/static/assets/js/project.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/ProjectManagementSystem-0.0.1-SNAPSHOT/WEB-INF/classes/templates/projects.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/ProjectManagementSystemApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/ProjectManagementSystemApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/AssignIssueAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/AssignIssueAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ChatAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ChatAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/DepartmentAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/IssueAPI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/NotificationAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/NotificationAPI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProfileAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProfileAPI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/UserAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/CalendarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/CalendarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ChatController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/DepartmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/DepartmentController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/IssueController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/IssueController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/PageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ProjectController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ReportController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/ReportController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/TeamLeaderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/view/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueRequestDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/AssignIssueRequestDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/dto/ProjectDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/Enum/Status.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/Enum/Status.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Issue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Department.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Position.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Position.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/Project.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/AssignIssueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/AssignIssueRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/IssueRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/DepartmentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/DepartmentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/ProjectRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/ProjectRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/IssueServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/IssueServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/PositionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/PositionServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/ProjectServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/UserServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/ProjectService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/ProjectService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/UserService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/main-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/main-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/chat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/department-list-view.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/department-list-view.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-modal-init.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-modal-init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/pm-teamleader-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/pm-teamleader-list.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project-update.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project-validation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709003879699.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709484326879.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709486140506.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709487481144.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709487812493.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709490565569.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709490688245.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709490913031.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709491057375.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709491982754.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709492734739.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709494407991.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709494577750.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/A.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/A6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/Chay Pu.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/search-bars.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/search-bars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issuelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/teamleader-issuelist.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/calendar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/calendar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/create-new-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/create-new-password.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/department.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/department.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/forgot-password.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issueboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/member-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/member-issueboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/members-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/members-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/project-detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/project-detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/report.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issueboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-progress-view.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-progress-view.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/user-management.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-management.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ai/group2/project_management_system/serviceTest/ProjectServiceImplTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="0" />
+  </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="D:\ProjectManagementSystem\htmlReport" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
-        <option value="Enum" />
         <option value="HTML File" />
-        <option value="Interface" />
-        <option value="AnnotationType" />
-        <option value="Class" />
         <option value="JavaScript File" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="InvalidFacetManager">
-    <ignored-facets>
-      <facet id="ProjectManagementSystem/invalid/Web" />
-    </ignored-facets>
-  </component>
-  <component name="JsbtTreeLayoutManager">
-    <layout place="tools.popupGrunt">
-      <scroll-view-position x="0" y="0" />
-    </layout>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="alwaysUpdateSnapshots" value="true" />
-        <option name="workOffline" value="true" />
-      </MavenGeneralSettings>
-    </option>
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="vmOptionsForImporter" value="-Xmx768m" />
-        <option name="workspaceImportForciblyTurnedOn" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
-        &quot;customColor&quot;: &quot;&quot;,
-        &quot;associatedIndex&quot;: 8
-        }</component>
-  <component name="ProjectId" id="2ayaFAWPrqRfepnH9LIai2wEEpH" />
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2d5fx54Mjb2jl3J9QwK9379LN8T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -258,89 +503,168 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging demo-main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tinhtet/Documents/Project Management System/src/main/resources/templates&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;711dd3093ac59cf676ea0432a926fcac&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "JUnit.All in ProjectManagementSystem (1).executor": "Coverage",
+    "JUnit.All in ProjectManagementSystem (2).executor": "Run",
+    "JUnit.All in ProjectManagementSystem (3).executor": "Run",
+    "JUnit.All in ProjectManagementSystem (4).executor": "Coverage",
+    "JUnit.All in ProjectManagementSystem.executor": "Coverage",
+    "JUnit.DepartmentAPITest.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testAddDepartment.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testDepartmentStatus_Active.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testDepartmentStatus_Inactive.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testGetDepartments.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testGetDepartmentsWhenEmpty.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testUpdateDepartment.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testUpdateDepartmentNotFound.executor": "Coverage",
+    "JUnit.DepartmentAPITest.testUpdateDepartmentStatus.executor": "Run",
+    "JUnit.DepartmentControllerTest.executor": "Coverage",
+    "JUnit.DepartmentServiceImplTest.executor": "Coverage",
+    "JUnit.DepartmentServiceImplTest.testGetAllDepartments.executor": "Coverage",
+    "JUnit.DepartmentServiceImplTest.testGetDepartmentById.executor": "Coverage",
+    "JUnit.DepartmentServiceImplTest.testSaveDepartment.executor": "Coverage",
+    "JUnit.ProjectManagementSystemApplicationTests.contextLoads.executor": "Coverage",
+    "JUnit.ProjectManagementSystemApplicationTests.executor": "Run",
+    "JUnit.ProjectServiceImplTest.executor": "Run",
+    "JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null.executor": "Coverage",
+    "JUnit.ProjectServiceImplTest.testGetProjectsByUserName.executor": "Run",
+    "JUnit.ProjectServiceImplTest.testGetUserIdsByProjectId.executor": "Coverage",
+    "JUnit.UserAPITest.testCreateUserEndpoint_Success.executor": "Coverage",
+    "JUnit.UserAPITest.testCreateUser_Success.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getCurrentUser_ReturnsCurrentUser.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getUsersByDepartmentId_ReturnsUserDTOs.executor": "Coverage",
+    "JUnit.UserServiceImplTest.getUsersByProjectId_ReturnsUserDTOs.executor": "Coverage",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "git-widget-placeholder": "Merging demo-main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/ProjectManagementSystem",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "coverage",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ai.group2.project_management_system.mapping" />
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/assets/css" />
-      <recent name="$PROJECT_DIR$/src/main/resources/static/assets/js" />
-      <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\projectFiles" />
-      <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\files\userPhoto" />
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="ai.group2.project_management_system.serviceTest.user" />
+      <recent name="ai.group2.project_management_system.serviceTest.department" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/static" />
-      <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\userPhoto" />
-      <recent name="$PROJECT_DIR$/src/main/resources/templates" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="configurationTypes">
-      <set>
-        <option value="SpringBootApplicationConfigurationType" />
-      </set>
-    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectManagementSystemApplication">
-    <configuration name="IssueManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <configuration name="All in ProjectManagementSystem (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjectManagementSystem" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="ai.group2.IssueManagementSystem.IssueManagementSystemApplication" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in ProjectManagementSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetProjectsByDepartmentId_Null" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectServiceImplTest.testGetProjectsByUserName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
+      <option name="METHOD_NAME" value="testGetProjectsByUserName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="issue-create.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="issue-create.js" working-dir="$PROJECT_DIR$/src/main/resources/static/assets/js">
+      <method v="2" />
+    </configuration>
     <configuration name="ProjectManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="ProjectManagementSystem" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ai.group2.project_management_system.ProjectManagementSystemApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.ProjectServiceImplTest" />
+      <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" />
+      <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByUserName" />
+      <item itemvalue="JUnit.All in ProjectManagementSystem" />
+      <item itemvalue="JUnit.All in ProjectManagementSystem (1)" />
+      <item itemvalue="Node.js.issue-create.js" />
+      <item itemvalue="Spring Boot.ProjectManagementSystemApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in ProjectManagementSystem" />
+        <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" />
+        <item itemvalue="JUnit.All in ProjectManagementSystem (1)" />
+        <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByUserName" />
+        <item itemvalue="JUnit.ProjectServiceImplTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="allServicesViewState">
       <serviceView>
-        <option name="contentProportion" value="0.0125" />
+        <option name="contentProportion" value="0.025531914" />
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3065f52e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3065f52e" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@3667ef19" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -349,7 +673,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-25a4bffe" />
+        <option value="jdk-17.0.10-corretto-17.0.10-3183f394aec4-cf227e86" />
       </set>
     </attachedChunks>
   </component>
@@ -359,117 +683,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="84f24c3b-6342-4d89-929d-01adf3cae5a7" name="Default Changelist" comment="" />
-      <created>1705293166524</created>
+      <changelist id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="" />
+      <created>1709303108709</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1705293166524</updated>
-      <workItem from="1705293167564" duration="20712000" />
-      <workItem from="1705376200048" duration="21000" />
-      <workItem from="1705376333349" duration="1086000" />
-      <workItem from="1705379688428" duration="4224000" />
-      <workItem from="1705460935679" duration="19000" />
-      <workItem from="1705461006666" duration="11828000" />
-      <workItem from="1705547874996" duration="18362000" />
-      <workItem from="1705630415045" duration="24000" />
-      <workItem from="1705630464511" duration="10917000" />
-      <workItem from="1705770519330" duration="1782000" />
-      <workItem from="1705811475535" duration="5659000" />
-      <workItem from="1705846149355" duration="6870000" />
-      <workItem from="1705892803246" duration="8677000" />
-      <workItem from="1705910109194" duration="19000" />
-      <workItem from="1705910150895" duration="4604000" />
-      <workItem from="1705933179662" duration="11518000" />
-      <workItem from="1705984518678" duration="4770000" />
-      <workItem from="1705993550355" duration="3962000" />
-      <workItem from="1706019758389" duration="612000" />
-      <workItem from="1706023815624" duration="1834000" />
-      <workItem from="1706061152012" duration="26000" />
-      <workItem from="1706061199365" duration="719000" />
-      <workItem from="1706065707759" duration="8474000" />
-      <workItem from="1706153004417" duration="4671000" />
-      <workItem from="1706163820723" duration="4374000" />
-      <workItem from="1706196570113" duration="5721000" />
-      <workItem from="1706232126018" duration="15187000" />
-      <workItem from="1706336789709" duration="3468000" />
-      <workItem from="1706413716642" duration="2265000" />
-      <workItem from="1706425791478" duration="8270000" />
-      <workItem from="1706497929292" duration="5353000" />
-      <workItem from="1706514425430" duration="5508000" />
-      <workItem from="1706530481254" duration="22570000" />
-      <workItem from="1706671126734" duration="46000" />
-      <workItem from="1706672632576" duration="1207000" />
-      <workItem from="1706688025532" duration="7126000" />
-      <workItem from="1706757454981" duration="11701000" />
-      <workItem from="1706796676115" duration="92000" />
-      <workItem from="1706796788088" duration="8668000" />
-      <workItem from="1706845413137" duration="127000" />
-      <workItem from="1706845572409" duration="9614000" />
-      <workItem from="1706873381420" duration="27000" />
-      <workItem from="1706873919095" duration="2353000" />
-      <workItem from="1706937310593" duration="496000" />
-      <workItem from="1706966619386" duration="1241000" />
-      <workItem from="1706974901728" duration="5596000" />
-      <workItem from="1707064344061" duration="4949000" />
-      <workItem from="1707075758465" duration="4776000" />
-      <workItem from="1707106757390" duration="22020000" />
-      <workItem from="1707150868006" duration="7736000" />
-      <workItem from="1707189975855" duration="1862000" />
-      <workItem from="1707202359208" duration="7587000" />
-      <workItem from="1707239347817" duration="708000" />
-      <workItem from="1707289176373" duration="6885000" />
-      <workItem from="1707297581296" duration="267000" />
-      <workItem from="1707301222101" duration="2595000" />
-      <workItem from="1707314497620" duration="12472000" />
-      <workItem from="1707354211161" duration="551000" />
-      <workItem from="1707359773915" duration="3840000" />
-      <workItem from="1707366421275" duration="3029000" />
-      <workItem from="1707376113717" duration="5374000" />
-      <workItem from="1707459235618" duration="2784000" />
-      <workItem from="1707668042002" duration="7203000" />
-      <workItem from="1707676842771" duration="505000" />
-      <workItem from="1707794367353" duration="1351000" />
-      <workItem from="1707796698268" duration="35000" />
-      <workItem from="1707796738276" duration="21000" />
-      <workItem from="1707796800957" duration="32000" />
-      <workItem from="1707796880573" duration="779000" />
-      <workItem from="1707880843734" duration="11846000" />
-      <workItem from="1707952498789" duration="14932000" />
-      <workItem from="1708064972128" duration="50834000" />
-      <workItem from="1708399599452" duration="1463000" />
-      <workItem from="1708401109723" duration="13529000" />
-      <workItem from="1708485314753" duration="37811000" />
-      <workItem from="1708574249578" duration="2446000" />
-      <workItem from="1708577731650" duration="631000" />
-      <workItem from="1708579900805" duration="12000" />
-      <workItem from="1708587741753" duration="23674000" />
-      <workItem from="1708657263976" duration="610000" />
-      <workItem from="1708674594189" duration="2302000" />
-      <workItem from="1708690742117" duration="7134000" />
-      <workItem from="1708742004579" duration="3393000" />
-      <workItem from="1708752535802" duration="7595000" />
-      <workItem from="1708854895306" duration="5484000" />
-      <workItem from="1708920420312" duration="855000" />
-      <workItem from="1709455039886" duration="9574000" />
-      <workItem from="1709466069195" duration="16583000" />
-      <workItem from="1709521941699" duration="11366000" />
-      <workItem from="1709603440471" duration="693000" />
-      <workItem from="1709614528783" duration="1679000" />
-      <workItem from="1709649677764" duration="4675000" />
-      <workItem from="1709656769223" duration="5747000" />
-      <workItem from="1709685431897" duration="3632000" />
-      <workItem from="1709693814194" duration="2287000" />
-      <workItem from="1709697147070" duration="9457000" />
-      <workItem from="1709737658977" duration="6944000" />
-      <workItem from="1709771530152" duration="9928000" />
-      <workItem from="1709794295080" duration="4585000" />
-      <workItem from="1709868043350" duration="5244000" />
-      <workItem from="1709916459547" duration="8376000" />
-      <workItem from="1709952283314" duration="19039000" />
-      <workItem from="1710063730070" duration="16999000" />
-      <workItem from="1710127608293" duration="19716000" />
-      <workItem from="1710220971076" duration="178000" />
-      <workItem from="1710226738334" duration="1411000" />
+      <updated>1709303108709</updated>
+      <workItem from="1709303120398" duration="10958000" />
+      <workItem from="1709353285534" duration="18479000" />
+      <workItem from="1710042045335" duration="11933000" />
+      <workItem from="1710134757580" duration="3764000" />
+      <workItem from="1710210142076" duration="13509000" />
     </task>
     <servers />
   </component>
@@ -481,33 +704,135 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="BEK_SORT_TYPE" value="1" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="origin/demoMain" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.springframework.beans.factory.NoSuchBeanDefinitionException" package="org.springframework.beans.factory" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/DepartmentAPI.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/UserServiceImpl.java</url>
+          <line>63</line>
+          <properties class="ai.group2.project_management_system.service.Impl.UserServiceImpl" method="getProjectsByUserId">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/project/ProjectServiceImplTest.java</url>
+          <line>308</line>
+          <properties class="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" method="testGetProjectsByUserName">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="ai.group2.project_management_system.model.entity.Notification" memberName="id" />
       </pinned-members>
     </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserAPITest_testCreateUserEndpoint_Success.ic" NAME="UserAPITest.testCreateUserEndpoint_Success Coverage Results" MODIFIED="1710175770383" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentControllerTest.ic" NAME="DepartmentControllerTest Coverage Results" MODIFIED="1710177654814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectManagementSystemApplication.ic" NAME="ProjectManagementSystemApplication Coverage Results" MODIFIED="1710217516354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testGetDepartments.ic" NAME="DepartmentAPITest.testGetDepartments Coverage Results" MODIFIED="1710179706505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem.ic" NAME="All in ProjectManagementSystem Coverage Results" MODIFIED="1710228404050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getCurrentUser_ReturnsCurrentUser.ic" NAME="UserServiceImplTest.getCurrentUser_ReturnsCurrentUser Coverage Results" MODIFIED="1710217500373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__1_.ic" NAME="All in ProjectManagementSystem (1) Coverage Results" MODIFIED="1710227937377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getUsersByDepartmentId_ReturnsUserDTOs.ic" NAME="UserServiceImplTest.getUsersByDepartmentId_ReturnsUserDTOs Coverage Results" MODIFIED="1710218282105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest_testGetDepartmentById.ic" NAME="DepartmentServiceImplTest.testGetDepartmentById Coverage Results" MODIFIED="1710213334218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__2_.ic" NAME="All in ProjectManagementSystem (2) Coverage Results" MODIFIED="1710219040984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectManagementSystemApplicationTests.ic" NAME="ProjectManagementSystemApplicationTests Coverage Results" MODIFIED="1710210204139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest_testSaveDepartment.ic" NAME="DepartmentServiceImplTest.testSaveDepartment Coverage Results" MODIFIED="1710213203188" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testDepartmentStatus_Active.ic" NAME="DepartmentAPITest.testDepartmentStatus_Active Coverage Results" MODIFIED="1710212588968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testUpdateDepartment.ic" NAME="DepartmentAPITest.testUpdateDepartment Coverage Results" MODIFIED="1710212450430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testGetDepartmentsWhenEmpty.ic" NAME="DepartmentAPITest.testGetDepartmentsWhenEmpty Coverage Results" MODIFIED="1710215089698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__3_.ic" NAME="All in ProjectManagementSystem (3) Coverage Results" MODIFIED="1710220433544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testAddDepartment.ic" NAME="DepartmentAPITest.testAddDepartment Coverage Results" MODIFIED="1710212337791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest.ic" NAME="DepartmentServiceImplTest Coverage Results" MODIFIED="1710177669405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testUpdateDepartmentNotFound.ic" NAME="DepartmentAPITest.testUpdateDepartmentNotFound Coverage Results" MODIFIED="1710212574848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest.ic" NAME="DepartmentAPITest Coverage Results" MODIFIED="1710215146841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserAPITest_testCreateUser_Success.ic" NAME="UserAPITest.testCreateUser_Success Coverage Results" MODIFIED="1710219422476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest_testGetAllDepartments.ic" NAME="DepartmentServiceImplTest.testGetAllDepartments Coverage Results" MODIFIED="1710213276156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectManagementSystemApplicationTests_contextLoads.ic" NAME="ProjectManagementSystemApplicationTests.contextLoads Coverage Results" MODIFIED="1710178083627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__4_.ic" NAME="All in ProjectManagementSystem (4) Coverage Results" MODIFIED="1710227445102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectServiceImplTest_testGetProjectsByDepartmentId_Null.ic" NAME="ProjectServiceImplTest.testGetProjectsByDepartmentId_Null Coverage Results" MODIFIED="1710228206228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.project.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getUsersByProjectId_ReturnsUserDTOs.ic" NAME="UserServiceImplTest.getUsersByProjectId_ReturnsUserDTOs Coverage Results" MODIFIED="1710217701467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectServiceImplTest_testGetUserIdsByProjectId.ic" NAME="ProjectServiceImplTest.testGetUserIdsByProjectId Coverage Results" MODIFIED="1710226991375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.project.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testDepartmentStatus_Inactive.ic" NAME="DepartmentAPITest.testDepartmentStatus_Inactive Coverage Results" MODIFIED="1710212597493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectServiceImplTest_testGetProjectsByUserName.ic" NAME="ProjectServiceImplTest.testGetProjectsByUserName Coverage Results" MODIFIED="1710227782917" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.project.*</FILTER>
+    </SUITE>
   </component>
 </project>

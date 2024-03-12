@@ -66,7 +66,7 @@
                     <div class="status">
                         <div class="d-flex mb-3">
                             <div class="flex-grow-1">
-                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3" >TODO <small class="badge bg-secondary align-bottom ms-1 totaltask-badge">2</small></h6>
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3" >TODO <small class="badge bg-secondary align-bottom ms-1 totaltask-badge" th:text="${todoCount}"></small></h6>
                             </div>
 
                         </div>
@@ -113,6 +113,10 @@
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
                                                 </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -136,7 +140,7 @@
                     <div class="status">
                         <div class="d-flex mb-3">
                             <div class="flex-grow-1">
-                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3">INPROGRESS <small class="badge bg-warning align-bottom ms-1 totaltask-badge">2</small></h6>
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3">INPROGRESS <small class="badge bg-warning align-bottom ms-1 totaltask-badge" th:text="${inprogressCount}"></small></h6>
                             </div>
 
                         </div>
@@ -182,6 +186,10 @@
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
                                                 </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
+                                                </div>
 
                                             </div>
                                         </div>
@@ -204,7 +212,7 @@
                     <div class="status">
                         <div class="d-flex mb-3">
                             <div class="flex-grow-1">
-                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3">COMPLETED <small class="badge bg-success align-bottom ms-1 totaltask-badge">1</small></h6>
+                                <h6 class="fs-14 text-uppercase fw-semibold mb-0 textlist mb-3">COMPLETED <small class="badge bg-success align-bottom ms-1 totaltask-badge" th:text="${completedCount}"> </small></h6>
                             </div>
 
                         </div>
@@ -249,6 +257,10 @@
                                                 <div class="flex-grow-1">
                                                     <span class="text-muted" th:text="${currentIssue.planStartDate}"><i class="ri-time-line align-bottom"></i>
                                                         </span>
+                                                </div>
+                                                <div class="flex-shrink-0">
+                                                    <span th:if="${currentIssue.isOverDue()}" class="badge bg-primary-subtle text-danger" th:text="OverDue"></span>
+
                                                 </div>
 
                                             </div>

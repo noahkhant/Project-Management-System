@@ -59,10 +59,10 @@ public class SecurityConfig {
                                        "userPhoto",
                                         "projectFiles"
                                 ).permitAll()
-                                .requestMatchers("/forgot-password","/otp-form").permitAll()
+                                .requestMatchers("/forgot-password","/otp-form","/create-new-password").permitAll()
                                 .requestMatchers("/calendar","/all-issue-list","/home","/project/projects")
                                 .hasAnyAuthority("PMO","PM","TEAMLEADER","MEMBER")
-                                .requestMatchers("/issue-list","/issueboard","/teamleader-progress-view")
+                                .requestMatchers("/issue-list","/issueboard","/teamleader-progress-view","/project/my-projects")
                                 .hasAnyAuthority("PM")
                                 .requestMatchers("/user-management")
                                 .hasAnyAuthority("PM","PMO")
@@ -134,8 +134,8 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-//        return NoOpPasswordEncoder.getInstance();
+       return new BCryptPasswordEncoder();
+    //    return NoOpPasswordEncoder.getInstance();
 
     }
 

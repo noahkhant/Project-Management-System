@@ -37,8 +37,8 @@ public class UserAPI {
     private String uploadDir;
 
     @PostMapping("/create")
-    public ResponseEntity<Map<String, String>> createUser(
-            @RequestParam("name") String name,
+    public ResponseEntity<Map<String, String>>  createUser(
+            Long id, @RequestParam("name") String name,
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
             @RequestParam("role")Role role,
@@ -50,10 +50,7 @@ public class UserAPI {
             @RequestParam("password") String password,
             @RequestParam("file") MultipartFile file) {
         try {
-
             System.out.println("Department = "+ department);
-            System.out.println("Position = "+ position);
-            System.out.println("Role:"+role);
             MultipartFile photo = file;
             System.out.println("photo : " + photo);
             if (photo != null && !photo.isEmpty()) {
@@ -65,9 +62,18 @@ public class UserAPI {
                     String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
                     User user = new User();
                     user.setName(name);
-                    user.setDepartment(department);
+                    if (!position.getPositionName().equals("Project Manager")) {
+                        user.setDepartment(department);
+                    }else{
+                        user.setDepartment(null);
+                    }
                     user.setPosition(position);
-                    user.setRole(role);
+                    // Set role based on position value
+                    if (position.getPositionName().equals("Project Manager")) {
+                        user.setRole(Role.PM);
+                    } else {
+                        user.setRole(role);
+                    }
                     user.setGender(gender);
                     user.setDob(dob);
                     user.setEducation(education);
@@ -159,8 +165,6 @@ public class UserAPI {
         }
     }
 
-
-
     @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUserWithImage(
             @PathVariable("id") long userId,
@@ -230,5 +234,19 @@ public class UserAPI {
     public ResponseEntity<User> getCurrentUser(){
         User currentUser = userService.getCurrentUser();
         return ResponseEntity.ok(currentUser); // This will return the authenticated user
+    }
+
+    @PutMapping("/updateUser/{userId}")
+    public ResponseEntity<String> departmentStatus(@PathVariable("userId") Long userId) {
+        User user = userService.getUserById(userId);
+        if (user != null && user.isActive()) {
+            user.setActive(false);
+            userService.save(user);
+            return ResponseEntity.ok("User status false changed successfully");
+        } else {
+            user.setActive(true);
+            userService.save(user);
+            return ResponseEntity.ok("User status true changed successfully");
+        }
     }
 }

@@ -6,7 +6,6 @@ import ai.group2.project_management_system.model.entity.User;
 
 import java.util.List;
 
-
 public interface UserService {
     User save (User user);
     List<User> getAllUsers();
@@ -23,4 +22,8 @@ public interface UserService {
     List<User> getUsersByIds(List<Long> teamLeaderIds);
 
     List<Project> getProjectsByUserId(Long userId);
+
+    String getUserEmailById(Long userId);
+
+    String getUserNameById(Long userId);
 }

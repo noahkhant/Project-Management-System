@@ -1,11 +1,10 @@
 package ai.group2.project_management_system.controller.api;
 
-import ai.group2.project_management_system.model.entity.Project;
 import ai.group2.project_management_system.model.entity.User;
 import ai.group2.project_management_system.service.ImageService;
 import ai.group2.project_management_system.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.internal.util.collections.IdentityMap;
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +21,14 @@ public class ProfileAPI {
        User currentUser = userService.getCurrentUser();
        System.out.println(currentUser);
         return ResponseEntity.ok(currentUser);
+    }
+
+
+    @GetMapping("/user/password/{password}")
+    public boolean getCurrentUserPassword(@PathVariable("password") String password) {
+        User currentUser = userService.getCurrentUser();
+        boolean checkedPassword = BCrypt.checkpw(password, currentUser.getPassword());
+        return checkedPassword;
     }
 
     @PostMapping("/edit-user/{id}")
@@ -80,6 +87,23 @@ public class ProfileAPI {
             e.printStackTrace();
             // Return an error response if the update fails
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+
+    @PostMapping("/update-password/{userId}")
+    public ResponseEntity<User> updatePassword(@PathVariable("userId") long userId, @RequestBody User user) {
+        System.out.println("we reach edit mapping!");
+
+        User existingUser = userService.getUserById(userId);
+        if (existingUser != null) {
+            // Update the password
+            String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+            existingUser.setPassword(hashedPassword);
+            User updatedUser = userService.save(existingUser);
+            return ResponseEntity.ok(updatedUser);
+        } else {
+            return ResponseEntity.notFound().build();
         }
     }
 }

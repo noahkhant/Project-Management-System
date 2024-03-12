@@ -1,5 +1,15 @@
-document.getElementById("createIssueForm").addEventListener('submit', function (event) {
+document.getElementById("createIssueBtn").addEventListener('click', function (event) {
+
     event.preventDefault();
+    // Get the form element
+    const form = document.getElementById("createIssueForm");
+
+    // Check if the form is valid
+    if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return false;
+    }
+
     const selectedTeamLeaderId = getSelectedTeamLeaderId();
     console.log('Selected Team Leader ID:', selectedTeamLeaderId);
     function stripHtmlTags(html) {
@@ -46,14 +56,9 @@ document.getElementById("createIssueForm").addEventListener('submit', function (
         .then(data => {
             console.log("data receive successfully")
             console.log(data);
-            //issue = data;
-
-            // fetch(url, {
-            //
-            // }).then(files=>{
-            //     issue = {...issue,...files};
-            // })
-
+            $('#createIssueModal').modal('hide');
+            // Reload the page
+            window.location.reload();
         })
         .catch(error => console.log("Error" + error));
 });
@@ -66,7 +71,6 @@ function getSelectedTeamLeaderId() {
             return radioButton.value;
         }
     }
-
     // Return a default value or handle the case where no team leader is selected
     return null;
 }

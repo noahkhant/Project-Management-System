@@ -71,6 +71,10 @@ public class User implements UserDetails {
     @JsonIgnore
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<AssignIssue> assignIssues;
+
+    public User(long l, String s) {
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
