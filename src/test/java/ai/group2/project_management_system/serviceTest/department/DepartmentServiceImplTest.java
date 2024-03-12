@@ -9,11 +9,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
 class DepartmentServiceImplTest {
 
@@ -30,61 +31,72 @@ class DepartmentServiceImplTest {
 
     @Test
     public void testSaveDepartment() {
-        // Create a department
+        // Create a sample department
         Department department = new Department();
-        department.setName("Test Department");
+        department.setId(1L);
+        department.setName("Department");
+        department.setEmail("department@example.com");
+        department.setPhone("1234567890");
 
-        // Mock the repository's save method to return the department
-        when(departmentRepository.save(department)).thenReturn(department);
+        // Mock the behavior of the departmentRepository.save() method
+        when(departmentRepository.save(any(Department.class))).thenReturn(department);
 
-        // Save the department
+        // Call the save method of DepartmentService
         Department savedDepartment = departmentService.save(department);
 
-        // Verify that the department is saved
-        assertNotNull(1);
-        assertEquals("Test Department", savedDepartment.getName());
+        // Verify that departmentRepository.save() method is called once with the correct argument
+        verify(departmentRepository, times(1)).save(department);
+
+        // Verify the returned department object
+        assertEquals(department, savedDepartment);
     }
 
     @Test
     public void testGetAllDepartments() {
-        // Create a list of departments
-        List<Department> departments = new ArrayList<>();
+        // Create sample department objects
         Department department1 = new Department();
+        department1.setId(1L);
         department1.setName("Department 1");
+        department1.setEmail("department1@example.com");
+        department1.setPhone("1234567890");
+
         Department department2 = new Department();
+        department2.setId(2L);
         department2.setName("Department 2");
-        departments.add(department1);
-        departments.add(department2);
+        department2.setEmail("department2@example.com");
+        department2.setPhone("9876543210");
 
-        // Mock the repository's findAll method to return the list of departments
-        when(departmentRepository.findAll()).thenReturn(departments);
+        // Mock the behavior of the departmentRepository.findAll() method
+        when(departmentRepository.findAll()).thenReturn(Arrays.asList(department1, department2));
 
-        // Get all departments
-        List<Department> returnedDepartments = departmentService.getAllDepartments();
+        // Call the getAllDepartments method of DepartmentService
+        List<Department> departments = departmentService.getAllDepartments();
 
-        // Verify that the returned list matches the expected list
-        assertEquals(departments.size(), returnedDepartments.size());
-        assertEquals(departments.get(0).getName(), returnedDepartments.get(0).getName());
-        assertEquals(departments.get(1).getName(), returnedDepartments.get(1).getName());
+        // Verify that departmentRepository.findAll() method is called once
+        verify(departmentRepository, times(1)).findAll();
+
+        // Verify the returned list of departments
+        assertEquals(2, departments.size());
+        assertEquals(department1, departments.get(0));
+        assertEquals(department2, departments.get(1));
     }
 
     @Test
     public void testGetDepartmentById() {
-        // Create a department
-        Long departmentId = 1L;
+        // Create a sample department object
         Department department = new Department();
-        department.setId(departmentId);
-        department.setName("Test Department");
+        department.setId(1L);
+        department.setName("Department 1");
+        department.setEmail("department1@example.com");
+        department.setPhone("1234567890");
 
-        // Mock the repository's getReferenceById method to return the department
-        when(departmentRepository.getReferenceById(departmentId)).thenReturn(department);
+        // Mock the behavior of the departmentRepository.getReferenceById() method
+        when(departmentRepository.getReferenceById(1L)).thenReturn(department);
 
-        // Get department by ID
-        Department returnedDepartment = departmentService.getDepartmentById(departmentId);
+        // Call the getDepartmentById method of DepartmentService with the department ID
+        Department retrievedDepartment = departmentService.getDepartmentById(1L);
 
-        // Verify that the returned department matches the expected department
-        assertNotNull(returnedDepartment);
-        assertEquals(departmentId, returnedDepartment.getId());
-        assertEquals("Test Department", returnedDepartment.getName());
+        // Verify that departmentRepository.getReferenceById() method is called once with the specified department ID
+        assertEquals(department, retrievedDepartment);
     }
 }

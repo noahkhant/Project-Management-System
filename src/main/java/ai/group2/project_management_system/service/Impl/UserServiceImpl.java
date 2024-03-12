@@ -22,6 +22,7 @@ import java.util.stream.Collectors;
 @Transactional
 public class UserServiceImpl implements UserService {
 
+
     private final UserRepository userRepository;
     private final UserMapping userMapping;
 
@@ -78,8 +79,6 @@ public class UserServiceImpl implements UserService {
     public User getUserById(long userId) {
         return userRepository.findById(userId).orElse(null);
     }
-
-
 
     @Override
     public List<User> findUsersByIds(List<Long> userIds) {

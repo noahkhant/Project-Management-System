@@ -49,6 +49,12 @@ public class Project implements Serializable {
 
     private boolean isOverDue;
 
+    public Project(boolean b) {
+    }
+
+    public Project(String s, String johnDoe) {
+    }
+
     public boolean isOverDue() {
         return isOverDue;
     }

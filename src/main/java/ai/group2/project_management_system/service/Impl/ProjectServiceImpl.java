@@ -44,7 +44,6 @@ public  class ProjectServiceImpl implements ProjectService {
         return projects;
     }
 
-
     @Override
     public Project getProjectBy_Id(Long projectId) {
        return projectRepository.findProjectById(projectId);
@@ -154,8 +153,6 @@ public  class ProjectServiceImpl implements ProjectService {
     public Project getProjectByTitle(String title) {
         return projectRepository.findProjectByTitle(title);
     }
-
-
     @Override
     public List<Project> getProjectsByUserName(String name){
         return projectRepository.findProjectsByUserName(name);
