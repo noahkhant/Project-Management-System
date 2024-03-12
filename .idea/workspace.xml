@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/NotificationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/MessageServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/NotificationServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/EmailServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/EmailServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +53,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "demo-main",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
