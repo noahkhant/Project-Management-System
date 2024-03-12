@@ -7,7 +7,27 @@
     <option name="diagramMode" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="" />
+    <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/AssignIssueDTOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/AssignIssueRequestDTOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/IssueDetailsDtoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/ProjectDTOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/UserDTOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/mapping/AssignIssueMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/mapping/UserMappingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/IssueTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/EmailServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/issue/IssueFilesServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/issue/IssueServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/EmailServiceImpl.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,78 +70,84 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.All in ProjectManagementSystem (1).executor": "Coverage",
-    "JUnit.All in ProjectManagementSystem (2).executor": "Run",
-    "JUnit.All in ProjectManagementSystem (3).executor": "Run",
-    "JUnit.All in ProjectManagementSystem (4).executor": "Coverage",
-    "JUnit.All in ProjectManagementSystem.executor": "Coverage",
-    "JUnit.DepartmentAPITest.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testAddDepartment.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testDepartmentStatus_Active.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testDepartmentStatus_Inactive.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testGetDepartments.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testGetDepartmentsWhenEmpty.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testUpdateDepartment.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testUpdateDepartmentNotFound.executor": "Coverage",
-    "JUnit.DepartmentAPITest.testUpdateDepartmentStatus.executor": "Run",
-    "JUnit.DepartmentControllerTest.executor": "Coverage",
-    "JUnit.DepartmentServiceImplTest.executor": "Coverage",
-    "JUnit.DepartmentServiceImplTest.testGetAllDepartments.executor": "Coverage",
-    "JUnit.DepartmentServiceImplTest.testGetDepartmentById.executor": "Coverage",
-    "JUnit.DepartmentServiceImplTest.testSaveDepartment.executor": "Coverage",
-    "JUnit.ProjectManagementSystemApplicationTests.contextLoads.executor": "Coverage",
-    "JUnit.ProjectManagementSystemApplicationTests.executor": "Run",
-    "JUnit.ProjectServiceImplTest.executor": "Run",
-    "JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null.executor": "Coverage",
-    "JUnit.ProjectServiceImplTest.testGetProjectsByUserName.executor": "Run",
-    "JUnit.ProjectServiceImplTest.testGetUserIdsByProjectId.executor": "Coverage",
-    "JUnit.UserAPITest.testCreateUserEndpoint_Success.executor": "Coverage",
-    "JUnit.UserAPITest.testCreateUser_Success.executor": "Coverage",
-    "JUnit.UserServiceImplTest.getCurrentUser_ReturnsCurrentUser.executor": "Coverage",
-    "JUnit.UserServiceImplTest.getUsersByDepartmentId_ReturnsUserDTOs.executor": "Coverage",
-    "JUnit.UserServiceImplTest.getUsersByProjectId_ReturnsUserDTOs.executor": "Coverage",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "demo-main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/ProjectManagementSystem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "coverage",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.All in ProjectManagementSystem (1).executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.All in ProjectManagementSystem (2).executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.All in ProjectManagementSystem (3).executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.All in ProjectManagementSystem (4).executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.All in ProjectManagementSystem.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.AssignIssueMapperTest.testMapAssignIssueToAssignIssue1.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testAddDepartment.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testDepartmentStatus_Active.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testDepartmentStatus_Inactive.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testGetDepartments.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testGetDepartmentsWhenEmpty.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testUpdateDepartment.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testUpdateDepartmentNotFound.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentAPITest.testUpdateDepartmentStatus.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.DepartmentControllerTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentServiceImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentServiceImplTest.testGetAllDepartments.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentServiceImplTest.testGetDepartmentById.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.DepartmentServiceImplTest.testSaveDepartment.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testGenerateOTP.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testSendEmailWithAttachment.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testSendMultipleEmail_Failure.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testSendMultipleEmail_Success.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testSimpleMail.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.IssueServiceImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.IssueServiceImplTest.testGetAllIssueByUserId.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.IssueServiceImplTest.testGetCountsByStatus.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.IssueServiceImplTest.testGetIssueDetailsById.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ProjectManagementSystemApplicationTests.contextLoads.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ProjectManagementSystemApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProjectServiceImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ProjectServiceImplTest.testGetProjectsByUserName.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProjectServiceImplTest.testGetUserIdsByProjectId.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ServletInitializerTest.testConfigure.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserAPITest.testCreateUserEndpoint_Success.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserAPITest.testCreateUser_Success.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserServiceImplTest.getCurrentUser_ReturnsCurrentUser.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserServiceImplTest.getUsersByDepartmentId_ReturnsUserDTOs.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserServiceImplTest.getUsersByProjectId_ReturnsUserDTOs.executor&quot;: &quot;Coverage&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;demo-main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/ProjectManagementSystem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;coverage&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
-      <recent name="ai.group2.project_management_system.serviceTest.user" />
-      <recent name="ai.group2.project_management_system.serviceTest.department" />
+      <recent name="ai.group2.project_management_system.model.entity" />
+      <recent name="ai.group2.project_management_system" />
+      <recent name="ai.group2.project_management_system.mapping" />
+      <recent name="ai.group2.project_management_system.dto" />
+      <recent name="ai.group2.project_management_system.service.Impl" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ProjectManagementSystemApplication">
-    <configuration name="All in ProjectManagementSystem (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in ProjectManagementSystem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjectManagementSystem" />
       <option name="PACKAGE_NAME" value="" />
@@ -130,48 +156,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AssignIssueMapperTest.testMapAssignIssueToAssignIssue1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjectManagementSystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
+          <option name="PATTERN" value="ai.group2.project_management_system.mapping.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ProjectManagementSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetProjectsByDepartmentId_Null" />
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.mapping" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.mapping.AssignIssueMapperTest" />
+      <option name="METHOD_NAME" value="testMapAssignIssueToAssignIssue1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectServiceImplTest.testGetProjectsByUserName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EmailServiceImplTest.testGenerateOTP" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ProjectManagementSystem" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ai.group2.project_management_system.serviceTest.project.*" />
+          <option name="PATTERN" value="ai.group2.project_management_system.service.Impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.serviceTest.project" />
-      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.serviceTest.project.ProjectServiceImplTest" />
-      <option name="METHOD_NAME" value="testGetProjectsByUserName" />
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service.Impl" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.Impl.EmailServiceImplTest" />
+      <option name="METHOD_NAME" value="testGenerateOTP" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmailServiceImplTest.testSimpleMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ai.group2.project_management_system.service.Impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system.service.Impl" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.service.Impl.EmailServiceImplTest" />
+      <option name="METHOD_NAME" value="testSimpleMail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServletInitializerTest.testConfigure" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ai.group2.project_management_system.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ai.group2.project_management_system" />
+      <option name="MAIN_CLASS_NAME" value="ai.group2.project_management_system.ServletInitializerTest" />
+      <option name="METHOD_NAME" value="testConfigure" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -188,21 +231,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ProjectServiceImplTest" />
-      <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" />
-      <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByUserName" />
+      <item itemvalue="JUnit.AssignIssueMapperTest.testMapAssignIssueToAssignIssue1" />
+      <item itemvalue="JUnit.EmailServiceImplTest.testGenerateOTP" />
+      <item itemvalue="JUnit.EmailServiceImplTest.testSimpleMail" />
+      <item itemvalue="JUnit.ServletInitializerTest.testConfigure" />
       <item itemvalue="JUnit.All in ProjectManagementSystem" />
-      <item itemvalue="JUnit.All in ProjectManagementSystem (1)" />
       <item itemvalue="Node.js.issue-create.js" />
       <item itemvalue="Spring Boot.ProjectManagementSystemApplication" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in ProjectManagementSystem" />
-        <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByDepartmentId_Null" />
-        <item itemvalue="JUnit.All in ProjectManagementSystem (1)" />
-        <item itemvalue="JUnit.ProjectServiceImplTest.testGetProjectsByUserName" />
-        <item itemvalue="JUnit.ProjectServiceImplTest" />
+        <item itemvalue="JUnit.ServletInitializerTest.testConfigure" />
+        <item itemvalue="JUnit.AssignIssueMapperTest.testMapAssignIssueToAssignIssue1" />
+        <item itemvalue="JUnit.EmailServiceImplTest.testGenerateOTP" />
+        <item itemvalue="JUnit.EmailServiceImplTest.testSimpleMail" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +282,8 @@
       <workItem from="1709353285534" duration="18479000" />
       <workItem from="1710042045335" duration="11933000" />
       <workItem from="1710134757580" duration="3764000" />
-      <workItem from="1710210142076" duration="13509000" />
+      <workItem from="1710210142076" duration="21772000" />
+      <workItem from="1710249721900" duration="823000" />
     </task>
     <servers />
   </component>
@@ -312,22 +356,31 @@
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentControllerTest.ic" NAME="DepartmentControllerTest Coverage Results" MODIFIED="1710177654814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$EmailServiceImplTest_testGenerateOTP.ic" NAME="EmailServiceImplTest.testGenerateOTP Coverage Results" MODIFIED="1710235274628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.service.Impl.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectManagementSystemApplication.ic" NAME="ProjectManagementSystemApplication Coverage Results" MODIFIED="1710217516354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testGetDepartments.ic" NAME="DepartmentAPITest.testGetDepartments Coverage Results" MODIFIED="1710179706505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem.ic" NAME="All in ProjectManagementSystem Coverage Results" MODIFIED="1710228404050" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem.ic" NAME="All in ProjectManagementSystem Coverage Results" MODIFIED="1710237900560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getCurrentUser_ReturnsCurrentUser.ic" NAME="UserServiceImplTest.getCurrentUser_ReturnsCurrentUser Coverage Results" MODIFIED="1710217500373" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__1_.ic" NAME="All in ProjectManagementSystem (1) Coverage Results" MODIFIED="1710227937377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$EmailServiceImplTest_testSendEmailWithAttachment.ic" NAME="EmailServiceImplTest.testSendEmailWithAttachment Coverage Results" MODIFIED="1710233733507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.service.Impl.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getUsersByDepartmentId_ReturnsUserDTOs.ic" NAME="UserServiceImplTest.getUsersByDepartmentId_ReturnsUserDTOs Coverage Results" MODIFIED="1710218282105" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$EmailServiceImplTest_testSimpleMail.ic" NAME="EmailServiceImplTest.testSimpleMail Coverage Results" MODIFIED="1710235153884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.service.Impl.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest_testGetDepartmentById.ic" NAME="DepartmentServiceImplTest.testGetDepartmentById Coverage Results" MODIFIED="1710213334218" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__2_.ic" NAME="All in ProjectManagementSystem (2) Coverage Results" MODIFIED="1710219040984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__2_.ic" NAME="All in ProjectManagementSystem (2) Coverage Results" MODIFIED="1710232752521" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectManagementSystemApplicationTests.ic" NAME="ProjectManagementSystemApplicationTests Coverage Results" MODIFIED="1710210204139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.*</FILTER>
     </SUITE>
@@ -337,15 +390,27 @@
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testDepartmentStatus_Active.ic" NAME="DepartmentAPITest.testDepartmentStatus_Active Coverage Results" MODIFIED="1710212588968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$IssueServiceImplTest_testGetCountsByStatus.ic" NAME="IssueServiceImplTest.testGetCountsByStatus Coverage Results" MODIFIED="1710232724694" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.issue.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testUpdateDepartment.ic" NAME="DepartmentAPITest.testUpdateDepartment Coverage Results" MODIFIED="1710212450430" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testGetDepartmentsWhenEmpty.ic" NAME="DepartmentAPITest.testGetDepartmentsWhenEmpty Coverage Results" MODIFIED="1710215089698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__3_.ic" NAME="All in ProjectManagementSystem (3) Coverage Results" MODIFIED="1710220433544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$All_in_ProjectManagementSystem__3_.ic" NAME="All in ProjectManagementSystem (3) Coverage Results" MODIFIED="1710231165032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$EmailServiceImplTest_testSendMultipleEmail_Success.ic" NAME="EmailServiceImplTest.testSendMultipleEmail_Success Coverage Results" MODIFIED="1710234955681" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.service.Impl.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testAddDepartment.ic" NAME="DepartmentAPITest.testAddDepartment Coverage Results" MODIFIED="1710212337791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$IssueServiceImplTest_testGetIssueDetailsById.ic" NAME="IssueServiceImplTest.testGetIssueDetailsById Coverage Results" MODIFIED="1710232120937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.issue.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$EmailServiceImplTest_testSendMultipleEmail_Failure.ic" NAME="EmailServiceImplTest.testSendMultipleEmail_Failure Coverage Results" MODIFIED="1710234609452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.service.Impl.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentServiceImplTest.ic" NAME="DepartmentServiceImplTest Coverage Results" MODIFIED="1710177669405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
@@ -355,6 +420,9 @@
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest.ic" NAME="DepartmentAPITest Coverage Results" MODIFIED="1710215146841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$ServletInitializerTest_testConfigure.ic" NAME="ServletInitializerTest.testConfigure Coverage Results" MODIFIED="1710237249986" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserAPITest_testCreateUser_Success.ic" NAME="UserAPITest.testCreateUser_Success Coverage Results" MODIFIED="1710219422476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
@@ -369,11 +437,17 @@
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectServiceImplTest_testGetProjectsByDepartmentId_Null.ic" NAME="ProjectServiceImplTest.testGetProjectsByDepartmentId_Null Coverage Results" MODIFIED="1710228206228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.project.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$IssueServiceImplTest_testGetAllIssueByUserId.ic" NAME="IssueServiceImplTest.testGetAllIssueByUserId Coverage Results" MODIFIED="1710232041545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.serviceTest.issue.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$UserServiceImplTest_getUsersByProjectId_ReturnsUserDTOs.ic" NAME="UserServiceImplTest.getUsersByProjectId_ReturnsUserDTOs Coverage Results" MODIFIED="1710217701467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.user.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$ProjectServiceImplTest_testGetUserIdsByProjectId.ic" NAME="ProjectServiceImplTest.testGetUserIdsByProjectId Coverage Results" MODIFIED="1710226991375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.project.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/ProjectManagementSystem$AssignIssueMapperTest_testMapAssignIssueToAssignIssue1.ic" NAME="AssignIssueMapperTest.testMapAssignIssueToAssignIssue1 Coverage Results" MODIFIED="1710236611714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>ai.group2.project_management_system.mapping.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/ProjectManagementSystem$DepartmentAPITest_testDepartmentStatus_Inactive.ic" NAME="DepartmentAPITest.testDepartmentStatus_Inactive Coverage Results" MODIFIED="1710212597493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>ai.group2.project_management_system.serviceTest.department.*</FILTER>

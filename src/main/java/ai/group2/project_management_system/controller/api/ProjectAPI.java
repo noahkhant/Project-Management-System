@@ -189,10 +189,12 @@ public class ProjectAPI {
             pj.setCreator(currentUser.getName());
             pj.setDescription(project.getDescription());
             pj.setCategory(project.getCategory());
-//            pj.setStatus(project.getStatus());
             pj.setPriority(project.getPriority());
             pj.setPlanStartDate(project.getPlanStartDate());
             pj.setPlanEndDate(project.getPlanEndDate());
+            List<Long> userIds = project.getUserIds();
+            List<User> users = userService.findUsersByIds(userIds);
+            pj.setUsers(new HashSet<>(users));
 
             Project latestUser = projectService.save(pj);
             return ResponseEntity.ok(latestUser);
