@@ -102,13 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
                  </div>
 </div>
        
-                <div class="flex-shrink-0 ms-4 additional-content">
-                    <ul class="list-inline tasks-list-menu mb-0">
-                        <li class="list-inline-item">
-                            <a href="issue_member_details.html"><button class="btn btn-sm btn-light" id="view-btn">View</button></a>
-                        </li>
-                    </ul>
-                </div>
+            
             </label>
         </div>
     </div>

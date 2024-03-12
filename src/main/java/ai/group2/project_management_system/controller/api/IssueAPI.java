@@ -242,5 +242,19 @@ public class IssueAPI {
         }
     }
 
+    @PutMapping("/api/updateIssue/{issueId}")
+    public ResponseEntity<String> updateIssueActive(@PathVariable("issueId") Long issueId) {
+        System.out.println("IssueId"+issueId);
+        Issue issue = issueService.getIssueById(issueId);
+        if (issue != null && issue.isActive()) {
+            issue.setActive(false);
+            issueService.save(issue);
+            return ResponseEntity.ok("Issue status false changed successfully");
+        } else {
+            issue.setActive(true);
+            issueService.save(issue);
+            return ResponseEntity.ok("Issue status true changed successfully");
+        }
+    }
 
 }
