@@ -185,8 +185,6 @@ public class IssueController {
         IssueDetailsDto issue=issueService.getIssueDetailsById(id);
         model.addAttribute("issue",issue);
         System.out.println("Issue Id:"+id);
-//          log.info("Issue -> {}",assignIssue.getIssue().getFilesList());
-//        log.info("Issue -> {}",assignIssue.getIssue().getFiles());
         return "issue-details";
     }
 }

@@ -81,7 +81,7 @@
                                         <td class="due_date"
                                             th:text="${project.getActualStartDate() != null ? project.getActualStartDate() : 'Not yet Started'}"></td>
                                         <td class="due_date"
-                                            th:text="${project.getActualEndDate() != null ? project.getActualEndDate() : 'Not yet Completed'}"></td>
+                                            th:text="${project.getActualEndDate() != null ? project.getActualEndDate() : 'Not yet Ended'}"></td>
                                         <td class="status"><span
                                                 class="badge bg-secondary-subtle text-secondary text-uppercase"
                                                 th:text="${project.getStatus()}"></span></td>
@@ -132,13 +132,36 @@
 <script src="assets/libs/list.js/list.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script>
-    $(document).ready(function () {
-        new DataTable('#example', {
-            pagingType: 'full_numbers'
-
-        });
+    $(document).ready(function() {
+        // Initialize DataTable if it's not already initialized
+        if (!$.fn.DataTable.isDataTable('#example')) {
+            $('#example').DataTable({
+                pagingType: 'full_numbers'
+            });
+        }
     });
 
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check if the "See More" button was clicked
+        const seeMoreClicked = sessionStorage.getItem('seeMoreClicked');
+
+        // Check if the button was clicked and selectedStatus is available
+        if (seeMoreClicked && localStorage.getItem('selectedStatus')) {
+            // Get the DataTable instance
+            var table = $('#example').DataTable();
+
+            // Retrieve the selectedStatus from localStorage
+            const selectedStatus = localStorage.getItem('selectedStatus');
+
+            // Set the search value programmatically
+            table.search(selectedStatus).draw();
+
+            // Clear the sessionStorage flag
+            sessionStorage.removeItem('seeMoreClicked');
+        }
+    });
 </script>
 <!--list pagination js-->
 <script src="assets/libs/list.pagination.js/list.pagination.min.js"></script>

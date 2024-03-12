@@ -13,7 +13,6 @@ public interface AssignIssueService {
 
     List<AssignIssue> getAssignIssuesByTeamleaderId(Long id);
 
-
     List<AssignIssue> getAssignIssuesByMemberId(Long id);
 
     AssignIssue getAssignIssueDetailsByAssignIssueId(Long id);

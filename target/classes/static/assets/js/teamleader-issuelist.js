@@ -1,5 +1,4 @@
 
-
 async function assignIssueBox(id) {
     let assignIssue = {};
     console.log("Issue Id:" + id);

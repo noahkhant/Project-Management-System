@@ -54,7 +54,6 @@ public class PageController {
 
     }
 
-
     @GetMapping("/login")
     public String login() {
         return "login";
@@ -74,7 +73,6 @@ public class PageController {
             // OTPs match, redirect to create-new-password
             return "create-new-password";
         } else {
-
             // OTPs don't match, redirect back to otp-form
             model.addAttribute("otpError", "Your OTP is shit, please type a correct one. Thanks");
             return "otp-form";
@@ -93,15 +91,9 @@ public class PageController {
                                           @RequestParam String subject,
                                           @RequestParam String message,
                                           @RequestParam(required = false) MultipartFile attachment) {
-
-
          service.sendEmailWithAttachment(recipient, subject, message, attachment);
-
          return "login";
-
     }
-
-
 
     @GetMapping("/sendMultipleEmail")
     public String getEmailForm(){
@@ -119,45 +111,6 @@ public class PageController {
 
         return "login";
     }
-
-
-    /*@PostMapping("/create-new-password")
-    public String createNewPassword(@RequestParam("password") String password, HttpSession httpSession) {
-
-        try {
-            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
-            String email = (String) httpSession.getAttribute("email");
-
-            if (email != null) {
-                Optional<User> optionalUser = userRepository.findByEmail(email);
-
-                if (optionalUser.isPresent()) {
-                    User user = optionalUser.get();
-                    user.setPassword(hashedPassword);
-                    User savedUser = userRepository.save(user);
-
-                    if (savedUser != null) {
-                        log.info("User with ID {} saved successfully.", savedUser.getId());
-                    } else {
-                        log.error("Failed to save user.");
-                    }
-                } else {
-                    // Log that the user was not found
-                    log.error("User with email {} not found.", email);
-                }
-            } else {
-                // Log that the email is null
-                log.error("Email is null.");
-            }
-
-            httpSession.invalidate();
-            return "login";
-        } catch (Exception e) {
-            // Log any unexpected exceptions
-            log.error("An unexpected error occurred.", e);
-            return "error/404"; // Redirect to an error page or handle appropriately
-        }
-    }*/
 
     @PostMapping("/create-new-password")
     public String createNewPassword(@RequestParam("password") String password,HttpSession httpSession){

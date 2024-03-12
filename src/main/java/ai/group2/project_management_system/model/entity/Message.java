@@ -18,8 +18,6 @@ public class Message {
     @ManyToOne(cascade = CascadeType.MERGE)
     private User user;
 
-
-
     public User getUser() {
         return user;
     }

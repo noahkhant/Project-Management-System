@@ -38,7 +38,7 @@ public class UserAPI {
 
     @PostMapping("/create")
     public ResponseEntity<Map<String, String>>  createUser(
-            @RequestParam("name") String name,
+            Long id, @RequestParam("name") String name,
             @RequestParam("department") Department department,
             @RequestParam("position") Position position,
             @RequestParam("role")Role role,
@@ -51,8 +51,6 @@ public class UserAPI {
             @RequestParam("file") MultipartFile file) {
         try {
             System.out.println("Department = "+ department);
-            System.out.println("Position = "+ position);
-            System.out.println("Role:"+role);
             MultipartFile photo = file;
             System.out.println("photo : " + photo);
             if (photo != null && !photo.isEmpty()) {
@@ -166,8 +164,6 @@ public class UserAPI {
             return ResponseEntity.notFound().build();
         }
     }
-
-
 
     @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUserWithImage(

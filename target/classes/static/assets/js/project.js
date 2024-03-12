@@ -100,10 +100,10 @@ function teamLeaderGetter() {
 }
 
 function populateTeamLeaderList(dto) {
-    const memberListContainer = document.getElementById('team-teamLeader-list');
+    const leaderContainer = document.getElementById('team-teamLeader-list');
     console.log("dto : " + dto);
     // Clear existing member list content
-    memberListContainer.innerHTML = '';
+    leaderContainer.innerHTML = '';
 
     if (!Array.isArray(dto)) {
         console.error('DTO is not an array:', dto);
@@ -137,7 +137,7 @@ function populateTeamLeaderList(dto) {
                 </div>
             </div>     
         `;
-        memberListContainer.appendChild(listItem);
+        leaderContainer.appendChild(listItem);
     });
 }
 

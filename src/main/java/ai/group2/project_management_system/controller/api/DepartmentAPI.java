@@ -32,12 +32,9 @@ public class DepartmentAPI {
         Department existingDepartment = departmentService.getDepartmentById(departmentId);
 
         if (existingDepartment != null) {
-            // Update the existing department with the new information
             existingDepartment.setName(updatedDepartment.getName());
             existingDepartment.setEmail(updatedDepartment.getEmail());
             existingDepartment.setPhone(updatedDepartment.getPhone());
-//            existingDepartment.setActive(updatedDepartment.isActive());
-            // Update other fields as needed
 
             Department savedDepartment = departmentService.save(existingDepartment);
             return ResponseEntity.ok(savedDepartment);
@@ -59,6 +56,5 @@ public class DepartmentAPI {
             return ResponseEntity.ok("Department status true changed successfully");
         }
     }
-
 
 }

@@ -2,11 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let createIssueModal = new bootstrap.Modal(document.getElementById('createIssueModal'));
     let viewModal = new bootstrap.Modal(document.getElementById('viewModal'));
 
-    // Handle the click event on the "View" button in the first modal
-    // document.getElementById('view-btn').addEventListener('click', function () {
-    //     viewModal.show();
-    // });
-
     document.getElementById('create-issue').addEventListener('click', function () {
         showCategoryDropdown();
         showProjectDropdown();

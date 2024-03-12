@@ -83,17 +83,6 @@ public class IssueAPI {
         }
     }
 
-    /*@GetMapping("/get-project/{projectId}")
-    public ResponseEntity<ProjectDTO> getProject(@PathVariable Long projectId) {
-        ProjectDTO project = projectService.getProjectById(projectId);
-
-        if (project != null) {
-            return ResponseEntity.ok(project);
-        } else {
-            return ResponseEntity.noContent().build();
-        }
-    }*/
-
     @GetMapping("/get-project/{projectId}")
     public ResponseEntity<Project> getProject(@PathVariable Long projectId) {
         Project project = projectService.getProjectBy_Id(projectId);

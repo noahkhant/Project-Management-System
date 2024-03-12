@@ -19,6 +19,13 @@ function validateAndConfirm() {
             timer: 2000 // 2 seconds
         });
         showData();
+    }else{
+        Swal.fire({
+            title: 'Error!',
+            text: 'Please check back your project data',
+            icon: 'error',
+            timer: 2000 // 2 seconds
+        });
     }
 }
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------//

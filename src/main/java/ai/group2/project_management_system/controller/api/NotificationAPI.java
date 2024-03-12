@@ -32,9 +32,6 @@ public class NotificationAPI {
         filteredNotification.setTitle(notification.getTitle());
         filteredNotification.setRedirectURL(notification.getRedirectURL());
         filteredNotification.setId(id++); /// temp id // to replace with .save() autogenerate from database
-        // Add other necessary fields
-
-        // Send notification only to the specified recipient
         simpMessagingTemplate.convertAndSendToUser(recipient, "/specific", filteredNotification);
     }
 }

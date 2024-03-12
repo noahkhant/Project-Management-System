@@ -10,7 +10,6 @@ document.getElementById("createIssueBtn").addEventListener('click', function (ev
         return false;
     }
 
-
     const selectedTeamLeaderId = getSelectedTeamLeaderId();
     console.log('Selected Team Leader ID:', selectedTeamLeaderId);
     function stripHtmlTags(html) {

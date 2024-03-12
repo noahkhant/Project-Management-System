@@ -95,7 +95,7 @@ function projectManagerRedirectToIssueListToDo() {
     localStorage.setItem('selectedStatus', 'TODO');
 
     console.log('selectedStatus:', localStorage.getItem('selectedStatus'));
-    window.location.href = "/issue-list";
+    window.location.href = "project/my-projects";
 }
 
 function projectManagerRedirectToIssueListToDoInProgress() {
@@ -105,7 +105,7 @@ function projectManagerRedirectToIssueListToDoInProgress() {
     localStorage.setItem('selectedStatus', 'INPROGRESS');
 
     console.log('selectedStatus:', localStorage.getItem('selectedStatus'));
-    window.location.href = "/issue-list";
+    window.location.href = "project/my-projects";
 }
 
 function projectManagerRedirectToIssueListCompleted() {
@@ -115,7 +115,7 @@ function projectManagerRedirectToIssueListCompleted() {
     localStorage.setItem('selectedStatus', 'COMPLETED');
 
     console.log('selectedStatus:', localStorage.getItem('selectedStatus'));
-    window.location.href = "/issue-list";
+    window.location.href = "project/my-projects";
 }
 
 function projectManagerRedirectToIssueListPending() {
@@ -125,7 +125,7 @@ function projectManagerRedirectToIssueListPending() {
     localStorage.setItem('selectedStatus', 'PENDING');
 
     console.log('selectedStatus:', localStorage.getItem('selectedStatus'));
-    window.location.href = "/issue-list";
+    window.location.href = "project/my-projects";
 }
 function projectManagerRedirectToIssueListOverDue() {
     // Set a flag in sessionStorage indicating that the "See More" button was clicked
@@ -134,5 +134,5 @@ function projectManagerRedirectToIssueListOverDue() {
     localStorage.setItem('selectedStatus', 'OVERDUE');
 
     console.log('selectedStatus:', localStorage.getItem('selectedStatus'));
-    window.location.href = "/issue-list";
+    window.location.href = "project/my-projects";
 }

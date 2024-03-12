@@ -72,6 +72,8 @@ public class SecurityConfig {
                                 .hasAnyAuthority("TEAMLEADER")
                                 .requestMatchers("/member-issueboard","member-issuelist")
                                 .hasAnyAuthority("MEMBER")
+                                .requestMatchers("/report")
+                                .hasAnyAuthority("PMO", "PM")
                                 .anyRequest()
                                 .fullyAuthenticated()
 

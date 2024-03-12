@@ -28,8 +28,6 @@ public interface ProjectRepository extends JpaRepository<Project, Long> {
              "JOIN p.users u " +
              "WHERE u.id = :userId")
      List<Project> findProjectsByUserId(@Param("userId") Long userId);
-
-
     Integer countByStatus(Status status);
 
 

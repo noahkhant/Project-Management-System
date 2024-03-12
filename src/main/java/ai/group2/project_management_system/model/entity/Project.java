@@ -24,8 +24,6 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-//@ToString(exclude = "users")
-//@EqualsAndHashCode(exclude = "users")
 public class Project implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,6 +48,12 @@ public class Project implements Serializable {
     private Status status;
 
     private boolean isOverDue;
+
+    public Project(boolean b) {
+    }
+
+    public Project(String s, String johnDoe) {
+    }
 
     public boolean isOverDue() {
         return isOverDue;
@@ -87,8 +91,6 @@ public class Project implements Serializable {
 
         this.isActive = isActive;
     }
-
-
 
     @Transient
     private List<Long> userIds;
