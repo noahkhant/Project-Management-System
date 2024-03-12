@@ -56,4 +56,5 @@ public class DepartmentAPI {
             return ResponseEntity.ok("Department status true changed successfully");
         }
     }
+
 }

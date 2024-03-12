@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 public class ChatController {
     private final UserService userService;
     @ModelAttribute("user")
-    public User getUserFromSession(HttpSession session) {
+    public User getUserFromSession() {
         User user = userService.getCurrentUser();
         return user;
     }

@@ -324,4 +324,20 @@ public class ProjectAPI {
         }
     }
 
+    @GetMapping("/get-all-projects/{creatorName}")
+    public ResponseEntity<List<Project>> getAllProjects(@PathVariable String creatorName){
+        if(creatorName.equals("null")) {
+            List<Project> projects = projectService.getAllProjects();
+            if (projects != null) {
+                return ResponseEntity.ok(projects);
+            }
+        }
+        List<Project> projects = projectService.getProjectsByCreator(creatorName);
+        if (projects != null) {
+            return ResponseEntity.ok(projects);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+
 }

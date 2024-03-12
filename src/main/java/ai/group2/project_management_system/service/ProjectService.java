@@ -27,7 +27,6 @@ public interface ProjectService {
     String getProjectNameById(Long projectId);
     String getProjectCreatorByPID(Long projectId);
     List<Project> getProjectsByCreator(String creatorName);
-
     List<Project> getProjectsByUserId(Long userId);
     Project getProjectByTitle(String title);
     List<Project> getProjectsByUserName(String name);

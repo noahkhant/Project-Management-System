@@ -137,4 +137,5 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.log("Error" + error));
     });
+
 });
