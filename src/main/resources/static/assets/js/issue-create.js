@@ -57,11 +57,33 @@ document.getElementById("createIssueBtn").addEventListener('click', function (ev
             console.log("data receive successfully")
             console.log(data);
             $('#createIssueModal').modal('hide');
+            sendNotiIssueCreate(data);
             // Reload the page
-            window.location.reload();
         })
         .catch(error => console.log("Error" + error));
 });
+
+function sendNotiIssueCreate(issue) {
+
+    fetch(`/get-user/${issue.teamLeaderId}`)
+        .then(response => response.json())
+        .then(user => {
+            delete currentUser.authorities;
+            delete user.authorities;
+
+            let noti = {
+                title: "New Issue Assigned",
+                redirectURL: "/teamleader-issueboard",
+                content: `You have been assigned to Issue of ${issue.title}`,
+                sender: currentUser,
+                sendTo: user
+            }
+            sendNotification(noti);
+            window.location.reload();
+        })
+
+}
+
 
 function getSelectedTeamLeaderId() {
     const radioButtons = document.querySelectorAll('input[name="user.id"]');
