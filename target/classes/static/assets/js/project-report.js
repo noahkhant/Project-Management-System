@@ -64,12 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     name: project.title,
                     start: Date.parse(project.planStartDate), // Assuming start and end dates are provided in a valid format
                     end: Date.parse(project.planEndDate),
-                    color: 'rgba(124, 181, 236, 0.2)'
+                    color: 'rgba(124, 181, 236, 0.8)'
                 }, {
                     //name: 'Actual',
                     start: Date.parse(project.actualStartDate),
                     end: Date.parse(project.actualEndDate),
-                    color: 'rgba(255, 0, 0, 0.2)'
+                    color: 'rgba(255, 0, 0, 0.8)'
                 }]
             })),
         });

@@ -5,34 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/AssignIssueDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/AssignIssueRequestDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/IssueDetailsDtoTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/ProjectDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/dto/UserDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/mapping/AssignIssueMapperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/mapping/UserMappingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/IssueTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/NotificationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/model/entity/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/EmailServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/MessageServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/service/Impl/NotificationServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/issue/IssueFilesServiceImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/ai/group2/project_management_system/serviceTest/issue/IssueServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/ProjectManagementSystemApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/EmailDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/service/Impl/EmailServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/controller/api/ProjectAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/EmailDetail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/EmailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/service/Impl/EmailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/issue-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/user-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/user-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/issue-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/issue-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-create.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/issue-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/issue-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/user-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/user-report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/issue-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/issue-report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/teamleader-issuelist.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/user-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/user-report.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,37 +50,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.All in ProjectManagementSystem.executor": "Coverage",
-    "JUnit.EmailServiceImplTest.testGenerateOTP.executor": "Coverage",
-    "JUnit.EmailServiceImplTest.testSendEmailWithAttachment.executor": "Coverage",
-    "JUnit.ImageServiceTest.testSaveImageAsync.executor": "Coverage",
-    "JUnit.MessageServiceImplTest.executor": "Coverage",
-    "JUnit.NotificationServiceImplTest.testSave.executor": "Coverage",
-    "JUnit.NotificationTest.testNotificationEntity.executor": "Coverage",
-    "JUnit.UserTest.testUserEntity.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Merging demo-main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "711dd3093ac59cf676ea0432a926fcac",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.All in ProjectManagementSystem.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testGenerateOTP.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EmailServiceImplTest.testSendEmailWithAttachment.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ImageServiceTest.testSaveImageAsync.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.MessageServiceImplTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.NotificationServiceImplTest.testSave.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.NotificationTest.testNotificationEntity.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserTest.testUserEntity.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging demo-main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;711dd3093ac59cf676ea0432a926fcac&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\userPhoto" />
@@ -104,9 +94,16 @@
       <recent name="ai.group2.project_management_system.model.entity" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.ProjectManagementSystemApplication">
     <configuration name="issue-create.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="issue-create.js" working-dir="$PROJECT_DIR$/src/main/resources/static/assets/js">
       <method v="2" />
+    </configuration>
+    <configuration name="ProjectManagementSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ProjectManagementSystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ai.group2.project_management_system.ProjectManagementSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

@@ -126,7 +126,7 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form th:object="${assignIssue}" method="post" th:action="@{/assignIssue}">
+                                            <form id="assignIssueForm" th:object="${assignIssue}" method="post" th:action="@{/assignIssue}">
                                                 <div class="row g-3">
 
                                                     <!--end col-->

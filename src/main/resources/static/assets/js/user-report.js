@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'pie'
             },
             title: {
-                text: 'Issue distribution by Team Leaders'
+                text: ''
             },
             tooltip: {
                 valueSuffix: '%'
@@ -260,6 +260,9 @@ document.addEventListener('DOMContentLoaded', function () {
         Highcharts.chart(containerId, {
             chart: {
                 type: 'bar'
+            },
+            title: {
+                text: ''
             },
             xAxis: {
                 categories,
