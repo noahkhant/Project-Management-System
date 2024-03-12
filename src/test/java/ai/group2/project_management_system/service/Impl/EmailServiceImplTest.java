@@ -2,8 +2,8 @@ package ai.group2.project_management_system.service.Impl;
 
 import ai.group2.project_management_system.model.entity.EmailDetail;
 import ai.group2.project_management_system.service.EmailService;
+import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,9 +11,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
-import java.io.IOException;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Arrays;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -29,6 +32,8 @@ class EmailServiceImplTest {
     @InjectMocks
     private EmailService emailService = Mockito.mock(EmailService.class);
     private EmailDetail emailDetail;
+    @InjectMocks
+    private EmailServiceImpl emailServiceImpl;
 
     @BeforeEach
     public void setup() {
@@ -63,6 +68,18 @@ class EmailServiceImplTest {
 
         // Verify that the method under test returned the expected response
         assertEquals(null, actualResponse);
+    }
+    @Test
+    void testGenerateOTP() {
+        // Create a new instance of EmailServiceImpl
+        EmailServiceImpl emailService = new EmailServiceImpl();
+
+        // Call the generateOTP method
+        String otp = emailService.generateOTP();
+
+        // Verify that the OTP is a 6-digit number
+        assertNotNull(otp);
+        assertTrue(otp.matches("\\d{6}"));
     }
 
 }
