@@ -126,13 +126,7 @@ function populateTeamLeaderList(dto) {
                             <div class="fw-bold">${user.name}</div>
                             <div>${user.position.positionName}</div>
                         </div>
-                        <div class="flex-shrink-0 ms-4 additional-content">
-                            <ul class="list-inline tasks-list-menu mb-0">
-                                <li class="list-inline-item">
-                                    <a href="issue_member_details.html"><button class="btn btn-sm btn-light" id="view-btn">View</button></a>
-                                </li>
-                            </ul>
-                        </div>
+                       
                     </label>
                 </div>
             </div>     
@@ -169,13 +163,7 @@ function populateMemberList(dto) {
                             <div class="fw-bold">${user.name}</div>
                             <div>${user.position.positionName}</div>
                         </div>
-                        <div class="flex-shrink-0 ms-4 additional-content">
-                            <ul class="list-inline tasks-list-menu mb-0">
-                                <li class="list-inline-item">
-                                    <a href="issue_member_details.html"><button class="btn btn-sm btn-light" id="view-btn">View</button></a>
-                                </li>
-                            </ul>
-                        </div>
+                        
                     </label>
                 </div>
             </div>
@@ -392,7 +380,7 @@ function showData() {
     console.log(formData);
     console.log("this");
 
-    let url = "/add-project";
+  /*  let url = "/add-project";
     fetch(url, {
         method: 'Post',
         headers: {
@@ -414,8 +402,36 @@ function showData() {
 
             sendNotiProjectCreate(data);
             // location.reload();
+        })*/
+
+    let url = "/add-project";
+    fetch(url, {
+        method: 'POST', // Correcting the HTTP method case
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...formData, userIds: selectedUserIds }),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
         })
-        .catch(error => console.log("Error" + error));
+        .then(data => {
+            console.log(data);
+            Swal.fire({
+                icon: 'success',
+                title: 'Success',
+                text: 'Your project has been successfully created.',
+                showConfirmButton: false,
+                timer: 2000 // Close after 2 seconds
+            });
+            displayProjects('All');
+            sendNotiProjectCreate(data);
+            // location.reload();
+        })
+        .catch(error => console.log("Error" + error.message));
     //});
 }
 
