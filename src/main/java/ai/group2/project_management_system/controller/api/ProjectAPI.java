@@ -1,6 +1,5 @@
 package ai.group2.project_management_system.controller.api;
 
-import ai.group2.project_management_system.dto.ProjectDTO;
 import ai.group2.project_management_system.dto.UserDTO;
 import ai.group2.project_management_system.mapping.UserMapping;
 import ai.group2.project_management_system.model.Enum.Role;
@@ -8,12 +7,9 @@ import ai.group2.project_management_system.model.Enum.Status;
 import ai.group2.project_management_system.model.entity.*;
 import ai.group2.project_management_system.repository.ProjectRepository;
 import ai.group2.project_management_system.service.DepartmentService;
-import ai.group2.project_management_system.service.Impl.ProjectServiceImpl;
 import ai.group2.project_management_system.service.ProjectService;
 import ai.group2.project_management_system.service.UserService;
-import jakarta.persistence.Cacheable;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cglib.core.CollectionUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

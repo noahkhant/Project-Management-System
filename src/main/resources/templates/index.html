@@ -1031,50 +1031,7 @@
 
 <!--Project Chart-->
 <script src="https://code.highcharts.com/highcharts.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        let projArr = [12, 10, 25, 30, 50, 45, 35, 20, 60, 70, 80, 90];
-        Highcharts.chart('projectChart', {
-            chart: {
-                type: 'column'
-            },
-            title: {
-                text: 'Annual Project Amount',
-                align: 'center'
-            },
-
-            xAxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'April', 'May', 'June','July','August','Sept','Oct','Nov','Dec'],
-                crosshair: true,
-                accessibility: {
-                    description: 'Months'
-                }
-            },
-            yAxis: {
-                min: 0,
-                title: {
-                    text: 'Project Count'
-                }
-            },
-            tooltip: {
-                valueSuffix: ' (1000 MT)'
-            },
-            plotOptions: {
-                column: {
-                    pointPadding: 0.2,
-                    borderWidth: 0
-                }
-            },
-            series: [
-                {
-                    name: 'Months',
-                    data: projArr
-                },
-
-            ]
-        });
-    });
-</script>
+<script src="assets/js/dashboard-bar-chart.js"></script>
 
 <!-- apexcharts -->
 <script src="assets/libs/apexcharts/apexcharts.min.js"></script>

@@ -67,9 +67,7 @@ function displayEditProject(id) {
                     document.getElementById('project-id').value = project.id;
                     document.getElementById('project-title-update').value = project.title;
                     document.getElementById('project-objective-update').value = project.objective;
-                    //document.getElementById('project-creator-update').value = project.creator;
                     document.getElementById('project-category-update').value = project.category;
-                    //document.getElementById('project-status-update').value = project.status;
                     document.getElementById('choices-priority-update').value = project.priority;
                     document.getElementById('datepicker-start-date-update').value = project.planStartDate;
                     document.getElementById('datepicker-end-date-update').value = project.planEndDate;

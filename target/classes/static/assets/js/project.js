@@ -380,30 +380,6 @@ function showData() {
     console.log(formData);
     console.log("this");
 
-  /*  let url = "/add-project";
-    fetch(url, {
-        method: 'Post',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({...formData, userIds: selectedUserIds}),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-            Swal.fire({
-                icon: 'success',
-                title: 'Success',
-                text: 'Your project has been successfully created.',
-                showConfirmButton: false,
-                timer: 2000 // Close after 2 seconds
-            })
-            displayProjects('All');
-
-            sendNotiProjectCreate(data);
-            // location.reload();
-        })*/
-
     let url = "/add-project";
     fetch(url, {
         method: 'POST', // Correcting the HTTP method case

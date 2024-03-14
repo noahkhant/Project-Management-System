@@ -4,180 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710237285624.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710238101757.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710238192584.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710238264851.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710238405308.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710239200404.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710239264048.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710239371643.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710257258771.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710257322391.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710257444035.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/PMO.jpg" afterDir="false" />
+    <list default="true" id="fa010c6a-5998-4e0b-b7a6-40f1eedc63f8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/dashboard-bar-chart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/controller/api/ProjectAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/group2/project_management_system/model/entity/AssignIssue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project-update.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709608710314.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709612985823.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709644243991.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709699627899.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709699706308.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709707308508.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709135803.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709334627.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709453717.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709709577364.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709711895020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712071203.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712177639.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712263255.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709712338882.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709785948348.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795232179.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795311459.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709795629409.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796482170.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796554274.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796603455.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796651822.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709796720612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797018014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797066397.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797195085.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797337007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709797514883.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709837941077.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709869032690.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709874392796.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881641102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881700440.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709881993960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883241534.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709883845234.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884286961.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884504749.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709884767778.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885179045.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885269385.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1709885412200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710034827052.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062810033.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062877447.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710062924194.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710100103989.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710131961771.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710134659764.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710134801259.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710144072940" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710144144859" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710145284542" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710148455972" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710148614494" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164132862.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164263158.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164332107.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164387597.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164443352.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710164959693.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710165144209.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167495758.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167644741.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167750079.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167893557.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710167937765.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168364047.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168424989.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168509290.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168563341.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168635683.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/userPhoto/1710168688293.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/assets/js/user-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/assets/js/user-report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/project.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709608710314.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709612985823.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709644243991.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709699627899.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709699706308.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709707308508.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709135803.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709334627.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709453717.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709709577364.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709711895020.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712071203.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712177639.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712263255.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709712338882.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709785948348.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795232179.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795311459.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709795629409.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796482170.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796554274.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796603455.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796651822.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709796720612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797018014.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797066397.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797195085.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797337007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709797514883.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709837941077.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709869032690.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709874392796.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881641102.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881700440.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709881993960.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883241534.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709883845234.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884286961.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884504749.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709884767778.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885179045.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885269385.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1709885412200.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710034827052.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062810033.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062877447.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710062924194.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710100103989.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710131961771.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710134659764.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710134801259.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710144072940" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710144144859" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710145284542" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710148455972" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710148614494" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164132862.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164263158.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164332107.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164387597.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164443352.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710164959693.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710165144209.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710167495758.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710167644741.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710167750079.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710167893557.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710167937765.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168364047.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168424989.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168509290.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168563341.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168635683.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/userPhoto/1710168688293.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ai/group2/project_management_system/model/entity/AssignIssue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/assets/js/user-report.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/assets/js/user-report.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/projects.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -197,9 +38,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2d5fx54Mjb2jl3J9QwK9379LN8T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -208,39 +49,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.All in ProjectManagementSystem.executor": "Coverage",
-    "JUnit.EmailServiceImplTest.testGenerateOTP.executor": "Coverage",
-    "JUnit.EmailServiceImplTest.testSendEmailWithAttachment.executor": "Coverage",
-    "JUnit.ImageServiceTest.testSaveImageAsync.executor": "Coverage",
-    "JUnit.MessageServiceImplTest.executor": "Coverage",
-    "JUnit.NotificationServiceImplTest.testSave.executor": "Coverage",
-    "JUnit.NotificationTest.testNotificationEntity.executor": "Coverage",
-    "JUnit.UserTest.testUserEntity.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ProjectManagementSystemApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "Merging demo-main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "711dd3093ac59cf676ea0432a926fcac",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ProjectManagementSystemApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging demo-main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Git Project\ProjectManagementSystem\src\main\resources\static\assets\userPhoto" />
@@ -280,7 +106,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="31e389ec-65c9-4d82-805c-a979f4f2a2b1" name="Changes" comment="" />
+      <changelist id="fa010c6a-5998-4e0b-b7a6-40f1eedc63f8" name="Changes" comment="" />
       <created>1709303108709</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -288,6 +114,8 @@
       <workItem from="1709303120398" duration="10958000" />
       <workItem from="1709353285534" duration="18479000" />
       <workItem from="1710341677022" duration="741000" />
+      <workItem from="1710387909639" duration="2480000" />
+      <workItem from="1710421902520" duration="1569000" />
     </task>
     <servers />
   </component>
